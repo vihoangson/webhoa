@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Category;
+use App\CategoryAllocation;
 use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
@@ -29,6 +31,8 @@ class ProductController extends Controller
      */
     public function create()
     {
+        dd(Product::find(83)->category);
+        dd(Category::find(1)->product);
         return view('product.edit');
     }
 
