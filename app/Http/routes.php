@@ -13,8 +13,10 @@
 
 Route::get('/', 'TagsController@index');
 Route::resource('post', 'PostController');
+Route::get('admin/product/template', 'admin\ProductController@template');
 Route::resource('admin/product', 'admin\ProductController');
 
+//
 Route::get('/welcome', function () {
     return view('welcome');
 });

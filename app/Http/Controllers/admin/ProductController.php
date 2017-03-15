@@ -29,7 +29,12 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.edit');
+    }
+
+    public function template()
+    {
+        return view('product.template');
     }
 
     /**
@@ -38,9 +43,10 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\CheckProductRequest $request)
     {
-        //
+        Product::create($request->all());
+        return redirect('admin/product');
     }
 
     /**
