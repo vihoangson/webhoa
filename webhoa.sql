@@ -1,14 +1,55 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               5.5.5-10.1.13-MariaDB - mariadb.org binary distribution
+-- Server version:               10.1.13-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win32
--- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2017-03-14 22:39:40
+-- HeidiSQL Version:             9.3.0.4984
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8 */;
-/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping database structure for webhoa
+CREATE DATABASE IF NOT EXISTS `webhoa` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `webhoa`;
+
+
+-- Dumping structure for table webhoa.categories
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table webhoa.categories: ~1 rows (approximately)
+/*!40000 ALTER TABLE `categories` DISABLE KEYS */;
+INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
+	(1, 'Hoa', '2017-03-15 14:25:38', '2017-03-15 14:25:41');
+/*!40000 ALTER TABLE `categories` ENABLE KEYS */;
+
+
+-- Dumping structure for table webhoa.category_product
+CREATE TABLE IF NOT EXISTS `category_product` (
+  `category_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `product_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`category_id`,`product_id`),
+  KEY `category_id_product_id` (`category_id`,`product_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `category_product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
+  CONSTRAINT `category_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table webhoa.category_product: ~1 rows (approximately)
+/*!40000 ALTER TABLE `category_product` DISABLE KEYS */;
+INSERT INTO `category_product` (`category_id`, `product_id`, `created_at`, `updated_at`) VALUES
+	(1, 83, NULL, NULL);
+/*!40000 ALTER TABLE `category_product` ENABLE KEYS */;
+
 
 -- Dumping structure for table webhoa.contacts
 CREATE TABLE IF NOT EXISTS `contacts` (
@@ -37,8 +78,11 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.migrations: ~0 rows (approximately)
+-- Dumping data for table webhoa.migrations: ~2 rows (approximately)
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
+INSERT INTO `migrations` (`migration`, `batch`) VALUES
+	('2017_03_14_143420_create_categories_table', 1),
+	('2017_03_15_054210_create_category_allocations_table', 2);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
 
@@ -67,93 +111,18 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=83 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.products: ~0 rows (approximately)
+-- Dumping data for table webhoa.products: ~7 rows (approximately)
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `products` (`id`, `title`, `category_id`, `images`, `content`, `price`, `created_at`, `updated_at`) VALUES
-	(1, 'title', '', '', '', 0, NULL, NULL),
-	(2, 'title', '', '', '', 0, NULL, NULL),
-	(3, 'title', '', '', '', 0, NULL, NULL),
-	(4, 'title', '', '', '', 0, NULL, NULL),
-	(5, 'title', '', '', '', 0, NULL, NULL),
-	(6, 'title', '', '', '', 0, NULL, NULL),
-	(7, 'title', '', '', '', 0, NULL, NULL),
-	(8, 'title', '', '', '', 0, NULL, NULL),
-	(9, 'title', '', '', '', 0, NULL, NULL),
-	(10, 'title', '', '', '', 0, NULL, NULL),
-	(11, 'title', '', '', '', 0, NULL, NULL),
-	(12, 'title', '', '', '', 0, NULL, NULL),
-	(13, 'title', '', '', '', 0, NULL, NULL),
-	(14, 'title', '', '', '', 0, NULL, NULL),
-	(15, 'title', '', '', '', 0, NULL, NULL),
-	(16, 'title', '', '', '', 0, NULL, NULL),
-	(17, 'title', '', '', '', 0, NULL, NULL),
-	(18, 'title', '', '', '', 0, NULL, NULL),
-	(19, 'title', '', '', '', 0, NULL, NULL),
-	(20, 'title', '', '', '', 0, NULL, NULL),
-	(21, 'title', '', '', '', 0, NULL, NULL),
-	(22, 'title', '', '', '', 0, NULL, NULL),
-	(23, 'title', '', '', '', 0, NULL, NULL),
-	(24, 'title', '', '', '', 0, NULL, NULL),
-	(25, 'title', '', '', '', 0, NULL, NULL),
-	(26, 'title', '', '', '', 0, NULL, NULL),
-	(27, 'title', '', '', '', 0, NULL, NULL),
-	(28, 'title', '', '', '', 0, NULL, NULL),
-	(29, 'title', '', '', '', 0, NULL, NULL),
-	(30, 'title', '', '', '', 0, NULL, NULL),
-	(31, 'title', '', '', '', 0, NULL, NULL),
-	(32, 'title', '', '', '', 0, NULL, NULL),
-	(33, 'title', '', '', '', 0, NULL, NULL),
-	(34, 'title', '', '', '', 0, NULL, NULL),
-	(35, 'title', '', '', '', 0, NULL, NULL),
-	(36, 'title', '', '', '', 0, NULL, NULL),
-	(37, 'title', '', '', '', 0, NULL, NULL),
-	(38, 'title', '', '', '', 0, NULL, NULL),
-	(39, 'title', '', '', '', 0, NULL, NULL),
-	(40, 'title', '', '', '', 0, NULL, NULL),
-	(41, 'title', '', '', '', 0, NULL, NULL),
-	(42, 'title', '', '', '', 0, NULL, NULL),
-	(43, 'title', '', '', '', 0, NULL, NULL),
-	(44, 'title', '', '', '', 0, NULL, NULL),
-	(45, 'title', '', '', '', 0, NULL, NULL),
-	(46, 'title', '', '', '', 0, NULL, NULL),
-	(47, 'title', '', '', '', 0, NULL, NULL),
-	(48, 'title', '', '', '', 0, NULL, NULL),
-	(49, 'title', '', '', '', 0, NULL, NULL),
-	(50, 'title', '', '', '', 0, NULL, NULL),
-	(51, 'title', '', '', '', 0, NULL, NULL),
-	(52, 'title', '', '', '', 0, NULL, NULL),
-	(53, 'title', '', '', '', 0, NULL, NULL),
-	(54, 'title', '', '', '', 0, NULL, NULL),
-	(55, 'title', '', '', '', 0, NULL, NULL),
-	(56, 'title', '', '', '', 0, NULL, NULL),
-	(57, 'title', '', '', '', 0, NULL, NULL),
-	(58, 'title', '', '', '', 0, NULL, NULL),
-	(59, 'title', '', '', '', 0, NULL, NULL),
-	(60, 'title', '', '', '', 0, NULL, NULL),
-	(61, 'title', '', '', '', 0, NULL, NULL),
-	(62, 'title', '', '', '', 0, NULL, NULL),
-	(63, 'title', '', '', '', 0, NULL, NULL),
-	(64, 'title', '', '', '', 0, NULL, NULL),
-	(65, 'title', '', '', '', 0, NULL, NULL),
-	(66, 'title', '', '', '', 0, NULL, NULL),
-	(67, 'title', '', '', '', 0, NULL, NULL),
-	(68, 'title', '', '', '', 0, NULL, NULL),
-	(69, 'title', '', '', '', 0, NULL, NULL),
-	(70, 'title', '', '', '', 0, NULL, NULL),
-	(71, 'title', '', '', '', 0, NULL, NULL),
-	(72, 'title', '', '', '', 0, NULL, NULL),
-	(73, 'title', '', '', '', 0, NULL, NULL),
-	(74, 'title', '', '', '', 0, NULL, NULL),
-	(75, 'title', '', '', '', 0, NULL, NULL),
-	(76, 'title', '', '', '', 0, NULL, NULL),
-	(77, 'title', '', '', '', 0, NULL, NULL),
-	(78, 'title', '', '', '', 0, NULL, NULL),
-	(79, 'title', '', '', '', 0, NULL, NULL),
-	(80, 'title', '', '', '', 0, NULL, NULL),
-	(81, 'title', '', '', '', 0, NULL, NULL),
-	(82, 'title', '', '', '', 0, NULL, NULL);
+	(83, '4124', '', '', '', 124, '2017-03-15 04:42:02', '2017-03-15 04:42:02'),
+	(84, '14124', '', '', '', 1243, '2017-03-15 04:44:31', '2017-03-15 04:44:31'),
+	(85, '', '', '', '', 0, '2017-03-15 04:45:50', '2017-03-15 04:45:50'),
+	(86, '235', '', '', '', 2354, '2017-03-15 04:46:02', '2017-03-15 04:46:02'),
+	(87, '5235', '', '', '', 235, '2017-03-15 04:46:07', '2017-03-15 04:46:07'),
+	(88, '4124', '', '', '', 4124, '2017-03-15 04:48:43', '2017-03-15 04:48:43'),
+	(89, '123', '', '', '', 123, '2017-03-15 05:36:13', '2017-03-15 05:36:13');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 
@@ -205,5 +174,6 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role_id`, `seen`, `
 	(3, 'Walker', 'walker@la.fr', '$2y$10$pLnINZxl1XqmZWEv94DBh.5y2wsxRI7jB3gLl54cd4YMldQFfY6sy', 3, 0, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-11 09:10:30', 'oxWicoBWufNOUBpYqimWqefHHfUZyL0Z73K9Jqxw0i2eNqiQu27PU4XxTnqd'),
 	(4, 'Slacker', 'slacker@la.fr', '$2y$10$.0/UgSMYfaQLqDDpEWTIT.7fZuyZJbKNn5RfOZBrgn.Z3YH863VEK', 3, 0, 0, 1, NULL, '2017-03-11 08:34:21', '2017-03-11 08:34:21', NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
