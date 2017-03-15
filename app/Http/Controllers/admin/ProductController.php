@@ -31,8 +31,6 @@ class ProductController extends Controller
      */
     public function create()
     {
-        dd(Product::find(83)->category);
-        dd(Category::find(1)->product);
         return view('product.edit');
     }
 
@@ -49,7 +47,16 @@ class ProductController extends Controller
      */
     public function store(Requests\CheckProductRequest $request)
     {
-        Product::create($request->all());
+        $rq = $request->all();
+//        $p = new Product();
+//        $p->title = $rq['title'];
+//        $p->title = $rq['price'];
+//        $p->title = $rq['title'];
+        $p = Product::create($request->all());
+        // todo: phần này đã lưu được
+        $p->category()->sync($rq['category']);
+        dd($p);
+        die;
         return redirect('admin/product');
     }
 

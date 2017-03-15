@@ -7,7 +7,6 @@
             @endforeach
         </ul>
     @endif
-
     <div class="row">
         <div class="col-xs-12 col-md-8">
             {!! Form::open(['url' => '/admin/product', 'method' => 'post','class'=>'form-horizontal']) !!}
@@ -24,12 +23,22 @@
                             <span class="input-group-addon">.00</span></div>
                     </div>
                 </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Category</label>
+                    <div class="col-sm-10">
+                    @foreach($data_category as $category)
+                            <label class="checkbox-inline">{!! Form::checkbox('category[]',$category->id) !!} {!! $category->name !!} </label>
+                    @endforeach
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-2">
                         <button class="btn btn-white" type="submit">Cancel</button>
                         <button class="btn btn-primary" type="submit">Save changes</button>
                     </div>
                 </div>
+
             {!! Form::close() !!}
 
         </div>
