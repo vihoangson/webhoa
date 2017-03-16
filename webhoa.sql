@@ -3,7 +3,7 @@
 -- Server version:               5.5.5-10.1.13-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2017-03-16 22:59:08
+-- Date/time:                    2017-03-17 01:16:13
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -48,11 +48,13 @@ CREATE TABLE IF NOT EXISTS `category_product` (
   CONSTRAINT `category_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.category_product: ~2 rows (approximately)
+-- Dumping data for table webhoa.category_product: ~4 rows (approximately)
 /*!40000 ALTER TABLE `category_product` DISABLE KEYS */;
 INSERT INTO `category_product` (`category_id`, `product_id`, `created_at`, `updated_at`) VALUES
-	(1, 155, '2017-03-16 15:53:05', '2017-03-16 15:53:05'),
-	(2, 156, '2017-03-16 15:55:27', '2017-03-16 15:55:27');
+	(1, 155, '2017-03-16 17:13:43', '2017-03-16 17:13:43'),
+	(2, 155, '2017-03-16 17:00:16', '2017-03-16 17:00:16'),
+	(2, 156, '2017-03-16 15:55:27', '2017-03-16 15:55:27'),
+	(2, 157, '2017-03-16 16:51:49', '2017-03-16 16:51:49');
 /*!40000 ALTER TABLE `category_product` ENABLE KEYS */;
 
 
@@ -87,13 +89,20 @@ CREATE TABLE IF NOT EXISTS `images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=143 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=150 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.images: ~2 rows (approximately)
+-- Dumping data for table webhoa.images: ~9 rows (approximately)
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 	(141, '1489679585.jpg', 'uploads/1489679585.jpg', '2017-03-16 15:53:05', '2017-03-16 15:53:05'),
-	(142, '1489679727.jpg', 'uploads/1489679727.jpg', '2017-03-16 15:55:27', '2017-03-16 15:55:27');
+	(142, '1489679727.jpg', 'uploads/1489679727.jpg', '2017-03-16 15:55:27', '2017-03-16 15:55:27'),
+	(143, '1489684435.jpg', 'uploads/1489684435.jpg', '2017-03-16 17:13:55', '2017-03-16 17:13:55'),
+	(144, '1489684456.jpg', 'uploads/1489684456.jpg', '2017-03-16 17:14:16', '2017-03-16 17:14:16'),
+	(145, '1489684974.jpg', 'uploads/1489684974.jpg', '2017-03-16 17:22:54', '2017-03-16 17:22:54'),
+	(146, '1489684974.jpg', 'uploads/1489684974.jpg', '2017-03-16 17:22:54', '2017-03-16 17:22:54'),
+	(147, '1489684974.jpg', 'uploads/1489684974.jpg', '2017-03-16 17:22:54', '2017-03-16 17:22:54'),
+	(148, '1489684974.jpg', 'uploads/1489684974.jpg', '2017-03-16 17:22:54', '2017-03-16 17:22:54'),
+	(149, '1489685136.jpg', 'uploads/1489685136.jpg', '2017-03-16 17:25:36', '2017-03-16 17:25:36');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 
 
@@ -111,11 +120,18 @@ CREATE TABLE IF NOT EXISTS `image_product` (
   CONSTRAINT `image_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.image_product: ~2 rows (approximately)
+-- Dumping data for table webhoa.image_product: ~9 rows (approximately)
 /*!40000 ALTER TABLE `image_product` DISABLE KEYS */;
 INSERT INTO `image_product` (`image_id`, `product_id`, `created_at`, `updated_at`) VALUES
 	(141, 155, '2017-03-16 15:53:05', '2017-03-16 15:53:05'),
-	(142, 156, '2017-03-16 15:55:27', '2017-03-16 15:55:27');
+	(142, 156, '2017-03-16 15:55:27', '2017-03-16 15:55:27'),
+	(143, 155, '2017-03-16 17:13:55', '2017-03-16 17:13:55'),
+	(144, 157, '2017-03-16 17:14:16', '2017-03-16 17:14:16'),
+	(145, 155, '2017-03-16 17:22:54', '2017-03-16 17:22:54'),
+	(146, 155, '2017-03-16 17:22:54', '2017-03-16 17:22:54'),
+	(147, 155, '2017-03-16 17:22:54', '2017-03-16 17:22:54'),
+	(148, 155, '2017-03-16 17:22:54', '2017-03-16 17:22:54'),
+	(149, 155, '2017-03-16 17:25:36', '2017-03-16 17:25:36');
 /*!40000 ALTER TABLE `image_product` ENABLE KEYS */;
 
 
@@ -155,22 +171,24 @@ CREATE TABLE IF NOT EXISTS `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
   `summary` text COLLATE utf8_unicode_ci NOT NULL,
+  `main_img` int(4) NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
   `price_sale` int(11) NOT NULL,
-  `date_begin_sale` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `date_end_sale` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `active` tinyint(4) NOT NULL,
+  `date_begin_sale` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_end_sale` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `active` int(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=157 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=158 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.products: ~2 rows (approximately)
+-- Dumping data for table webhoa.products: ~3 rows (approximately)
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` (`id`, `title`, `summary`, `content`, `price`, `price_sale`, `date_begin_sale`, `date_end_sale`, `active`, `created_at`, `updated_at`) VALUES
-	(155, '134', '1235', '<p>1235</p>', 1234, 1235, '2017-03-01 15:53:05', '2017-03-28 15:53:05', 1, '2017-03-16 15:53:05', '2017-03-16 15:53:05'),
-	(156, '4tw2', '2345', '<p>2345</p>', 3452345, 2345, '2017-03-09 15:55:27', '2017-03-30 15:55:27', 1, '2017-03-16 15:55:27', '2017-03-16 15:55:27');
+INSERT INTO `products` (`id`, `title`, `summary`, `main_img`, `content`, `price`, `price_sale`, `date_begin_sale`, `date_end_sale`, `active`, `created_at`, `updated_at`) VALUES
+	(155, '134124124222222222222', 'Summary', 149, '<p>Nội <b>dung</b> </p><p><img src="/uploads/1489684420_62757.jpg"><br></p>', 100000, 10000, '2017-03-17 01:08:09', '2017-03-31 17:22:38', 1, '2017-03-16 15:53:05', '2017-03-16 18:15:50'),
+	(156, '4tw2', '2345', 127, '<p>2345</p>', 3452345, 2345, '2017-03-17 01:07:36', '2017-03-30 15:55:27', 0, '2017-03-16 15:55:27', '2017-03-16 18:07:36'),
+	(157, '4tw2', '2345', 0, '<p>2345</p>', 3452345, 2345, '2017-03-17 00:42:16', '2017-03-23 16:51:49', 0, '2017-03-16 16:51:49', '2017-03-16 17:42:16');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 

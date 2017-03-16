@@ -125,7 +125,20 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $product = Product::find($id);
+        return view("product.edit")->with(compact('product'));
         //
+    }
+    public function update_ajax(\Illuminate\Http\Request $requests){
+        switch($requests->process){
+            case 'change_main_img':
+                $p = Product::find($requests->pid);
+                $p->main_img = $requests->id;
+                var_dump($p->save());
+                echo $requests->id;
+                break;
+        }
+
     }
 
     /**
@@ -135,9 +148,54 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\CheckProductRequest $request, $id)
     {
-        //
+        $rq = $request->all();
+        $p = Product::find($id);
+        $p->title = $rq['title'];
+        $p->summary = $rq['summary'];
+        $p->content = $rq['content'];
+        $p->price = $rq['price'];
+        $p->price_sale = $rq['price_sale'];
+        $p->date_begin_sale = $rq['date_begin_sale'];
+        $p->date_end_sale = $rq['date_end_sale'];
+        if(isset($rq['active'])){
+            $p->active = $rq['active'];
+        }else{
+            $p->active = 0;
+        }
+        $p->save();
+        if(isset($rq['category'])){
+            // todo: phần này đã lưu được
+            $p->category()->sync($rq['category']);
+        }
+
+        /**
+         * Upload files
+         */
+        if(is_array($request->file("image"))){
+            $files = $request->file("image");
+            $data_files = [];
+            foreach ($files as $key => $file){
+                if($file === null) continue;
+                // todo: Bỏ list ext file ra ngoài config dùng chung
+                // Lọc file
+                if(!in_array(strtolower($file->getClientOriginalExtension()),['jpg','png','gif'])){
+                    continue;
+                }
+
+                $file_name = time().".".$file->getClientOriginalExtension();
+                $data_files[$key] = $file->move('uploads',$file_name);
+
+                $img = new Image();
+                $img->title = $file_name;
+                $img->url = 'uploads/'.$file_name;
+                $img->save();
+                $p->image()->attach($img->id);
+            }
+        }
+
+        return redirect('admin/product');
     }
 
     /**

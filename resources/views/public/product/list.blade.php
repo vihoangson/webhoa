@@ -26,7 +26,7 @@
             <div class="col-md-3">
                 <div class="ibox">
                     <div class="ibox-content product-box">
-                        <div class="product-imitation" style="background:url('/{{$product->image->first()->url or ''}}') center center no-repeat;background-size: 100% ;">
+                        <div class="product-imitation" style="background:url('/{{$product->image->find($product->main_img)->url or ''}}') center center no-repeat;background-size: 100% ;">
                         </div>
                         <div class="product-desc">
                                 <span class="product-price">

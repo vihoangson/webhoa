@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::post('/up', 'admin\ProductController@up');
+Route::post('/update_ajax', 'admin\ProductController@update_ajax');
+
 Route::resource('post', 'PostController');
 Route::get('admin/product/template', 'admin\ProductController@template');
 Route::resource('admin/product', 'admin\ProductController');

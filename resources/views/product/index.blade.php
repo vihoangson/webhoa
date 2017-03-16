@@ -48,7 +48,7 @@
                     <td class="text-right">
                         <div class="btn-group">
                             <a href="#" class="btn-white btn btn-xs">View</a>
-                            <a href="#" class="btn-white btn btn-xs">Edit</a>
+                            <a href="/admin/product/{{$product->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                         </div>
                     </td>
                 </tr>
