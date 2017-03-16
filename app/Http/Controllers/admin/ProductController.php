@@ -51,7 +51,7 @@ class ProductController extends Controller
             // todo: Bỏ list ext file ra ngoài config dùng chung
             // Lọc file
             if(!in_array(strtolower($request->image_editor->getClientOriginalExtension()),['jpg','png','gif'])){
-                continue;
+
             }
 
             $extension = $request->image_editor->getClientOriginalExtension();

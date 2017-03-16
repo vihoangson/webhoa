@@ -12,8 +12,8 @@
 
     <link href="{{$template_path}}css/animate.css" rel="stylesheet">
     <link href="{{$template_path}}css/style.css" rel="stylesheet">
-    <link href="/bower_components/summernote/dist/summernote.css" rel="stylesheet">
-    {{--<link href="{{$template_path}}css/plugins/summernote/summernote-bs3.css" rel="stylesheet">--}}
+    @yield('custom_header')
+
 </head>
 <body>
 <div id="wrapper">
@@ -883,52 +883,12 @@
 
 <!-- FooTable -->
 <script src="{{$template_path}}js/plugins/footable/footable.all.min.js"></script>
-<script src="/bower_components/summernote/dist/summernote.min.js"></script>
 
+@yield('custom_footer')
 <!-- Page-Level Scripts -->
 <script>
-
-
     $(document).ready(function() {
-        function uploadImage(image) {
-            var data = new FormData();
-            data.append("image_editor", image);
-            $.ajax({
-                url: '/up',
-                cache: false,
-                contentType: false,
-                processData: false,
-                data: data,
-                type: "post",
-                success: function(url) {
-                    var image = $('<img>').attr('src', '/' + url);
-                    $('.summernote').summernote("insertNode", image[0]);
-                },
-                error: function(data) {
-                    console.log(data);
-                }
-            });
-        }
-
-        var IMAGE_PATH = 'http://www.path/to/document_root/';
         $('.footable').footable();
-
-        $('.summernote').summernote({
-            height: 300,
-            toolbar : [
-                ['style',['bold','italic','underline','clear']],
-                ['font',['fontsize']],
-                ['color',['color']],
-                ['para',['ul','ol','paragraph']],
-                ['link',['link']],
-                ['picture',['picture']]
-            ],
-            callbacks : {
-                onImageUpload: function(image) {
-                    uploadImage(image[0]);
-                }
-            }
-        });
     });
 </script>
 </body>
