@@ -9,7 +9,7 @@
     @endif
     <div class="row">
         <div class="col-xs-12 col-md-8">
-            {!! Form::open(['url' => '/admin/product', 'method' => 'post','class'=>'form-horizontal']) !!}
+            {!! Form::open(['url' => '/admin/product', 'method' => 'post','class'=>'form-horizontal', 'files' => true]) !!}
                 <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('title','Title:') !!}</label>
                     <div class="col-sm-10">
                         {!! Form::text('title',null,['class'=>'form-control']) !!}
@@ -35,6 +35,7 @@
                 <div class="form-group"><label class="col-sm-2 control-label">Category</label>
                     <div class="col-sm-10">
                         <textarea class="summernote" name="content"></textarea>
+                        {!! Form::file('image[]',['multiple' => "multiple" ]) !!}
                     </div>
                 </div>
                 <div class="form-group">
