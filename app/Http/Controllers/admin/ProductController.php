@@ -21,6 +21,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::paginate();
+        //dd($products[0]->category[0]->name);
         return view('product.index',compact('products'));
     }
 
@@ -32,11 +33,6 @@ class ProductController extends Controller
     public function create()
     {
         return view('product.edit');
-    }
-
-    public function template()
-    {
-        return view('product.template');
     }
 
     /**
@@ -55,8 +51,6 @@ class ProductController extends Controller
         $p = Product::create($request->all());
         // todo: phần này đã lưu được
         $p->category()->sync($rq['category']);
-        dd($p);
-        die;
         return redirect('admin/product');
     }
 
@@ -103,5 +97,13 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function template()
+    {
+        return view('product.template');
     }
 }

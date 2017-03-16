@@ -36,7 +36,11 @@
                         {{$product->price}}
                     </td>
                     <td>
-                        1000
+                        @if(isset($product->category ))
+                            @foreach($product->category as $cat)
+                                <div>{{$cat->name}}</div>
+                            @endforeach
+                        @endif
                     </td>
                     <td>
                         <span class="label label-primary">Enable</span>
