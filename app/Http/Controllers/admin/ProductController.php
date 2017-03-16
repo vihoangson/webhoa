@@ -72,7 +72,6 @@ class ProductController extends Controller
     public function store(Requests\CheckProductRequest $request)
     {
         $rq = $request->all();
-
         $p = Product::create($request->all());
         if(isset($rq['category'])){
             // todo: phần này đã lưu được
@@ -86,7 +85,7 @@ class ProductController extends Controller
             $files = $request->file("image");
             $data_files = [];
             foreach ($files as $key => $file){
-
+                if($file === null) continue;
                 // todo: Bỏ list ext file ra ngoài config dùng chung
                 // Lọc file
                 if(!in_array(strtolower($file->getClientOriginalExtension()),['jpg','png','gif'])){

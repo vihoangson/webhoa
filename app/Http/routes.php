@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'admin\ProductController@index');
+Route::get('/', 'HomeController@index');
 Route::post('/up', 'admin\ProductController@up');
 Route::resource('post', 'PostController');
 Route::get('admin/product/template', 'admin\ProductController@template');

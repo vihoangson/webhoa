@@ -10,6 +10,13 @@
     <div class="row">
         <div class="col-xs-12 col-md-8">
             {!! Form::open(['url' => '/admin/product', 'method' => 'post','class'=>'form-horizontal', 'files' => true]) !!}
+
+                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('active','Active:') !!}</label>
+                    <div class="col-sm-10">
+                        <input type="checkbox" name="active" value="1" class="js-switch" checked />
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('title','Title:') !!}</label>
                     <div class="col-sm-10">
                         {!! Form::text('title',null,['class'=>'form-control']) !!}
@@ -24,6 +31,14 @@
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('price_sale','Price sale:') !!}</label>
+                    <div class="col-sm-10">
+                        <div class="input-group m-b"><span class="input-group-addon">$</span>
+                            {!! Form::text('price_sale',null,['class'=>'form-control']) !!}
+                            <span class="input-group-addon">.00</span></div>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">Category</label>
                     <div class="col-sm-10">
                     @foreach($data_category as $category)
@@ -32,9 +47,20 @@
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Summary</label>
+                    <div class="col-sm-10">
+                        <textarea class="form-control" name="summary"></textarea>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">Category</label>
                     <div class="col-sm-10">
                         <textarea class="summernote" name="content"></textarea>
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Images</label>
+                    <div class="col-sm-10">
                         {!! Form::file('image[]',['multiple' => "multiple" ]) !!}
                     </div>
                 </div>
@@ -44,9 +70,9 @@
                     <div class="col-sm-10">
                         <div class="form-group" id="data_5">
                             <div class="input-daterange input-group" id="datepicker">
-                                <input type="text" class="input-sm form-control" name="start" value="05/14/2014"/>
+                                <input type="text" class="input-sm form-control" name="date_begin_sale" value=""/>
                                 <span class="input-group-addon">to</span>
-                                <input type="text" class="input-sm form-control" name="end" value="05/22/2014" />
+                                <input type="text" class="input-sm form-control" name="date_end_sale" value="" />
                             </div>
                         </div>
                     </div>
@@ -69,13 +95,21 @@
 @section('custom_header')
     <link href="{{$template_path}}css/plugins/datapicker/datepicker3.css" rel="stylesheet">
     <link href="/bower_components/summernote/dist/summernote.css" rel="stylesheet">
+    <link href="{{$template_path}}css/plugins/switchery/switchery.css" rel="stylesheet">
+
 @endsection
 
 @section('custom_footer')
     <!-- Data picker -->
+    <!-- Switchery -->
+    <script src="{{$template_path}}js/plugins/switchery/switchery.js"></script>
     <script src="{{$template_path}}js/plugins/datapicker/bootstrap-datepicker.js"></script>
     <script src="/bower_components/summernote/dist/summernote.min.js"></script>
 <script>
+
+    var elem = document.querySelector('.js-switch');
+    var switchery = new Switchery(elem, { color: '#1AB394' });
+
     // datepicker
     $('#data_5 .input-daterange').datepicker({
         keyboardNavigation: false,
