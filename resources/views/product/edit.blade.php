@@ -31,7 +31,12 @@
                     @endforeach
                     </div>
                 </div>
-
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Category</label>
+                    <div class="col-sm-10">
+                        <div class="summernote"> 1231</div>
+                    </div>
+                </div>
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-2">
                         <button class="btn btn-white" type="submit">Cancel</button>

@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>INSPINIA | E-commerce</title>
-
+    <title>{{$title_page or 'Web hoa'}}</title>
     <link href="{{$template_path}}css/bootstrap.min.css" rel="stylesheet">
     <link href="{{$template_path}}font-awesome/css/font-awesome.css" rel="stylesheet">
 
@@ -16,6 +12,8 @@
 
     <link href="{{$template_path}}css/animate.css" rel="stylesheet">
     <link href="{{$template_path}}css/style.css" rel="stylesheet">
+    <link href="{{$template_path}}css/plugins/summernote/summernote.css" rel="stylesheet">
+    <link href="{{$template_path}}css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
 </head>
 <body>
 <div id="wrapper">
@@ -873,7 +871,6 @@
 
     </div>
 </div>
-
 <!-- Mainly scripts -->
 <script src="{{$template_path}}js/jquery-2.1.1.js"></script>
 <script src="{{$template_path}}js/bootstrap.min.js"></script>
@@ -886,14 +883,20 @@
 
 <!-- FooTable -->
 <script src="{{$template_path}}js/plugins/footable/footable.all.min.js"></script>
+<script src="{{$template_path}}js/plugins/summernote/summernote.min.js"></script>
 
 <!-- Page-Level Scripts -->
 <script>
     $(document).ready(function() {
-
         $('.footable').footable();
-
+        $('.summernote').summernote({
+            height: 300,                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: true                  // set focus to editable area after initializing summernote
+        });
     });
+
 
 </script>
 </body>
