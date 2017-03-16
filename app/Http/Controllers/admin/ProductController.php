@@ -47,6 +47,13 @@ class ProductController extends Controller
          * Upload in editor
          */
         if(isset($request->image_editor)){
+
+            // todo: Bỏ list ext file ra ngoài config dùng chung
+            // Lọc file
+            if(!in_array(strtolower($request->image_editor->getClientOriginalExtension()),['jpg','png','gif'])){
+                continue;
+            }
+
             $extension = $request->image_editor->getClientOriginalExtension();
             $destinationPath = 'uploads'; // upload path
             $fileName = time()."_".rand(11111,99999).'.'.$extension; // renameing image_editor
@@ -79,6 +86,13 @@ class ProductController extends Controller
             $files = $request->file("image");
             $data_files = [];
             foreach ($files as $key => $file){
+
+                // todo: Bỏ list ext file ra ngoài config dùng chung
+                // Lọc file
+                if(!in_array(strtolower($file->getClientOriginalExtension()),['jpg','png','gif'])){
+                    continue;
+                }
+
                 $file_name = time().".".$file->getClientOriginalExtension();
                 $data_files[$key] = $file->move('uploads',$file_name);
 
@@ -87,10 +101,7 @@ class ProductController extends Controller
                 $img->url = 'uploads/'.$file_name;
                 $img->save();
                 $p->image()->attach($img->id);
-
             }
-
-            //$p->category()->sync($rq['category']);
         }
 
         return redirect('admin/product');
