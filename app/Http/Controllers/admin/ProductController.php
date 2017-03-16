@@ -35,6 +35,15 @@ class ProductController extends Controller
         return view('product.edit');
     }
 
+    public function up(Request $request){
+        $extension = $request->image->getClientOriginalExtension();
+        $destinationPath = 'uploads'; // upload path
+        $fileName = time()."_".rand(11111,99999).'.'.$extension; // renameing image
+        $file = $request->image->move($destinationPath,$fileName);
+        header('Content-Type: application/json');
+        echo $destinationPath.'/'.$fileName;
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -44,13 +53,11 @@ class ProductController extends Controller
     public function store(Requests\CheckProductRequest $request)
     {
         $rq = $request->all();
-//        $p = new Product();
-//        $p->title = $rq['title'];
-//        $p->title = $rq['price'];
-//        $p->title = $rq['title'];
         $p = Product::create($request->all());
-        // todo: phần này đã lưu được
-        $p->category()->sync($rq['category']);
+        if(isset($rq['category'])){
+            // todo: phần này đã lưu được
+            $p->category()->sync($rq['category']);
+        }
         return redirect('admin/product');
     }
 

@@ -34,7 +34,7 @@
                 <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">Category</label>
                     <div class="col-sm-10">
-                        <div class="summernote"> 1231</div>
+                        <textarea class="summernote" name="content"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
