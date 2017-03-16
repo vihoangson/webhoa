@@ -892,7 +892,7 @@
     $(document).ready(function() {
         function uploadImage(image) {
             var data = new FormData();
-            data.append("image", image);
+            data.append("image_editor", image);
             $.ajax({
                 url: '/up',
                 cache: false,

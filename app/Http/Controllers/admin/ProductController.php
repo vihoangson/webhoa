@@ -35,13 +35,24 @@ class ProductController extends Controller
         return view('product.edit');
     }
 
+    /**
+     * @param Request $request
+     */
     public function up(Request $request){
-        $extension = $request->image->getClientOriginalExtension();
-        $destinationPath = 'uploads'; // upload path
-        $fileName = time()."_".rand(11111,99999).'.'.$extension; // renameing image
-        $file = $request->image->move($destinationPath,$fileName);
-        header('Content-Type: application/json');
-        echo $destinationPath.'/'.$fileName;
+
+
+
+        /**
+         * Upload in editor
+         */
+        if(isset($request->image_editor)){
+            $extension = $request->image_editor->getClientOriginalExtension();
+            $destinationPath = 'uploads'; // upload path
+            $fileName = time()."_".rand(11111,99999).'.'.$extension; // renameing image_editor
+            $request->image_editor->move($destinationPath,$fileName);
+            header('Content-Type: application/json');
+            echo $destinationPath.'/'.$fileName;
+        }
     }
 
     /**

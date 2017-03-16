@@ -12,6 +12,11 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Category')
             ->withTimestamps();
-        //return $this->morphToMany('App\Category','category_allocations');
+    }
+
+    public function image()
+    {
+        return $this->belongsToMany('App\Image')
+            ->withTimestamps();
     }
 }
