@@ -72,9 +72,10 @@
                         {!! Form::file('image[]',['multiple' => "multiple" ]) !!}
                         @if(isset($product->image))
                             @foreach($product->image as $img)
-                                <img class="thumb_img {{($product->main_img == $img->id?'active_box':'')}}" src="/{{$img->url}}" style="width:100px;" data-id="{{$img->id}}" data-pid="{{$product->id}}">
+                                <img data-id="{{$img->id}}" class="thumb_img {{($product->main_img == $img->id?'active_box':'')}}" src="/{{$img->url}}" style="width:100px;" data-id="{{$img->id}}" data-pid="{{$product->id}}">
                             @endforeach
                         @endif
+                        <button class="btn btn-danger delete-img" type="button">Delete img</button>
                     </div>
                 </div>
 
@@ -117,15 +118,33 @@
 @endsection
 
 @section('custom_footer')
+
     <!-- Data picker -->
     <!-- Switchery -->
     <script src="{{$template_path}}js/plugins/switchery/switchery.js"></script>
     <script src="{{$template_path}}js/plugins/datapicker/bootstrap-datepicker.js"></script>
     <script src="/bower_components/summernote/dist/summernote.min.js"></script>
 <script>
+
+    $(".delete-img").click(function(){
+        $(".thumb_img").each(function(){
+            $(this).after("<button class='btn btn-default dl_img' type='button' data-id='"+$(this).data('id')+"'>Delete</button>");
+        })
+
+    });
+    $(document).on("click",".dl_img",function(){
+        var this_btn = $(this);
+        $.post('/update_ajax',{'process':'delete_img_product','id':$(this).data('id')},function(data) {
+            if(data.status == true){
+                $(".thumb_img[data-id='"+data.id+"']").remove();
+                this_btn.remove();
+            }
+        });
+
+    })
 $(".thumb_img").click(function(){
     var this_select = $(this);
-    $.post('/update_ajax',{'process':'change_main_img','id':$(this).data('id'),'pid':$(this).data('pid')},function(){
+    $.post('/update_ajax',{'process':'change_main_img','id':$(this).data('id'),'pid':$(this).data('pid')},function(data){
         $(".thumb_img").removeClass('active_box');
         this_select.addClass('active_box');
     })

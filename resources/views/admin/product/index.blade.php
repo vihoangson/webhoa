@@ -20,7 +20,7 @@
             @foreach($products as $product)
                 <tr>
                     <td>
-                        <img src="/uploads/product/{{$product->images}}">
+                        <div class="" style="width:40px; height:40px;background:url('/{{$product->image->find($product->main_img)->url or ''}}') center center no-repeat;background-size: 100% ;"></div>
                     </td>
                     <td>
                         {{$product->title}}

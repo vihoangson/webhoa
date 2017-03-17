@@ -78,6 +78,13 @@ class ProductController extends Controller
             $p->category()->sync($rq['category']);
         }
 
+        $this->upload_file($p,$request);
+
+        return redirect('admin/product');
+    }
+
+    private function upload_file($p,$request){
+
         /**
          * Upload files
          */
@@ -92,7 +99,7 @@ class ProductController extends Controller
                     continue;
                 }
 
-                $file_name = time().".".$file->getClientOriginalExtension();
+                $file_name = time()."_".rand(10000,99999).".".$file->getClientOriginalExtension();
                 $data_files[$key] = $file->move('uploads',$file_name);
 
                 $img = new Image();
@@ -102,8 +109,6 @@ class ProductController extends Controller
                 $p->image()->attach($img->id);
             }
         }
-
-        return redirect('admin/product');
     }
 
     /**
@@ -135,8 +140,15 @@ class ProductController extends Controller
             case 'change_main_img':
                 $p = Product::find($requests->pid);
                 $p->main_img = $requests->id;
-                var_dump($p->save());
-                echo $requests->id;
+                $p->save();
+                break;
+            case 'delete_img_product':
+                $img = Image::find($requests->id);
+                $img->product()->detach();
+                return response()->json([
+                    'status' => $img->delete(),
+                    'id' => $requests->id,
+                ]);
                 break;
         }
 
@@ -171,30 +183,8 @@ class ProductController extends Controller
             $p->category()->sync($rq['category']);
         }
 
-        /**
-         * Upload files
-         */
-        if(is_array($request->file("image"))){
-            $files = $request->file("image");
-            $data_files = [];
-            foreach ($files as $key => $file){
-                if($file === null) continue;
-                // todo: Bỏ list ext file ra ngoài config dùng chung
-                // Lọc file
-                if(!in_array(strtolower($file->getClientOriginalExtension()),['jpg','png','gif'])){
-                    continue;
-                }
+        $this->upload_file($p,$request);
 
-                $file_name = time().".".$file->getClientOriginalExtension();
-                $data_files[$key] = $file->move('uploads',$file_name);
-
-                $img = new Image();
-                $img->title = $file_name;
-                $img->url = 'uploads/'.$file_name;
-                $img->save();
-                $p->image()->attach($img->id);
-            }
-        }
 
         return redirect('admin/product');
     }
