@@ -13,7 +13,6 @@
             <th data-hide="phone,tablet" >Quantity</th>
             <th data-hide="phone">Status</th>
             <th class="text-right" data-sort-ignore="true">Action</th>
-
         </tr>
         </thead>
         <tbody>
@@ -43,11 +42,11 @@
                         @endif
                     </td>
                     <td>
-                        <span class="label label-primary">Enable</span>
+                        {!! ($product->active == 1 ?'<span class="label label-primary">Enable</span>':'<span class="label label-danger">Disable</span>') !!}
                     </td>
                     <td class="text-right">
                         <div class="btn-group">
-                            <a href="#" class="btn-white btn btn-xs">View</a>
+                            <a href="/admin/product/{{$product->id}}" class="btn-white btn btn-xs">View</a>
                             <a href="/admin/product/{{$product->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                         </div>
                     </td>

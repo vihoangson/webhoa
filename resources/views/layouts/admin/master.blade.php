@@ -364,7 +364,7 @@
         </div>
 
 
-        <div class="ibox-content m-b-sm border-bottom">
+        <div class="ibox-content m-b-sm border-bottom hidden">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
