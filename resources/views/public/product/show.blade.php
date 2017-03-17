@@ -1,16 +1,12 @@
-@extends('layouts.admin.master')
+@extends('layouts.public.master')
 @section('content')
-
     <div class="row">
         <div class="col-lg-12">
-
             <div class="ibox product-detail">
                 <div class="ibox-content">
 
                     <div class="row">
                         <div class="col-md-5">
-
-
                             <div class="product-images">
                                 @foreach($product->image as $image)
                                 <div>
@@ -26,16 +22,15 @@
                             <h2 class="font-bold m-b-xs">
                                 {{$product->title}}
                             </h2>
-                            <small>{{$product->summary}}</small>
+                            <small>{{$product->price}}</small>
                             <div class="m-t-md">
-                                <h2 class="product-main-price">${{$product->price}} <small class="text-muted">Exclude Tax</small> </h2>
+                                <h2 class="product-main-price">{{$product->price_sale}}</h2>
                             </div>
                             <hr>
-
                             <h4>Product description</h4>
-
+                            {{$product->summary}}
                             <div class="small text-muted">
-                                {!! $product->content !!}
+
                             </div>
                             <dl class="small m-t-md">
                                 <dt>Description lists</dt>
@@ -62,6 +57,7 @@
                     </div>
 
                 </div>
+                {!! $product->content !!}
                 <div class="ibox-footer">
                             <span class="pull-right">
                                 Full stock - <i class="fa fa-clock-o"></i> 14.04.2016 10:04 pm
@@ -72,7 +68,6 @@
 
         </div>
     </div>
-
 @endsection
 
 @section('custom_header')

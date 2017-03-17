@@ -23,7 +23,7 @@ class ProductController extends Controller
     {
         $products = Product::paginate();
         //dd($products[0]->category[0]->name);
-        return view('product.index',compact('products'));
+        return view('admin.product.index',compact('products'));
     }
 
     /**
@@ -33,7 +33,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('product.edit');
+        return view('admin.product.edit');
     }
 
     /**
@@ -115,7 +115,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('product.show')->with(compact('product'));
+        return view('admin.product.show')->with(compact('product'));
     }
 
     /**
@@ -127,7 +127,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
-        return view("product.edit")->with(compact('product'));
+        return view("admin.product.edit")->with(compact('product'));
         //
     }
     public function update_ajax(\Illuminate\Http\Request $requests){
@@ -215,6 +215,6 @@ class ProductController extends Controller
      */
     public function template()
     {
-        return view('product.template');
+        return view('admin.product.template');
     }
 }

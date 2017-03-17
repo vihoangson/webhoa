@@ -29,4 +29,16 @@ class HomeController extends Controller
         $products = Product::where('active', 1)->paginate();
         return view('public.product.list')->with(['products'=>$products]);
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        $product = Product::find($id);
+        return view('public.product.show')->with(['product'=>$product]);
+    }
+
 }

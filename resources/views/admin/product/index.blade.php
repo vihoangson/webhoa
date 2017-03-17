@@ -29,7 +29,7 @@
                         {{$product->title}}
                     </td>
                     <td>
-                        {{$product->content}}
+                        {{$product->summary}}
                     </td>
                     <td>
                         {{$product->price}}
@@ -46,7 +46,7 @@
                     </td>
                     <td class="text-right">
                         <div class="btn-group">
-                            <a href="/admin/product/{{$product->id}}" class="btn-white btn btn-xs">View</a>
+                            <a href="/product/{{$product->id}}" target="_blank" class="btn-white btn btn-xs">View</a>
                             <a href="/admin/product/{{$product->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                         </div>
                     </td>

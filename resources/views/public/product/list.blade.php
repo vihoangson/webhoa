@@ -26,14 +26,17 @@
             <div class="col-md-3">
                 <div class="ibox">
                     <div class="ibox-content product-box">
+                        <a href="/product/{{$product->id}}">
+
                         <div class="product-imitation" style="background:url('/{{$product->image->find($product->main_img)->url or ''}}') center center no-repeat;background-size: 100% ;">
                         </div>
-                        <div class="product-desc">
+                    </a>
+                    <div class="product-desc">
                                 <span class="product-price">
                                     {{$product->price}}
                                 </span>
                             <small class="text-muted">Category</small>
-                            <a href="#" class="product-name"> {{$product->title}}</a>
+                            <a href="/product/{{$product->id}}" class="product-name"> {{$product->title}}</a>
 
 
 
@@ -42,7 +45,7 @@
                             </div>
                             <div class="m-t text-righ">
 
-                                <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                <a href="/product/{{$product->id}}" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
                             </div>
                         </div>
                     </div>

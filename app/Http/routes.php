@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/product/{id}', 'HomeController@show');
+
 Route::post('/up', 'admin\ProductController@up');
 Route::post('/update_ajax', 'admin\ProductController@update_ajax');
 

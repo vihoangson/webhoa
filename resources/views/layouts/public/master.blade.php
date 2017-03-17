@@ -21,9 +21,14 @@
     <div id="" class="gray-bg dashbard-1">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header hidden">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                    <form role="search" class="navbar-form-custom" action="search_results.html">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="/">
+                        Webhoa.vn
+                    </a>
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="/admin/product">
+                        Dashboard
+                    </a>
+                    <form role="search" class="navbar-form-custom hidden" action="search_results.html">
                         <div class="form-group">
                             <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
                         </div>
@@ -144,41 +149,6 @@
 
             </nav>
         </div>
-
-
-        <div class="ibox-content m-b-sm border-bottom">
-            <div class="row">
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label class="control-label" for="product_name">Product Name</label>
-                        <input type="text" id="product_name" name="product_name" value="" placeholder="Product Name" class="form-control">
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="form-group">
-                        <label class="control-label" for="price">Price</label>
-                        <input type="text" id="price" name="price" value="" placeholder="Price" class="form-control">
-                    </div>
-                </div>
-                <div class="col-sm-2">
-                    <div class="form-group">
-                        <label class="control-label" for="quantity">Quantity</label>
-                        <input type="text" id="quantity" name="quantity" value="" placeholder="Quantity" class="form-control">
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="form-group">
-                        <label class="control-label" for="status">Status</label>
-                        <select name="status" id="status" class="form-control">
-                            <option value="1" selected>Enabled</option>
-                            <option value="0">Disabled</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
         <div class="row">
             <div class="col-lg-12">
                 <div class="ibox">
