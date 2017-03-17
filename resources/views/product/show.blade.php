@@ -12,49 +12,30 @@
 
 
                             <div class="product-images">
-
+                                @foreach($product->image as $image)
                                 <div>
-                                    <div class="image-imitation">
-                                        [IMAGE 1]
+                                    <div class="image-imitation" style="background: center center no-repeat url('/{{$image->url}}'); background-size:100%">
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="image-imitation">
-                                        [IMAGE 2]
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="image-imitation">
-                                        [IMAGE 3]
-                                    </div>
-                                </div>
-
-
+                                @endforeach
                             </div>
 
                         </div>
                         <div class="col-md-7">
 
                             <h2 class="font-bold m-b-xs">
-                                Desktop publishing software
+                                {{$product->title}}
                             </h2>
-                            <small>Many desktop publishing packages and web page editors now.</small>
+                            <small>{{$product->summary}}</small>
                             <div class="m-t-md">
-                                <h2 class="product-main-price">$406,602 <small class="text-muted">Exclude Tax</small> </h2>
+                                <h2 class="product-main-price">${{$product->price}} <small class="text-muted">Exclude Tax</small> </h2>
                             </div>
                             <hr>
 
                             <h4>Product description</h4>
 
                             <div class="small text-muted">
-                                It is a long established fact that a reader will be distracted by the readable
-                                content of a page when looking at its layout. The point of using Lorem Ipsum is
-
-                                <br/>
-                                <br/>
-                                There are many variations of passages of Lorem Ipsum available, but the majority
-                                have suffered alteration in some form, by injected humour, or randomised words
-                                which don't look even slightly believable.
+                                {!! $product->content !!}
                             </div>
                             <dl class="small m-t-md">
                                 <dt>Description lists</dt>
