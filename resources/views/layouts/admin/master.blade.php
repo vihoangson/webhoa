@@ -8,7 +8,7 @@
     <link href="{{$template_path}}font-awesome/css/font-awesome.css" rel="stylesheet">
 
     <!-- FooTable -->
-    <link href="{{$template_path}}css/plugins/footable/footable.core.css" rel="stylesheet">
+    {{--<link href="{{$template_path}}css/plugins/footable/footable.core.css" rel="stylesheet">--}}
 
     <link href="{{$template_path}}css/animate.css" rel="stylesheet">
     <link href="{{$template_path}}css/style.css" rel="stylesheet">
@@ -364,7 +364,7 @@
         </div>
 
 
-        <div class="ibox-content m-b-sm border-bottom hidden">
+        <div class="ibox-content m-b-sm border-bottom">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
@@ -888,7 +888,7 @@
 <!-- Page-Level Scripts -->
 <script>
     $(document).ready(function() {
-        $('.footable').footable();
+//        $('.footable').footable();
     });
 </script>
 </body>
