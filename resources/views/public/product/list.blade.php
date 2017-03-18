@@ -1,45 +1,33 @@
 @extends('public.layouts.master')
 @section('content')
-
-<div class="wrapper wrapper-content animated fadeInRight">
-    <div class="row">
+    <!-- Product Carousel Starts -->
+    <div id="owl-product" class="owl-carousel">
         @foreach($products as $key => $product)
-            <div class="col-md-3">
-                <div class="ibox">
-                    <div class="ibox-content product-box">
-                        <a href="/product/{{$product->id}}">
-
-                        <div class="product-imitation" style="background:url('/{{$product->image->find($product->main_img)->url or ''}}') center center no-repeat;background-size: 100% ;">
+            <div class="item">
+                <div class="product-col">
+                    <div class="image">
+                        <img src="/{{$product->image->find($product->main_img)->url or ''}}" alt="product" class="img-responsive" />
+                    </div>
+                    <div class="caption">
+                        <h4><a href="/assets/flower-shoppe/product.html">{{$product->title}}</a></h4>
+                        <div class="description">
+                            {{$product->summary}}
                         </div>
-                    </a>
-                    <div class="product-desc">
-                                <span class="product-price">
-                                    {{$product->price}}
-                                </span>
-                            <small class="text-muted">Category</small>
-                            <a href="/product/{{$product->id}}" class="product-name"> {{$product->title}}</a>
-
-
-
-                            <div class="small m-t-xs">
-                                {{$product->summary}}
-                            </div>
-                            <div class="m-t text-righ">
-
-                                <a href="/product/{{$product->id}}" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
-                            </div>
+                        <div class="price">
+                            <span class="price-new">{{$product->price_sale}}</span>
+                            <span class="price-old">{{$product->price}}</span>
+                        </div>
+                        <div class="cart-button button-group">
+                            <a href="/product/add_cart/{{$product->id}}" class="btn btn-cart">
+                                Add To Cart
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            @if(($key+1) % 4==0)
-    </div>
-    <div class="row">
-            @endif
         @endforeach
     </div>
-    {!! $products->render() !!}
+    <!-- Product Carousel Ends -->
 
-</div>
 @endsection
 
