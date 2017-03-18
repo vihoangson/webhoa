@@ -73,8 +73,8 @@ class ProductController extends Controller
 
     public function submit_payment(Request $request){
         $rq = $request->all();
-        //Customer;
-        dd($request);
+        Customer::create($rq);
+        return redirect("/product/finish");
     }
 
     public function finish(){
