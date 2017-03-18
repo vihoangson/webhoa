@@ -1,4 +1,4 @@
-@extends('layouts.public.master')
+@extends('public.layouts.master')
 @section('content')
 
 <div class="wrapper wrapper-content animated fadeInRight">

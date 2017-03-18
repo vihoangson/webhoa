@@ -1,658 +1,813 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+
     <meta charset="utf-8">
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{$title_page or 'Web hoa'}}</title>
-    <link href="{{$template_path}}css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{$template_path}}font-awesome/css/font-awesome.css" rel="stylesheet">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- FooTable -->
-    <link href="{{$template_path}}css/plugins/footable/footable.core.css" rel="stylesheet">
+    <title>Flowers Shoppe Stores - Bootstrap 3 E-Commerce Template</title>
 
-    <link href="{{$template_path}}css/animate.css" rel="stylesheet">
-    <link href="{{$template_path}}css/style.css" rel="stylesheet">
-    @yield('custom_header')
+    <!-- Bootstrap Core CSS -->
+    <link href="/assets/flower-shoppe/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Web Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- CSS Files -->
+    <link href="/assets/flower-shoppe/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/flower-shoppe/css/owl.carousel.css" rel="stylesheet">
+    <link href="/assets/flower-shoppe/css/style.css" rel="stylesheet">
+    <link href="/assets/flower-shoppe/css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="/assets/flower-shoppe/js/ie8-responsive-file-warning.js"></script>
+    <![endif]-->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="/assets/flower-shoppe/https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="/assets/flower-shoppe/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/flower-shoppe/images/fav-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/flower-shoppe/images/fav-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/flower-shoppe/images/fav-72.png">
+    <link rel="apple-touch-icon-precomposed" href="/assets/flower-shoppe/images/fav-57.png">
+    <link rel="shortcut icon" href="/assets/flower-shoppe/images/fav.png">
 
 </head>
 <body>
-<div id="wrapper">
-    <div id="" class="gray-bg dashbard-1">
-        <div class="row border-bottom">
-            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header">
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="/">
-                        Webhoa.vn
-                    </a>
-                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="/admin/product">
-                        Dashboard
-                    </a>
-                    <form role="search" class="navbar-form-custom hidden" action="search_results.html">
-                        <div class="form-group">
-                            <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-                        </div>
-                    </form>
+<!-- Header Section Starts -->
+<header id="header-area">
+    <!-- Starts -->
+    <div class="container">
+        <!-- Header Top Starts -->
+        <div class="header-top">
+            <div class="row">
+                <!-- Header Links Starts -->
+                <div class="col-sm-8 col-xs-12">
+                    <div class="header-links">
+                        <ul class="nav navbar-nav pull-left">
+                            <li>
+                                <a href="/assets/flower-shoppe/index.html">
+                                    <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
+                                    <span class="hidden-sm hidden-xs">
+											Home
+										</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-heart hidden-lg hidden-md" title="Wish List"></i>
+                                    <span class="hidden-sm hidden-xs">
+											Wish List(0)
+										</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-user hidden-lg hidden-md" title="My Account"></i>
+                                    <span class="hidden-sm hidden-xs">
+											My Account
+										</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/assets/flower-shoppe/cart.html">
+                                    <i class="fa fa-shopping-cart hidden-lg hidden-md" title="Shopping Cart"></i>
+                                    <span class="hidden-sm hidden-xs">
+											Shopping Cart
+										</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/assets/flower-shoppe/register.html">
+                                    <i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
+                                    <span class="hidden-sm hidden-xs">
+											Register
+										</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/assets/flower-shoppe/login.html">
+                                    <i class="fa fa-lock hidden-lg hidden-md" title="Login"></i>
+                                    <span class="hidden-sm hidden-xs">
+											Login
+										</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <ul class="nav navbar-top-links navbar-right">
-                    <li>
-                        <span class="m-r-sm text-muted welcome-message">Welcome to INSPINIA+ Admin Theme.</span>
-                    </li>
+                <!-- Header Links Ends -->
+                <!-- Currency & Languages Starts -->
+                <div class="col-sm-4 col-xs-12">
+                    <div class="pull-right">
+                        <!-- Languages Starts -->
+                        <div class="btn-group">
+                            <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-sm hidden-xs">Language</span>
+                                <span class="hidden-lg hidden-md">EN</span>
+                                <i class="fa fa-angle-double-down"></i>
+                            </button>
+                            <ul class="pull-right dropdown-menu">
+                                <li>
+                                    <a tabindex="-1" href="#">English</a>
+                                </li>
+                                <li>
+                                    <a tabindex="-1" href="#">French</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Languages Ends -->
+                        <!-- Currency Starts -->
+                        <div class="btn-group">
+                            <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                                <span class="hidden-sm hidden-xs">Currency</span>
+                                <span class="hidden-lg hidden-md">$</span>
+                                <i class="fa fa-angle-double-down"></i>
+                            </button>
+                            <ul class="pull-right dropdown-menu">
+                                <li><a tabindex="-1" href="#">Pound </a></li>
+                                <li><a tabindex="-1" href="#">US Dollar</a></li>
+                                <li><a tabindex="-1" href="#">Euro</a></li>
+                            </ul>
+                        </div>
+                        <!-- Currency Ends -->
+                    </div>
+                </div>
+                <!-- Currency & Languages Ends -->
+            </div>
+        </div>
+        <!-- Header Top Ends -->
+        <!-- Main Header Starts -->
+        <div class="main-header">
+            <div class="row">
+                <!-- Search Starts -->
+                <div class="col-md-3">
+                    <div id="search">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-lg" placeholder="Search">
+                            <span class="input-group-btn">
+								<button class="btn btn-lg" type="button">
+									<i class="fa fa-search"></i>
+								</button>
+							  </span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Search Ends -->
+                <!-- Logo Starts -->
+                <div class="col-md-5">
+                    <div id="logo">
+                        <a href="/assets/flower-shoppe/index.html"><img src="/assets/flower-shoppe/images/logo.png" title="Flower Shoppe" alt="Flower Shoppe" class="img-responsive" /></a>
+                    </div>
+                </div>
+                <!-- Logo Starts -->
+                <!-- Shopping Cart Starts -->
+                <div class="col-md-4">
+                    <div id="cart" class="btn-group btn-block">
+                        <button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
+                            <i class="fa fa-shopping-cart"></i>
+                            <span class="hidden-md">Cart:</span>
+                            <span id="cart-total">2 item(s) - $340.00</span>
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <table class="table hcart">
+                                    <tr>
+                                        <td class="text-center">
+                                            <a href="/assets/flower-shoppe/product.html">
+                                                <img src="/assets/flower-shoppe/images/product-images/hcart-thumb1.png" alt="image" title="image" class="img-thumbnail img-responsive" />
+                                            </a>
+                                        </td>
+                                        <td class="text-left">
+                                            <a href="/assets/flower-shoppe/product-full.html">
+                                                Flowers
+                                            </a>
+                                        </td>
+                                        <td class="text-right">x 1</td>
+                                        <td class="text-right">$120.68</td>
+                                        <td class="text-center">
+                                            <a href="#">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">
+                                            <a href="/assets/flower-shoppe/product.html">
+                                                <img src="/assets/flower-shoppe/images/product-images/hcart-thumb2.png" alt="image" title="image" class="img-thumbnail img-responsive" />
+                                            </a>
+                                        </td>
+                                        <td class="text-left">
+                                            <a href="/assets/flower-shoppe/product-full.html">
+                                                Bouquet
+                                            </a>
+                                        </td>
+                                        <td class="text-right">x 2</td>
+                                        <td class="text-right">$240.00</td>
+                                        <td class="text-center">
+                                            <a href="#">
+                                                <i class="fa fa-times"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li>
+                                <table class="table table-bordered total">
+                                    <tbody>
+                                    <tr>
+                                        <td class="text-right"><strong>Sub-Total</strong></td>
+                                        <td class="text-left">$1,101.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
+                                        <td class="text-left">$4.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>VAT (17.5%)</strong></td>
+                                        <td class="text-left">$192.68</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right"><strong>Total</strong></td>
+                                        <td class="text-left">$1,297.68</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <p class="text-right btn-block1">
+                                    <a href="/assets/flower-shoppe/cart.html">
+                                        View Cart
+                                    </a>
+                                    <a href="#">
+                                        Checkout
+                                    </a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Shopping Cart Ends -->
+            </div>
+        </div>
+        <!-- Main Header Ends -->
+        <!-- Main Menu Starts -->
+        <nav id="main-menu" class="navbar" role="navigation">
+            <!-- Nav Header Starts -->
+            <div class="navbar-header">
+                <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-cat-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <!-- Nav Header Ends -->
+            <!-- Navbar Cat collapse Starts -->
+            <div class="collapse navbar-collapse navbar-cat-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/assets/flower-shoppe/category-list.html">family flowers</a></li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                            <i class="fa fa-envelope"></i>  <span class="label label-warning">16</span>
+                        <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                            corporate
                         </a>
-                        <ul class="dropdown-menu dropdown-messages">
-                            <li>
-                                <div class="dropdown-messages-box">
-                                    <a href="{{$template_path}}profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="{{$template_path}}img/a7.jpg">
-                                    </a>
-                                    <div class="media-body">
-                                        <small class="pull-right">46h ago</small>
-                                        <strong>Mike Loreipsum</strong> started following <strong>Monica Smith</strong>. <br>
-                                        <small class="text-muted">3 days ago at 7:58 pm - 10.06.2014</small>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <div class="dropdown-messages-box">
-                                    <a href="{{$template_path}}profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="{{$template_path}}img/a4.jpg">
-                                    </a>
-                                    <div class="media-body ">
-                                        <small class="pull-right text-navy">5h ago</small>
-                                        <strong>Chris Johnatan Overtunk</strong> started following <strong>Monica Smith</strong>. <br>
-                                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2014</small>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <div class="dropdown-messages-box">
-                                    <a href="{{$template_path}}profile.html" class="pull-left">
-                                        <img alt="image" class="img-circle" src="{{$template_path}}img/profile.jpg">
-                                    </a>
-                                    <div class="media-body ">
-                                        <small class="pull-right">23h ago</small>
-                                        <strong>Monica Smith</strong> love <strong>Kim Smith</strong>. <br>
-                                        <small class="text-muted">2 days ago at 2:30 am - 11.06.2014</small>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <div class="text-center link-block">
-                                    <a href="{{$template_path}}mailbox.html">
-                                        <i class="fa fa-envelope"></i> <strong>Read All Messages</strong>
-                                    </a>
-                                </div>
-                            </li>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a tabindex="-1" href="#">get well</a></li>
+                            <li><a tabindex="-1" href="#">funeral</a></li>
+                            <li><a tabindex="-1" href="#">new baby</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
-                            <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                        <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">congratulation</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+                                    <li class="dropdown-header">Sub Category</li>
+                                    <li><a tabindex="-1" href="#">item 1</a></li>
+                                    <li><a tabindex="-1" href="#">item 2</a></li>
+                                    <li><a tabindex="-1" href="#">item 3</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li class="dropdown-header">Sub Category</li>
+                                    <li><a tabindex="-1" href="#">item 1</a></li>
+                                    <li><a tabindex="-1" href="#">item 2</a></li>
+                                    <li><a tabindex="-1" href="#">item 3</a></li>
+                                </ul>
+                                <ul class="list-unstyled">
+                                    <li class="dropdown-header">Sub Category</li>
+                                    <li><a tabindex="-1" href="#">item 1</a></li>
+                                    <li><a tabindex="-1" href="#">item 2</a></li>
+                                    <li><a tabindex="-1" href="#">item 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="/assets/flower-shoppe/category-list.html">get well</a></li>
+                    <li><a href="/assets/flower-shoppe/category-list.html">love</a></li>
+                    <li><a href="/assets/flower-shoppe/category-list.html">funeral</a></li>
+                    <li><a href="/assets/flower-shoppe/category-list.html">new baby</a></li>
+                    <li class="dropdown">
+                        <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                            Pages
                         </a>
-                        <ul class="dropdown-menu dropdown-alerts">
-                            <li>
-                                <a href="{{$template_path}}mailbox.html">
-                                    <div>
-                                        <i class="fa fa-envelope fa-fw"></i> You have 16 messages
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="{{$template_path}}profile.html">
-                                    <div>
-                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                        <span class="pull-right text-muted small">12 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="{{$template_path}}grid_options.html">
-                                    <div>
-                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                        <span class="pull-right text-muted small">4 minutes ago</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <div class="text-center link-block">
-                                    <a href="{{$template_path}}notifications.html">
-                                        <strong>See All Alerts</strong>
-                                        <i class="fa fa-angle-right"></i>
-                                    </a>
-                                </div>
-                            </li>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/index.html">Home</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/about.html">About</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/category-list.html">Category List</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/category-grid.html">Category Grid</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/product.html">Product</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/product-full.html">Product Full Width</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/cart.html">Cart</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/login.html">Login</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/compare.html">Compare Products</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/typography.html">Typography</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/register.html">Register</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/contact.html">Contact</a></li>
+                            <li><a tabindex="-1" href="/assets/flower-shoppe/404.html">404</a></li>
                         </ul>
                     </li>
-
-
-                    <li>
-                        <a href="{{$template_path}}login.html">
-                            <i class="fa fa-sign-out"></i> Log out
-                        </a>
-                    </li>
-                    <li>
-                        <a class="right-sidebar-toggle">
-                            <i class="fa fa-tasks"></i>
-                        </a>
-                    </li>
-                </ul>
-
-            </nav>
-        </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <ul class="nav metismenu">
-                    @foreach($data_category as $category)
-                        <li><a href="/category/{{$category->id}}">{{$category->name}}</a></li>
-                    @endforeach
                 </ul>
             </div>
-            <div class="col-sm-9">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="ibox">
-                            <div class="ibox-content">
-                                @yield("content")
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
+            <!-- Navbar Cat collapse Ends -->
+        </nav>
+        <!-- Main Menu Ends -->
     </div>
-    <div class="small-chat-box fadeInRight animated">
-
-        <div class="heading" draggable="true">
-            <small class="chat-date pull-right">
-                02.19.2015
-            </small>
-            Small chat
+    <!-- Ends -->
+</header>
+<!-- Header Section Ends -->
+<!-- Slider Section Starts -->
+<div class="slider">
+    <div class="container">
+        <div id="main-carousel" class="carousel slide" data-ride="carousel">
+            <!-- Wrapper For Slides Starts -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="/assets/flower-shoppe/images/slider-imgs/slide1-img.jpg" alt="Slider" class="img-responsive" />
+                </div>
+                <div class="item">
+                    <img src="/assets/flower-shoppe/images/slider-imgs/slide2-img.jpg" alt="Slider" class="img-responsive" />
+                </div>
+            </div>
+            <!-- Wrapper For Slides Ends -->
+            <!-- Controls Starts -->
+            <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+            <!-- Controls Ends -->
         </div>
-
-        <div class="content">
-
-            <div class="left">
-                <div class="author-name">
-                    Monica Jackson <small class="chat-date">
-                        10:02 am
-                    </small>
-                </div>
-                <div class="chat-message active">
-                    Lorem Ipsum is simply dummy text input.
-                </div>
-
-            </div>
-            <div class="right">
-                <div class="author-name">
-                    Mick Smith
-                    <small class="chat-date">
-                        11:24 am
-                    </small>
-                </div>
-                <div class="chat-message">
-                    Lorem Ipsum is simpl.
-                </div>
-            </div>
-            <div class="left">
-                <div class="author-name">
-                    Alice Novak
-                    <small class="chat-date">
-                        08:45 pm
-                    </small>
-                </div>
-                <div class="chat-message active">
-                    Check this stock char.
-                </div>
-            </div>
-            <div class="right">
-                <div class="author-name">
-                    Anna Lamson
-                    <small class="chat-date">
-                        11:24 am
-                    </small>
-                </div>
-                <div class="chat-message">
-                    The standard chunk of Lorem Ipsum
-                </div>
-            </div>
-            <div class="left">
-                <div class="author-name">
-                    Mick Lane
-                    <small class="chat-date">
-                        08:45 pm
-                    </small>
-                </div>
-                <div class="chat-message active">
-                    I belive that. Lorem Ipsum is simply dummy text.
-                </div>
-            </div>
-
-
-        </div>
-        <div class="form-chat">
-            <div class="input-group input-group-sm"><input type="text" class="form-control"> <span class="input-group-btn"> <button
-                            class="btn btn-primary" type="button">Send
-                </button> </span></div>
-        </div>
-
-    </div>
-    <div id="small-chat">
-
-        <span class="badge badge-warning pull-right">5</span>
-        <a class="open-small-chat">
-            <i class="fa fa-comments"></i>
-
-        </a>
-    </div>
-    <div id="right-sidebar">
-        <div class="sidebar-container">
-
-            <ul class="nav nav-tabs navs-3">
-
-                <li class="active"><a data-toggle="tab" href="{{$template_path}}#tab-1">
-                        Notes
-                    </a></li>
-                <li><a data-toggle="tab" href="{{$template_path}}#tab-2">
-                        Projects
-                    </a></li>
-                <li class=""><a data-toggle="tab" href="{{$template_path}}#tab-3">
-                        <i class="fa fa-gear"></i>
-                    </a></li>
-            </ul>
-
-            <div class="tab-content">
-
-
-                <div id="tab-1" class="tab-pane active">
-
-                    <div class="sidebar-title">
-                        <h3> <i class="fa fa-comments-o"></i> Latest Notes</h3>
-                        <small><i class="fa fa-tim"></i> You have 10 new message.</small>
-                    </div>
-
-                    <div>
-
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="{{$template_path}}img/a1.jpg">
-
-                                    <div class="m-t-xs">
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-
-                                    There are many variations of passages of Lorem Ipsum available.
-                                    <br>
-                                    <small class="text-muted">Today 4:21 pm</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="{{$template_path}}img/a2.jpg">
-                                </div>
-                                <div class="media-body">
-                                    The point of using Lorem Ipsum is that it has a more-or-less normal.
-                                    <br>
-                                    <small class="text-muted">Yesterday 2:45 pm</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="{{$template_path}}img/a3.jpg">
-
-                                    <div class="m-t-xs">
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    Mevolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                                    <br>
-                                    <small class="text-muted">Yesterday 1:10 pm</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="{{$template_path}}img/a4.jpg">
-                                </div>
-
-                                <div class="media-body">
-                                    Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the
-                                    <br>
-                                    <small class="text-muted">Monday 8:37 pm</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="{{$template_path}}img/a8.jpg">
-                                </div>
-                                <div class="media-body">
-
-                                    All the Lorem Ipsum generators on the Internet tend to repeat.
-                                    <br>
-                                    <small class="text-muted">Today 4:21 pm</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="{{$template_path}}img/a7.jpg">
-                                </div>
-                                <div class="media-body">
-                                    Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-                                    <br>
-                                    <small class="text-muted">Yesterday 2:45 pm</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="{{$template_path}}img/a3.jpg">
-
-                                    <div class="m-t-xs">
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                        <i class="fa fa-star text-warning"></i>
-                                    </div>
-                                </div>
-                                <div class="media-body">
-                                    The standard chunk of Lorem Ipsum used since the 1500s is reproduced below.
-                                    <br>
-                                    <small class="text-muted">Yesterday 1:10 pm</small>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="sidebar-message">
-                            <a href="#">
-                                <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="{{$template_path}}img/a4.jpg">
-                                </div>
-                                <div class="media-body">
-                                    Uncover many web sites still in their infancy. Various versions have.
-                                    <br>
-                                    <small class="text-muted">Monday 8:37 pm</small>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div id="tab-2" class="tab-pane">
-
-                    <div class="sidebar-title">
-                        <h3> <i class="fa fa-cube"></i> Latest projects</h3>
-                        <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
-                    </div>
-
-                    <ul class="sidebar-list">
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9 hours ago</div>
-                                <h4>Business valuation</h4>
-                                It is a long established fact that a reader will be distracted.
-
-                                <div class="small">Completion with: 22%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
-                                </div>
-                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9 hours ago</div>
-                                <h4>Contract with Company </h4>
-                                Many desktop publishing packages and web page editors.
-
-                                <div class="small">Completion with: 48%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 48%;" class="progress-bar"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9 hours ago</div>
-                                <h4>Meeting</h4>
-                                By the readable content of a page when looking at its layout.
-
-                                <div class="small">Completion with: 14%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-primary pull-right">NEW</span>
-                                <h4>The generated</h4>
-                                <!--<div class="small pull-right m-t-xs">9 hours ago</div>-->
-                                There are many variations of passages of Lorem Ipsum available.
-                                <div class="small">Completion with: 22%</div>
-                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9 hours ago</div>
-                                <h4>Business valuation</h4>
-                                It is a long established fact that a reader will be distracted.
-
-                                <div class="small">Completion with: 22%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 22%;" class="progress-bar progress-bar-warning"></div>
-                                </div>
-                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9 hours ago</div>
-                                <h4>Contract with Company </h4>
-                                Many desktop publishing packages and web page editors.
-
-                                <div class="small">Completion with: 48%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 48%;" class="progress-bar"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <div class="small pull-right m-t-xs">9 hours ago</div>
-                                <h4>Meeting</h4>
-                                By the readable content of a page when looking at its layout.
-
-                                <div class="small">Completion with: 14%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 14%;" class="progress-bar progress-bar-info"></div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="label label-primary pull-right">NEW</span>
-                                <h4>The generated</h4>
-                                <!--<div class="small pull-right m-t-xs">9 hours ago</div>-->
-                                There are many variations of passages of Lorem Ipsum available.
-                                <div class="small">Completion with: 22%</div>
-                                <div class="small text-muted m-t-xs">Project end: 4:00 pm - 12.06.2014</div>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-                <div id="tab-3" class="tab-pane">
-
-                    <div class="sidebar-title">
-                        <h3><i class="fa fa-gears"></i> Settings</h3>
-                        <small><i class="fa fa-tim"></i> You have 14 projects. 10 not completed.</small>
-                    </div>
-
-                    <div class="setings-item">
-                    <span>
-                        Show notifications
-                    </span>
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
-                                <label class="onoffswitch-label" for="example">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setings-item">
-                    <span>
-                        Disable Chat
-                    </span>
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="collapsemenu" checked class="onoffswitch-checkbox" id="example2">
-                                <label class="onoffswitch-label" for="example2">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setings-item">
-                    <span>
-                        Enable history
-                    </span>
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
-                                <label class="onoffswitch-label" for="example3">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setings-item">
-                    <span>
-                        Show charts
-                    </span>
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
-                                <label class="onoffswitch-label" for="example4">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setings-item">
-                    <span>
-                        Offline users
-                    </span>
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example5">
-                                <label class="onoffswitch-label" for="example5">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setings-item">
-                    <span>
-                        Global search
-                    </span>
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" checked name="collapsemenu" class="onoffswitch-checkbox" id="example6">
-                                <label class="onoffswitch-label" for="example6">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setings-item">
-                    <span>
-                        Update everyday
-                    </span>
-                        <div class="switch">
-                            <div class="onoffswitch">
-                                <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
-                                <label class="onoffswitch-label" for="example7">
-                                    <span class="onoffswitch-inner"></span>
-                                    <span class="onoffswitch-switch"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-content">
-                        <h4>Settings</h4>
-                        <div class="small">
-                            I belive that. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                            And typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
-                            Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-
-
     </div>
 </div>
-<!-- Mainly scripts -->
-<script src="{{$template_path}}js/jquery-2.1.1.js"></script>
-<script src="{{$template_path}}js/bootstrap.min.js"></script>
-<script src="{{$template_path}}js/plugins/metisMenu/jquery.metisMenu.js"></script>
-<script src="{{$template_path}}js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-<!-- Custom and plugin javascript -->
-<script src="{{$template_path}}js/inspinia.js"></script>
-<script src="{{$template_path}}js/plugins/pace/pace.min.js"></script>
-
-<!-- FooTable -->
-<script src="{{$template_path}}js/plugins/footable/footable.all.min.js"></script>
-
-@yield('custom_footer')
-<!-- Page-Level Scripts -->
-<script>
-    $(document).ready(function() {
-        $('.footable').footable();
-    });
-</script>
+<!-- Slider Section Ends -->
+<!-- Latest Products Starts -->
+<section class="product-carousel">
+    <div class="container">
+        <!-- Heading Starts -->
+        <h2 class="product-head">Latest Products</h2>
+        <!-- Heading Ends -->
+        <!-- Products Row Starts -->
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- Product Carousel Starts -->
+                <div id="owl-product" class="owl-carousel">
+                    <!-- Product #1 Starts -->
+                    <div class="item">
+                        <div class="product-col">
+                            <div class="image">
+                                <img src="/assets/flower-shoppe/images/product-images/1.png" alt="product" class="img-responsive" />
+                            </div>
+                            <div class="caption">
+                                <h4><a href="/assets/flower-shoppe/product.html">Quis Nostrud Exercitatio</a></h4>
+                                <div class="description">
+                                    We are so lucky living in such a wonderful time. Our almost unlimited ...
+                                </div>
+                                <div class="price">
+                                    <span class="price-new">$199.50</span>
+                                    <span class="price-old">$249.50</span>
+                                </div>
+                                <div class="cart-button button-group">
+                                    <button type="button" class="btn btn-cart">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product #1 Ends -->
+                    <!-- Product #2 Starts -->
+                    <div class="item">
+                        <div class="product-col">
+                            <div class="image">
+                                <img src="/assets/flower-shoppe/images/product-images/2.png" alt="product" class="img-responsive" />
+                            </div>
+                            <div class="caption">
+                                <h4><a href="/assets/flower-shoppe/product.html">Quis Nostrud Exercitatio</a></h4>
+                                <div class="description">
+                                    We are so lucky living in such a wonderful time. Our almost unlimited ...
+                                </div>
+                                <div class="price">
+                                    <span class="price-new">$199.50</span>
+                                    <span class="price-old">$249.50</span>
+                                </div>
+                                <div class="cart-button button-group">
+                                    <button type="button" class="btn btn-cart">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product #2 Ends -->
+                    <!-- Product #3 Starts -->
+                    <div class="item">
+                        <div class="product-col">
+                            <div class="image">
+                                <img src="/assets/flower-shoppe/images/product-images/3.png" alt="product" class="img-responsive" />
+                            </div>
+                            <div class="caption">
+                                <h4><a href="/assets/flower-shoppe/product.html">Quis Nostrud Exercitatio</a></h4>
+                                <div class="description">
+                                    We are so lucky living in such a wonderful time. Our almost unlimited ...
+                                </div>
+                                <div class="price">
+                                    <span class="price-new">$199.50</span>
+                                    <span class="price-old">$249.50</span>
+                                </div>
+                                <div class="cart-button button-group">
+                                    <button type="button" class="btn btn-cart">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product #3 Ends -->
+                    <!-- Product #4 Starts -->
+                    <div class="item">
+                        <div class="product-col">
+                            <div class="image">
+                                <img src="/assets/flower-shoppe/images/product-images/4.png" alt="product" class="img-responsive" />
+                            </div>
+                            <div class="caption">
+                                <h4><a href="/assets/flower-shoppe/product.html">Quis Nostrud Exercitatio</a></h4>
+                                <div class="description">
+                                    We are so lucky living in such a wonderful time. Our almost unlimited ...
+                                </div>
+                                <div class="price">
+                                    <span class="price-new">$199.50</span>
+                                    <span class="price-old">$249.50</span>
+                                </div>
+                                <div class="cart-button button-group">
+                                    <button type="button" class="btn btn-cart">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product #4 Ends -->
+                    <!-- Product #5 Starts -->
+                    <div class="item">
+                        <div class="product-col">
+                            <div class="image">
+                                <img src="/assets/flower-shoppe/images/product-images/5.png" alt="product" class="img-responsive" />
+                            </div>
+                            <div class="caption">
+                                <h4><a href="/assets/flower-shoppe/product.html">Quis Nostrud Exercitatio</a></h4>
+                                <div class="description">
+                                    We are so lucky living in such a wonderful time. Our almost unlimited ...
+                                </div>
+                                <div class="price">
+                                    <span class="price-new">$199.50</span>
+                                    <span class="price-old">$249.50</span>
+                                </div>
+                                <div class="cart-button button-group">
+                                    <button type="button" class="btn btn-cart">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product #5 Ends -->
+                    <!-- Product #6 Starts -->
+                    <div class="item">
+                        <div class="product-col">
+                            <div class="image">
+                                <img src="/assets/flower-shoppe/images/product-images/6.png" alt="product" class="img-responsive" />
+                            </div>
+                            <div class="caption">
+                                <h4><a href="/assets/flower-shoppe/product.html">Quis Nostrud Exercitatio</a></h4>
+                                <div class="description">
+                                    We are so lucky living in such a wonderful time. Our almost unlimited ...
+                                </div>
+                                <div class="price">
+                                    <span class="price-new">$199.50</span>
+                                    <span class="price-old">$249.50</span>
+                                </div>
+                                <div class="cart-button button-group">
+                                    <button type="button" class="btn btn-cart">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product #6 Ends -->
+                    <!-- Product #7 Starts -->
+                    <div class="item">
+                        <div class="product-col">
+                            <div class="image">
+                                <img src="/assets/flower-shoppe/images/product-images/7.png" alt="product" class="img-responsive" />
+                            </div>
+                            <div class="caption">
+                                <h4><a href="/assets/flower-shoppe/product.html">Quis Nostrud Exercitatio</a></h4>
+                                <div class="description">
+                                    We are so lucky living in such a wonderful time. Our almost unlimited ...
+                                </div>
+                                <div class="price">
+                                    <span class="price-new">$199.50</span>
+                                    <span class="price-old">$249.50</span>
+                                </div>
+                                <div class="cart-button button-group">
+                                    <button type="button" class="btn btn-cart">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product #7 Ends -->
+                    <!-- Product #8 Starts -->
+                    <div class="item">
+                        <div class="product-col">
+                            <div class="image">
+                                <img src="/assets/flower-shoppe/images/product-images/8.png" alt="product" class="img-responsive" />
+                            </div>
+                            <div class="caption">
+                                <h4><a href="/assets/flower-shoppe/product.html">Quis Nostrud Exercitatio</a></h4>
+                                <div class="description">
+                                    We are so lucky living in such a wonderful time. Our almost unlimited ...
+                                </div>
+                                <div class="price">
+                                    <span class="price-new">$199.50</span>
+                                    <span class="price-old">$249.50</span>
+                                </div>
+                                <div class="cart-button button-group">
+                                    <button type="button" class="btn btn-cart">
+                                        Add To Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Product #8 Ends -->
+                </div>
+                <!-- Product Carousel Ends -->
+            </div>
+        </div>
+        <!-- Products Row Ends -->
+    </div>
+</section>
+<!-- Latest Products Ends -->
+<!-- 3 Column Banners Starts -->
+<div class="col3-banners">
+    <div class="container">
+        <ul class="row list-unstyled">
+            <li class="col-sm-4">
+                <img src="/assets/flower-shoppe/images/banners/3col-banner1.jpg" alt="banners" class="img-responsive" />
+            </li>
+            <li class="col-sm-4">
+                <img src="/assets/flower-shoppe/images/banners/3col-banner2.jpg" alt="banners" class="img-responsive" />
+            </li>
+            <li class="col-sm-4">
+                <img src="/assets/flower-shoppe/images/banners/3col-banner3.jpg" alt="banners" class="img-responsive" />
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- 3 Column Banners Ends -->
+<!-- Featured Products Starts -->
+<section class="products-list">
+    <div class="container">
+        <!-- Heading Starts -->
+        <h2 class="product-head">Featured Products</h2>
+        <!-- Heading Ends -->
+        <!-- Products Row Starts -->
+        <div class="row">
+            <!-- Product #1 Starts -->
+            <div class="col-md-3 col-sm-6">
+                <div class="product-col">
+                    <div class="image">
+                        <img src="/assets/flower-shoppe/images/product-images/9.png" alt="product" class="img-responsive" />
+                    </div>
+                    <div class="caption">
+                        <h4><a href="/assets/flower-shoppe/product.html">Flowers</a></h4>
+                        <div class="description">
+                            We are so lucky living in such a wonderful time. Our almost unlimited ...
+                        </div>
+                        <div class="price">
+                            <span class="price-new">$199.50</span>
+                            <span class="price-old">$249.50</span>
+                        </div>
+                        <div class="cart-button button-group">
+                            <button type="button" class="btn btn-cart">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product #1 Ends -->
+            <!-- Product #2 Starts -->
+            <div class="col-md-3 col-sm-6">
+                <div class="product-col">
+                    <div class="image">
+                        <img src="/assets/flower-shoppe/images/product-images/10.png" alt="product" class="img-responsive" />
+                    </div>
+                    <div class="caption">
+                        <h4><a href="/assets/flower-shoppe/product.html">Flowers</a></h4>
+                        <div class="description">
+                            We are so lucky living in such a wonderful time. Our almost unlimited ...
+                        </div>
+                        <div class="price">
+                            <span class="price-new">$199.50</span>
+                            <span class="price-old">$249.50</span>
+                        </div>
+                        <div class="cart-button button-group">
+                            <button type="button" class="btn btn-cart">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product #2 Ends -->
+            <!-- Product #3 Starts -->
+            <div class="col-md-3 col-sm-6">
+                <div class="product-col">
+                    <div class="image">
+                        <img src="images/product-images/11.png" alt="product" class="img-responsive" />
+                    </div>
+                    <div class="caption">
+                        <h4><a href="/assets/flower-shoppe/product.html">Flowers</a></h4>
+                        <div class="description">
+                            We are so lucky living in such a wonderful time. Our almost unlimited ...
+                        </div>
+                        <div class="price">
+                            <span class="price-new">$199.50</span>
+                            <span class="price-old">$249.50</span>
+                        </div>
+                        <div class="cart-button button-group">
+                            <button type="button" class="btn btn-cart">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product #3 Ends -->
+            <!-- Product #4 Starts -->
+            <div class="col-md-3 col-sm-6">
+                <div class="product-col">
+                    <div class="image">
+                        <img src="images/product-images/12.png" alt="product" class="img-responsive" />
+                    </div>
+                    <div class="caption">
+                        <h4><a href="/assets/flower-shoppe/product.html">Flowers</a></h4>
+                        <div class="description">
+                            We are so lucky living in such a wonderful time. Our almost unlimited ...
+                        </div>
+                        <div class="price">
+                            <span class="price-new">$199.50</span>
+                            <span class="price-old">$249.50</span>
+                        </div>
+                        <div class="cart-button button-group">
+                            <button type="button" class="btn btn-cart">
+                                Add To Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product #4 Ends -->
+        </div>
+        <!-- Products Row Ends -->
+    </div>
+</section>
+<!-- Featured Products Ends -->
+<!-- 1 Column Banners Starts -->
+<div class="col1-banners">
+    <div class="container">
+        <img src="images/banners/1col-banner1.jpg" alt="banners" class="img-responsive" />
+    </div>
+</div>
+<!-- 1 Column Banners Ends -->
+<!-- Footer Section Starts -->
+<footer id="footer-area">
+    <!-- Footer Links Starts -->
+    <div class="footer-links">
+        <!-- Container Starts -->
+        <div class="container">
+            <div class="row">
+                <!-- Information Links Starts -->
+                <div class="col-md-3 col-sm-6">
+                    <h5>Information</h5>
+                    <ul>
+                        <li><a href="/assets/flower-shoppe/about.html">About Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <!-- Information Links Ends -->
+                <!-- My Account Links Starts -->
+                <div class="col-md-3 col-sm-6">
+                    <h5>My Account</h5>
+                    <ul>
+                        <li><a href="#">My Orders</a></li>
+                        <li><a href="#">My Credit Slips</a></li>
+                        <li><a href="#">My Addresses</a></li>
+                        <li><a href="#">My Personal Info</a></li>
+                    </ul>
+                </div>
+                <!-- My Account Links Ends -->
+                <!-- Customer Service Links Starts -->
+                <div class="col-md-3 col-sm-6">
+                    <h5>Service</h5>
+                    <ul>
+                        <li><a href="/assets/flower-shoppe/contact.html">Contact Us</a></li>
+                        <li><a href="#">Site Map</a></li>
+                        <li><a href="#">Affiliates</a></li>
+                        <li><a href="#">Specials</a></li>
+                    </ul>
+                </div>
+                <!-- Customer Service Links Ends -->
+                <!-- Follow Us Links Starts -->
+                <div class="col-md-3 col-sm-6">
+                    <h5>Follow Us</h5>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">RSS</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+                <!-- Follow Us Links Ends -->
+            </div>
+        </div>
+        <!-- Container Ends -->
+    </div>
+    <!-- Footer Links Ends -->
+    <!-- Copyright Area Starts -->
+    <div class="container">
+        <div class="copyright clearfix">
+            <!-- Starts -->
+            <p class="pull-left">
+                &copy; 2015 Flowers Shoppe All Rights Reserved. Designed By <a href="http://sainathchillapuram.com">Sainath Chillapuram</a>
+            </p>
+            <!-- Ends -->
+            <!-- Payment Gateway Links Starts -->
+            <ul class="pull-right list-inline">
+                <li>
+                    <img src="images/payment-icon/cirrus.png" alt="PaymentGateway" />
+                </li>
+                <li>
+                    <img src="images/payment-icon/paypal.png" alt="PaymentGateway" />
+                </li>
+                <li>
+                    <img src="images/payment-icon/visa.png" alt="PaymentGateway" />
+                </li>
+                <li>
+                    <img src="images/payment-icon/mastercard.png" alt="PaymentGateway" />
+                </li>
+                <li>
+                    <img src="images/payment-icon/americanexpress.png" alt="PaymentGateway" />
+                </li>
+            </ul>
+            <!-- Payment Gateway Links Ends -->
+        </div>
+    </div>
+    <!-- Copyright Area Ends -->
+</footer>
+<!-- Footer Section Ends -->
+<!-- JavaScript Files -->
+<script src="/assets/flower-shoppe/js/jquery-1.11.1.min.js"></script>
+<script src="/assets/flower-shoppe/js/jquery-migrate-1.2.1.min.js"></script>
+<script src="/assets/flower-shoppe/js/bootstrap.min.js"></script>
+<script src="/assets/flower-shoppe/js/bootstrap-hover-dropdown.min.js"></script>
+<script src="/assets/flower-shoppe/js/jquery.magnific-popup.min.js"></script>
+<script src="/assets/flower-shoppe/js/owl.carousel.min.js"></script>
+<script src="/assets/flower-shoppe/js/custom.js"></script>
 </body>
 </html>
