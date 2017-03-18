@@ -26,13 +26,13 @@
                         {{$product->title}}
                     </td>
                     <td>
-                        {{$product->title}}
-                    </td>
-                    <td>
                         {{$product->summary}}
                     </td>
                     <td>
                         {{$product->price}}
+                    </td>
+                    <td>
+                        {{$product->price_sale}}
                     </td>
                     <td>
                         @if(isset($product->category ))

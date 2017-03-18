@@ -40,6 +40,10 @@
                         IN+
                     </div>
                 </li>
+                <li>
+                    <a href="/admin/product"><i class="fa fa-diamond"></i> <span class="nav-label">Product</span></a>
+                    <a href="/admin/category"><i class="fa fa-diamond"></i> <span class="nav-label">Category</span></a>
+                </li>
                 <li class="active">
                     <a href="{{$template_path}}index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">

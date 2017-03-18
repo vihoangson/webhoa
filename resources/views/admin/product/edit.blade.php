@@ -125,7 +125,9 @@
     <script src="{{$template_path}}js/plugins/datapicker/bootstrap-datepicker.js"></script>
     <script src="/bower_components/summernote/dist/summernote.min.js"></script>
 <script>
-
+    if($(".thumb_img").length==0){
+        $(".delete-img").hide();
+    }
     $(".delete-img").click(function(){
         $(".thumb_img").each(function(){
             $(this).after("<button class='btn btn-default dl_img' type='button' data-id='"+$(this).data('id')+"'>Delete</button>");
