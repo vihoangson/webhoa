@@ -3,7 +3,7 @@
 -- Server version:               5.5.5-10.1.13-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win32
 -- HeidiSQL version:             7.0.0.4053
--- Date/time:                    2017-03-18 22:03:14
+-- Date/time:                    2017-03-18 22:15:20
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -95,14 +95,20 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.customers: ~1 rows (approximately)
+-- Dumping data for table webhoa.customers: ~9 rows (approximately)
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
 INSERT INTO `customers` (`id`, `name`, `address`, `tel`, `created_at`, `updated_at`) VALUES
 	(1, '234', '234', '234', '2017-03-18 14:52:51', '2017-03-18 14:52:51'),
 	(2, '234', '234', '234', '2017-03-18 15:01:37', '2017-03-18 15:01:37'),
-	(3, '', '', '', '2017-03-18 15:01:51', '2017-03-18 15:01:51');
+	(3, '', '', '', '2017-03-18 15:01:51', '2017-03-18 15:01:51'),
+	(4, '', '', '', '2017-03-18 15:03:50', '2017-03-18 15:03:50'),
+	(5, '345', '345', '', '2017-03-18 15:11:14', '2017-03-18 15:11:14'),
+	(6, '345', '345', '', '2017-03-18 15:12:34', '2017-03-18 15:12:34'),
+	(7, '345', '345', '', '2017-03-18 15:13:20', '2017-03-18 15:13:20'),
+	(8, '345', '345', '', '2017-03-18 15:13:30', '2017-03-18 15:13:30'),
+	(9, '3456345', '34543', '54325', '2017-03-18 15:14:26', '2017-03-18 15:14:26');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 
 
@@ -203,6 +209,27 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 	('2017_03_15_054210_create_category_allocations_table', 2),
 	('0000_00_00_000000_create_shoppingcart_table', 3);
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
+
+
+-- Dumping structure for table webhoa.orders
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE IF NOT EXISTS `orders` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `customer_id` int(255) NOT NULL,
+  `product_id` int(255) NOT NULL,
+  `data_cache` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table webhoa.orders: ~3 rows (approximately)
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` (`id`, `customer_id`, `product_id`, `data_cache`, `created_at`, `updated_at`) VALUES
+	(1, 7, 0, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 15:13:20', '2017-03-18 15:13:20'),
+	(2, 8, 0, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 15:13:30', '2017-03-18 15:13:30'),
+	(3, 9, 0, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":2,"price":100000,"options":[],"tax":21000,"subtotal":200000},"2f3ce7c0f15a10b494d8607241b0857c":{"rowId":"2f3ce7c0f15a10b494d', '2017-03-18 15:14:26', '2017-03-18 15:14:26');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.password_resets

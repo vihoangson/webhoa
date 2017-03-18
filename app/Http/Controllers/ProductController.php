@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use App\Order;
 use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -73,7 +74,12 @@ class ProductController extends Controller
 
     public function submit_payment(Request $request){
         $rq = $request->all();
-        Customer::create($rq);
+        $customer = (Customer::create($rq));
+
+        $od = new Order;
+        $od->data_cache = json_encode(Cart::content());
+        $od->customer_id = $customer->id;
+        $od->save();
         return redirect("/product/finish");
     }
 
