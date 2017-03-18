@@ -17,7 +17,6 @@
 </head>
 <body>
 <div id="wrapper">
-
     <div id="" class="gray-bg dashbard-1">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
@@ -150,14 +149,26 @@
             </nav>
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <div class="ibox">
-                    <div class="ibox-content">
-                        @yield("content")
+            <div class="col-sm-3">
+                <ul class="nav metismenu">
+                    @foreach($data_category as $category)
+                        <li><a href="/category/{{$category->id}}">{{$category->name}}</a></li>
+                    @endforeach
+                </ul>
+            </div>
+            <div class="col-sm-9">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="ibox">
+                            <div class="ibox-content">
+                                @yield("content")
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
 
     </div>
     <div class="small-chat-box fadeInRight animated">

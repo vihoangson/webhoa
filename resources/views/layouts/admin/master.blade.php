@@ -41,6 +41,7 @@
                     </div>
                 </li>
                 <li>
+                    <a href="/"><i class="fa fa-diamond"></i> <span class="nav-label">Homepage</span></a>
                     <a href="/admin/product"><i class="fa fa-diamond"></i> <span class="nav-label">Product</span></a>
                     <a href="/admin/category"><i class="fa fa-diamond"></i> <span class="nav-label">Category</span></a>
                 </li>

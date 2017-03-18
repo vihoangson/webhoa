@@ -38,8 +38,6 @@
             @endif
         @endforeach
     </div>
-    {!! $products->render() !!}
-
 </div>
 @endsection
 
