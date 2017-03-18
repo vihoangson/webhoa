@@ -12,10 +12,14 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/product/payment', 'ProductController@payment');
+Route::post('/product/payment', 'ProductController@submit_payment');
 Route::get('/product/checkout', 'ProductController@checkout');
 Route::get('/product/add_cart/{id}', 'ProductController@add_cart');
 Route::post('/product/update_cart', 'ProductController@update_cart');
+Route::get('/product/finish', 'ProductController@finish');
 Route::get('/product/{id}', 'ProductController@show');
+
 
 Route::resource('post', 'PostController');
 

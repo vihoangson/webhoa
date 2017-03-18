@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Customer;
 use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
@@ -64,5 +65,21 @@ class ProductController extends Controller
         return view('public.product.checkout')->with('cart',Cart::content());
     }
 
+    public function payment()
+    {
+        //todo: Xử lý lưu cart
+        return view('public.product.payment');
+    }
 
+    public function submit_payment(Request $request){
+        $rq = $request->all();
+        //Customer;
+        dd($request);
+    }
+
+    public function finish(){
+        Cart::destroy();
+        //todo: Xử lý lưu cart
+        return view('public.product.finish');
+    }
 }

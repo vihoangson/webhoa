@@ -30,7 +30,7 @@
         </tfoot>
     </table>
     <button class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-    <button class="btn btn-primary">Checkout</button>
+    <a href="/product/payment" class="btn btn-primary">Checkout</a>
     {!! Form::close() !!}
 @endsection
 
