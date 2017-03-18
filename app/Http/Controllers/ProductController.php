@@ -63,16 +63,25 @@ class ProductController extends Controller
 
     public function checkout()
     {
+        if(Cart::count() == 0){
+            return redirect('/');
+        }
         return view('public.product.checkout')->with('cart',Cart::content());
     }
 
     public function payment()
     {
+        if(Cart::count() == 0){
+            return redirect('/');
+        }
         //todo: Xử lý lưu cart
         return view('public.product.payment');
     }
 
     public function submit_payment(Request $request){
+        if(Cart::count() == 0){
+            return redirect('/');
+        }
         $rq = $request->all();
         $customer = (Customer::create($rq));
 
@@ -84,6 +93,9 @@ class ProductController extends Controller
     }
 
     public function finish(){
+        if(Cart::count() == 0){
+            return redirect('/');
+        }
         Cart::destroy();
         //todo: Xử lý lưu cart
         return view('public.product.finish');
