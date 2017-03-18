@@ -1148,3 +1148,6 @@ hr{
 			padding-top: 8px;
 			margin-bottom: 0;
 		}
+.content.panel-smart img {
+	max-width: 100%;
+}

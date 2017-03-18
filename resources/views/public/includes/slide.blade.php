@@ -16,7 +16,7 @@
                     <img src="/{{$product->image->find($product->main_img)->url or ''}}" alt="product" class="img-responsive" />
                 </div>
                 <div class="caption">
-                    <h4><a href="/assets/flower-shoppe/product.html">{{$product->title}}</a></h4>
+                    <h4><a href="/product/{{$product->id}}">{{$product->title}}</a></h4>
                     <div class="description">
                         {{$product->summary}}
                     </div>

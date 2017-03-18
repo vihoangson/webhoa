@@ -1,89 +1,169 @@
-@extends('layouts.public.master')
+@extends('public.layouts.inside')
 @section('content')
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="ibox product-detail">
-                <div class="ibox-content">
-
-                    <div class="row">
-                        <div class="col-md-5">
-                            <div class="product-images">
-                                @foreach($product->image as $image)
-                                <div>
-                                    <div class="image-imitation" style="background: center center no-repeat url('/{{$image->url}}'); background-size:100%">
-                                    </div>
-                                </div>
-                                @endforeach
-                            </div>
-
+        <!-- Breadcrumb Ends -->
+        <!-- Product Info Starts -->
+        <div class="row product-info">
+            <!-- Left Starts -->
+            <div class="col-sm-5 images-block">
+                <p>
+                    <img src="/assets/flower-shoppe/images/product-images/pimg3.png" alt="Image" class="img-responsive thumbnail">
+                </p>
+                <ul class="list-unstyled list-inline">
+                    <li>
+                        <img src="/assets/flower-shoppe/images/product-images/thumb1.png" alt="Image" class="img-responsive thumbnail">
+                    </li>
+                    <li>
+                        <img src="/assets/flower-shoppe/images/product-images/thumb2.png" alt="Image" class="img-responsive thumbnail">
+                    </li>
+                    <li>
+                        <img src="/assets/flower-shoppe/images/product-images/thumb3.png" alt="Image" class="img-responsive thumbnail">
+                    </li>
+                    <li>
+                        <img src="/assets/flower-shoppe/images/product-images/thumb4.png" alt="Image" class="img-responsive thumbnail">
+                    </li>
+                </ul>
+            </div>
+            <!-- Left Ends -->
+            <!-- Right Starts -->
+            <div class="col-sm-7 product-details">
+                <!-- Product Name Starts -->
+                <h2>{{$product->title}}</h2>
+                <!-- Product Name Ends -->
+                <hr>
+                <!-- Manufacturer Starts -->
+                <ul class="list-unstyled manufacturer">
+                    <li>
+                        <span>Brand:</span> Indian spices
+                    </li>
+                    <li><span>Reward Points:</span> 300</li>
+                    <li>
+                        <span>Availability:</span> <strong class="label label-success">In Stock</strong>
+                    </li>
+                </ul>
+                <!-- Manufacturer Ends -->
+                <hr>
+                <!-- Price Starts -->
+                <div class="price">
+                    <span class="price-head">Price :</span>
+                    <span class="price-new">{{$product->price_sale}}</span>
+                </div>
+                <!-- Price Ends -->
+                <hr>
+                <!-- Available Options Starts -->
+                <div class="options">
+                    <div class="form-group">
+                        <label class="control-label text-uppercase" for="input-quantity">Qty:</label>
+                        <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control">
+                    </div>
+                    <div class="cart-button button-group">
+                        <button type="button" class="btn btn-cart">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+                <!-- Available Options Ends -->
+                <hr>
+            </div>
+            <!-- Right Ends -->
+        </div>
+        <!-- product Info Ends -->
+        <!-- Product Description Starts -->
+        <div class="product-info-box">
+            <h4 class="heading">Description</h4>
+            <div class="content panel-smart">
+                {!! $product->content !!}
+            </div>
+        </div>
+        <!-- Product Description Ends -->
+        <!-- Additional Information Starts -->
+        <div class="product-info-box">
+            <h4 class="heading">Additional Information</h4>
+            <div class="content panel-smart">
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+        </div>
+        <!-- Additional Information Ends -->
+        <!-- Related Products Starts -->
+        <div class="product-info-box">
+            <h4 class="heading">Related Products</h4>
+            <!-- Products Row Starts -->
+            <div class="row">
+                <!-- Product #1 Starts -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-col">
+                        <div class="image">
+                            <img src="/assets/flower-shoppe/images/product-images/1.png" alt="product" class="img-responsive">
                         </div>
-                        <div class="col-md-7">
-
-                            <h2 class="font-bold m-b-xs">
-                                {{$product->title}}
-                            </h2>
-                            <small>{{$product->price}}</small>
-                            <div class="m-t-md">
-                                <h2 class="product-main-price">{{$product->price_sale}}</h2>
+                        <div class="caption">
+                            <h4><a href="product.html">Flowers</a></h4>
+                            <div class="description">
+                                We are so lucky living in such a wonderful time. Our almost unlimited ...
                             </div>
-                            <hr>
-                            <h4>Product description</h4>
-                            {{$product->summary}}
-                            <div class="small text-muted">
-
+                            <div class="price">
+                                <span class="price-new">$199.50</span>
+                                <span class="price-old">$249.50</span>
                             </div>
-                            <dl class="small m-t-md">
-                                <dt>Description lists</dt>
-                                <dd>A description list is perfect for defining terms.</dd>
-                                <dt>Euismod</dt>
-                                <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
-                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
-                                <dt>Malesuada porta</dt>
-                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
-                            </dl>
-                            <hr>
-
-                            <div>
-                                <div class="btn-group">
-                                    <a href="/product/add_cart/{{$product->id}}" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</a>
-                                    <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
-                                    <button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> Contact with author </button>
-                                </div>
+                            <div class="cart-button button-group">
+                                <button type="button" class="btn btn-cart">
+                                    Add to cart
+                                </button>
                             </div>
-
-
-
                         </div>
                     </div>
-
                 </div>
-                {!! $product->content !!}
-                <div class="ibox-footer">
-                            <span class="pull-right">
-                                Full stock - <i class="fa fa-clock-o"></i> 14.04.2016 10:04 pm
-                            </span>
-                    The generated Lorem Ipsum is therefore always free
+                <!-- Product #1 Ends -->
+                <!-- Product #2 Starts -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-col">
+                        <div class="image">
+                            <img src="/assets/flower-shoppe/images/product-images/2.png" alt="product" class="img-responsive">
+                        </div>
+                        <div class="caption">
+                            <h4><a href="product.html">Flowers</a></h4>
+                            <div class="description">
+                                We are so lucky living in such a wonderful time. Our almost unlimited ...
+                            </div>
+                            <div class="price">
+                                <span class="price-new">$199.50</span>
+                                <span class="price-old">$249.50</span>
+                            </div>
+                            <div class="cart-button button-group">
+                                <button type="button" class="btn btn-cart">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- Product #2 Ends -->
+                <!-- Product #3 Starts -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="product-col">
+                        <div class="image">
+                            <img src="/assets/flower-shoppe/images/product-images/3.png" alt="product" class="img-responsive">
+                        </div>
+                        <div class="caption">
+                            <h4><a href="product.html">Flowers</a></h4>
+                            <div class="description">
+                                We are so lucky living in such a wonderful time. Our almost unlimited ...
+                            </div>
+                            <div class="price">
+                                <span class="price-new">$199.50</span>
+                                <span class="price-old">$249.50</span>
+                            </div>
+                            <div class="cart-button button-group">
+                                <button type="button" class="btn btn-cart">
+                                    Add to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product #3 Ends -->
             </div>
-
+            <!-- Products Row Ends -->
         </div>
-    </div>
-@endsection
-
-@section('custom_header')
-    <link href="{{$template_path}}css/plugins/slick/slick.css" rel="stylesheet">
-    <link href="{{$template_path}}css/plugins/slick/slick-theme.css" rel="stylesheet">
-@endsection
-
-@section('custom_footer')
-
-    <!-- slick carousel-->
-    <script src="{{$template_path}}js/plugins/slick/slick.min.js"></script>
-
-    <script>
-        $('.product-images').slick({
-            dots: true
-        });
-    </script>
-
+        <!-- Related Products Ends -->
 @endsection
