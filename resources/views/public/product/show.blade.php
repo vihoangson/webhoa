@@ -45,7 +45,7 @@
 
                             <div>
                                 <div class="btn-group">
-                                    <button class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</button>
+                                    <a href="/product/add_cart/{{$product->id}}" class="btn btn-primary btn-sm"><i class="fa fa-cart-plus"></i> Add to cart</a>
                                     <button class="btn btn-white btn-sm"><i class="fa fa-star"></i> Add to wishlist </button>
                                     <button class="btn btn-white btn-sm"><i class="fa fa-envelope"></i> Contact with author </button>
                                 </div>

@@ -12,12 +12,17 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/product/{id}', 'HomeController@show');
+Route::get('/product/checkout', 'ProductController@checkout');
+Route::get('/product/add_cart/{id}', 'ProductController@add_cart');
+Route::post('/product/update_cart', 'ProductController@update_cart');
+Route::get('/product/{id}', 'ProductController@show');
+
+Route::resource('post', 'PostController');
 
 Route::post('/up', 'admin\ProductController@up');
 Route::post('/update_ajax', 'admin\ProductController@update_ajax');
 
-Route::resource('post', 'PostController');
+
 Route::get('admin/product/template', 'admin\ProductController@template');
 Route::resource('admin/product', 'admin\ProductController');
 Route::resource('admin/category', 'admin\CategoryController');
