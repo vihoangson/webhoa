@@ -58,7 +58,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-col">
                     <div class="image">
-                        <img src="images/product-images/11.png" alt="product" class="img-responsive" />
+                        <img src="/assets/flower-shoppe/images/product-images/11.png" alt="product" class="img-responsive" />
                     </div>
                     <div class="caption">
                         <h4><a href="/assets/flower-shoppe/product.html">Flowers</a></h4>
@@ -82,7 +82,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="product-col">
                     <div class="image">
-                        <img src="images/product-images/12.png" alt="product" class="img-responsive" />
+                        <img src="/assets/flower-shoppe/images/product-images/12.png" alt="product" class="img-responsive" />
                     </div>
                     <div class="caption">
                         <h4><a href="/assets/flower-shoppe/product.html">Flowers</a></h4>
