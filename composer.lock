@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1d351e7fba1d42396dc09c56f0f750ca",
-    "content-hash": "dab1f59c38bdd0f12cf129c0619b4851",
+    "hash": "45ead4ac436948fda54307803c4f5996",
+    "content-hash": "c295b08565f50296dcfe6292ea4eb8ec",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -2060,64 +2060,6 @@
                 "dump"
             ],
             "time": "2016-07-26 08:03:56"
-        },
-        {
-            "name": "torann/currency",
-            "version": "1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Torann/laravel-currency.git",
-                "reference": "340fa9433dd96aeafb64089e9c9fc355bc12f40e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Torann/laravel-currency/zipball/340fa9433dd96aeafb64089e9c9fc355bc12f40e",
-                "reference": "340fa9433dd96aeafb64089e9c9fc355bc12f40e",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/cache": "~5.1",
-                "illuminate/support": "~5.1",
-                "php": ">=5.5.9"
-            },
-            "suggest": {
-                "illuminate/database": "Allows for storing of currencies in the database"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
-                "psr-4": {
-                    "Torann\\Currency\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD 2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel Stainback",
-                    "email": "torann@gmail.com"
-                }
-            ],
-            "description": "This provides Laravel 5 with currency functions such as currency formatting and conversion using up-to-date exchange rates.",
-            "keywords": [
-                "currency",
-                "exchange rate",
-                "finance",
-                "laravel",
-                "money",
-                "openexchangerates",
-                "yahoo finance"
-            ],
-            "time": "2017-01-26 22:05:47"
         },
         {
             "name": "vlucas/phpdotenv",

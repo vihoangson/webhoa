@@ -150,7 +150,7 @@
                                                 </a>
                                             </td>
                                             <td class="text-right">x{{$item->qty}}</td>
-                                            <td class="text-right">11{{currency($item->price)}}</td>
+                                            <td class="text-right">{{($item->price)}}</td>
                                             <td class="text-center">
                                                 <a href="#">
                                                     <i class="fa fa-times"></i>
