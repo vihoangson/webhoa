@@ -84,7 +84,7 @@ class ProductController extends Controller
             return redirect('/');
         }
         $rq = $request->all();
-        $customer = (Customer::create($rq));
+        $customer = Customer::create($rq);
 
         $od = new Order;
         $od->data_cache = json_encode(Cart::content());
@@ -97,12 +97,12 @@ class ProductController extends Controller
         if(Cart::count() == 0){
             return redirect('/');
         }
-        Cart::destroy();
+        //Cart::destroy();
         //todo: Xử lý lưu cart
         return view('public.product.finish');
     }
 
-    public function remove_item_in_cart($rowId,$redirect){
+    public function remove_item_in_cart($rowId,$redirect = null){
         Cart::remove($rowId);
         if($redirect == 'checkout'){
             return Redirect('/product/checkout');

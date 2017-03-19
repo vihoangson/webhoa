@@ -1,4 +1,4 @@
-@extends('layouts.public.master')
+@extends('public.layouts.no_sidebar')
 @section('content')
     <h1>Finish</h1>
     Thank you ...

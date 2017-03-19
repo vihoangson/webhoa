@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('/product/payment', 'ProductController@payment');
 Route::get('/product/remove_item_in_cart/{rowId}/{redirect}', 'ProductController@remove_item_in_cart');
+Route::get('/product/remove_item_in_cart/{rowId}', 'ProductController@remove_item_in_cart');
 Route::post('/product/payment', 'ProductController@submit_payment');
 Route::get('/product/checkout', 'ProductController@checkout');
 Route::get('/product/add_cart/{id}', 'ProductController@add_cart');

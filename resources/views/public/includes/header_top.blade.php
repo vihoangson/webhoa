@@ -210,47 +210,20 @@
             <!-- Navbar Cat collapse Starts -->
             <div class="collapse navbar-collapse navbar-cat-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/category/4">family flowers</a></li>
+                    <li><a href="/">Trang chủ</a></li>
                     <li class="dropdown">
                         <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
-                            corporate
+                            Hoa tươi
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a tabindex="-1" href="#">get well</a></li>
-                            <li><a tabindex="-1" href="#">funeral</a></li>
-                            <li><a tabindex="-1" href="#">new baby</a></li>
+                            <li><a tabindex="-1" href="/category/3-cuoi-hoi">Cưới hỏi</a></li>
+                            <li><a tabindex="-1" href="/category/3-sinh-nhat">Sinh nhật</a></li>
+                            <li><a t]abindex="-1" href="/category/3-khai-truong-hoi-nghi">Khai trương hội nghị</a></li>
+                            <li><a tabindex="-1" href="/category/3-chuc-mung">Chúc mừng</a></li>
+                            <li><a tabindex="-1" href="/category/3-chia-buon">Chia buồn</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown">
-                        <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">congratulation</a>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-inner">
-                                <ul class="list-unstyled">
-                                    <li class="dropdown-header">Sub Category</li>
-                                    <li><a tabindex="-1" href="#">item 1</a></li>
-                                    <li><a tabindex="-1" href="#">item 2</a></li>
-                                    <li><a tabindex="-1" href="#">item 3</a></li>
-                                </ul>
-                                <ul class="list-unstyled">
-                                    <li class="dropdown-header">Sub Category</li>
-                                    <li><a tabindex="-1" href="#">item 1</a></li>
-                                    <li><a tabindex="-1" href="#">item 2</a></li>
-                                    <li><a tabindex="-1" href="#">item 3</a></li>
-                                </ul>
-                                <ul class="list-unstyled">
-                                    <li class="dropdown-header">Sub Category</li>
-                                    <li><a tabindex="-1" href="#">item 1</a></li>
-                                    <li><a tabindex="-1" href="#">item 2</a></li>
-                                    <li><a tabindex="-1" href="#">item 3</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li><a href="/assets/flower-shoppe/category-list.html">get well</a></li>
-                    <li><a href="/assets/flower-shoppe/category-list.html">love</a></li>
-                    <li><a href="/assets/flower-shoppe/category-list.html">funeral</a></li>
-                    <li><a href="/assets/flower-shoppe/category-list.html">new baby</a></li>
-                    <li class="dropdown">
+                    <li class="dropdown hidden{{----}}">
                         <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
                             Pages
                         </a>

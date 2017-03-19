@@ -1,4 +1,4 @@
-    @extends('public.layouts.no_sidebar')
+@extends('public.layouts.no_sidebar')
 @section('content')
     <div id="main-container" class="container">
         <!-- Main Heading Starts -->
@@ -86,150 +86,8 @@
             <div class="row">
                 <!-- Shipping & Shipment Block Starts -->
                 <div class="col-sm-6">
-                    <!-- Taxes Block Starts -->
-                    <div class="panel panel-smart">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                Shipping &amp; Taxes
-                            </h3>
-                        </div>
-                        <div class="panel-body">
-                            <!-- Form Starts -->
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label for="inputCountry" class="col-sm-3 control-label">Country :</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control" id="inputCountry">
-                                            <option>- All Countries -</option>
-                                            <option>India</option>
-                                            <option>USA</option>
-                                            <option>UK</option>
-                                            <option>China</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputRegion" class="col-sm-3 control-label">Region :</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control" id="inputRegion">
-                                            <option>- All Regions -</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputZipCode" class="col-sm-3 control-label">Zip Code :</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputZipCode" placeholder="Zip Code">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-3 col-sm-9">
-                                        <button type="submit" class="btn btn-default">
-                                            Get Info
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- Form Ends -->
-                        </div>
-                    </div>
-                    <!-- Taxes Block Ends -->
-                    <!-- Shipment Information Block Starts -->
-                    <div class="panel panel-smart">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">
-                                Shipment Information
-                            </h3>
-                        </div>
-                        <div class="panel-body">
-                            <!-- Form Starts -->
-                            <form class="form-horizontal" role="form">
-                                <div class="form-group">
-                                    <label for="inputFname" class="col-sm-3 control-label">First Name :</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputFname" placeholder="First Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputLname" class="col-sm-3 control-label">Last Name :</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputLname" placeholder="Last Name">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
-                                    <div class="col-sm-9">
-                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputPhone" class="col-sm-3 control-label">Phone :</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPhone" placeholder="Phone">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputAddress1" class="col-sm-3 control-label">Address/1 :</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputAddress1" placeholder="Address/1">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputAddress2" class="col-sm-3 control-label">Address/2 :</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Address/2">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputCity" class="col-sm-3 control-label">City :</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputCity" placeholder="City">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputPostCode" class="col-sm-3 control-label">Postal Code :</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputPostCode" placeholder="Postal Code">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputCountry" class="col-sm-3 control-label">Country :</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control" id="inputCountry1">
-                                            <option>- All Countries -</option>
-                                            <option>India</option>
-                                            <option>USA</option>
-                                            <option>UK</option>
-                                            <option>China</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="inputRegion" class="col-sm-3 control-label">Region :</label>
-                                    <div class="col-sm-9">
-                                        <select class="form-control" id="inputRegion1">
-                                            <option>- All Regions -</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-offset-3 col-sm-9">
-                                        <button type="submit" class="btn btn-main">
-                                            Submit
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                            <!-- Form Ends -->
-                        </div>
-                    </div>
-                    <!-- Shipment Information Block Ends -->
-                </div>
-                <!-- Shipping & Shipment Block Ends -->
-                <!-- Discount & Conditions Blocks Starts -->
-                <div class="col-sm-6">
                     <!-- Discount Coupon Block Starts -->
-                    <div class="panel panel-smart">
+                    <div class="panel panel-smart ">
                         <div class="panel-heading">
                             <h3 class="panel-title">
                                 Discount Coupon Code
@@ -256,8 +114,12 @@
                         </div>
                     </div>
                     <!-- Discount Coupon Block Ends -->
+                </div>
+                <!-- Shipping & Shipment Block Ends -->
+                <!-- Discount & Conditions Blocks Starts -->
+                <div class="col-sm-6">
                     <!-- Conditions Panel Starts -->
-                    <div class="panel panel-smart">
+                    <div class="panel panel-smart hidden">
                         <div class="panel-heading">
                             <h3 class="panel-title">
                                 Terms &amp; Conditions
@@ -286,28 +148,24 @@
                         <div class="panel-body">
                             <dl class="dl-horizontal">
                                 <dt>Coupon Discount :</dt>
-                                <dd>$-25.00</dd>
-                                <dt>Subtotal :</dt>
-                                <dd>$300.00</dd>
-                                <dt>Payment Fee :</dt>
-                                <dd>$10.00</dd>
-                                <dt>Shipment Fee :</dt>
-                                <dd>$15.00</dd>
-                                <dt>Tax Total :</dt>
-                                <dd>$315.00</dd>
+                                <dd>0 đ</dd>
+                                {{--<dt>Shipment Fee :</dt>--}}
+                                {{--<dd>15.000 đ</dd>--}}
+                                {{--<dt>Subtotal :</dt>--}}
+                                {{--<dd>{{Cart::total()}}</dd>--}}
                             </dl>
                             <hr>
                             <dl class="dl-horizontal total">
                                 <dt>Total :</dt>
-                                <dd>$325.00</dd>
+                                <dd>{{Cart::total()}} đ</dd>
                             </dl>
                             <hr>
                             <div class="text-uppercase clearfix">
-                                <a href="#" class="btn btn-default pull-left">
+                                <a href="/" class="btn btn-default pull-left">
                                     <span class="hidden-xs">Continue Shopping</span>
                                     <span class="visible-xs">Continue</span>
                                 </a>
-                                <a href="#" class="btn btn-default pull-right">
+                                <a href="/product/payment" class="btn btn-default pull-right">
                                     Checkout
                                 </a>
                             </div>
