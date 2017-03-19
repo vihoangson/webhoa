@@ -22,6 +22,7 @@
     <link href="/assets/flower-shoppe/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="/assets/flower-shoppe/css/owl.carousel.css" rel="stylesheet">
     <link href="/assets/flower-shoppe/css/style.css" rel="stylesheet">
+    <link href="/assets/flower-shoppe/css/my_style.css" rel="stylesheet">
     <link href="/assets/flower-shoppe/css/responsive.css" rel="stylesheet">
 
     <!--[if lt IE 9]>

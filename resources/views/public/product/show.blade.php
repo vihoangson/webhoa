@@ -6,21 +6,14 @@
             <!-- Left Starts -->
             <div class="col-sm-5 images-block">
                 <p>
-                    <img src="/assets/flower-shoppe/images/product-images/pimg3.png" alt="Image" class="img-responsive thumbnail">
+                    <img src="/{{$product->image->find($product->main_img)->url}}" alt="Image" class="img-responsive thumbnail">
                 </p>
                 <ul class="list-unstyled list-inline">
-                    <li>
-                        <img src="/assets/flower-shoppe/images/product-images/thumb1.png" alt="Image" class="img-responsive thumbnail">
-                    </li>
-                    <li>
-                        <img src="/assets/flower-shoppe/images/product-images/thumb2.png" alt="Image" class="img-responsive thumbnail">
-                    </li>
-                    <li>
-                        <img src="/assets/flower-shoppe/images/product-images/thumb3.png" alt="Image" class="img-responsive thumbnail">
-                    </li>
-                    <li>
-                        <img src="/assets/flower-shoppe/images/product-images/thumb4.png" alt="Image" class="img-responsive thumbnail">
-                    </li>
+                    @foreach($product->image as $img)
+                        <li>
+                            <img src="/{{$img->url}}" alt="Image" class="img-responsive thumbnail">
+                        </li>
+                    @endforeach
                 </ul>
             </div>
             <!-- Left Ends -->

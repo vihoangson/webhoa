@@ -47,7 +47,7 @@ class ProductController extends Controller
     {
         if(isset($id)){
             $product = Product::find($id);
-            Cart::add($product->id, $product->title, 1, $product->price);
+            Cart::add($product->id, $product->title, 1, $product->price,['img_url'=>$product->image->find($product->main_img)->url]);
             return redirect('/product/checkout');
         }
     }

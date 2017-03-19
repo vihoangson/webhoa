@@ -12,6 +12,7 @@
 
     <link href="{{$template_path}}css/animate.css" rel="stylesheet">
     <link href="{{$template_path}}css/style.css" rel="stylesheet">
+    <link href="{{$template_path}}css/my_style.css" rel="stylesheet">
     @yield('custom_header')
 
 </head>

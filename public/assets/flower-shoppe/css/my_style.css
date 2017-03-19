@@ -1,0 +1,8 @@
+.content.panel-smart img {
+	max-width: 100%;
+}
+.product-info .images-block .list-inline li {
+	padding-left: 2px;
+	padding-right: 2px;
+	width: 32.4%;
+}

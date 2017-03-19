@@ -14,7 +14,7 @@
         <tbody>
             @foreach($cart as $row)
                 <tr>
-                    <td>{{$row->name}}</td>
+                        <td>{{$row->name}}</td>
                     <td><input class="form-control" style="width:45px;text-align: center;" name="ql[{{$row->rowId}}]" value="{{$row->qty}}"></td>
                     <td>{{number_format($row->price)}}</td>
                     <td>{{number_format($row->total)}}</td>
