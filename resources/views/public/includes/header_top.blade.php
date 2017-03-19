@@ -223,6 +223,18 @@
                             <li><a tabindex="-1" href="/category/3-chia-buon">Chia buồn</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                            Lan hồ điệp
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a tabindex="-1" href="/category/3-cuoi-hoi">Từ 1 đến 4 cành</a></li>
+                            <li><a tabindex="-1" href="/category/3-sinh-nhat">Từ 5 đến 10 cành</a></li>
+                            <li><a t]abindex="-1" href="/category/3-khai-truong-hoi-nghi">Trên 10 cành</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/contact">Cách chăm sóc hoa</a></li>
+                    <li><a href="/contact">Liên hệ</a></li>
                     <li class="dropdown hidden{{----}}">
                         <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
                             Pages
