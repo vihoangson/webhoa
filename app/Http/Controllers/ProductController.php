@@ -7,6 +7,7 @@ use App\Order;
 use App\Product;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ProductController extends Controller
 {
@@ -99,5 +100,13 @@ class ProductController extends Controller
         Cart::destroy();
         //todo: Xử lý lưu cart
         return view('public.product.finish');
+    }
+
+    public function remove_item_in_cart($rowId,$redirect){
+        Cart::remove($rowId);
+        if($redirect == 'checkout'){
+            return Redirect('/product/checkout');
+        }
+        return Redirect('/');
     }
 }

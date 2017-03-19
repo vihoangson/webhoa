@@ -41,7 +41,7 @@
                             </a>
                         </td>
                         <td class="text-center">
-                            <a href="product-full.html">{{$row->name}}</a>
+                            <a href="/product/{{$row->id}}">{{$row->name}}</a>
                         </td>
                         <td class="text-center">
                             <div class="input-group btn-block">
@@ -49,18 +49,19 @@
                             </div>
                         </td>
                         <td class="text-center">
-                            {{number_format($row->price)}}
+                            {{number_format($row->price)}} đ
                         </td>
                         <td class="text-center">
-                            {{number_format($row->total)}}
+                            {{number_format($row->total)}} đ
                         </td>
                         <td class="text-center">
                             <button type="submit" title="" class="btn btn-default tool-tip" data-original-title="Update">
                                 <i class="fa fa-refresh"></i>
                             </button>
-                            <button type="button" title="" class="btn btn-default tool-tip" data-original-title="Remove">
+
+                            <a href="/product/remove_item_in_cart/{{$row->rowId}}/checkout"  title="" class="btn btn-default tool-tip" data-original-title="Remove">
                                 <i class="fa fa-times-circle"></i>
-                            </button>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
@@ -72,7 +73,7 @@
                         <strong>Total :</strong>
                     </td>
                     <td colspan="2" class="text-left">
-                        {{Cart::total()}}
+                        {{Cart::total()}} đ
                     </td>
                 </tr>
                 </tfoot>
@@ -321,40 +322,6 @@
     </div>
 @endsection
 
-@section('custom_header111')
-    <h1>Checkout</h1>
-    {!! Form::open(['url'=>'/product/update_cart','method'=>'post']) !!}
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>QL</th>
-            <th>Price</th>
-            <th>Total</th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach($cart as $row)
-            <tr>
-                <td>{{$row->name}}</td>
-                <td><input class="form-control" style="width:45px;text-align: center;" name="ql[{{$row->rowId}}]" value="{{$row->qty}}"></td>
-                <td>{{number_format($row->price)}}</td>
-                <td>{{number_format($row->total)}}</td>
-            </tr>
-        @endforeach
-        </tbody>
-        <tfoot>
-        <tr>
-            <td colspan="2">&nbsp;</td>
-            <td>Total</td>
-            <td>{{Cart::total()}}</td>
-        </tr>
-        </tfoot>
-    </table>
-    <button class="btn btn-default"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
-    <a href="/product/payment" class="btn btn-primary">Checkout</a>
-    {!! Form::close() !!}
-@endsection
 
 @section('custom_footer')
 

@@ -3,14 +3,14 @@
     <!-- Starts -->
     <div class="container">
         <!-- Header Top Starts -->
-        <div class="header-top">
+        <div class="header-top  hidden">
             <div class="row">
                 <!-- Header Links Starts -->
-                <div class="col-sm-8 col-xs-12">
-                    <div class="header-links">
-                        <ul class="nav navbar-nav pull-left">
+                <div class="col-sm-8 col-xs-12 hidden">
+                    <div class="header-links  hidden">
+                        <ul class="nav navbar-nav pull-left hidden">
                             <li>
-                                <a href="/assets/flower-shoppe/index.html">
+                                <a href="/">
                                     <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
                                     <span class="hidden-sm hidden-xs">
 											@lang('common.homepage')
@@ -41,16 +41,16 @@
 										</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="/assets/flower-shoppe/register.html">
+                            <li class="hidden">
+                                <a href="/">
                                     <i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
                                     <span class="hidden-sm hidden-xs">
                                             @lang('common.register')
                                     </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="/assets/flower-shoppe/login.html">
+                            <li class="hidden">
+                                <a href="/">
                                     <i class="fa fa-lock hidden-lg hidden-md" title="Login"></i>
                                     <span class="hidden-sm hidden-xs">
 											@lang('common.login')
@@ -131,7 +131,7 @@
                         <button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
                             <i class="fa fa-shopping-cart"></i>
                             <span class="hidden-md">@lang('common.cart'):</span>
-                            <span id="cart-total">{{Cart::count()}} item(s) - {{Cart::total()}}</span>
+                            <span id="cart-total">{{Cart::count()}} item(s) - {{(Cart::total())}} đ</span>
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right">
@@ -150,9 +150,9 @@
                                                 </a>
                                             </td>
                                             <td class="text-right">x{{$item->qty}}</td>
-                                            <td class="text-right">{{($item->price)}}</td>
+                                            <td class="text-right">{{number_format($item->price)}}đ</td>
                                             <td class="text-center">
-                                                <a href="#">
+                                                <a href="/product/remove_item_in_cart/{{$item->rowId}}" class="remove-item-in-cart" data-id="">
                                                     <i class="fa fa-times"></i>
                                                 </a>
                                             </td>
@@ -163,29 +163,29 @@
                             <li>
                                 <table class="table table-bordered total">
                                     <tbody>
-                                    <tr>
+                                    <tr class="hidden">
                                         <td class="text-right"><strong>Sub-Total</strong></td>
                                         <td class="text-left">$1,101.00</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="hidden">
                                         <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
                                         <td class="text-left">$4.00</td>
                                     </tr>
-                                    <tr>
+                                    <tr class="hidden">
                                         <td class="text-right"><strong>VAT (17.5%)</strong></td>
                                         <td class="text-left">$192.68</td>
                                     </tr>
                                     <tr>
                                         <td class="text-right"><strong>Total</strong></td>
-                                        <td class="text-left">$1,297.68</td>
+                                        <td class="text-left">{{Cart::total()}}đ</td>
                                     </tr>
                                     </tbody>
                                 </table>
                                 <p class="text-right btn-block1">
-                                    <a href="/assets/flower-shoppe/cart.html">
+                                    <a href="/product/checkout">
                                         View Cart
                                     </a>
-                                    <a href="#">
+                                    <a href="/product/payment">
                                         Checkout
                                     </a>
                                 </p>

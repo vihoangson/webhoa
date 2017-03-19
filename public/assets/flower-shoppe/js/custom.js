@@ -1,5 +1,4 @@
 $(".images-block p .img-responsive.thumbnail").click(function(){
-
 });
 
 $(".images-block li .img-responsive.thumbnail").click(function(){
