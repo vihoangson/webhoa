@@ -10,9 +10,11 @@
                 </p>
                 <ul class="list-unstyled list-inline">
                     @foreach($product->image as $img)
+                        @if( $img->url != $product->image->find($product->main_img)->url)
                         <li>
                             <img src="/{{$img->url}}" alt="Image" class="img-responsive thumbnail">
                         </li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
@@ -43,17 +45,20 @@
                 <!-- Price Ends -->
                 <hr>
                 <!-- Available Options Starts -->
+
+                {!! Form::open(['url'=>'/product/add_cart/'.$product->id,'method'=>'get']) !!}
                 <div class="options">
                     <div class="form-group">
                         <label class="control-label text-uppercase" for="input-quantity">Qty:</label>
                         <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control">
                     </div>
                     <div class="cart-button button-group">
-                        <button type="button" class="btn btn-cart">
+                        <button type="submit" class="btn btn-cart">
                             Add to cart
                         </button>
                     </div>
                 </div>
+                {!! Form::close() !!}
                 <!-- Available Options Ends -->
                 <hr>
             </div>

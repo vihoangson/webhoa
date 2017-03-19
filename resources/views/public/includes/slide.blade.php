@@ -13,7 +13,7 @@
         <div class="item">
             <div class="product-col">
                 <div class="image">
-                    <img src="/{{$product->image->find($product->main_img)->url or ''}}" alt="product" class="img-responsive" />
+                    <a href="/product/{{$product->id}}"><img src="/{{$product->image->find($product->main_img)->url or ''}}" alt="product" class="img-responsive" /></a>
                 </div>
                 <div class="caption">
                     <h4><a href="/product/{{$product->id}}">{{$product->title}}</a></h4>

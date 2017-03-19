@@ -1,3 +1,14 @@
+$(".images-block p .img-responsive.thumbnail").click(function(){
+
+});
+
+$(".images-block li .img-responsive.thumbnail").click(function(){
+    m = $(".images-block p .img-responsive.thumbnail").attr("src");
+    n = $(this).attr("src");
+    $(".images-block p .img-responsive.thumbnail").attr("src",n);
+    $(this).attr("src",m);
+});
+
 //MAGNIFIC POPUP
 $(document).ready(function() {
   $('.images-block').magnificPopup({
@@ -36,3 +47,4 @@ $(document).ready(function() {
   });	
 	
 })(jQuery);
+

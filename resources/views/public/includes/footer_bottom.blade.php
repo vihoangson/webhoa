@@ -85,3 +85,5 @@
     </div>
     <!-- Copyright Area Ends -->
 </footer>
+
+<pre>{!! var_dump(Cart::content()) !!}</pre>

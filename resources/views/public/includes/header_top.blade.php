@@ -13,11 +13,11 @@
                                 <a href="/assets/flower-shoppe/index.html">
                                     <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
                                     <span class="hidden-sm hidden-xs">
-											Home
+											@lang('common.homepage')
 										</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="hidden">
                                 <a href="#">
                                     <i class="fa fa-heart hidden-lg hidden-md" title="Wish List"></i>
                                     <span class="hidden-sm hidden-xs">
@@ -25,7 +25,7 @@
 										</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="hidden">
                                 <a href="#">
                                     <i class="fa fa-user hidden-lg hidden-md" title="My Account"></i>
                                     <span class="hidden-sm hidden-xs">
@@ -33,7 +33,7 @@
 										</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="hidden">
                                 <a href="/assets/flower-shoppe/cart.html">
                                     <i class="fa fa-shopping-cart hidden-lg hidden-md" title="Shopping Cart"></i>
                                     <span class="hidden-sm hidden-xs">
@@ -45,16 +45,16 @@
                                 <a href="/assets/flower-shoppe/register.html">
                                     <i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
                                     <span class="hidden-sm hidden-xs">
-											Register
-										</span>
+                                            @lang('common.register')
+                                    </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="/assets/flower-shoppe/login.html">
                                     <i class="fa fa-lock hidden-lg hidden-md" title="Login"></i>
                                     <span class="hidden-sm hidden-xs">
-											Login
-										</span>
+											@lang('common.login')
+                                    </span>
                                 </a>
                             </li>
                         </ul>
@@ -63,7 +63,7 @@
                 <!-- Header Links Ends -->
                 <!-- Currency & Languages Starts -->
                 <div class="col-sm-4 col-xs-12">
-                    <div class="pull-right">
+                    <div class="pull-right hidden">
                         <!-- Languages Starts -->
                         <div class="btn-group">
                             <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
@@ -108,7 +108,7 @@
                 <div class="col-md-3">
                     <div id="search">
                         <div class="input-group">
-                            <input type="text" class="form-control input-lg" placeholder="Search">
+                            <input type="text" class="form-control input-lg" placeholder="@lang('common.search')">
                             <span class="input-group-btn">
 								<button class="btn btn-lg" type="button">
 									<i class="fa fa-search"></i>
@@ -130,51 +130,34 @@
                     <div id="cart" class="btn-group btn-block">
                         <button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
                             <i class="fa fa-shopping-cart"></i>
-                            <span class="hidden-md">Cart:</span>
-                            <span id="cart-total">2 item(s) - $340.00</span>
+                            <span class="hidden-md">@lang('common.cart'):</span>
+                            <span id="cart-total">{{Cart::count()}} item(s) - {{Cart::total()}}</span>
                             <i class="fa fa-caret-down"></i>
                         </button>
                         <ul class="dropdown-menu pull-right">
                             <li>
                                 <table class="table hcart">
-                                    <tr>
-                                        <td class="text-center">
-                                            <a href="/assets/flower-shoppe/product.html">
-                                                <img src="/assets/flower-shoppe/images/product-images/hcart-thumb1.png" alt="image" title="image" class="img-thumbnail img-responsive" />
-                                            </a>
-                                        </td>
-                                        <td class="text-left">
-                                            <a href="/assets/flower-shoppe/product-full.html">
-                                                Flowers
-                                            </a>
-                                        </td>
-                                        <td class="text-right">x 1</td>
-                                        <td class="text-right">$120.68</td>
-                                        <td class="text-center">
-                                            <a href="#">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-center">
-                                            <a href="/assets/flower-shoppe/product.html">
-                                                <img src="/assets/flower-shoppe/images/product-images/hcart-thumb2.png" alt="image" title="image" class="img-thumbnail img-responsive" />
-                                            </a>
-                                        </td>
-                                        <td class="text-left">
-                                            <a href="/assets/flower-shoppe/product-full.html">
-                                                Bouquet
-                                            </a>
-                                        </td>
-                                        <td class="text-right">x 2</td>
-                                        <td class="text-right">$240.00</td>
-                                        <td class="text-center">
-                                            <a href="#">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
+                                    @foreach(Cart::content() as $key => $item)
+                                        <tr>
+                                            <td class="text-center">
+                                                <a href="/product/{{$item->id}}">
+                                                    <img src="/{{$item->options->img_url}}" alt="image" title="image" class="img-thumbnail img-responsive" />
+                                                </a>
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="/product/{{$item->id}}">
+                                                    {{$item->name}}
+                                                </a>
+                                            </td>
+                                            <td class="text-right">x{{$item->qty}}</td>
+                                            <td class="text-right">11{{currency($item->price)}}</td>
+                                            <td class="text-center">
+                                                <a href="#">
+                                                    <i class="fa fa-times"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </table>
                             </li>
                             <li>
