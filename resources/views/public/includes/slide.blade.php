@@ -21,12 +21,12 @@
                         {{$product->summary}}
                     </div>
                     <div class="price">
-                        <span class="price-new">{{$product->price_sale}}</span>
-                        <span class="price-old">{{$product->price}}</span>
+                        <span class="price-new">{{number_format($product->price_sale)}}đ</span>
+                        <span class="price-old">{{number_format($product->price)}}đ</span>
                     </div>
                     <div class="cart-button button-group">
                         <a href="/product/add_cart/{{$product->id}}" class="btn btn-cart">
-                            Add To Cart
+                            Đặt hoa
                         </a>
                     </div>
                 </div>
