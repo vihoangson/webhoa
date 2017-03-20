@@ -190,7 +190,6 @@ class ProductController extends Controller
             $p->main_img = $p->image->first()->id;
             $p->save();
         }
-
         return redirect('admin/product');
     }
 

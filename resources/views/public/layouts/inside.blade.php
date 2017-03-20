@@ -73,66 +73,44 @@
                 </a>
                 <a href="/assets/flower-shoppe/category-grid.html" class="list-group-item">
                     <i class="fa fa-chevron-right"></i>
-                    corporate
+                    family flowers
                 </a>
                 <a href="/assets/flower-shoppe/category-grid.html" class="list-group-item">
                     <i class="fa fa-chevron-right"></i>
-                    congratulation
-                </a>
-                <a href="/assets/flower-shoppe/category-grid.html" class="list-group-item">
-                    <i class="fa fa-chevron-right"></i>
-                    get well
-                </a>
-                <a href="/assets/flower-shoppe/category-grid.html" class="list-group-item">
-                    <i class="fa fa-chevron-right"></i>
-                    funeral
+                    family flowers
                 </a>
             </div>
             <!-- Categories Links Ends -->
             <!-- Shopping Options Starts -->
             <h3 class="side-heading">Shopping Options</h3>
             <div class="list-group">
-                <div class="list-group-item">
-                    Brands
-                </div>
-                <div class="list-group-item">
-                    <div class="filter-group">
-                        <label class="checkbox">
-                            <input name="filter1" type="checkbox" value="br1" checked="checked" />
-                            Brand Name 1
-                        </label>
-                        <label class="checkbox">
-                            <input name="filter2" type="checkbox" value="br2" />
-                            Brand Name 2
-                        </label>
-                        <label class="checkbox">
-                            <input name="filter2" type="checkbox" value="br2" />
-                            Brand Name 3
-                        </label>
+                <form action="/">
+                    <div class="list-group-item">
+                        Brands
                     </div>
-                </div>
-                <div class="list-group-item">
-                    Manufacturer
-                </div>
-                <div class="list-group-item">
-                    <div class="filter-group">
-                        <label class="radio">
-                            <input name="filter-manuf" type="radio" value="mr1" checked="checked" />
-                            Manufacturer Name 1
-                        </label>
-                        <label class="radio">
-                            <input name="filter-manuf" type="radio" value="mr2" />
-                            Manufacturer Name 2
-                        </label>
-                        <label class="radio">
-                            <input name="filter-manuf" type="radio" value="mr3" />
-                            Manufacturer Name 3
-                        </label>
+                    <div class="list-group-item">
+                        <div class="filter-group">
+                            <label class="checkbox">
+                                <input name="filter1" type="checkbox" value="br1" checked="checked" />
+                                Brand Name 1
+                            </label>
+                        </div>
                     </div>
-                </div>
-                <div class="list-group-item">
-                    <button type="button" class="btn btn-main">Filter</button>
-                </div>
+                    <div class="list-group-item">
+                        Manufacturer
+                    </div>
+                    <div class="list-group-item">
+                        <div class="filter-group">
+                            <label class="radio">
+                                <input name="filter-manuf" type="radio" value="mr1" checked="checked" />
+                                Manufacturer Name 1
+                            </label>
+                        </div>
+                    </div>
+                    <div class="list-group-item">
+                        <button type="submit" class="btn btn-main">Filter</button>
+                    </div>
+                </form>
             </div>
             <!-- Shopping Options Ends -->
             <!-- Bestsellers Links Starts -->
