@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label for="inputZipCode" class="col-sm-3 control-label">Zip Code :</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" id="inputZipCode" placeholder="Zip Code">
+                            <input type="text" class="form-control" id="inputZipCode" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
@@ -62,40 +62,40 @@
             <div class="panel-body">
                 <!-- Form Starts -->
                     <div class="form-group">
-                        <label for="inputFname" class="col-sm-3 control-label">Name :</label>
+                        <label for="inputFname" class="col-sm-3 control-label">Họ tên :</label>
                         <div class="col-sm-9">
-                            <input type="text" required="required" name="name" class="form-control" id="inputFname" placeholder="First Name">
+                            <input type="text" required="required" name="name" class="form-control" id="inputFname" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
                         <div class="col-sm-9">
-                            <input type="email" required="required" name="email" class="form-control" id="inputEmail" placeholder="Email">
+                            <input type="email" required="required" name="email" class="form-control" id="inputEmail" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress1" class="col-sm-3 control-label">Phone :</label>
+                        <label for="inputAddress1" class="col-sm-3 control-label">Điện thoại :</label>
                         <div class="col-sm-9">
-                            <input type="tel" required="required" name="tel" class="form-control" id="inputAddress1" placeholder="Phone">
+                            <input type="tel" required="required" name="tel" class="form-control" id="inputAddress1" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress1" class="col-sm-3 control-label">Address :</label>
+                        <label for="inputAddress1" class="col-sm-3 control-label">Địa chỉ :</label>
                         <div class="col-sm-9">
-                            <input type="text" required="required" name="address" class="form-control" id="Address" placeholder="Address">
+                            <input type="text" required="required" name="address" class="form-control" id="Address" placeholder="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputCity" class="col-sm-3 control-label">City :</label>
+                        <label for="inputCity" class="col-sm-3 control-label">Thành phố :</label>
                         <div class="col-sm-9">
-                            <input type="text" required="required" name="city" class="form-control" id="inputCity" placeholder="City">
+                            <input type="text" required="required" name="city" class="form-control" id="inputCity" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-9">
                             <button type="submit" class="btn btn-main">
-                                Submit
+                                Hoàn tất
                             </button>
                         </div>
                     </div>

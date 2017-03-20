@@ -24,7 +24,7 @@
                 <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('title','Title:') !!}</label>
                     <div class="col-sm-10">
-                        {!! Form::text('title',(isset($product->title)?$product->title:''),['class'=>'form-control']) !!}
+                        {!! Form::text('title',(isset($product->title)?$product->title:''),['class'=>'form-control','required' => 'required']) !!}
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
@@ -84,9 +84,9 @@
                     <div class="col-sm-10">
                         <div class="form-group" id="data_5">
                             <div class="input-daterange input-group" id="datepicker">
-                                <input type="text" class="input-sm form-control" name="date_begin_sale" value="{{(isset($product->date_begin_sale)?$product->date_begin_sale:'')}}"/>
+                                <input required="required" type="text" class="input-sm form-control" name="date_begin_sale" value="{{(isset($product->date_begin_sale)?$product->date_begin_sale:'')}}"/>
                                 <span class="input-group-addon">to</span>
-                                <input type="text" class="input-sm form-control" name="date_end_sale" value="{{(isset($product->date_end_sale)?$product->date_end_sale:'')}}" />
+                                <input required="required" type="text" class="input-sm form-control" name="date_end_sale" value="{{(isset($product->date_end_sale)?$product->date_end_sale:'')}}" />
                             </div>
                         </div>
                     </div>

@@ -79,7 +79,9 @@ class ProductController extends Controller
         }
 
         $this->upload_file($p,$request);
-
+        //print_r($p->image->first()->id);
+        $p->main_img = $p->image->first()->id;
+        $p->save();
         return redirect('admin/product');
     }
 
@@ -197,7 +199,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $pd = Product::find($id);
+        $pd->image()->detach();
+        $pd->category()->detach();
+        $pd->delete();
+        return redirect('/admin/product');
     }
 
     /**

@@ -48,6 +48,9 @@
                         <div class="btn-group">
                             <a href="/product/{{$product->id}}" target="_blank" class="btn-white btn btn-xs">View</a>
                             <a href="/admin/product/{{$product->id}}/edit" class="btn-white btn btn-xs">Edit</a>
+                            {!! Form::open(['url' => '/admin/product/'.$product->id, 'method' => 'delete']) !!}
+                            <button type="submit" name="id" value="{{$product->id}}" href="/admin/product/{{$product->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
+                            {!! Form::close() !!}
                         </div>
                     </td>
                 </tr>
