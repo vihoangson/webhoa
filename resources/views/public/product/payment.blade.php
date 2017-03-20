@@ -64,32 +64,32 @@
                     <div class="form-group">
                         <label for="inputFname" class="col-sm-3 control-label">Name :</label>
                         <div class="col-sm-9">
-                            <input type="text" name="name" class="form-control" id="inputFname" placeholder="First Name">
+                            <input type="text" required="required" name="name" class="form-control" id="inputFname" placeholder="First Name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
                         <div class="col-sm-9">
-                            <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+                            <input type="email" required="required" name="email" class="form-control" id="inputEmail" placeholder="Email">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress1" class="col-sm-3 control-label">Phone :</label>
                         <div class="col-sm-9">
-                            <input type="text" name="tel" class="form-control" id="inputAddress1" placeholder="Address/1">
+                            <input type="tel" required="required" name="tel" class="form-control" id="inputAddress1" placeholder="Phone">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress1" class="col-sm-3 control-label">Address :</label>
                         <div class="col-sm-9">
-                            <input type="text" name="address" class="form-control" id="inputAddress1" placeholder="Address/1">
+                            <input type="text" required="required" name="address" class="form-control" id="Address" placeholder="Address">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="inputCity" class="col-sm-3 control-label">City :</label>
                         <div class="col-sm-9">
-                            <input type="text" name="city" class="form-control" id="inputCity" placeholder="City">
+                            <input type="text" required="required" name="city" class="form-control" id="inputCity" placeholder="City">
                         </div>
                     </div>
                     <div class="form-group">
