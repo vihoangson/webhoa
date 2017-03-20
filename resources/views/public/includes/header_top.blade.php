@@ -226,7 +226,7 @@
                             <li><a href="{{$value}}">{{$key}}</a></li>
                         @endif
                     @endforeach
-                    
+
                     <li class="dropdown hidden{{----}}">
                         <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
                             Pages
