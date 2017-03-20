@@ -67,18 +67,12 @@
             <!-- Categories Links Starts -->
             <h3 class="side-heading">Categories</h3>
             <div class="list-group">
-                <a href="/assets/flower-shoppe/category-grid.html" class="list-group-item">
-                    <i class="fa fa-chevron-right"></i>
-                    family flowers
-                </a>
-                <a href="/assets/flower-shoppe/category-grid.html" class="list-group-item">
-                    <i class="fa fa-chevron-right"></i>
-                    family flowers
-                </a>
-                <a href="/assets/flower-shoppe/category-grid.html" class="list-group-item">
-                    <i class="fa fa-chevron-right"></i>
-                    family flowers
-                </a>
+                @foreach($menu_left as $key => $value)
+                    <a href="{{$value}}" class="list-group-item">
+                        <i class="fa fa-chevron-right"></i>
+                        {{$key}}
+                    </a>
+                @endforeach
             </div>
             <!-- Categories Links Ends -->
             <!-- Shopping Options Starts -->

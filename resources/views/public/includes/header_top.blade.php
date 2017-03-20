@@ -210,32 +210,23 @@
             <!-- Navbar Cat collapse Starts -->
             <div class="collapse navbar-collapse navbar-cat-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/">Trang chủ</a></li>
-                    <li class="dropdown">
-                        <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
-                            Hoa tươi
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a tabindex="-1" href="/category/3-cuoi-hoi">Cưới hỏi</a></li>
-                            <li><a tabindex="-1" href="/category/3-sinh-nhat">Sinh nhật</a></li>
-                            <li><a t]abindex="-1" href="/category/3-khai-truong-hoi-nghi">Khai trương hội nghị</a></li>
-                            <li><a tabindex="-1" href="/category/3-chuc-mung">Chúc mừng</a></li>
-                            <li><a tabindex="-1" href="/category/3-chia-buon">Chia buồn</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
-                            Lan hồ điệp
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a tabindex="-1" href="/category/3-cuoi-hoi">Từ 1 đến 4 cành</a></li>
-                            <li><a tabindex="-1" href="/category/3-sinh-nhat">Từ 5 đến 10 cành</a></li>
-                            <li><a t]abindex="-1" href="/category/3-khai-truong-hoi-nghi">Trên 10 cành</a></li>
-
-                        </ul>
-                    </li>
-                    <li><a href="/contact">Cách chăm sóc hoa</a></li>
-                    <li><a href="/contact">Liên hệ</a></li>
+                    @foreach($menu_main as $key => $value)
+                        @if(is_array($value))
+                            <li class="dropdown">
+                                <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                                    {{$key}}
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    @foreach($value as $key1 => $value1)
+                                        <li><a tabindex="-1" href="{{$value1}}">{{$key1}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        @else
+                            <li><a href="{{$value}}">{{$key}}</a></li>
+                        @endif
+                    @endforeach
+                    
                     <li class="dropdown hidden{{----}}">
                         <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
                             Pages
