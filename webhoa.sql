@@ -1,14 +1,14 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.1.13-MariaDB - mariadb.org binary distribution
+-- Server version:               5.5.5-10.1.13-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win32
--- HeidiSQL Version:             9.3.0.4984
+-- HeidiSQL version:             7.0.0.4053
+-- Date/time:                    2017-03-21 05:19:52
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping database structure for webhoa
 DROP DATABASE IF EXISTS `webhoa`;
@@ -53,16 +53,8 @@ CREATE TABLE IF NOT EXISTS `category_product` (
   CONSTRAINT `category_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.category_product: ~7 rows (approximately)
+-- Dumping data for table webhoa.category_product: ~0 rows (approximately)
 /*!40000 ALTER TABLE `category_product` DISABLE KEYS */;
-INSERT INTO `category_product` (`category_id`, `product_id`, `created_at`, `updated_at`) VALUES
-	(1, 155, '2017-03-16 17:13:43', '2017-03-16 17:13:43'),
-	(2, 155, '2017-03-16 17:00:16', '2017-03-16 17:00:16'),
-	(2, 156, '2017-03-16 15:55:27', '2017-03-16 15:55:27'),
-	(2, 157, '2017-03-16 16:51:49', '2017-03-16 16:51:49'),
-	(3, 155, '2017-03-18 05:59:10', '2017-03-18 05:59:10'),
-	(4, 155, '2017-03-18 05:59:10', '2017-03-18 05:59:10'),
-	(4, 160, '2017-03-18 09:17:03', '2017-03-18 09:17:03');
 /*!40000 ALTER TABLE `category_product` ENABLE KEYS */;
 
 
@@ -125,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.customers: ~24 rows (approximately)
+-- Dumping data for table webhoa.customers: ~21 rows (approximately)
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
 INSERT INTO `customers` (`id`, `name`, `address`, `tel`, `city`, `email`, `created_at`, `updated_at`) VALUES
 	(1, '234', '234', '234', '', '', '2017-03-18 14:52:51', '2017-03-18 14:52:51'),
@@ -166,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=192 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.images: ~23 rows (approximately)
+-- Dumping data for table webhoa.images: ~22 rows (approximately)
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 	(162, '1489760252_64429.jpg', 'uploads/1489760252_64429.jpg', '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
@@ -209,32 +201,8 @@ CREATE TABLE IF NOT EXISTS `image_product` (
   CONSTRAINT `image_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.image_product: ~23 rows (approximately)
+-- Dumping data for table webhoa.image_product: ~0 rows (approximately)
 /*!40000 ALTER TABLE `image_product` DISABLE KEYS */;
-INSERT INTO `image_product` (`image_id`, `product_id`, `created_at`, `updated_at`) VALUES
-	(162, 155, '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
-	(163, 155, '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
-	(164, 155, '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
-	(165, 155, '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
-	(166, 155, '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
-	(168, 155, '2017-03-17 15:04:56', '2017-03-17 15:04:56'),
-	(169, 155, '2017-03-17 15:04:56', '2017-03-17 15:04:56'),
-	(170, 155, '2017-03-17 15:04:56', '2017-03-17 15:04:56'),
-	(177, 157, '2017-03-18 01:05:59', '2017-03-18 01:05:59'),
-	(178, 157, '2017-03-18 01:05:59', '2017-03-18 01:05:59'),
-	(179, 157, '2017-03-18 01:05:59', '2017-03-18 01:05:59'),
-	(180, 157, '2017-03-18 01:05:59', '2017-03-18 01:05:59'),
-	(181, 157, '2017-03-18 01:05:59', '2017-03-18 01:05:59'),
-	(182, 157, '2017-03-18 01:05:59', '2017-03-18 01:05:59'),
-	(183, 156, '2017-03-18 03:40:07', '2017-03-18 03:40:07'),
-	(184, 156, '2017-03-18 03:40:07', '2017-03-18 03:40:07'),
-	(185, 158, '2017-03-18 07:28:28', '2017-03-18 07:28:28'),
-	(186, 158, '2017-03-18 07:28:28', '2017-03-18 07:28:28'),
-	(187, 158, '2017-03-18 07:28:28', '2017-03-18 07:28:28'),
-	(188, 158, '2017-03-18 07:28:28', '2017-03-18 07:28:28'),
-	(189, 160, '2017-03-18 09:17:03', '2017-03-18 09:17:03'),
-	(190, 160, '2017-03-18 09:17:03', '2017-03-18 09:17:03'),
-	(191, 160, '2017-03-18 09:17:03', '2017-03-18 09:17:03');
 /*!40000 ALTER TABLE `image_product` ENABLE KEYS */;
 
 
@@ -245,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.migrations: ~4 rows (approximately)
+-- Dumping data for table webhoa.migrations: ~2 rows (approximately)
 /*!40000 ALTER TABLE `migrations` DISABLE KEYS */;
 INSERT INTO `migrations` (`migration`, `batch`) VALUES
 	('2017_03_14_143420_create_categories_table', 1),
@@ -264,10 +232,10 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `data_cache` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`,`order_detail_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.orders: ~12 rows (approximately)
+-- Dumping data for table webhoa.orders: ~11 rows (approximately)
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
 INSERT INTO `orders` (`id`, `order_detail_id`, `customer_id`, `data_cache`, `created_at`, `updated_at`) VALUES
 	(1, 0, 7, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 15:13:20', '2017-03-18 15:13:20'),
@@ -308,7 +276,7 @@ DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   KEY `password_resets_email_index` (`email`),
   KEY `password_resets_token_index` (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -316,6 +284,27 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 -- Dumping data for table webhoa.password_resets: ~0 rows (approximately)
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
+
+
+-- Dumping structure for table webhoa.posts
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
+  `summary` text COLLATE utf8_unicode_ci NOT NULL,
+  `main_img` int(4) NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `active` int(4) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=171 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table webhoa.posts: ~0 rows (approximately)
+/*!40000 ALTER TABLE `posts` DISABLE KEYS */;
+INSERT INTO `posts` (`id`, `title`, `summary`, `main_img`, `content`, `active`, `created_at`, `updated_at`) VALUES
+	(170, 'ádf', 'sdfasdf', 3, 'adfadsfadf', 0, NULL, NULL);
+/*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.products
@@ -328,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
   `price_sale` int(11) NOT NULL,
-  `date_begin_sale` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_begin_sale` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `date_end_sale` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `active` int(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
@@ -336,23 +325,9 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.products: ~15 rows (approximately)
+-- Dumping data for table webhoa.products: ~1 rows (approximately)
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `products` (`id`, `title`, `summary`, `main_img`, `content`, `price`, `price_sale`, `date_begin_sale`, `date_end_sale`, `active`, `created_at`, `updated_at`) VALUES
-	(155, '1341 241 2422 22222222 22', 'Summary', 164, '<p><img src="/uploads/1489862902_31987.jpg"><br></p>', 100000, 10000, '2017-03-19 01:48:25', '2017-03-31 17:22:38', 1, '2017-03-16 15:53:05', '2017-03-18 18:48:25'),
-	(156, '4tw2', '2345', 184, '<p>2345</p>', 3452345, 2345, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, '2017-03-16 15:55:27', '2017-03-18 06:30:57'),
-	(157, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(158, '4tw2', '2345', 186, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 07:28:35'),
-	(159, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(160, '4tw2', '2345', 190, '<p>2345</p>', 3452345, 2345, '2017-03-18 16:17:20', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 09:17:20'),
-	(161, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(162, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(163, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(164, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(165, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(166, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(167, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(168, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
 	(169, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
@@ -423,6 +398,5 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role_id`, `seen`, `
 	(3, 'Walker', 'walker@la.fr', '$2y$10$pLnINZxl1XqmZWEv94DBh.5y2wsxRI7jB3gLl54cd4YMldQFfY6sy', 3, 0, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-11 09:10:30', 'oxWicoBWufNOUBpYqimWqefHHfUZyL0Z73K9Jqxw0i2eNqiQu27PU4XxTnqd'),
 	(4, 'Slacker', 'slacker@la.fr', '$2y$10$.0/UgSMYfaQLqDDpEWTIT.7fZuyZJbKNn5RfOZBrgn.Z3YH863VEK', 3, 0, 0, 1, NULL, '2017-03-11 08:34:21', '2017-03-11 08:34:21', NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
