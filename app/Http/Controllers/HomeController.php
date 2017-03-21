@@ -41,4 +41,7 @@ class HomeController extends Controller
         return view('public.product.show')->with(['product'=>$product]);
     }
 
+    public function contact(){
+        return view('public.contact');
+    }
 }

@@ -2,7 +2,7 @@
 @section('content')
     <!-- Main Heading Starts -->
     <h2 class="main-heading2">
-        flowers bouquet
+        {{$category->name}}
     </h2>
     <!-- Main Heading Ends -->
     <!-- Category Intro Content Starts -->

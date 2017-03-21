@@ -28,6 +28,7 @@
                     <td></td>
                     <td class="text-right">
                         <div class="btn-group">
+                            <a href="/category/{{$category->id}}" class="btn-white btn btn-xs" target="_blank">View</a>
                             <a href="/admin/category/{{$category->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                         </div>
                     </td>

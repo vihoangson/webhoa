@@ -41,9 +41,10 @@
                     </div>
                 </li>
                 <li>
-                    <a href="/"><i class="fa fa-diamond"></i> <span class="nav-label">Homepage</span></a>
-                    <a href="/admin/product"><i class="fa fa-diamond"></i> <span class="nav-label">Product</span></a>
-                    <a href="/admin/category"><i class="fa fa-diamond"></i> <span class="nav-label">Category</span></a>
+                    <a href="/"><i class="fa fa-home"></i> <span class="nav-label">Homepage</span></a>
+                    <a href="/admin/product"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Product</span></a>
+                    <a href="/admin/category"><i class="fa fa-folder-o "></i> <span class="nav-label">Category</span></a>
+                    <a href="/admin/post"><i class="fa fa-file-text"></i> <span class="nav-label">Post</span></a>
                 </li>
                 <li class="active">
                     <a href="{{$template_path}}index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>

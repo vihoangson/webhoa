@@ -53,6 +53,9 @@ class PostController extends Controller
     public function show($id)
     {
         $post = Post::find($id);
+        if($post == null ){
+            return redirect("/");
+        }
         return view('public.post.show')->with(compact("post"));
     }
 
