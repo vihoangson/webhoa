@@ -6,7 +6,6 @@ use App\Category;
 use App\CategoryAllocation;
 use App\Image;
 use App\Post;
-use App\Product;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -32,7 +31,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.product.edit');
+        return view('admin.post.edit');
     }
 
     /**
@@ -68,20 +67,15 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Requests\CheckProductRequest $request)
+    public function store(Request $request)
     {
         $rq = $request->all();
-        $p = Product::create($request->all());
-        if(isset($rq['category'])){
-            // todo: phần này đã lưu được
-            $p->category()->sync($rq['category']);
-        }
+        $p = Post::create($rq);
 
-        $this->upload_file($p,$request);
-        //print_r($p->image->first()->id);
-        $p->main_img = $p->image->first()->id;
+//        $this->upload_file($p,$request);
+//        $p->main_img = $p->image->first()->id;
         $p->save();
-        return redirect('admin/product');
+        return redirect('admin/post');
     }
 
     private function upload_file($p,$request){
@@ -120,8 +114,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
-        return view('admin.product.show')->with(compact('product'));
+        $post = Post::find($id);
+        return view('admin.post.show')->with(compact('post'));
     }
 
     /**
@@ -132,20 +126,20 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::find($id);
-        return view("admin.product.edit")->with(compact('product'));
+        $post = Post::find($id);
+        return view("admin.post.edit")->with(compact('post'));
         //
     }
     public function update_ajax(\Illuminate\Http\Request $requests){
         switch($requests->process){
             case 'change_main_img':
-                $p = Product::find($requests->pid);
+                $p = Post::find($requests->pid);
                 $p->main_img = $requests->id;
                 $p->save();
                 break;
-            case 'delete_img_product':
+            case 'delete_img_post':
                 $img = Image::find($requests->id);
-                $img->product()->detach();
+                $img->post()->detach();
                 return response()->json([
                     'status' => $img->delete(),
                     'id' => $requests->id,
@@ -162,34 +156,31 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Requests\CheckProductRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $rq = $request->all();
-        $p = Product::find($id);
+        $p = Post::find($id);
         $p->title = $rq['title'];
         $p->summary = $rq['summary'];
         $p->content = $rq['content'];
-        $p->price = $rq['price'];
-        $p->price_sale = $rq['price_sale'];
-        $p->date_begin_sale = $rq['date_begin_sale'];
-        $p->date_end_sale = $rq['date_end_sale'];
+
         if(isset($rq['active'])){
             $p->active = $rq['active'];
         }else{
             $p->active = 0;
         }
         $p->save();
-        if(isset($rq['category'])){
-            // todo: phần này đã lưu được
-            $p->category()->sync($rq['category']);
-        }
+//        if(isset($rq['category'])){
+//            // todo: phần này đã lưu được
+//            $p->category()->sync($rq['category']);
+//        }
 
-        $this->upload_file($p,$request);
-        if(!$p->main_img){
-            $p->main_img = $p->image->first()->id;
-            $p->save();
-        }
-        return redirect('admin/product');
+//        $this->upload_file($p,$request);
+//        if(!$p->main_img){
+//            $p->main_img = $p->image->first()->id;
+//            $p->save();
+//        }
+        return redirect('admin/post');
     }
 
     /**
@@ -200,11 +191,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $pd = Product::find($id);
-        $pd->image()->detach();
-        $pd->category()->detach();
+        $pd = Post::find($id);
         $pd->delete();
-        return redirect('/admin/product');
+        return redirect('/admin/post');
     }
 
     /**
@@ -212,6 +201,6 @@ class PostController extends Controller
      */
     public function template()
     {
-        return view('admin.product.template');
+        return view('admin.post.template');
     }
 }
