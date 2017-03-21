@@ -328,7 +328,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
   `price_sale` int(11) NOT NULL,
-  `date_begin_sale` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date_begin_sale` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `date_end_sale` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `active` int(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
