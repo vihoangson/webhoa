@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for webhoa
+DROP DATABASE IF EXISTS `webhoa`;
 CREATE DATABASE IF NOT EXISTS `webhoa` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `webhoa`;
 
 
 -- Dumping structure for table webhoa.categories
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
@@ -24,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `categories` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.categories: ~7 rows (approximately)
+-- Dumping data for table webhoa.categories: ~15 rows (approximately)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 	(1, 'Hoa tươi', '2017-03-15 14:25:38', '2017-03-19 07:51:18'),
@@ -46,6 +48,7 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table webhoa.category_product
+DROP TABLE IF EXISTS `category_product`;
 CREATE TABLE IF NOT EXISTS `category_product` (
   `category_id` int(10) unsigned NOT NULL DEFAULT '0',
   `product_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -64,6 +67,7 @@ CREATE TABLE IF NOT EXISTS `category_product` (
 
 
 -- Dumping structure for table webhoa.contacts
+DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -85,6 +89,7 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `text`, `seen`, `created_at`, `up
 
 
 -- Dumping structure for table webhoa.currencies
+DROP TABLE IF EXISTS `currencies`;
 CREATE TABLE IF NOT EXISTS `currencies` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -99,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `currencies` (
   KEY `currencies_code_index` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.currencies: ~0 rows (approximately)
+-- Dumping data for table webhoa.currencies: ~1 rows (approximately)
 /*!40000 ALTER TABLE `currencies` DISABLE KEYS */;
 INSERT INTO `currencies` (`id`, `name`, `code`, `symbol`, `format`, `exchange_rate`, `active`, `created_at`, `updated_at`) VALUES
 	(1, 'US Dollar', 'USD', '$', '$1,0.00', '0', 0, '2017-03-19 06:01:21', '2017-03-19 06:01:21');
@@ -107,6 +112,7 @@ INSERT INTO `currencies` (`id`, `name`, `code`, `symbol`, `format`, `exchange_ra
 
 
 -- Dumping structure for table webhoa.customers
+DROP TABLE IF EXISTS `customers`;
 CREATE TABLE IF NOT EXISTS `customers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -150,6 +156,7 @@ INSERT INTO `customers` (`id`, `name`, `address`, `tel`, `city`, `email`, `creat
 
 
 -- Dumping structure for table webhoa.images
+DROP TABLE IF EXISTS `images`;
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -159,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `images` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.images: ~23 rows (approximately)
+-- Dumping data for table webhoa.images: ~25 rows (approximately)
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 	(162, '1489760252_64429.jpg', 'uploads/1489760252_64429.jpg', '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
@@ -191,6 +198,7 @@ INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table webhoa.image_product
+DROP TABLE IF EXISTS `image_product`;
 CREATE TABLE IF NOT EXISTS `image_product` (
   `image_id` int(10) unsigned NOT NULL DEFAULT '0',
   `product_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -209,6 +217,7 @@ CREATE TABLE IF NOT EXISTS `image_product` (
 
 
 -- Dumping structure for table webhoa.migrations
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
@@ -225,6 +234,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 
 
 -- Dumping structure for table webhoa.orders
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_detail_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -235,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`id`,`order_detail_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.orders: ~0 rows (approximately)
+-- Dumping data for table webhoa.orders: ~12 rows (approximately)
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
 INSERT INTO `orders` (`id`, `order_detail_id`, `customer_id`, `data_cache`, `created_at`, `updated_at`) VALUES
 	(1, 0, 7, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 15:13:20', '2017-03-18 15:13:20'),
@@ -254,6 +264,7 @@ INSERT INTO `orders` (`id`, `order_detail_id`, `customer_id`, `data_cache`, `cre
 
 
 -- Dumping structure for table webhoa.order_products
+DROP TABLE IF EXISTS `order_products`;
 CREATE TABLE IF NOT EXISTS `order_products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -271,6 +282,7 @@ CREATE TABLE IF NOT EXISTS `order_products` (
 
 
 -- Dumping structure for table webhoa.password_resets
+DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -285,6 +297,7 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 
 
 -- Dumping structure for table webhoa.posts
+DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
@@ -297,7 +310,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.posts: ~0 rows (approximately)
+-- Dumping data for table webhoa.posts: ~2 rows (approximately)
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
 INSERT INTO `posts` (`id`, `title`, `summary`, `main_img`, `content`, `active`, `created_at`, `updated_at`) VALUES
 	(172, '423456785678', '', 0, '<p><img src="/uploads/1490061312_44525.jpg"><b>2<i style="background-color: rgb(255, 255, 0);">342</i>3</b></p>', 1, '2017-03-21 01:34:55', '2017-03-21 01:55:14'),
@@ -306,6 +319,7 @@ INSERT INTO `posts` (`id`, `title`, `summary`, `main_img`, `content`, `active`, 
 
 
 -- Dumping structure for table webhoa.products
+DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
@@ -322,7 +336,7 @@ CREATE TABLE IF NOT EXISTS `products` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.products: ~0 rows (approximately)
+-- Dumping data for table webhoa.products: ~5 rows (approximately)
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `products` (`id`, `title`, `summary`, `main_img`, `content`, `price`, `price_sale`, `date_begin_sale`, `date_end_sale`, `active`, `created_at`, `updated_at`) VALUES
 	(169, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
@@ -334,6 +348,7 @@ INSERT INTO `products` (`id`, `title`, `summary`, `main_img`, `content`, `price`
 
 
 -- Dumping structure for table webhoa.roles
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -343,7 +358,7 @@ CREATE TABLE IF NOT EXISTS `roles` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.roles: ~0 rows (approximately)
+-- Dumping data for table webhoa.roles: ~3 rows (approximately)
 /*!40000 ALTER TABLE `roles` DISABLE KEYS */;
 INSERT INTO `roles` (`id`, `title`, `slug`, `created_at`, `updated_at`) VALUES
 	(1, 'Administrator', 'admin', '2017-03-11 08:34:20', '2017-03-11 08:34:20'),
@@ -353,6 +368,7 @@ INSERT INTO `roles` (`id`, `title`, `slug`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table webhoa.shoppingcart
+DROP TABLE IF EXISTS `shoppingcart`;
 CREATE TABLE IF NOT EXISTS `shoppingcart` (
   `identifier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `instance` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -368,6 +384,7 @@ CREATE TABLE IF NOT EXISTS `shoppingcart` (
 
 
 -- Dumping structure for table webhoa.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -388,7 +405,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.users: ~0 rows (approximately)
+-- Dumping data for table webhoa.users: ~4 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role_id`, `seen`, `valid`, `confirmed`, `confirmation_code`, `created_at`, `updated_at`, `remember_token`) VALUES
 	(1, 'GreatAdmin', 'admin@la.fr', '$2y$10$YCzrrR/n8KebdLvDGkngr.uVV5N3oJLnCiD998F1551JrObQBojXm', 1, 1, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-11 08:34:20', NULL),
