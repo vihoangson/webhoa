@@ -6,7 +6,9 @@
             <!-- Left Starts -->
             <div class="col-sm-5 images-block">
                 <p>
+                    @if($product->main_img)
                     <img src="/{{$product->image->find($product->main_img)->url}}" alt="Image" class="img-responsive thumbnail">
+                    @endif
                 </p>
                 <ul class="list-unstyled list-inline">
                     @foreach($product->image as $img)

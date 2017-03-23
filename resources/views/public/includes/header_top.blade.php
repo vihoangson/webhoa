@@ -131,9 +131,14 @@
                         <button type="button" data-toggle="dropdown" class="btn btn-block btn-lg dropdown-toggle">
                             <i class="fa fa-shopping-cart"></i>
                             <span class="hidden-md">@lang('common.cart'):</span>
-                            <span id="cart-total">{{Cart::count()}} item(s) - {{(Cart::total())}} đ</span>
-                            <i class="fa fa-caret-down"></i>
+                            @if(Cart::total()==0)
+                                <span id="cart-total">@lang('common.No item')</span>
+                            @else
+                                <span id="cart-total">{{Cart::count()}} item(s) - {{(Cart::total())}} đ</span>
+                                <i class="fa fa-caret-down"></i>
+                            @endif
                         </button>
+                        @if(Cart::total()!=0)
                         <ul class="dropdown-menu pull-right">
                             <li>
                                 <table class="table hcart">
@@ -191,6 +196,7 @@
                                 </p>
                             </li>
                         </ul>
+                        @endif
                     </div>
                 </div>
                 <!-- Shopping Cart Ends -->

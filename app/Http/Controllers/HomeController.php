@@ -27,7 +27,9 @@ class HomeController extends Controller
     public function index()
     {
         $products = Product::where('active', 1)->paginate();
-        return view('public.product.homepage')->with(['products'=>$products]);
+        $feature_products = Product::where('active', 1)->paginate();
+
+        return view('public.product.homepage')->with(['products'=>$products,'feature_products'=>$feature_products]);
     }
 
     /**
