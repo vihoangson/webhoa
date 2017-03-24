@@ -78,7 +78,8 @@ return [
     |
     */
 
-    'fallback_locale' => 'vi',
+    //'fallback_locale' => 'vi',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -159,6 +160,7 @@ return [
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*

@@ -29,7 +29,7 @@ class HomeController extends Controller
         $products = Product::where('active', 1)->paginate();
         $feature_products = Product::where('active', 1)->paginate();
 
-        return view('public.product.homepage')->with(['products'=>$products,'feature_products'=>$feature_products]);
+        return view('public.product.homepage')->with(['products' => $products, 'feature_products' => $feature_products]);
     }
 
     /**
@@ -40,10 +40,11 @@ class HomeController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('public.product.show')->with(['product'=>$product]);
+        return view('public.product.show')->with(['product' => $product]);
     }
 
-    public function contact(){
+    public function contact()
+    {
         return view('public.contact');
     }
 }

@@ -33,7 +33,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::paginate();
-        return view('admin.post.index',compact('posts'));
+        return view('admin.post.index', compact('posts'));
     }
 
     /**
@@ -49,34 +49,34 @@ class PostController extends Controller
     /**
      * @param Request $request
      */
-    public function up(Request $request){
-
+    public function up(Request $request)
+    {
 
 
         /**
          * Upload in editor
          */
-        if(isset($request->image_editor)){
+        if (isset($request->image_editor)) {
 
             // todo: Bỏ list ext file ra ngoài config dùng chung
             // Lọc file
-            if(!in_array(strtolower($request->image_editor->getClientOriginalExtension()),['jpg','png','gif'])){
+            if (!in_array(strtolower($request->image_editor->getClientOriginalExtension()), ['jpg', 'png', 'gif'])) {
 
             }
 
             $extension = $request->image_editor->getClientOriginalExtension();
             $destinationPath = 'uploads'; // upload path
-            $fileName = time()."_".rand(11111,99999).'.'.$extension; // renameing image_editor
-            $request->image_editor->move($destinationPath,$fileName);
+            $fileName = time() . "_" . rand(11111, 99999) . '.' . $extension; // renameing image_editor
+            $request->image_editor->move($destinationPath, $fileName);
             header('Content-Type: application/json');
-            echo $destinationPath.'/'.$fileName;
+            echo $destinationPath . '/' . $fileName;
         }
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -90,28 +90,29 @@ class PostController extends Controller
         return redirect('admin/post');
     }
 
-    private function upload_file($p,$request){
+    private function upload_file($p, $request)
+    {
 
         /**
          * Upload files
          */
-        if(is_array($request->file("image"))){
+        if (is_array($request->file("image"))) {
             $files = $request->file("image");
             $data_files = [];
-            foreach ($files as $key => $file){
-                if($file === null) continue;
+            foreach ($files as $key => $file) {
+                if ($file === null) continue;
                 // todo: Bỏ list ext file ra ngoài config dùng chung
                 // Lọc file
-                if(!in_array(strtolower($file->getClientOriginalExtension()),['jpg','png','gif'])){
+                if (!in_array(strtolower($file->getClientOriginalExtension()), ['jpg', 'png', 'gif'])) {
                     continue;
                 }
 
-                $file_name = time()."_".rand(10000,99999).".".$file->getClientOriginalExtension();
-                $data_files[$key] = $file->move('uploads',$file_name);
+                $file_name = time() . "_" . rand(10000, 99999) . "." . $file->getClientOriginalExtension();
+                $data_files[$key] = $file->move('uploads', $file_name);
 
                 $img = new Image();
                 $img->title = $file_name;
-                $img->url = 'uploads/'.$file_name;
+                $img->url = 'uploads/' . $file_name;
                 $img->save();
                 $p->image()->attach($img->id);
             }
@@ -121,7 +122,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -133,7 +134,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -142,8 +143,10 @@ class PostController extends Controller
         return view("admin.post.edit")->with(compact('post'));
         //
     }
-    public function update_ajax(\Illuminate\Http\Request $requests){
-        switch($requests->process){
+
+    public function update_ajax(\Illuminate\Http\Request $requests)
+    {
+        switch ($requests->process) {
             case 'change_main_img':
                 $p = Post::find($requests->pid);
                 $p->main_img = $requests->id;
@@ -164,8 +167,8 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -176,9 +179,9 @@ class PostController extends Controller
         $p->summary = $rq['summary'];
         $p->content = $rq['content'];
 
-        if(isset($rq['active'])){
+        if (isset($rq['active'])) {
             $p->active = $rq['active'];
-        }else{
+        } else {
             $p->active = 0;
         }
         $p->save();
@@ -198,7 +201,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

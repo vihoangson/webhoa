@@ -8,7 +8,8 @@ use App\Http\Requests;
 
 class TagsController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $tags = \App\Tags::all();
         //dd($tags);
 

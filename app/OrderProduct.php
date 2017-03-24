@@ -9,5 +9,4 @@ class OrderProduct extends Model
     protected $fillable = [];
 
 
-
 }

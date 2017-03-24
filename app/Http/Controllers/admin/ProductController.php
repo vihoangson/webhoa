@@ -24,6 +24,7 @@ class ProductController extends Controller
         parent::__construct();
         $this->middleware('auth');
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -33,7 +34,7 @@ class ProductController extends Controller
     {
         $products = Product::paginate();
         //dd($products[0]->category[0]->name);
-        return view('admin.product.index',compact('products'));
+        return view('admin.product.index', compact('products'));
     }
 
     /**
@@ -49,74 +50,75 @@ class ProductController extends Controller
     /**
      * @param Request $request
      */
-    public function up(Request $request){
-
+    public function up(Request $request)
+    {
 
 
         /**
          * Upload in editor
          */
-        if(isset($request->image_editor)){
+        if (isset($request->image_editor)) {
 
             // todo: Bỏ list ext file ra ngoài config dùng chung
             // Lọc file
-            if(!in_array(strtolower($request->image_editor->getClientOriginalExtension()),['jpg','png','gif'])){
+            if (!in_array(strtolower($request->image_editor->getClientOriginalExtension()), ['jpg', 'png', 'gif'])) {
 
             }
 
             $extension = $request->image_editor->getClientOriginalExtension();
             $destinationPath = 'uploads'; // upload path
-            $fileName = time()."_".rand(11111,99999).'.'.$extension; // renameing image_editor
-            $request->image_editor->move($destinationPath,$fileName);
+            $fileName = time() . "_" . rand(11111, 99999) . '.' . $extension; // renameing image_editor
+            $request->image_editor->move($destinationPath, $fileName);
             header('Content-Type: application/json');
-            echo $destinationPath.'/'.$fileName;
+            echo $destinationPath . '/' . $fileName;
         }
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Requests\CheckProductRequest $request)
     {
         $rq = $request->all();
         $p = Product::create($request->all());
-        if(isset($rq['category'])){
+        if (isset($rq['category'])) {
             // todo: phần này đã lưu được
             $p->category()->sync($rq['category']);
         }
 
-        $this->upload_file($p,$request);
+        $this->upload_file($p, $request);
         //print_r($p->image->first()->id);
         $p->main_img = $p->image->first()->id;
         $p->save();
         return redirect('admin/product');
     }
 
-    private function upload_file($p,$request){
+    private function upload_file($p, $request)
+    {
 
         /**
          * Upload files
          */
-        if(is_array($request->file("image"))){
+        if (is_array($request->file("image"))) {
             $files = $request->file("image");
             $data_files = [];
-            foreach ($files as $key => $file){
-                if($file === null) continue;
+            foreach ($files as $key => $file) {
+                if ($file === null) continue;
                 // todo: Bỏ list ext file ra ngoài config dùng chung
                 // Lọc file
-                if(!in_array(strtolower($file->getClientOriginalExtension()),['jpg','png','gif'])){
+                if (!in_array(strtolower($file->getClientOriginalExtension()), ['jpg', 'png', 'gif'])) {
                     continue;
                 }
 
-                $file_name = time()."_".rand(10000,99999).".".$file->getClientOriginalExtension();
-                $data_files[$key] = $file->move('uploads',$file_name);
+                $file_name = time() . "_" . rand(10000, 99999) . "." . $file->getClientOriginalExtension();
+                $data_files[$key] = $file->move('uploads', $file_name);
 
                 $img = new Image();
                 $img->title = $file_name;
-                $img->url = 'uploads/'.$file_name;
+                $img->url = 'uploads/' . $file_name;
                 $img->save();
                 $p->image()->attach($img->id);
             }
@@ -126,7 +128,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -138,7 +140,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -147,8 +149,10 @@ class ProductController extends Controller
         return view("admin.product.edit")->with(compact('product'));
         //
     }
-    public function update_ajax(\Illuminate\Http\Request $requests){
-        switch($requests->process){
+
+    public function update_ajax(\Illuminate\Http\Request $requests)
+    {
+        switch ($requests->process) {
             case 'change_main_img':
                 $p = Product::find($requests->pid);
                 $p->main_img = $requests->id;
@@ -169,8 +173,8 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Requests\CheckProductRequest $request, $id)
@@ -184,19 +188,19 @@ class ProductController extends Controller
         $p->price_sale = $rq['price_sale'];
         $p->date_begin_sale = $rq['date_begin_sale'];
         $p->date_end_sale = $rq['date_end_sale'];
-        if(isset($rq['active'])){
+        if (isset($rq['active'])) {
             $p->active = $rq['active'];
-        }else{
+        } else {
             $p->active = 0;
         }
         $p->save();
-        if(isset($rq['category'])){
+        if (isset($rq['category'])) {
             // todo: phần này đã lưu được
             $p->category()->sync($rq['category']);
         }
 
-        $this->upload_file($p,$request);
-        if(!$p->main_img){
+        $this->upload_file($p, $request);
+        if (!$p->main_img) {
             $p->main_img = $p->image->first()->id;
             $p->save();
         }
@@ -206,7 +210,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

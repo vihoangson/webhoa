@@ -30,18 +30,18 @@
                 <!-- Manufacturer Starts -->
                 <ul class="list-unstyled manufacturer">
                     <li>
-                        <span>Brand:</span> Indian spices
+                        <span>@lang('common.Brand'):</span> Indian spices
                     </li>
-                    <li><span>Reward Points:</span> 300</li>
+                    <li><span>@lang('common.Reward Points'):</span> 300</li>
                     <li>
-                        <span>Availability:</span> <strong class="label label-success">In Stock</strong>
+                        <span>@lang('common.Availability'):</span> <strong class="label label-success">@lang('common.In Stock')</strong>
                     </li>
                 </ul>
                 <!-- Manufacturer Ends -->
                 <hr>
                 <!-- Price Starts -->
                 <div class="price">
-                    <span class="price-head">Price :</span>
+                    <span class="price-head">@lang('common.Price') :</span>
                     <span class="price-new">{{$product->price_sale}}</span>
                 </div>
                 <!-- Price Ends -->
@@ -56,7 +56,7 @@
                     </div>
                     <div class="cart-button button-group">
                         <button type="submit" class="btn btn-cart">
-                            Add to cart
+                            @lang('common.order_button')
                         </button>
                     </div>
                 </div>

@@ -53,5 +53,11 @@ return [
     'Message' => 'Nội dung',
     'Submit' => 'Gửi',
     'No item' => 'Chưa có sản phẩm',
+    'Availability' => 'Tình trạng',
+    'In Stock' => 'Còn hàng',
+    'Reward Points' => 'Điểm tích lũy',
+    'Brand' => 'Thương hiệu',
+    'Price'=> "Giá"
+
 
 ];

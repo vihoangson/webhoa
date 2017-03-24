@@ -16,8 +16,10 @@
     <link href="/assets/flower-shoppe/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Web Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
 
     <!-- CSS Files -->
     <link href="/assets/flower-shoppe/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -54,12 +56,12 @@
         <div id="main-carousel" class="carousel slide" data-ride="carousel">
             <!-- Wrapper For Slides Starts -->
             <div class="carousel-inner">
-                <div class="item active">
-                    <img src="/assets/flower-shoppe/images/slider-imgs/slide1-img.jpg" alt="Slider" class="img-responsive" />
-                </div>
-                <div class="item">
-                    <img src="/assets/flower-shoppe/images/slider-imgs/slide2-img.jpg" alt="Slider" class="img-responsive" />
-                </div>
+                @foreach($banner_top as $key => $value)
+                    <div class="item {{($value['active'] == true?'active':'') }}">
+                        <a href="{{$value['url']}}"><img src="{{$value['link_img']}}" alt="Slider"
+                                                         class="img-responsive"/></a>
+                    </div>
+                @endforeach
             </div>
             <!-- Wrapper For Slides Ends -->
             <!-- Controls Starts -->
@@ -74,11 +76,11 @@
     </div>
 </div>
 <!-- Slider Section Ends -->
-    @yield('content')
+@yield('content')
 <!-- 1 Column Banners Starts -->
 <div class="col1-banners">
     <div class="container">
-        <img src="/assets/flower-shoppe/images/banners/1col-banner1.jpg" alt="banners" class="img-responsive" />
+        <img src="/assets/flower-shoppe/images/banners/1col-banner1.jpg" alt="banners" class="img-responsive"/>
     </div>
 </div>
 <!-- 1 Column Banners Ends -->

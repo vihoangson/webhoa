@@ -13,8 +13,23 @@ use View;
 class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
+
     public function __construct()
     {
+        $banner_top = [
+            [
+                'url' => '/',
+                'link_img' => '/assets/flower-shoppe/images/slider-imgs/slide1-img.jpg',
+                'active' => false,
+            ],
+            [
+                'url' => '/',
+                'link_img' => '/assets/flower-shoppe/images/slider-imgs/slide2-img.jpg',
+                'active' => true,
+            ],
+        ];
+        View::share('banner_top', $banner_top);
+
         $data_menu_main = [
             'Trang chủ' => '/',
             'Hoa tươi' => [

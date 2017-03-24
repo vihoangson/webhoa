@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::where('active', 1)->paginate();
-        return view('public.product.list')->with(['products'=>$products]);
+        return view('public.product.list')->with(['products' => $products]);
     }
 
     /**
@@ -41,14 +41,14 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('public.product.show')->with(['product'=>$product]);
+        return view('public.product.show')->with(['product' => $product]);
     }
 
     public function add_cart($id)
     {
-        if(isset($id)){
+        if (isset($id)) {
             $product = Product::find($id);
-            Cart::add($product->id, $product->title, 1, ($product->price_sale?$product->price_sale:$product->price),['img_url'=>($product->main_img?$product->image->find($product->main_img)->url:'')]);
+            Cart::add($product->id, $product->title, 1, ($product->price_sale ? $product->price_sale : $product->price), ['img_url' => ($product->main_img ? $product->image->find($product->main_img)->url : '')]);
             return redirect('/product/checkout');
         }
     }
@@ -57,30 +57,31 @@ class ProductController extends Controller
     {
         $rq = $request->all();
         foreach ($rq['ql'] as $key => $item) {
-            Cart::update($key,$item);
+            Cart::update($key, $item);
         }
         return redirect('/product/checkout');
     }
 
     public function checkout()
     {
-        if(Cart::count() == 0){
+        if (Cart::count() == 0) {
             return redirect('/');
         }
-        return view('public.product.checkout')->with('cart',Cart::content());
+        return view('public.product.checkout')->with('cart', Cart::content());
     }
 
     public function payment()
     {
-        if(Cart::count() == 0){
+        if (Cart::count() == 0) {
             return redirect('/');
         }
         //todo: Xử lý lưu cart
         return view('public.product.payment');
     }
 
-    public function submit_payment(Request $request){
-        if(Cart::count() == 0){
+    public function submit_payment(Request $request)
+    {
+        if (Cart::count() == 0) {
             return redirect('/');
         }
         $rq = $request->all();
@@ -93,8 +94,9 @@ class ProductController extends Controller
         return redirect("/product/finish");
     }
 
-    public function finish(){
-        if(Cart::count() == 0){
+    public function finish()
+    {
+        if (Cart::count() == 0) {
             return redirect('/');
         }
         //Cart::destroy();
@@ -102,9 +104,10 @@ class ProductController extends Controller
         return view('public.product.finish');
     }
 
-    public function remove_item_in_cart($rowId,$redirect = null){
+    public function remove_item_in_cart($rowId, $redirect = null)
+    {
         Cart::remove($rowId);
-        if($redirect == 'checkout'){
+        if ($redirect == 'checkout') {
             return Redirect('/product/checkout');
         }
         return Redirect('/');
@@ -113,7 +116,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
