@@ -2,15 +2,11 @@
 <div class="col3-banners">
     <div class="container">
         <ul class="row list-unstyled">
-            <li class="col-sm-4">
-                <img src="/assets/flower-shoppe/images/banners/3col-banner1.jpg" alt="banners" class="img-responsive" />
-            </li>
-            <li class="col-sm-4">
-                <img src="/assets/flower-shoppe/images/banners/3col-banner2.jpg" alt="banners" class="img-responsive" />
-            </li>
-            <li class="col-sm-4">
-                <img src="/assets/flower-shoppe/images/banners/3col-banner3.jpg" alt="banners" class="img-responsive" />
-            </li>
+            @foreach($db_banner_ad as $key => $value)
+                <li class="col-sm-4">
+                    <a href="{{$value['url']}}"><img src="{{$value['link_img']}}" alt="banners" class="img-responsive" /></a>
+                </li>
+            @endforeach
         </ul>
     </div>
 </div>

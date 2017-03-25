@@ -16,7 +16,8 @@ class Controller extends BaseController
 
     public function __construct()
     {
-        $banner_top = [
+        //<editor-fold desc="banner ">
+        $db_banner_top = [
             [
                 'url' => '/',
                 'link_img' => '/assets/flower-shoppe/images/slider-imgs/slide1-img.jpg',
@@ -28,7 +29,38 @@ class Controller extends BaseController
                 'active' => true,
             ],
         ];
-        View::share('banner_top', $banner_top);
+
+        $db_banner_ad = [
+            [
+                'url' => '/',
+                'link_img' => '/assets/flower-shoppe/images/banners/3col-banner1.jpg',
+                'active' => false,
+            ],
+            [
+                'url' => '/',
+                'link_img' => '/assets/flower-shoppe/images/banners/3col-banner2.jpg',
+                'active' => false,
+            ],
+                [
+                    'url' => '/',
+                    'link_img' => '/assets/flower-shoppe/images/banners/3col-banner3.jpg',
+                    'active' => false,
+                ],
+        ];
+
+        $db_banner_bottom = [
+            [
+                'url' => '/',
+                'link_img' => '/assets/flower-shoppe/images/banners/1col-banner1.jpg',
+                'active' => false,
+            ],
+        ];
+
+        View::share('db_banner_top', $db_banner_top);
+        View::share('db_banner_ad', $db_banner_ad);
+        View::share('db_banner_bottom', $db_banner_bottom);
+
+        //</editor-fold>
 
         $data_menu_main = [
             'Trang chủ' => '/',

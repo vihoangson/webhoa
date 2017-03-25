@@ -33,8 +33,9 @@ Route::post('/update_ajax', 'admin\ProductController@update_ajax');
 Route::get('/admin/product/template', 'admin\ProductController@template');
 Route::resource('/admin/product', 'admin\ProductController');
 Route::resource('/admin/post', 'admin\PostController');
-
 Route::resource('/admin/category', 'admin\CategoryController');
+Route::resource('/admin/order', 'admin\OrderController');
+
 Route::resource('/category', 'CategoryController');
 
 //

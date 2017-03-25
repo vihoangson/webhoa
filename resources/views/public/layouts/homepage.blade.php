@@ -56,7 +56,7 @@
         <div id="main-carousel" class="carousel slide" data-ride="carousel">
             <!-- Wrapper For Slides Starts -->
             <div class="carousel-inner">
-                @foreach($banner_top as $key => $value)
+                @foreach($db_banner_top as $key => $value)
                     <div class="item {{($value['active'] == true?'active':'') }}">
                         <a href="{{$value['url']}}"><img src="{{$value['link_img']}}" alt="Slider"
                                                          class="img-responsive"/></a>
@@ -80,7 +80,7 @@
 <!-- 1 Column Banners Starts -->
 <div class="col1-banners">
     <div class="container">
-        <img src="/assets/flower-shoppe/images/banners/1col-banner1.jpg" alt="banners" class="img-responsive"/>
+        <a href="{{$db_banner_bottom[0]['url']}}"><img src="{{$db_banner_bottom[0]['link_img']}}" alt="banners" class="img-responsive"/></a>
     </div>
 </div>
 <!-- 1 Column Banners Ends -->
