@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/',  ['uses' => 'HomeController@index', 'as' => 'home']);
 Route::get('/contact', 'HomeController@contact');
 Route::get('/product/payment', 'ProductController@payment');
 Route::get('/product/remove_item_in_cart/{rowId}/{redirect}', 'ProductController@remove_item_in_cart');
@@ -46,3 +46,5 @@ Route::get('/welcome', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+// Home
+
