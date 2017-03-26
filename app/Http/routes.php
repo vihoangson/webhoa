@@ -31,7 +31,8 @@ Route::resource('post', 'PostController');
 Route::post('/up', 'admin\ProductController@up');
 Route::post('/update_ajax', 'admin\ProductController@update_ajax');
 
-
+Route::get('/admin', 'admin\DashboardController@index');
+Route::get('/admin/logout', 'admin\DashboardController@logout');
 Route::get('/admin/product/template', 'admin\ProductController@template');
 Route::resource('/admin/product', 'admin\ProductController');
 Route::resource('/admin/post', 'admin\PostController');

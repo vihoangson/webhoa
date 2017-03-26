@@ -50,8 +50,8 @@
                         <span class="price-new">{{number_format($product->price)}}đ</span>
                     @else
                         <span class="price-head">@lang('common.Price') :</span>
-                        <span class="price-new">{{number_format($product->price_sale)}} đ</span>
-                        <span class="price-old">{{number_format($product->price)}} đ</span>
+                        <span class="price-new">{{number_format($product->price_sale)}}đ </span>
+                        <span class="price-old">{{number_format($product->price)}}đ </span>
 
                     @endif
 

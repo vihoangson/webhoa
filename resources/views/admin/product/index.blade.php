@@ -48,7 +48,7 @@
                         <div class="btn-group">
                             <a href="/product/{{$product->id}}" target="_blank" class="btn-white btn btn-xs">View</a>
                             <a href="/admin/product/{{$product->id}}/edit" class="btn-white btn btn-xs">Edit</a>
-                            {!! Form::open(['url' => '/admin/product/'.$product->id, 'method' => 'delete']) !!}
+                            {!! Form::open(['url' => '/admin/product/'.$product->id, 'method' => 'delete','class'=>'confirm-action']) !!}
                             <button type="submit" name="id" value="{{$product->id}}" href="/admin/product/{{$product->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
                             {!! Form::close() !!}
                         </div>
@@ -67,4 +67,7 @@
         </tfoot>
     </table>
     <div><a href="/admin/product/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create product</a></div>
+@endsection
+
+@section('custom_footer')
 @endsection

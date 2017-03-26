@@ -357,7 +357,7 @@
 
 
                     <li>
-                        <a href="{{$template_path}}login.html">
+                        <a href="/admin/logout">
                             <i class="fa fa-sign-out"></i> Log out
                         </a>
                     </li>
@@ -372,7 +372,7 @@
         </div>
 
 
-        <div class="ibox-content m-b-sm border-bottom">
+        <div class="ibox-content m-b-sm border-bottom hidden">
             <div class="row">
                 <div class="col-sm-4">
                     <div class="form-group">
@@ -894,7 +894,9 @@
 
 @yield('custom_footer')
 <!-- Page-Level Scripts -->
+<script src="/assets/scripts/general.js"></script>
 <script>
+
     $(document).ready(function() {
 //        $('.footable').footable();
     });

@@ -31,7 +31,7 @@ return [
     'Terms Conditions'=> 'Chính sách đổi trả',
     'My Account'=> 'ACCOUNT',
     'My Orders'=> 'Đơn hàng của tôi',
-    'Register'=> 'Đăng kỹ',
+    'Register'=> 'Đăng ký',
     'Login'=> 'Đăng nhập',
     'My Personal Info'=> '',
     'Service'=> 'Dịch vụ',

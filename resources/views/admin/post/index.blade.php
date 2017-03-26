@@ -10,7 +10,7 @@
             <th data-hide="phone">Model</th>
             <th data-hide="all">Description</th>
             <th data-hide="phone">Price</th>
-            <th data-hide="phone,tablet" >Quantity</th>
+            <th data-hide="phone,tablet">Quantity</th>
             <th data-hide="phone">Status</th>
             <th class="text-right" data-sort-ignore="true">Action</th>
         </tr>
@@ -43,8 +43,10 @@
                         <div class="btn-group">
                             <a href="/post/{{$post->id}}" target="_blank" class="btn-white btn btn-xs">View</a>
                             <a href="/admin/post/{{$post->id}}/edit" class="btn-white btn btn-xs">Edit</a>
-                            {!! Form::open(['url' => '/admin/post/'.$post->id, 'method' => 'delete']) !!}
-                            <button type="submit" name="id" value="{{$post->id}}" href="/admin/post/{{$post->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
+                            {!! Form::open(['url' => '/admin/post/'.$post->id, 'method' => 'delete' ,'class'=>'confirm-action']) !!}
+                            <button type="submit" name="id" value="{{$post->id}}"
+                                    href="/admin/post/{{$post->id}}/destroy" class="btn-white btn btn-xs">Delete
+                            </button>
                             {!! Form::close() !!}
                         </div>
                     </td>

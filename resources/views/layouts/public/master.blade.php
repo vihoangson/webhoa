@@ -647,7 +647,7 @@
 
 <!-- FooTable -->
 <script src="{{$template_path}}js/plugins/footable/footable.all.min.js"></script>
-
+<script src="/assets/scripts/general.js"></script>
 @yield('custom_footer')
 <!-- Page-Level Scripts -->
 <script>

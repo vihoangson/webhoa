@@ -1,5 +1,5 @@
-$(".images-block p .img-responsive.thumbnail").click(function(){
-});
+
+
 
 $(".images-block li .img-responsive.thumbnail").click(function(){
     m = $(".images-block p .img-responsive.thumbnail").attr("src");

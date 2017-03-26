@@ -9,6 +9,7 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
 use View;
+use Illuminate\Support\Facades\Auth;
 
 class Controller extends BaseController
 {
@@ -16,6 +17,7 @@ class Controller extends BaseController
 
     public function __construct()
     {
+
         //<editor-fold desc="banner ">
         $db_banner_top = [
             [
@@ -79,6 +81,10 @@ class Controller extends BaseController
             'Chăm sóc hoa' => '/post/172-cham-soc-hoa',
             'Liên hệ' => '/contact',
         ];
+        if(!Auth::guard()->guest()){
+            $data_menu_main['Admin CP'] = '/admin';
+        }
+
 
         $data_menu_left = [
             'Bó hoa' => '8',
