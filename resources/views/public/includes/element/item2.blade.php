@@ -16,9 +16,9 @@
             @endif
         </div>
         <div class="cart-button button-group">
-            <button type="button" class="btn btn-cart">
+            <a href="/product/add_cart/{{$product->id}}" class="btn btn-cart">
                 @lang('common.order_button')
-            </button>
+            </a>
         </div>
     </div>
 </div>

@@ -1,24 +1,24 @@
 <?php
 Breadcrumbs::register('home', function($breadcrumbs)
 {
-    $breadcrumbs->push('Home', route('home'));
+    $breadcrumbs->push('Trang chủ', route('home'));
 });
 
 Breadcrumbs::register('contact', function($breadcrumbs)
 {
     $breadcrumbs->parent('home');
-    $breadcrumbs->push('Contact', '/contact');
+    $breadcrumbs->push('Liên hệ', '/contact');
 });
 
 Breadcrumbs::register('product', function($breadcrumbs)
 {
     $breadcrumbs->parent('home');
-    $breadcrumbs->push('Product', '/product');
+    $breadcrumbs->push('Sản phẩm', '/product');
 });
 Breadcrumbs::register('checkout', function($breadcrumbs)
 {
     $breadcrumbs->parent('product');
-    $breadcrumbs->push('Checkout', '/checkout');
+    $breadcrumbs->push('Đặt hàng', '/checkout');
 });
 Breadcrumbs::register('product_detail', function($breadcrumbs,$page=null)
 {

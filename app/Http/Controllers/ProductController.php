@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::where('active', 1)->paginate();
-        return view('public.product.list')->with(['products' => $products]);
+        return view('public.product.index')->with(['products' => $products]);
     }
 
     /**
