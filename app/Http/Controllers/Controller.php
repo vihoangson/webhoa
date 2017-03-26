@@ -87,11 +87,11 @@ class Controller extends BaseController
 
 
         $data_menu_left = [
-            'Bó hoa' => '8',
-            'giỏ hoa' => '9',
-            'bình hoa' => '10',
-            'hộp hoa' => '11',
-            'loại khác' => '12',
+            'Bó hoa' => '/category/8',
+            'giỏ hoa' => '/category/9',
+            'bình hoa' => '/category/10',
+            'hộp hoa' => '/category/11',
+            'loại khác' => '/category/12',
         ];
 
         View::share('menu_main', $data_menu_main);

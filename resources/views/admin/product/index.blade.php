@@ -29,10 +29,10 @@
                         {{$product->summary}}
                     </td>
                     <td>
-                        {{$product->price}}
+                        {{$product->price_formated}}
                     </td>
                     <td>
-                        {{$product->price_sale}}
+                        {{$product->price_sale_formated}}
                     </td>
                     <td>
                         @if(isset($product->category ))

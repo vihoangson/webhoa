@@ -9,10 +9,10 @@
         </div>
         <div class="price">
             @if($product->price_sale)
-                <span class="price-new">{{number_format($product->price_sale)}}đ</span>
-                <span class="price-old">{{number_format($product->price)}}đ</span>
+                <span class="price-new">{{$product->price_sale_formated}}</span>
+                <span class="price-old">{{$product->price_formated}}</span>
             @else
-                <span class="price-new">{{number_format($product->price)}}đ</span>
+                <span class="price-new">{{$product->price_formated}}</span>
             @endif
         </div>
         <div class="cart-button button-group">

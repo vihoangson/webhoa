@@ -10,6 +10,27 @@ class Product extends Model
 {
     protected $fillable = ['title', 'price', 'price_sale', 'content', 'date_begin_sale', 'date_end_sale', 'active', 'summary', 'main_img'];
 
+
+    /**
+     * Add custom attributes to Eloquent models
+     *
+     * price_formated
+     * @return string
+     */
+    public function getPriceFormatedAttribute(){
+        return number_format($this->attributes['price'])."đ";
+    }
+
+    /**
+     * Add custom attributes to Eloquent models
+     *
+     * price_sale_formated
+     * @return string
+     */
+    public function getPriceSaleFormatedAttribute(){
+        return number_format($this->attributes['price_sale'])."đ";
+    }
+
     public function getPriceSaleAttribute($price_sale){
         return $price_sale;
     }
