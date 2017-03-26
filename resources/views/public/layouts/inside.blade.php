@@ -142,6 +142,7 @@
 <script src="/assets/flower-shoppe/js/bootstrap-hover-dropdown.min.js"></script>
 <script src="/assets/flower-shoppe/js/jquery.magnific-popup.min.js"></script>
 <script src="/assets/flower-shoppe/js/owl.carousel.min.js"></script>
+<script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
 <script src="/assets/flower-shoppe/js/custom.js"></script>
 </body>
 </html>

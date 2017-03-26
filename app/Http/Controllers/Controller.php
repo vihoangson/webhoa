@@ -78,7 +78,7 @@ class Controller extends BaseController
                 'Từ 5 đến 10 cành' => '/category/14-tu-5-den-10-canh',
                 'Trên 10 cành' => '/category/15-tren-10-canh',
             ],
-            'Chăm sóc hoa' => '/post/172-cham-soc-hoa',
+            'Chăm sóc hoa' => '/post/177-cham-soc-hoa',
             'Liên hệ' => '/contact',
         ];
         if(!Auth::guard()->guest()){
