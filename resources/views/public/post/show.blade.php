@@ -1,4 +1,7 @@
 @extends('public.layouts.inside')
+@section('breadcrumb')
+    {!! Breadcrumbs::render('post_detail',$post->title) !!}
+@endsection
 @section('content')
         <!-- Breadcrumb Ends -->
         <!-- Product Info Starts -->

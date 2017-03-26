@@ -1,4 +1,7 @@
 @extends('public.layouts.no_sidebar')
+@section('breadcrumb')
+    {!! Breadcrumbs::render('product_detail','payment') !!}
+@endsection
 @section('content')
     <h1>Payment</h1>
     {!! Form::open(['url'=>'/product/payment','method'=>'post','class'=>'form-horizontal']) !!}

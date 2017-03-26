@@ -1,4 +1,7 @@
 @extends('public.layouts.no_sidebar')
+@section('breadcrumb')
+    {!! Breadcrumbs::render('contact') !!}
+@endsection
 @section('content')
     <!-- Starts -->
     <div class="row">
