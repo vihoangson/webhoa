@@ -1,4 +1,8 @@
 @extends('public.layouts.inside')
+@section('breadcrumb')
+    {!! Breadcrumbs::render('category',$category->name) !!}
+@endsection
+
 @section('content')
     <!-- Main Heading Starts -->
     <h2 class="main-heading2">

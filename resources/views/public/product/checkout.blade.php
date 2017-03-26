@@ -1,4 +1,9 @@
 @extends('public.layouts.no_sidebar')
+
+@section('breadcrumb')
+    {!! Breadcrumbs::render('checkout') !!}
+@endsection
+
 @section('content')
     <div id="main-container" class="container">
         <!-- Main Heading Starts -->

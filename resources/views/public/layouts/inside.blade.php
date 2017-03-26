@@ -53,12 +53,7 @@
     <div class="row">
         <!-- Primary Content Starts -->
         <div class="col-md-9">
-            <!-- Breadcrumb Starts -->
-            <ol class="breadcrumb">
-                <li><a href="/">Home</a></li>
-                <li class="active">flowers bouquet</li>
-            </ol>
-            <!-- Breadcrumb Ends -->
+            @yield('breadcrumb')
             @yield('content')
         </div>
         <!-- Primary Content Ends -->

@@ -1,4 +1,8 @@
 @extends('layouts.public.master')
+@section('breadcrumb')
+    {!! Breadcrumbs::render('category') !!}
+@endsection
+
 @section('content')
 
 @endsection
