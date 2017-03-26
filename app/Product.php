@@ -66,6 +66,19 @@ class Product extends Model
         return '';
     }
 
+    /**
+     * Add custom attributes to Eloquent models
+     *
+     * price_sale_formated
+     * @return string
+     */
+    public function getDateEndSaleFormatedCountdownAttribute(){
+        if($this->attributes['date_end_sale'] && $this->attributes['date_end_sale']!= '0000-00-00 00:00:00'){
+            $carbon_date = Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['date_end_sale']);
+            return $carbon_date->format('Y/m/d');
+        }
+        return '';
+    }
 
     public function getPriceSaleAttribute($price_sale){
         return $price_sale;

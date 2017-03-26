@@ -11,6 +11,7 @@
             @if($product->price_sale)
                 <span class="price-new">{{$product->price_sale_formated}}</span>
                 <span class="price-old">{{$product->price_formated}}</span>
+                <div>{{$product->date_begin_sale_formated}}</div>
             @else
                 <span class="price-new">{{$product->price_formated}}</span>
             @endif
