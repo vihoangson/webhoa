@@ -84,9 +84,9 @@
                     <div class="col-sm-10">
                         <div class="form-group" id="data_5">
                             <div class="input-daterange input-group" id="datepicker">
-                                <input required="required" type="text" class="input-sm form-control" name="date_begin_sale" value="{{(isset($product->date_begin_sale)?$product->date_begin_sale:'')}}"/>
+                                <input type="text" class="input-sm form-control" name="date_begin_sale" value="{{(isset($product->date_begin_sale_formated)?$product->date_begin_sale_formated:'')}}"/>
                                 <span class="input-group-addon">to</span>
-                                <input required="required" type="text" class="input-sm form-control" name="date_end_sale" value="{{(isset($product->date_end_sale)?$product->date_end_sale:'')}}" />
+                                <input type="text" class="input-sm form-control" name="date_end_sale" value="{{(isset($product->date_end_sale_formated)?$product->date_end_sale_formated:'')}}" />
                             </div>
                         </div>
                     </div>

@@ -7,10 +7,10 @@
         <tr>
             <th data-sort-ignore="true"></th>
             <th data-toggle="true">Product Name</th>
-            <th data-hide="phone">Model</th>
-            <th data-hide="all">Description</th>
-            <th data-hide="phone">Price</th>
-            <th data-hide="phone,tablet" >Quantity</th>
+            <th data-hide="phone"></th>
+            <th data-hide="all">Price</th>
+            <th data-hide="phone">Price sale</th>
+            <th data-hide="phone,tablet" >Categirt</th>
             <th data-hide="phone">Status</th>
             <th class="text-right" data-sort-ignore="true">Action</th>
         </tr>

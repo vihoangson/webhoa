@@ -18,6 +18,9 @@ class Product extends Model
      * @return string
      */
     public function getPriceFormatedAttribute(){
+        if($this->attributes['price']==0){
+            return '';
+        }
         return number_format($this->attributes['price'])."đ";
     }
 
@@ -28,8 +31,41 @@ class Product extends Model
      * @return string
      */
     public function getPriceSaleFormatedAttribute(){
+        if($this->attributes['price_sale']==0){
+            return '';
+        }
         return number_format($this->attributes['price_sale'])."đ";
     }
+
+
+    /**
+     * Add custom attributes to Eloquent models
+     *
+     * price_sale_formated
+     * @return string
+     */
+    public function getDateBeginSaleFormatedAttribute(){
+        if($this->attributes['date_begin_sale'] && $this->attributes['date_begin_sale']!= '0000-00-00 00:00:00'){
+            $carbon_date = Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['date_begin_sale']);
+            return $carbon_date->format('m/d/Y');
+        }
+        return '';
+    }
+
+    /**
+     * Add custom attributes to Eloquent models
+     *
+     * price_sale_formated
+     * @return string
+     */
+    public function getDateEndSaleFormatedAttribute(){
+        if($this->attributes['date_end_sale'] && $this->attributes['date_end_sale']!= '0000-00-00 00:00:00'){
+            $carbon_date = Carbon::createFromFormat('Y-m-d H:i:s', $this->attributes['date_end_sale']);
+            return $carbon_date->format('m/d/Y');
+        }
+        return '';
+    }
+
 
     public function getPriceSaleAttribute($price_sale){
         return $price_sale;

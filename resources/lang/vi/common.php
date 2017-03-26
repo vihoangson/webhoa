@@ -57,7 +57,8 @@ return [
     'In Stock' => 'Còn hàng',
     'Reward Points' => 'Điểm tích lũy',
     'Brand' => 'Thương hiệu',
-    'Price'=> "Giá"
-
+    'Price'=> "Giá",
+    'Shipment Information'=> "Thông tin khách hàng",
+    'Payment'=> "Thanh toán",
 
 ];

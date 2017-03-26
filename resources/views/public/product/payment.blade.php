@@ -1,9 +1,9 @@
 @extends('public.layouts.no_sidebar')
 @section('breadcrumb')
-    {!! Breadcrumbs::render('product_detail','payment') !!}
+    {!! Breadcrumbs::render('product_detail','Thanh toán') !!}
 @endsection
 @section('content')
-    <h1>Payment</h1>
+    <h1>@lang('common.Payment')</h1>
     {!! Form::open(['url'=>'/product/payment','method'=>'post','class'=>'form-horizontal']) !!}
     <!-- Shipping & Shipment Block Starts -->
     <div class="col-sm-12">
@@ -59,7 +59,7 @@
         <div class="panel panel-smart">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    Shipment Information
+                    @lang('common.Shipment Information')
                 </h3>
             </div>
             <div class="panel-body">
