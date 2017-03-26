@@ -10,6 +10,14 @@ class Product extends Model
 {
     protected $fillable = ['title', 'price', 'price_sale', 'content', 'date_begin_sale', 'date_end_sale', 'active', 'summary', 'main_img'];
 
+    public function getPriceSaleAttribute($price_sale){
+        return $price_sale;
+    }
+
+    public function getPriceAttribute($price){
+        return $price;
+    }
+
     public function setActiveAttribute($active)
     {
         if ($active == null) {

@@ -25,7 +25,7 @@
     </div>
     <!-- Category Intro Content Ends -->
     <!-- Product Filter Starts -->
-    <div class="product-filter">
+    <div class="product-filter hidden">
         <div class="row">
             <div class="col-md-4">
                 <div class="display">
