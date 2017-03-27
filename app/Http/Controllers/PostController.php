@@ -56,7 +56,7 @@ class PostController extends Controller
         if ($post == null) {
             return redirect("/");
         }
-        return view('public.'.$this->template_path.'.post.show')->with(compact("post"));
+        return view('public.'.$this->template_name.'.post.show')->with(compact("post"));
     }
 
     /**

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Category;
 use App\CategoryAllocation;
 use App\Image;
+use App\Option;
 use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
@@ -26,12 +27,30 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-    public function index(){
+    public function index()
+    {
         return view('admin.dashboard.index');
     }
 
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
         return redirect('/admin/');
+    }
+
+    public function setting()
+    {
+        $tempalte_name = Option::firstOrNew(['name' => 'template_name'])->value;
+        return view('admin.dashboard.setting')->with(compact('tempalte_name'));
+    }
+
+    public function save_setting(Request $request)
+    {
+        $template_name = $request->template_name;
+        $obj_option = Option::firstOrNew(['name' => 'template_name']);
+        $obj_option->value = $template_name;
+        if($obj_option->save()){
+            return redirect('/admin/setting');
+        }
     }
 }

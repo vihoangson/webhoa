@@ -51,7 +51,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $products = $category->product;
-        return view('public.'.$this->template_path.'.category.list')->with(compact('category', 'products'));
+        return view('public.'.$this->template_name.'.category.list')->with(compact('category', 'products'));
     }
 
     /**

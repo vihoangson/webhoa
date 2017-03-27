@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Option;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -15,11 +16,14 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
-    protected $template_path = 'hotdeal';
+    protected $template_name = 'hoa';
 
     public function __construct()
     {
+        $m = Option::firstOrNew(['name' => 'template_name']);
+        $this->template_name = $m->value;
 
+        //Option::create(['name'=>'template_name','value'=>'hoa']);
         //<editor-fold desc="banner ">
         $db_banner_top = [
             [
@@ -102,6 +106,6 @@ class Controller extends BaseController
         View::share('data_category', Category::all());
         View::share('template_admin_path', "/assets/tempate_admin/");
 
-        View::share('template_name', $this->template_path);
+        View::share('template_name', $this->template_name);
     }
 }
