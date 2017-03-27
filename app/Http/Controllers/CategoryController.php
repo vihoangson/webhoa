@@ -51,7 +51,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $products = $category->product;
-        return view('public.category.list')->with(compact('category', 'products'));
+        return view('public.hoa.category.list')->with(compact('category', 'products'));
     }
 
     /**

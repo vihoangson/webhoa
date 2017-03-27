@@ -30,7 +30,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::where('active', 1)->paginate();
-        return view('public.product.index')->with(['products' => $products]);
+        return view('public.hoa.product.index')->with(['products' => $products]);
     }
 
     /**
@@ -41,7 +41,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('public.product.show')->with(['product' => $product]);
+        return view('public.hoa.product.show')->with(['product' => $product]);
     }
 
     public function add_cart($id)
@@ -67,7 +67,7 @@ class ProductController extends Controller
         if (Cart::count() == 0) {
             return redirect('/');
         }
-        return view('public.product.checkout')->with('cart', Cart::content());
+        return view('public.hoa.product.checkout')->with('cart', Cart::content());
     }
 
     public function payment()
@@ -76,7 +76,7 @@ class ProductController extends Controller
             return redirect('/');
         }
         //todo: Xử lý lưu cart
-        return view('public.product.payment');
+        return view('public.hoa.product.payment');
     }
 
     public function submit_payment(Request $request)
@@ -101,7 +101,7 @@ class ProductController extends Controller
         }
         //Cart::destroy();
         //todo: Xử lý lưu cart
-        return view('public.product.finish');
+        return view('public.hoa.product.finish');
     }
 
     public function remove_item_in_cart($rowId, $redirect = null)

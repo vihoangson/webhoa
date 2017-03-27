@@ -56,7 +56,7 @@ class PostController extends Controller
         if ($post == null) {
             return redirect("/");
         }
-        return view('public.post.show')->with(compact("post"));
+        return view('public.hoa.post.show')->with(compact("post"));
     }
 
     /**
