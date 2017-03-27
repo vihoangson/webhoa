@@ -10,7 +10,7 @@
 <!-- Product Carousel Starts -->
 <div id="owl-product" class="owl-carousel">
     @foreach($products as $key => $product)
-        @include('public.hoa.includes.element.item1')
+        @include('public.didong.includes.element.item1')
     @endforeach
 </div>
 <!-- Product Carousel Ends -->

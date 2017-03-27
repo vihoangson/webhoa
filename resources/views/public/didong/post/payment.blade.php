@@ -1,4 +1,4 @@
-@extends('public.hoa.layouts.no_sidebar')
+@extends('public.didong.layouts.no_sidebar')
 @section('content')
     <h1>Payment</h1>
     {!! Form::open(['url'=>'/product/payment','method'=>'post','class'=>'form-horizontal']) !!}

@@ -1,4 +1,4 @@
-@extends('public.hoa.layouts.no_sidebar')
+@extends('public.didong.layouts.no_sidebar')
 @section('content')
     <div id="main-container" class="container">
         <!-- Main Heading Starts -->

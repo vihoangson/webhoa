@@ -1,4 +1,4 @@
-@extends('public.hoa.layouts.no_sidebar')
+@extends('public.didong.layouts.no_sidebar')
 
 @section('breadcrumb')
     {!! Breadcrumbs::render('checkout') !!}

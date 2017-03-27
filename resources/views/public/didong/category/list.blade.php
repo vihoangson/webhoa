@@ -1,4 +1,4 @@
-@extends('public.hoa.layouts.inside')
+@extends('public.didong.layouts.inside')
 @section('breadcrumb')
     {!! Breadcrumbs::render('category',$category->name) !!}
 @endsection
@@ -65,7 +65,7 @@
         @foreach($products as $key => $product)
         <!-- Product #1 Starts -->
         <div class="col-md-4 col-sm-6">
-            @include('public.hoa.includes.element.item1',['product'=>$product])
+            @include('public.didong.includes.element.item1',['product'=>$product])
         </div>
         <!-- Product #1 Ends -->
         @endforeach

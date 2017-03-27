@@ -30,7 +30,7 @@ class HomeController extends Controller
         $products = Product::where('active', 1)->paginate();
         $feature_products = Product::where('active', 1)->paginate();
 
-        return view('public.hoa.product.homepage')->with(['products' => $products, 'feature_products' => $feature_products]);
+        return view('public.'.$this->template_path.'.product.homepage')->with(['products' => $products, 'feature_products' => $feature_products]);
     }
 
     /**
@@ -41,11 +41,11 @@ class HomeController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-        return view('public.hoa.product.show')->with(['product' => $product]);
+        return view('public.'.$this->template_path.'.product.show')->with(['product' => $product]);
     }
 
     public function contact()
     {
-        return view('public.hoa.contact');
+        return view('public.'.$this->template_path.'.contact');
     }
 }

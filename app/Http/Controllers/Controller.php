@@ -15,6 +15,8 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
+    protected $template_path = 'didong';
+
     public function __construct()
     {
 

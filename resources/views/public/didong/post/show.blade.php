@@ -1,4 +1,4 @@
-@extends('public.hoa.layouts.inside')
+@extends('public.didong.layouts.inside')
 @section('breadcrumb')
     {!! Breadcrumbs::render('post_detail',$post->title) !!}
 @endsection

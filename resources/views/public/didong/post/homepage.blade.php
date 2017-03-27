@@ -1,7 +1,7 @@
-@extends('public.hoa.layouts.homepage')
+@extends('public.didong.layouts.homepage')
 @section('content')
-    @include('public.hoa.includes.slide')
-    @include('public.hoa.includes.banner')
-    @include('public.hoa.includes.product_list')
+    @include('public.didong.includes.slide')
+    @include('public.didong.includes.banner')
+    @include('public.didong.includes.product_list')
 @endsection
 

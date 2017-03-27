@@ -1,4 +1,4 @@
-@extends('public.hoa.ayouts.no_sidebar')
+@extends('public.didong.ayouts.no_sidebar')
 @section('content')
     <h1>Finish</h1>
     Thank you ...
