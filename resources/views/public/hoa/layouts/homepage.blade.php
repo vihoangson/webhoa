@@ -48,7 +48,7 @@
 
 </head>
 <body>
-@include('public.hoa.includes.header_top')
+@include('public.'.$template_name.'.includes.header_top')
 
 <!-- Slider Section Starts -->
 <div class="slider">
@@ -84,7 +84,7 @@
     </div>
 </div>
 <!-- 1 Column Banners Ends -->
-@include('public.hoa.includes.footer_bottom')
+@include('public.'.$template_name.'.includes.footer_bottom')
 
 <!-- JavaScript Files -->
 <script src="/assets/themes/flower-shoppe/js/jquery-1.11.1.min.js"></script>

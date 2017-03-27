@@ -1,4 +1,4 @@
-@extends('public.didong.ayouts.no_sidebar')
+@extends('public.'.$template_name.'.layouts.no_sidebar')
 @section('content')
     <h1>Finish</h1>
     Thank you ...

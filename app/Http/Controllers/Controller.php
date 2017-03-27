@@ -15,7 +15,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
-    protected $template_path = 'didong';
+    protected $template_path = 'hotdeal';
 
     public function __construct()
     {
@@ -100,6 +100,8 @@ class Controller extends BaseController
         View::share('menu_left', $data_menu_left);
 
         View::share('data_category', Category::all());
-        View::share('template_path', "/assets/tempate_admin/");
+        View::share('template_admin_path', "/assets/tempate_admin/");
+
+        View::share('template_name', $this->template_path);
     }
 }

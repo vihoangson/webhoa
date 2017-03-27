@@ -1,4 +1,4 @@
-@extends('public.hoa.layouts.no_sidebar')
+@extends('public.'.$template_name.'.layouts.no_sidebar')
 @section('breadcrumb')
     {!! Breadcrumbs::render('contact') !!}
 @endsection

@@ -1,4 +1,4 @@
-@extends('public.hoa.layouts.inside')
+@extends('public.'.$template_name.'.layouts.inside')
 @section('breadcrumb')
     {!! Breadcrumbs::render('product_detail',$product->title) !!}
 @endsection

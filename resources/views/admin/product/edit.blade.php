@@ -107,9 +107,9 @@
 @endsection
 
 @section('custom_header')
-    <link href="{{$template_path}}css/plugins/datapicker/datepicker3.css" rel="stylesheet">
+    <link href="{{$template_admin_path}}css/plugins/datapicker/datepicker3.css" rel="stylesheet">
     <link href="/bower_components/summernote/dist/summernote.css" rel="stylesheet">
-    <link href="{{$template_path}}css/plugins/switchery/switchery.css" rel="stylesheet">
+    <link href="{{$template_admin_path}}css/plugins/switchery/switchery.css" rel="stylesheet">
 <style>
     .active_box {
         box-shadow: 0px 0 12px 3px #9c9c9c;
@@ -121,8 +121,8 @@
 
     <!-- Data picker -->
     <!-- Switchery -->
-    <script src="{{$template_path}}js/plugins/switchery/switchery.js"></script>
-    <script src="{{$template_path}}js/plugins/datapicker/bootstrap-datepicker.js"></script>
+    <script src="{{$template_admin_path}}js/plugins/switchery/switchery.js"></script>
+    <script src="{{$template_admin_path}}js/plugins/datapicker/bootstrap-datepicker.js"></script>
     <script src="/bower_components/summernote/dist/summernote.min.js"></script>
 <script>
     if($(".thumb_img").length==0){

@@ -46,7 +46,7 @@
 </head>
 <body>
 
-@include('public.hoa.includes.header_top')
+@include('public.'.$template_name.'.includes.header_top')
 
 <!-- Main Container Starts -->
 <div id="main-container" class="container">
@@ -60,7 +60,7 @@
     </div>
 </div>
 <!-- Main Container Ends -->
-@include('public.hoa.includes.footer_bottom')
+@include('public.'.$template_name.'.includes.footer_bottom')
 
 <!-- Footer Section Ends -->
 <!-- JavaScript Files -->
