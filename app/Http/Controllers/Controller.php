@@ -22,12 +22,12 @@ class Controller extends BaseController
         $db_banner_top = [
             [
                 'url' => '/',
-                'link_img' => '/assets/flower-shoppe/images/slider-imgs/slide1-img.jpg',
+                'link_img' => '/assets/themes/flower-shoppe/images/slider-imgs/slide1-img.jpg',
                 'active' => false,
             ],
             [
                 'url' => '/',
-                'link_img' => '/assets/flower-shoppe/images/slider-imgs/slide2-img.jpg',
+                'link_img' => '/assets/themes/flower-shoppe/images/slider-imgs/slide2-img.jpg',
                 'active' => true,
             ],
         ];
@@ -35,17 +35,17 @@ class Controller extends BaseController
         $db_banner_ad = [
             [
                 'url' => '/',
-                'link_img' => '/assets/flower-shoppe/images/banners/3col-banner1.jpg',
+                'link_img' => '/assets/themes/flower-shoppe/images/banners/3col-banner1.jpg',
                 'active' => false,
             ],
             [
                 'url' => '/',
-                'link_img' => '/assets/flower-shoppe/images/banners/3col-banner2.jpg',
+                'link_img' => '/assets/themes/flower-shoppe/images/banners/3col-banner2.jpg',
                 'active' => false,
             ],
                 [
                     'url' => '/',
-                    'link_img' => '/assets/flower-shoppe/images/banners/3col-banner3.jpg',
+                    'link_img' => '/assets/themes/flower-shoppe/images/banners/3col-banner3.jpg',
                     'active' => false,
                 ],
         ];
@@ -53,7 +53,7 @@ class Controller extends BaseController
         $db_banner_bottom = [
             [
                 'url' => '/',
-                'link_img' => '/assets/flower-shoppe/images/banners/1col-banner1.jpg',
+                'link_img' => '/assets/themes/flower-shoppe/images/banners/1col-banner1.jpg',
                 'active' => false,
             ],
         ];
@@ -98,6 +98,6 @@ class Controller extends BaseController
         View::share('menu_left', $data_menu_left);
 
         View::share('data_category', Category::all());
-        View::share('template_path', "/assets/tempates/");
+        View::share('template_path', "/assets/tempate_admin/");
     }
 }
