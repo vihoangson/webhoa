@@ -108,7 +108,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="product-col">
                         <div class="image">
-                            <img src="/assets/flower-shoppe/images/product-images/1.png" alt="product" class="img-responsive">
+                            <img src="/assets/themes/flower-shoppe/images/product-images/1.png" alt="product" class="img-responsive">
                         </div>
                         <div class="caption">
                             <h4><a href="product.html">Flowers</a></h4>
@@ -132,7 +132,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="product-col">
                         <div class="image">
-                            <img src="/assets/flower-shoppe/images/product-images/2.png" alt="product" class="img-responsive">
+                            <img src="/assets/themes/flower-shoppe/images/product-images/2.png" alt="product" class="img-responsive">
                         </div>
                         <div class="caption">
                             <h4><a href="product.html">Flowers</a></h4>
@@ -156,7 +156,7 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="product-col">
                         <div class="image">
-                            <img src="/assets/flower-shoppe/images/product-images/3.png" alt="product" class="img-responsive">
+                            <img src="/assets/themes/flower-shoppe/images/product-images/3.png" alt="product" class="img-responsive">
                         </div>
                         <div class="caption">
                             <h4><a href="product.html">Flowers</a></h4>

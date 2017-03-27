@@ -34,7 +34,7 @@
                                 </a>
                             </li>
                             <li class="hidden">
-                                <a href="/assets/flower-shoppe/cart.html">
+                                <a href="/assets/themes/flower-shoppe/cart.html">
                                     <i class="fa fa-shopping-cart hidden-lg hidden-md" title="Shopping Cart"></i>
                                     <span class="hidden-sm hidden-xs">
 											Shopping Cart
@@ -121,7 +121,7 @@
                 <!-- Logo Starts -->
                 <div class="col-md-5">
                     <div id="logo">
-                        <a href="/"><img src="/assets/flower-shoppe/images/logo.png" title="Flower Shoppe" alt="Flower Shoppe" class="img-responsive" /></a>
+                        <a href="/"><img src="/assets/themes/flower-shoppe/images/logo.png" title="Flower Shoppe" alt="Flower Shoppe" class="img-responsive" /></a>
                     </div>
                 </div>
                 <!-- Logo Starts -->
@@ -219,7 +219,7 @@
                     @foreach($menu_main as $key => $value)
                         @if(is_array($value))
                             <li class="dropdown">
-                                <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                                <a href="/assets/themes/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
                                     {{$key}}
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
@@ -234,23 +234,23 @@
                     @endforeach
 
                     <li class="dropdown hidden{{----}}">
-                        <a href="/assets/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                        <a href="/assets/themes/flower-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
                             Pages
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/index.html">Home</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/about.html">About</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/category-list.html">Category List</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/category-grid.html">Category Grid</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/product.html">Product</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/product-full.html">Product Full Width</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/cart.html">Cart</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/login.html">Login</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/compare.html">Compare Products</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/typography.html">Typography</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/register.html">Register</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/contact.html">Contact</a></li>
-                            <li><a tabindex="-1" href="/assets/flower-shoppe/404.html">404</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/index.html">Home</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/about.html">About</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/category-list.html">Category List</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/category-grid.html">Category Grid</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/product.html">Product</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/product-full.html">Product Full Width</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/cart.html">Cart</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/login.html">Login</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/compare.html">Compare Products</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/typography.html">Typography</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/register.html">Register</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/contact.html">Contact</a></li>
+                            <li><a tabindex="-1" href="/assets/themes/flower-shoppe/404.html">404</a></li>
                         </ul>
                     </li>
                 </ul>

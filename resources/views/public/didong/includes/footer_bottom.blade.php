@@ -64,19 +64,19 @@
             <!-- Payment Gateway Links Starts -->
             <ul class="pull-right list-inline">
                 <li>
-                    <img src="/assets/flower-shoppe/images/payment-icon/cirrus.png" alt="PaymentGateway" />
+                    <img src="/assets/themes/flower-shoppe/images/payment-icon/cirrus.png" alt="PaymentGateway" />
                 </li>
                 <li>
-                    <img src="/assets/flower-shoppe/images/payment-icon/paypal.png" alt="PaymentGateway" />
+                    <img src="/assets/themes/flower-shoppe/images/payment-icon/paypal.png" alt="PaymentGateway" />
                 </li>
                 <li>
-                    <img src="/assets/flower-shoppe/images/payment-icon/visa.png" alt="PaymentGateway" />
+                    <img src="/assets/themes/flower-shoppe/images/payment-icon/visa.png" alt="PaymentGateway" />
                 </li>
                 <li>
-                    <img src="/assets/flower-shoppe/images/payment-icon/mastercard.png" alt="PaymentGateway" />
+                    <img src="/assets/themes/flower-shoppe/images/payment-icon/mastercard.png" alt="PaymentGateway" />
                 </li>
                 <li>
-                    <img src="/assets/flower-shoppe/images/payment-icon/americanexpress.png" alt="PaymentGateway" />
+                    <img src="/assets/themes/flower-shoppe/images/payment-icon/americanexpress.png" alt="PaymentGateway" />
                 </li>
             </ul>
             <!-- Payment Gateway Links Ends -->

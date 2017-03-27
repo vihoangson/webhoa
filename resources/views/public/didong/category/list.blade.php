@@ -12,7 +12,7 @@
     <!-- Category Intro Content Starts -->
     <div class="row cat-intro hidden">
         <div class="col-sm-3">
-            <img src="/assets/flower-shoppe/images/misc/cat-thumb-img1.png" alt="Image" class="img-responsive img-thumbnail" />
+            <img src="/assets/themes/flower-shoppe/images/misc/cat-thumb-img1.png" alt="Image" class="img-responsive img-thumbnail" />
         </div>
         <div class="col-sm-9 cat-body">
             <p>
@@ -29,10 +29,10 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="display">
-                    <a href="/assets/flower-shoppe/category-list.html">
+                    <a href="/assets/themes/flower-shoppe/category-list.html">
                         <i class="fa fa-th-list" title="List View"></i>
                     </a>
-                    <a href="/assets/flower-shoppe/category-grid.html" class="active">
+                    <a href="/assets/themes/flower-shoppe/category-grid.html" class="active">
                         <i class="fa fa-th" title="Grid View"></i>
                     </a>
                 </div>
