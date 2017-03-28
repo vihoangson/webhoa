@@ -1,33 +1,24 @@
-<div class="product-col">
-    <div class="image">
-        <img src="/{{$product->image->find($product->main_img)->url or ''}}" alt="product" class="img-responsive img-center-sm img-center-xs" />
-    </div>
-    <div class="caption">
-        <h4>
-            <a href="/product/{{$product->id}}">{{$product->title}}</a>
-        </h4>
-        <div class="price">
-            @if($product->price_sale)
-                <span class="price-new">{{$product->price_sale_formated}}</span>
-                <span class="price-old">{{$product->price_formated}}</span>
-                @if($product->date_end_sale_formated_countdown)
-                    <div data-countdown="{{$product->date_end_sale_formated_countdown}}"></div>
-                @endif
-            @else
-                <span class="price-new">{{$product->price_formated}}</span>
-            @endif
-        </div>
-        <div class="cart-button button-group">
-            <a href="/product/add_cart/{{$product->id}}" class="btn btn-cart">
-                <i class="fa fa-shopping-cart"></i>
-                @lang('common.order_button')
-            </a>
-            <button type="button" title="Wishlist" class="btn btn-wishlist">
-                <i class="fa fa-heart"></i>
-            </button>
-            <button type="button" title="Compare" class="btn btn-compare">
-                <i class="fa fa-bar-chart-o"></i>
-            </button>
+<a class="col-md-4" href="/product/{{$product->id}}">
+    <div class="product-thumb">
+        <header class="product-header">
+            <img src="/{{$product->image->find($product->main_img)->url or ''}}" alt="Image Alternative text"
+                 title="The Hidden Power of the Heart"/>
+        </header>
+        <div class="product-inner">
+            <h5 class="product-title">{{$product->title}}</h5>
+            <p class="product-desciption">Praesent netus vitae hendrerit eu tellus nulla viverra</p>
+            <div class="product-meta"><span class="product-time"><i
+                            class="fa fa-clock-o"></i> 10 days 11 h remaining</span>
+                <ul class="product-price-list">
+                    <li><span class="product-price">{{$product->price_sale_formated}}</span>
+                    </li>
+                    <li><span class="product-old-price">{{$product->price_formated}}</span>
+                    </li>
+                    <li><span class="product-save">Save 57%</span>
+                    </li>
+                </ul>
+            </div>
+            <p class="product-location"><i class="fa fa-map-marker"></i> Boston</p>
         </div>
     </div>
-</div>
+</a>
