@@ -1,0 +1,52 @@
+.preview-page {
+	padding: 50px 0;
+}
+
+.preview-title {
+	font-weight:  100;
+	font-size: 70px;
+	margin-bottom: 60px;
+}
+
+.preview-logo {
+	width: 266px;
+	margin-bottom:  4px;
+}
+
+.preview-tagline {
+	font-size: 21px;
+	opacity: 0.6;
+	margin-bottom: 70px;
+}
+
+.preview-item-link {
+	display:  block;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+
+.preview-item-link:hover {
+	-webkit-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.col-space {
+	padding: 0 30px;
+}
+
+.row-space {
+	margin: 0 -30px;
+}
+
+.row-space .col-space {
+	margin-bottom: 60px;
+}
+
+.preview-item-title {
+	margin-bottom: 0;
+	margin-top: 10px;
+	font-size: 17px;
+	font-weight: 100;
+	opacity: 0.7;
+	letter-spacing: 1px;
+}
