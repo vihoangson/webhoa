@@ -481,7 +481,7 @@
 
 
     <!-- TOP AREA -->
-    <div class="top-area">
+    <div class="top-area hidden">
         <div class="owl-carousel owl-slider" id="owl-carousel-slider" data-inner-pagination="true" data-white-pagination="true" data-nav="false">
             <div>
                 <div class="bg-holder">
@@ -558,113 +558,150 @@
 
 
     <div class="container">
-        {{--Sidebar and week feature--}}
-        <div class="row hidden">
-            <div class="col-md-3">
-                <aside class="sidebar-left">
-                    <h3 class="mb20">I am Looking For</h3>
-                    <ul class="nav nav-tabs nav-stacked nav-coupon-category nav-coupon-category-left">
-                        <li><a href="#"><i class="fa fa-cutlery"></i>Food & Drink<span>44</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-calendar"></i>Events<span>48</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-female"></i>Beauty<span>50</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-bolt"></i>Fitness<span>41</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-headphones"></i>Electronics<span>46</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-image"></i>Furniture<span>37</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-umbrella"></i>Fashion<span>30</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i>Shopping<span>42</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-home"></i>Home & Graden<span>30</span></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-plane"></i>Travel<span>36</span></a>
-                        </li>
-                    </ul>
-                </aside>
-            </div>
+
+        <div class="row">
             <div class="col-md-9">
-                <h1 class="mb20">Weekly Featured <small><a href="#">View All</a></small></h1>
-                <div class="row row-wrap">
-                    <a class="col-md-4" href="#">
-                        <div class="product-thumb">
-                            <header class="product-header">
-                                <img src="/assets/themes/remtsoy/img/a_turn_800x600.jpg" alt="Image Alternative text" title="a turn" />
-                            </header>
-                            <div class="product-inner">
-                                <h5 class="product-title">Diving with Sharks</h5>
-                                <p class="product-desciption">Tortor parturient id fermentum dictum enim maecenas curabitur</p>
-                                <div class="product-meta"><span class="product-time"><i class="fa fa-clock-o"></i> 2 days 7 h remaining</span>
-                                    <ul class="product-price-list">
-                                        <li><span class="product-price">$116</span>
-                                        </li>
-                                        <li><span class="product-old-price">$182</span>
-                                        </li>
-                                        <li><span class="product-save">Save 64%</span>
-                                        </li>
-                                    </ul>
+
+                @yield('content')
+
+                <div class="gap"></div>
+            </div>
+            <div class="col-md-3">
+                <aside class="sidebar-right hidden-phone">
+                    <div class="sidebar-box">
+                        <h5>Blog Categories</h5>
+                        <ul class="icon-list blog-category-list">
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Web</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Digital</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Typography</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Design</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Lifestyle</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Travel</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="sidebar-box">
+
+                        <h5>Newsletter singup</h5>
+                        <form class="sign-up">
+                            <input type="text" class="form-control" placeholder="E-mail">
+                            <small class="help-block">*We never send spam</small>
+                            <input type="submit" class="btn btn-primary" value="Subscribe">
+                        </form>
+                    </div>
+
+
+                    <div class="sidebar-box">
+                        <h5>Recent Posts</h5>
+                        <ul class="thumb-list">
+                            <li>
+                                <a href="#">
+                                    <img src="/assets/themes/remtsoy/img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Sodales felis</a></h5>
+                                    <p class="thumb-list-item-desciption">Aptent magna platea magna varius</p>
                                 </div>
-                                <p class="product-location"><i class="fa fa-map-marker"></i> Boston</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="col-md-4" href="#">
-                        <div class="product-thumb">
-                            <header class="product-header">
-                                <img src="/assets/themes/remtsoy/img/amaze_800x600.jpg" alt="Image Alternative text" title="AMaze" />
-                            </header>
-                            <div class="product-inner">
-                                <h5 class="product-title">New Glass Collection</h5>
-                                <p class="product-desciption">Tortor parturient id fermentum dictum enim maecenas curabitur</p>
-                                <div class="product-meta"><span class="product-time"><i class="fa fa-clock-o"></i> 8 days 14 h remaining</span>
-                                    <ul class="product-price-list">
-                                        <li><span class="product-price">$111</span>
-                                        </li>
-                                        <li><span class="product-old-price">$258</span>
-                                        </li>
-                                        <li><span class="product-save">Save 43%</span>
-                                        </li>
-                                    </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Felis bibendum</a></h5>
+                                    <p class="thumb-list-item-desciption">Donec eget habitasse condimentum placerat</p>
                                 </div>
-                                <p class="product-location"><i class="fa fa-map-marker"></i> Boston</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="col-md-4" href="#">
-                        <div class="product-thumb">
-                            <header class="product-header">
-                                <img src="/assets/themes/remtsoy/img/the_best_mode_of_transport_here_in_maldives_800x600.jpg" alt="Image Alternative text" title="the best mode of transport here in maldives" />
-                            </header>
-                            <div class="product-inner">
-                                <h5 class="product-title">Finshing in Maldives</h5>
-                                <p class="product-desciption">Tortor parturient id fermentum dictum enim maecenas curabitur</p>
-                                <div class="product-meta"><span class="product-time"><i class="fa fa-clock-o"></i> 8 days 32 h remaining</span>
-                                    <ul class="product-price-list">
-                                        <li><span class="product-price">$93</span>
-                                        </li>
-                                        <li><span class="product-old-price">$157</span>
-                                        </li>
-                                        <li><span class="product-save">Save 59%</span>
-                                        </li>
-                                    </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/assets/themes/remtsoy/img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Quis neque</a></h5>
+                                    <p class="thumb-list-item-desciption">Habitant parturient taciti litora turpis</p>
                                 </div>
-                                <p class="product-location"><i class="fa fa-map-marker"></i> Boston</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h5>Twitter Feed</h5>
+                        <!-- START TWITTER -->
+                        <div class="twitter" id="twitter"></div>
+                        <!-- END TWITTER -->
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h5>Popular Tags</h5>
+                        <ul class="tags-list">
+                            <li><a href="#">Lifestyle</a>
+                            </li>
+                            <li><a href="#">Design</a>
+                            </li>
+                            <li><a href="#">Business</a>
+                            </li>
+                            <li><a href="#">Travel</a>
+                            </li>
+                            <li><a href="#">Discounts</a>
+                            </li>
+                            <li><a href="#">Shopping</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h5>Recent Comments</h5>
+                        <ul class="thumb-list thumb-list-right">
+                            <li>
+                                <a href="#">
+                                    <img src="/assets/themes/remtsoy/img/gamer_chick_50x50.jpg" alt="Image Alternative text" title="Gamer Chick" class="rounded">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">8 minutes ago</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Frank Mills</a></h5>
+                                    <p class="thumb-list-item-desciption">Tellus fermentum odio vivamus aenean...</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/assets/themes/remtsoy/img/ana_29_50x50.jpg" alt="Image Alternative text" title="Ana 29" class="rounded">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">6 minutes ago</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Keith Churchill</a></h5>
+                                    <p class="thumb-list-item-desciption">Praesent purus habitasse varius fames...</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/assets/themes/remtsoy/img/afro_50x50.jpg" alt="Image Alternative text" title="Afro" class="rounded">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">9 minutes ago</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Cyndy Naquin</a></h5>
+                                    <p class="thumb-list-item-desciption">Scelerisque conubia netus blandit...</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </aside>
+
+
             </div>
         </div>
 
-        <div class="gap gap-small"></div>
-
-        @yield('content')
-
-        <div class="gap"></div>
+        {{--Sidebar and week feature--}}
 
     </div>
 
