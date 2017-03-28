@@ -1,8 +1,9 @@
+
 <!DOCTYPE HTML>
 <html>
 
 <head>
-    <title>Couponia - Index coupon layout 1</title>
+    <title>Couponia - Category page shop</title>
     <!-- meta info -->
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="keywords" content="Koupon HTML5 Template" />
@@ -49,7 +50,7 @@
 
 </head>
 
-<body class="boxed bg-cover" style="background-image: url(img/backgrounds/wood.jpg)">
+<body>
 
 
 <div class="global-wrap">
@@ -126,19 +127,22 @@
     <!-- //////////////////////////////////
 //////////////MAIN HEADER/////////////
 ////////////////////////////////////-->
-    <header class="main main-white">
+    <div class="top-main-area text-center">
+        <div class="container">
+            <a href="/assets/themes/remtsoy/index.html" class="logo mt5">
+                <img src="/assets/themes/remtsoy/img/logo-small-dark.png" alt="Image Alternative text" title="Image Title" />
+            </a>
+        </div>
+    </div>
+    <header class="main">
         <div class="container">
             <div class="row">
-                <div class="col-md-2">
-                    <a href="/assets/themes/remtsoy/index.html" class="logo">
-                        <img src="/assets/themes/remtsoy/img/logo-small-dark.png" alt="Image Alternative text" title="Image Title" />
-                    </a>
-                </div>
                 <div class="col-md-6">
+                    <!-- MAIN NAVIGATION -->
                     <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                     <nav>
                         <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
-                            <li class="active"><a href="/assets/themes/remtsoy/index.html">Home</a>
+                            <li><a href="/assets/themes/remtsoy/index.html">Home</a>
                                 <ul>
                                     <li><a href="/assets/themes/remtsoy/index-shop-layout-1.html">Shop Layout</a>
                                         <ul>
@@ -154,9 +158,9 @@
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="active"><a href="/assets/themes/remtsoy/index-coupon-layout-1.html">Coupon Layout</a>
+                                    <li><a href="/assets/themes/remtsoy/index-coupon-layout-1.html">Coupon Layout</a>
                                         <ul>
-                                            <li class="active"><a href="/assets/themes/remtsoy/index-coupon-layout-1.html">Layout 1</a>
+                                            <li><a href="/assets/themes/remtsoy/index-coupon-layout-1.html">Layout 1</a>
                                             </li>
                                             <li><a href="/assets/themes/remtsoy/index-coupon-layout-2.html">Layout 2</a>
                                             </li>
@@ -188,9 +192,9 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="/assets/themes/remtsoy/category-page-shop.html">Category</a>
+                            <li class="active"><a href="/assets/themes/remtsoy/category-page-shop.html">Category</a>
                                 <ul>
-                                    <li><a href="/assets/themes/remtsoy/category-page-shop.html">Shop</a>
+                                    <li class="active"><a href="/assets/themes/remtsoy/category-page-shop.html">Shop</a>
                                     </li>
                                     <li><a href="/assets/themes/remtsoy/category-page-coupon.html">Coupon</a>
                                     </li>
@@ -356,10 +360,12 @@
                             </li>
                         </ul>
                     </nav>
+                    <!-- END MAIN NAVIGATION -->
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
+                    <!-- LOGIN REGISTER LINKS -->
                     <ul class="login-register">
-                        <li class="shopping-cart shopping-cart-white"><a href="/assets/themes/remtsoy/page-cart.html"><i class="fa fa-shopping-cart"></i>My Cart</a>
+                        <li class="shopping-cart"><a href="/assets/themes/remtsoy/page-cart.html"><i class="fa fa-shopping-cart"></i>My Cart</a>
                             <div class="shopping-cart-box">
                                 <ul class="shopping-cart-items">
                                     <li>
@@ -392,6 +398,7 @@
             </div>
         </div>
     </header>
+
     <!-- LOGIN REGISTER LINKS CONTENT -->
     <div id="login-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
         <i class="fa fa-sign-in dialog-icon"></i>
@@ -480,42 +487,6 @@
     <!-- END LOGIN REGISTER LINKS CONTENT -->
 
 
-    <!-- TOP AREA -->
-    <div class="top-area hidden">
-        <div class="owl-carousel owl-slider" id="owl-carousel-slider" data-inner-pagination="true" data-white-pagination="true" data-nav="false">
-            <div>
-                <div class="bg-holder">
-                    <img src="/assets/themes/remtsoy/img/bridge_1200x480.jpg" alt="Image Alternative text" title="Bridge" />
-                    <div class="bg-mask"></div>
-                    <div class="bg-front vert-center text-white text-center">
-                        <h2 class="text-hero">London Weekends</h2>
-                        <div class="countdown countdown-big" data-countdown="Jul 7, 2014 5:30:00"></div><a class="btn btn-lg btn-ghost btn-white" href="#">Save 50% Now</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="bg-holder">
-                    <img src="/assets/themes/remtsoy/img/4_strokes_of_fun_1200x480.jpg" alt="Image Alternative text" title="4 Strokes of Fun" />
-                    <div class="bg-mask"></div>
-                    <div class="bg-front vert-center text-white text-center">
-                        <h2 class="text-hero">Adrenaline Madness</h2>
-                        <div class="countdown countdown-big" data-countdown="Jul 15, 2014 5:30:00"></div><a class="btn btn-lg btn-ghost btn-white" href="#">Save 90% Now</a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="bg-holder">
-                    <img src="/assets/themes/remtsoy/img/lhotel_porto_bay_sao_paulo_luxury_suite_1200x480.jpg" alt="Image Alternative text" title="LHOTEL PORTO BAY SAO PAULO luxury suite" />
-                    <div class="bg-mask"></div>
-                    <div class="bg-front vert-center text-white text-center">
-                        <h2 class="text-hero">Premium Apartments</h2>
-                        <div class="countdown countdown-big" data-countdown="Jul 24, 2014 5:30:00"></div><a class="btn btn-lg btn-ghost btn-white" href="#">Save 50% Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END TOP AREA -->
 
     <!-- SEARCH AREA -->
     <form class="search-area form-group">
@@ -558,150 +529,132 @@
 
 
     <div class="container">
-
         <div class="row">
-            <div class="col-md-9">
-
-                @yield('content')
-
-                <div class="gap"></div>
-            </div>
             <div class="col-md-3">
-                <aside class="sidebar-right hidden-phone">
+                <aside class="sidebar-left">
+                    <ul class="nav nav-tabs nav-stacked nav-coupon-category">
+                        <li class="active"><a href="#"><i class="fa fa-ticket"></i>All</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-cutlery"></i>Food & Drink</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-calendar"></i>Events</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-female"></i>Beauty</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-bolt"></i>Fitness</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-headphones"></i>Electronics</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-image"></i>Furniture</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-umbrella"></i>Fashion</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-shopping-cart"></i>Shopping</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-home"></i>Home & Garden</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-plane"></i>Travel</a>
+                        </li>
+                    </ul>
                     <div class="sidebar-box">
-                        <h5>Blog Categories</h5>
-                        <ul class="icon-list blog-category-list">
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Web</a>
+                        <h5>Filter By Price</h5>
+                        <input type="text" id="price-slider">
+                    </div>
+                    <div class="sidebar-box">
+                        <h5>Product Feature</h5>
+                        <ul class="checkbox-list">
+                            <li class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="i-check">On Sale</label>
                             </li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Digital</a>
+                            <li class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="i-check">New</label>
                             </li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Typography</a>
+                            <li class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="i-check">Ending Soon</label>
                             </li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Design</a>
+                            <li class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="i-check">High Rating</label>
                             </li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Lifestyle</a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-angle-right"></i>Travel</a>
+                            <li class="checkbox">
+                                <label>
+                                    <input type="checkbox" class="i-check">Free Shipping</label>
                             </li>
                         </ul>
                     </div>
-
-
                     <div class="sidebar-box">
-
-                        <h5>Newsletter singup</h5>
-                        <form class="sign-up">
-                            <input type="text" class="form-control" placeholder="E-mail">
-                            <small class="help-block">*We never send spam</small>
-                            <input type="submit" class="btn btn-primary" value="Subscribe">
-                        </form>
-                    </div>
-
-
-                    <div class="sidebar-box">
-                        <h5>Recent Posts</h5>
+                        <h5>Recent Viewed</h5>
                         <ul class="thumb-list">
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag">
+                                    <img src="/assets/themes/remtsoy/img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
                                 </a>
                                 <div class="thumb-list-item-caption">
-                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Sodales felis</a></h5>
-                                    <p class="thumb-list-item-desciption">Aptent magna platea magna varius</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Best Camera Lenthes</a></h5>
+                                    <p class="thumb-list-item-price">$343</p>
                                 </div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze">
+                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
                                 </a>
                                 <div class="thumb-list-item-caption">
-                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Felis bibendum</a></h5>
-                                    <p class="thumb-list-item-desciption">Donec eget habitasse condimentum placerat</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">New Glass Collection</a></h5>
+                                    <p class="thumb-list-item-price">$402</p>
                                 </div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart">
+                                    <img src="/assets/themes/remtsoy/img/waipio_valley_70x70.jpg" alt="Image Alternative text" title="waipio valley" />
                                 </a>
                                 <div class="thumb-list-item-caption">
-                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Quis neque</a></h5>
-                                    <p class="thumb-list-item-desciption">Habitant parturient taciti litora turpis</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Awesome Vacation</a></h5>
+                                    <p class="thumb-list-item-price">$387</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
-
                     <div class="sidebar-box">
-                        <h5>Twitter Feed</h5>
-                        <!-- START TWITTER -->
-                        <div class="twitter" id="twitter"></div>
-                        <!-- END TWITTER -->
-                    </div>
-
-                    <div class="sidebar-box">
-                        <h5>Popular Tags</h5>
-                        <ul class="tags-list">
-                            <li><a href="#">Lifestyle</a>
-                            </li>
-                            <li><a href="#">Design</a>
-                            </li>
-                            <li><a href="#">Business</a>
-                            </li>
-                            <li><a href="#">Travel</a>
-                            </li>
-                            <li><a href="#">Discounts</a>
-                            </li>
-                            <li><a href="#">Shopping</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="sidebar-box">
-                        <h5>Recent Comments</h5>
-                        <ul class="thumb-list thumb-list-right">
+                        <h5>Popular</h5>
+                        <ul class="thumb-list">
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/gamer_chick_50x50.jpg" alt="Image Alternative text" title="Gamer Chick" class="rounded">
+                                    <img src="/assets/themes/remtsoy/img/food_is_pride_70x70.jpg" alt="Image Alternative text" title="Food is Pride" />
                                 </a>
                                 <div class="thumb-list-item-caption">
-                                    <p class="thumb-list-item-meta">8 minutes ago</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Frank Mills</a></h5>
-                                    <p class="thumb-list-item-desciption">Tellus fermentum odio vivamus aenean...</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Best Pasta</a></h5>
+                                    <p class="thumb-list-item-price">$472</p>
                                 </div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/ana_29_50x50.jpg" alt="Image Alternative text" title="Ana 29" class="rounded">
+                                    <img src="/assets/themes/remtsoy/img/old_no7_70x70.jpg" alt="Image Alternative text" title="Old No7" />
                                 </a>
                                 <div class="thumb-list-item-caption">
-                                    <p class="thumb-list-item-meta">6 minutes ago</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Keith Churchill</a></h5>
-                                    <p class="thumb-list-item-desciption">Praesent purus habitasse varius fames...</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Fancy Coffe Cup</a></h5>
+                                    <p class="thumb-list-item-price">$243</p>
                                 </div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/afro_50x50.jpg" alt="Image Alternative text" title="Afro" class="rounded">
+                                    <img src="/assets/themes/remtsoy/img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
                                 </a>
                                 <div class="thumb-list-item-caption">
-                                    <p class="thumb-list-item-meta">9 minutes ago</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Cyndy Naquin</a></h5>
-                                    <p class="thumb-list-item-desciption">Scelerisque conubia netus blandit...</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Beach Holidays</a></h5>
+                                    <p class="thumb-list-item-price">$408</p>
                                 </div>
                             </li>
                         </ul>
                     </div>
-
                 </aside>
-
-
+            </div>
+            <div class="col-md-9">
+                @yield('content')
             </div>
         </div>
-
-        {{--Sidebar and week feature--}}
 
     </div>
 
@@ -741,7 +694,7 @@
                                 <a class="fa fa-tumblr box-icon" href="#" data-toggle="tooltip" title="Tumblr"></a>
                             </li>
                         </ul>
-                        <p>Pretium hendrerit suspendisse quisque eros tempus sodales sagittis volutpat nullam fames inceptos himenaeos platea lorem laoreet iaculis penatibus aptent elit</p>
+                        <p>Curae primis aliquet sapien pellentesque velit tristique taciti tincidunt adipiscing pharetra massa at quisque fermentum faucibus ultrices mi fames himenaeos</p>
                     </div>
                     <div class="col-md-3">
                         <h4>Sign Up to the Newsletter</h4>
@@ -751,7 +704,7 @@
                                     <label>E-mail</label>
                                     <input type="text" class="form-control" />
                                 </div>
-                                <p class="mb10">Integer aliquam pretium pretium varius quam integer</p>
+                                <p class="mb10">Facilisis penatibus integer lacinia semper nibh ullamcorper</p>
                                 <input type="submit" class="btn btn-primary" value="Sign Up" />
                             </form>
                         </div>
@@ -771,8 +724,8 @@
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Augue maecenas</a></h5>
-                                    <p class="thumb-list-item-desciption">Ridiculus aliquam suspendisse vulputate etiam</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Nunc ad</a></h5>
+                                    <p class="thumb-list-item-desciption">Ornare commodo luctus curabitur mi</p>
                                 </div>
                             </li>
                             <li>
@@ -781,8 +734,8 @@
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Convallis aptent</a></h5>
-                                    <p class="thumb-list-item-desciption">Justo aptent senectus quis volutpat</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Aliquet aliquam</a></h5>
+                                    <p class="thumb-list-item-desciption">Nec sollicitudin fames cubilia elit</p>
                                 </div>
                             </li>
                             <li>
@@ -791,8 +744,8 @@
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Vel at</a></h5>
-                                    <p class="thumb-list-item-desciption">Mus ipsum fames habitant montes</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Donec nostra</a></h5>
+                                    <p class="thumb-list-item-desciption">Cum nullam porta dignissim tortor</p>
                                 </div>
                             </li>
                         </ul>
