@@ -43,7 +43,8 @@ class DashboardController extends Controller
         $directory = resource_path().'/views/public';
         $templates_name_options = \File::directories($directory);
         foreach ($templates_name_options as &$file){
-            $file = str_replace($directory."\\",'',$file);
+            preg_match('/(\\\|\/)([a-z-]+)$/',$file,$match);
+            $file = $match[2];
         }
         unset($file);
         $tempalte_name = Option::firstOrNew(['name' => 'template_name'])->value;
@@ -52,7 +53,6 @@ class DashboardController extends Controller
 
     public function save_setting(Request $request)
     {
-
         $template_name = $request->template_name;
         $obj_option = Option::firstOrNew(['name' => 'template_name']);
         $obj_option->value = $template_name;
