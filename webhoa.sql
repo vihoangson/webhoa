@@ -11,22 +11,20 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for webhoa
-DROP DATABASE IF EXISTS `webhoa`;
 CREATE DATABASE IF NOT EXISTS `webhoa` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `webhoa`;
 
 
 -- Dumping structure for table webhoa.categories
-DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.categories: ~15 rows (approximately)
+-- Dumping data for table webhoa.categories: ~19 rows (approximately)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
 INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 	(1, 'Hoa tươi', '2017-03-15 14:25:38', '2017-03-19 07:51:18'),
@@ -43,12 +41,15 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 	(12, 'Loại khác', '2017-03-21 05:56:49', '2017-03-21 05:56:49'),
 	(13, 'Từ 1 đến 4 cành', '2017-03-21 05:59:52', '2017-03-21 05:59:52'),
 	(14, 'Từ 5 đến 10 cành', '2017-03-21 05:59:59', '2017-03-21 05:59:59'),
-	(15, 'Trên 10 cành', '2017-03-21 06:00:05', '2017-03-21 06:00:05');
+	(15, 'Trên 10 cành', '2017-03-21 06:00:05', '2017-03-21 06:00:05'),
+	(16, '12312', '2017-03-30 11:18:04', '2017-03-30 11:18:04'),
+	(17, '345345', '2017-03-30 11:19:32', '2017-03-30 11:19:32'),
+	(18, '124124', '2017-03-30 11:19:59', '2017-03-30 11:19:59'),
+	(19, '452345', '2017-03-30 11:21:04', '2017-03-30 11:21:04');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.category_product
-DROP TABLE IF EXISTS `category_product`;
 CREATE TABLE IF NOT EXISTS `category_product` (
   `category_id` int(10) unsigned NOT NULL DEFAULT '0',
   `product_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -61,13 +62,17 @@ CREATE TABLE IF NOT EXISTS `category_product` (
   CONSTRAINT `category_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.category_product: ~0 rows (approximately)
+-- Dumping data for table webhoa.category_product: ~4 rows (approximately)
 /*!40000 ALTER TABLE `category_product` DISABLE KEYS */;
+INSERT INTO `category_product` (`category_id`, `product_id`, `created_at`, `updated_at`) VALUES
+	(1, 169, '2017-03-21 06:25:04', '2017-03-21 06:25:04'),
+	(2, 169, '2017-03-21 06:25:04', '2017-03-21 06:25:04'),
+	(7, 169, '2017-03-21 06:25:04', '2017-03-21 06:25:04'),
+	(13, 169, '2017-03-21 06:25:04', '2017-03-21 06:25:04');
 /*!40000 ALTER TABLE `category_product` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.contacts
-DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -89,7 +94,6 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `text`, `seen`, `created_at`, `up
 
 
 -- Dumping structure for table webhoa.currencies
-DROP TABLE IF EXISTS `currencies`;
 CREATE TABLE IF NOT EXISTS `currencies` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -104,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `currencies` (
   KEY `currencies_code_index` (`code`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.currencies: ~1 rows (approximately)
+-- Dumping data for table webhoa.currencies: ~0 rows (approximately)
 /*!40000 ALTER TABLE `currencies` DISABLE KEYS */;
 INSERT INTO `currencies` (`id`, `name`, `code`, `symbol`, `format`, `exchange_rate`, `active`, `created_at`, `updated_at`) VALUES
 	(1, 'US Dollar', 'USD', '$', '$1,0.00', '0', 0, '2017-03-19 06:01:21', '2017-03-19 06:01:21');
@@ -112,7 +116,6 @@ INSERT INTO `currencies` (`id`, `name`, `code`, `symbol`, `format`, `exchange_ra
 
 
 -- Dumping structure for table webhoa.customers
-DROP TABLE IF EXISTS `customers`;
 CREATE TABLE IF NOT EXISTS `customers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -123,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table webhoa.customers: ~24 rows (approximately)
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
@@ -151,12 +154,34 @@ INSERT INTO `customers` (`id`, `name`, `address`, `tel`, `city`, `email`, `creat
 	(21, '11', '66', '555', '', '', '2017-03-19 07:20:46', '2017-03-19 07:20:46'),
 	(22, '11', '66', '555', '77', '444', '2017-03-19 07:21:20', '2017-03-19 07:21:20'),
 	(23, '11', '66', '555', '77', '444', '2017-03-19 07:21:39', '2017-03-19 07:21:39'),
-	(24, '1', '4', '3', '5', '2@gmail.com', '2017-03-19 07:26:22', '2017-03-19 07:26:22');
+	(24, '1', '4', '3', '5', '2@gmail.com', '2017-03-19 07:26:22', '2017-03-19 07:26:22'),
+	(25, '123', '123', '1123', '3123', '123@fmai.com', '2017-03-27 03:12:12', '2017-03-27 03:12:12');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 
 
+-- Dumping structure for table webhoa.groups
+CREATE TABLE IF NOT EXISTS `groups` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `parent_id` int(10) unsigned NOT NULL,
+  `sequence` int(10) unsigned NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table webhoa.groups: ~4 rows (approximately)
+/*!40000 ALTER TABLE `groups` DISABLE KEYS */;
+INSERT INTO `groups` (`id`, `name`, `parent_id`, `sequence`, `created_at`, `updated_at`) VALUES
+	(1, 'asdafas222222222224124', 0, 0, '2017-03-30 11:22:07', '2017-03-30 13:04:16'),
+	(2, '424523433134', 0, 3, '2017-03-30 11:22:11', '2017-03-30 13:03:33'),
+	(3, 'ưerwer', 2, 4, '2017-03-30 12:02:06', '2017-03-30 13:03:44'),
+	(4, 'tưer21512541', 1, 2, '2017-03-30 12:02:09', '2017-03-30 13:04:20'),
+	(5, 'wrtwrt4124123', 1, 1, '2017-03-30 12:57:44', '2017-03-30 13:04:24');
+/*!40000 ALTER TABLE `groups` ENABLE KEYS */;
+
+
 -- Dumping structure for table webhoa.images
-DROP TABLE IF EXISTS `images`;
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -164,9 +189,9 @@ CREATE TABLE IF NOT EXISTS `images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=194 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.images: ~25 rows (approximately)
+-- Dumping data for table webhoa.images: ~28 rows (approximately)
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 	(162, '1489760252_64429.jpg', 'uploads/1489760252_64429.jpg', '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
@@ -193,12 +218,15 @@ INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 	(190, '1489828623_77983.jpg', 'uploads/1489828623_77983.jpg', '2017-03-18 09:17:03', '2017-03-18 09:17:03'),
 	(191, '1489828623_96596.jpg', 'uploads/1489828623_96596.jpg', '2017-03-18 09:17:03', '2017-03-18 09:17:03'),
 	(192, '1490060113_15229.jpg', 'uploads/1490060113_15229.jpg', '2017-03-21 01:35:13', '2017-03-21 01:35:13'),
-	(193, '1490060231_96421.jpg', 'uploads/1490060231_96421.jpg', '2017-03-21 01:37:11', '2017-03-21 01:37:11');
+	(193, '1490060231_96421.jpg', 'uploads/1490060231_96421.jpg', '2017-03-21 01:37:11', '2017-03-21 01:37:11'),
+	(195, '1490665925_78112.png', 'uploads/1490665925_78112.png', '2017-03-28 01:52:05', '2017-03-28 01:52:05'),
+	(196, '1490665934_78323.png', 'uploads/1490665934_78323.png', '2017-03-28 01:52:14', '2017-03-28 01:52:14'),
+	(197, '1490665941_94344.png', 'uploads/1490665941_94344.png', '2017-03-28 01:52:21', '2017-03-28 01:52:21'),
+	(198, '1490665952_84207.png', 'uploads/1490665952_84207.png', '2017-03-28 01:52:32', '2017-03-28 01:52:32');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.image_product
-DROP TABLE IF EXISTS `image_product`;
 CREATE TABLE IF NOT EXISTS `image_product` (
   `image_id` int(10) unsigned NOT NULL DEFAULT '0',
   `product_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -211,13 +239,17 @@ CREATE TABLE IF NOT EXISTS `image_product` (
   CONSTRAINT `image_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.image_product: ~0 rows (approximately)
+-- Dumping data for table webhoa.image_product: ~3 rows (approximately)
 /*!40000 ALTER TABLE `image_product` DISABLE KEYS */;
+INSERT INTO `image_product` (`image_id`, `product_id`, `created_at`, `updated_at`) VALUES
+	(195, 170, '2017-03-28 01:52:05', '2017-03-28 01:52:05'),
+	(196, 171, '2017-03-28 01:52:14', '2017-03-28 01:52:14'),
+	(197, 172, '2017-03-28 01:52:21', '2017-03-28 01:52:21'),
+	(198, 169, '2017-03-28 01:52:32', '2017-03-28 01:52:32');
 /*!40000 ALTER TABLE `image_product` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.migrations
-DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
@@ -233,8 +265,24 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 /*!40000 ALTER TABLE `migrations` ENABLE KEYS */;
 
 
+-- Dumping structure for table webhoa.options
+CREATE TABLE IF NOT EXISTS `options` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` tinytext COLLATE utf8_unicode_ci NOT NULL,
+  `value` text COLLATE utf8_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- Dumping data for table webhoa.options: ~0 rows (approximately)
+/*!40000 ALTER TABLE `options` DISABLE KEYS */;
+INSERT INTO `options` (`id`, `name`, `value`, `created_at`, `updated_at`) VALUES
+	(1, 'template_name', 'hotdeal', '2017-03-28 01:49:13', '2017-03-30 13:28:44');
+/*!40000 ALTER TABLE `options` ENABLE KEYS */;
+
+
 -- Dumping structure for table webhoa.orders
-DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_detail_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -243,7 +291,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`,`order_detail_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table webhoa.orders: ~12 rows (approximately)
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
@@ -259,12 +307,12 @@ INSERT INTO `orders` (`id`, `order_detail_id`, `customer_id`, `data_cache`, `cre
 	(10, 0, 19, '{"64c0f00d428dbd52ef0bd8caa284adf4":{"rowId":"64c0f00d428dbd52ef0bd8caa284adf4","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":{"img_url":"uploads\\/1489760252_10392.jpg"},"tax":0,"subtotal":100000}}', '2017-03-19 07:17:41', '2017-03-19 07:17:41'),
 	(11, 0, 20, '{"80e09d8fbf17105de12b1777d6060802":{"rowId":"80e09d8fbf17105de12b1777d6060802","id":156,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489808407_26303.jpg"},"tax":0,"subtotal":3452345}}', '2017-03-19 07:19:00', '2017-03-19 07:19:00'),
 	(12, 0, 23, '{"80e09d8fbf17105de12b1777d6060802":{"rowId":"80e09d8fbf17105de12b1777d6060802","id":156,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489808407_26303.jpg"},"tax":0,"subtotal":3452345}}', '2017-03-19 07:21:39', '2017-03-19 07:21:39'),
-	(13, 0, 24, '{"80e09d8fbf17105de12b1777d6060802":{"rowId":"80e09d8fbf17105de12b1777d6060802","id":156,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489808407_26303.jpg"},"tax":0,"subtotal":3452345},"90985c92d3f69f7995d1591eaef7fcce":{"rowId":"90985c92d3f69f7995d1591eaef7fcce","id":160,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489828623_77983.jpg"},"tax":0,"subtotal":3452345}}', '2017-03-19 07:26:22', '2017-03-19 07:26:22');
+	(13, 0, 24, '{"80e09d8fbf17105de12b1777d6060802":{"rowId":"80e09d8fbf17105de12b1777d6060802","id":156,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489808407_26303.jpg"},"tax":0,"subtotal":3452345},"90985c92d3f69f7995d1591eaef7fcce":{"rowId":"90985c92d3f69f7995d1591eaef7fcce","id":160,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489828623_77983.jpg"},"tax":0,"subtotal":3452345}}', '2017-03-19 07:26:22', '2017-03-19 07:26:22'),
+	(14, 0, 25, '{"90ec73253e32aaffbd70ae4b39d5fc5a":{"rowId":"90ec73253e32aaffbd70ae4b39d5fc5a","id":169,"name":"4tw2","qty":6,"price":2345,"options":{"img_url":"uploads\\/1490077504_66642.jpg"},"tax":0,"subtotal":14070}}', '2017-03-27 03:12:12', '2017-03-27 03:12:12');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.order_products
-DROP TABLE IF EXISTS `order_products`;
 CREATE TABLE IF NOT EXISTS `order_products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -282,7 +330,6 @@ CREATE TABLE IF NOT EXISTS `order_products` (
 
 
 -- Dumping structure for table webhoa.password_resets
-DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -297,7 +344,6 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 
 
 -- Dumping structure for table webhoa.posts
-DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
@@ -319,7 +365,6 @@ INSERT INTO `posts` (`id`, `title`, `summary`, `main_img`, `content`, `active`, 
 
 
 -- Dumping structure for table webhoa.products
-DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
@@ -328,27 +373,25 @@ CREATE TABLE IF NOT EXISTS `products` (
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
   `price_sale` int(11) NOT NULL,
-  `date_begin_sale` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `date_begin_sale` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `date_end_sale` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `active` int(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.products: ~5 rows (approximately)
+-- Dumping data for table webhoa.products: ~3 rows (approximately)
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
 INSERT INTO `products` (`id`, `title`, `summary`, `main_img`, `content`, `price`, `price_sale`, `date_begin_sale`, `date_end_sale`, `active`, `created_at`, `updated_at`) VALUES
-	(169, '4tw2', '2345', 180, '<p>2345</p>', 3452345, 2345, '2017-03-18 08:06:07', '2017-03-23 16:51:49', 1, '2017-03-16 16:51:49', '2017-03-18 01:06:07'),
-	(170, 'ấấd', '', 0, '', 0, 0, '2017-03-01 01:21:47', '2017-03-28 01:21:47', 1, '2017-03-21 01:21:47', '2017-03-21 01:21:47'),
-	(171, 'ấấd', '', 0, '', 0, 0, '2017-03-01 01:22:36', '2017-03-28 01:22:36', 1, '2017-03-21 01:22:36', '2017-03-21 01:22:36'),
-	(172, 'ádf', 'ádf', 0, '<p>ádf</p>', 0, 0, '2017-03-21 08:33:24', '0000-00-00 00:00:00', 0, '2017-03-21 01:33:24', '2017-03-21 01:33:24'),
-	(173, 'ádf', 'ádf', 0, '<p>ádf</p>', 0, 0, '2017-03-21 08:34:03', '0000-00-00 00:00:00', 0, '2017-03-21 01:34:03', '2017-03-21 01:34:03');
+	(169, '4tw2', '2345', 198, '<p>2345</p>', 3452345, 2345, '2017-03-28 08:52:43', '2017-03-23 01:52:32', 1, '2017-03-16 16:51:49', '2017-03-28 01:52:43'),
+	(170, '4tw2', '2345', 195, '<p>2345</p>', 3452345, 2345, '2017-03-28 08:52:46', '2017-03-23 01:52:05', 1, '2017-03-16 16:51:49', '2017-03-28 01:52:46'),
+	(171, '4tw2', '2345', 196, '<p>2345</p>', 3452345, 2345, '2017-03-28 08:52:49', '2017-03-23 01:52:14', 1, '2017-03-16 16:51:49', '2017-03-28 01:52:49'),
+	(172, '4tw2', '2345', 197, '<p>2345</p>', 3452345, 2345, '2017-03-28 08:52:52', '2017-03-23 01:52:21', 1, '2017-03-16 16:51:49', '2017-03-28 01:52:52');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.roles
-DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -368,7 +411,6 @@ INSERT INTO `roles` (`id`, `title`, `slug`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table webhoa.shoppingcart
-DROP TABLE IF EXISTS `shoppingcart`;
 CREATE TABLE IF NOT EXISTS `shoppingcart` (
   `identifier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `instance` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -384,7 +426,6 @@ CREATE TABLE IF NOT EXISTS `shoppingcart` (
 
 
 -- Dumping structure for table webhoa.users
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
@@ -408,7 +449,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table webhoa.users: ~4 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role_id`, `seen`, `valid`, `confirmed`, `confirmation_code`, `created_at`, `updated_at`, `remember_token`) VALUES
-	(1, 'GreatAdmin', 'admin@la.fr', '$2y$10$YCzrrR/n8KebdLvDGkngr.uVV5N3oJLnCiD998F1551JrObQBojXm', 1, 1, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-11 08:34:20', NULL),
+	(1, 'GreatAdmin', 'admin@la.fr', '$2y$10$YCzrrR/n8KebdLvDGkngr.uVV5N3oJLnCiD998F1551JrObQBojXm', 1, 1, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-27 03:56:26', 'jeB0rMYLQiLWsIJmOqJxol5nF0rhtEjOaXuIxG7sZTMw3fStElAVAwd3QdWR'),
 	(2, 'GreatRedactor', 'redac@la.fr', '$2y$10$L3ytEP7pFndg5gSeUIORbeQkln4BtA2fyg4SA3n.jNK8RJ.2XvEDG', 2, 1, 1, 1, NULL, '2017-03-11 08:34:20', '2017-03-11 09:29:18', 'FBVAKSyBvwyRf4BkEs1gfcpfVxrsCspuxexv0J8w9GZfsOD4WPDPMAqYq0XZ'),
 	(3, 'Walker', 'walker@la.fr', '$2y$10$pLnINZxl1XqmZWEv94DBh.5y2wsxRI7jB3gLl54cd4YMldQFfY6sy', 3, 0, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-11 09:10:30', 'oxWicoBWufNOUBpYqimWqefHHfUZyL0Z73K9Jqxw0i2eNqiQu27PU4XxTnqd'),
 	(4, 'Slacker', 'slacker@la.fr', '$2y$10$.0/UgSMYfaQLqDDpEWTIT.7fZuyZJbKNn5RfOZBrgn.Z3YH863VEK', 3, 0, 0, 1, NULL, '2017-03-11 08:34:21', '2017-03-11 08:34:21', NULL);
