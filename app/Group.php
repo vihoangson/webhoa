@@ -18,4 +18,10 @@ class Group extends Model
         return $this->hasMany('App\Group', 'parent_id');
     }
 
+    public function post()
+    {
+        return $this->belongsToMany('App\Post')
+                    ->withTimestamps();
+    }
+
 }

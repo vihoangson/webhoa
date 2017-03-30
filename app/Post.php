@@ -17,4 +17,10 @@ class Post extends Model
     {
         $this->attributes['slug'] = $slug . "_" . time();
     }
+
+    public function group()
+    {
+        return $this->belongsToMany('App\Group')
+                    ->withTimestamps();
+    }
 }
