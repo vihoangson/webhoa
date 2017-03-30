@@ -13,38 +13,38 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
     <!-- Bootstrap styles -->
-    <link rel="stylesheet" href="/assets/themes/remtsoy/css/boostrap.css">
+    <link rel="stylesheet" href="{{config('templates.'.$template_name.'.template_path')}}css/boostrap.css">
     <!-- Font Awesome styles (icons) -->
-    <link rel="stylesheet" href="/assets/themes/remtsoy/css/font_awesome.css">
+    <link rel="stylesheet" href="{{config('templates.'.$template_name.'.template_path')}}css/font_awesome.css">
     <!-- Main Template styles -->
-    <link rel="stylesheet" href="/assets/themes/remtsoy/css/styles.css">
+    <link rel="stylesheet" href="{{config('templates.'.$template_name.'.template_path')}}css/styles.css">
     <!-- IE 8 Fallback -->
     <!--[if lt IE 9]>
-    <link rel="stylesheet" type="text/css" href="/assets/themes/remtsoy/css/ie.css" />
+    <link rel="stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/ie.css" />
     <![endif]-->
 
     <!-- Your custom styles (blank file) -->
-    <link rel="stylesheet" href="/assets/themes/remtsoy/css/mystyles.css">
+    <link rel="stylesheet" href="{{config('templates.'.$template_name.'.template_path')}}css/mystyles.css">
 
-    <link rel="stylesheet" href="/assets/themes/remtsoy/css/switcher.css">
+    <link rel="stylesheet" href="{{config('templates.'.$template_name.'.template_path')}}css/switcher.css">
     <!-- Demo Examples -->
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/apple.css" title="apple" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/pink.css" title="pink" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/teal.css" title="teal" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/gold.css" title="gold" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/downy.css" title="downy" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/atlantis.css" title="atlantis" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/red.css" title="red" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/violet.css" title="violet" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/pomegranate.css" title="pomegranate" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/violet-red.css" title="violet-red" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/mexican-red.css" title="mexican-red" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/victoria.css" title="victoria" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/orient.css" title="orient" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/jgger.css" title="jgger" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/de-york.css" title="de-york" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/blaze-orange.css" title="blaze-orange" media="all" />
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/hot-pink.css" title="hot-pink" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/apple.css" title="apple" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/pink.css" title="pink" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/teal.css" title="teal" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/gold.css" title="gold" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/downy.css" title="downy" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/atlantis.css" title="atlantis" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/red.css" title="red" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/violet.css" title="violet" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/pomegranate.css" title="pomegranate" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/violet-red.css" title="violet-red" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/mexican-red.css" title="mexican-red" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/victoria.css" title="victoria" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/orient.css" title="orient" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/jgger.css" title="jgger" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/de-york.css" title="de-york" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/blaze-orange.css" title="blaze-orange" media="all" />
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/hot-pink.css" title="hot-pink" media="all" />
     <!-- END Demo Examples -->
 
 </head>
@@ -61,24 +61,24 @@
             <div class="line"></div>
             <p>Color Scheme</p>
             <div class="predefined_styles" id="styleswitch_area">
-                <a href="/assets/themes/remtsoy/?default=true" class="styleswitch" style="background:#2A8FBD"></a>
-                <a href="/assets/themes/remtsoy/" data-source="apple" class="styleswitch" style="background:#56AD48"></a>
-                <a href="/assets/themes/remtsoy/" data-source="pink" class="styleswitch" style="background:#FF0066"></a>
-                <a href="/assets/themes/remtsoy/" data-source="teal" class="styleswitch" style="background:#1693A5"></a>
-                <a href="/assets/themes/remtsoy/" data-source="gold" class="styleswitch" style="background:#FBB829"></a>
-                <a href="/assets/themes/remtsoy/" data-source="downy" class="styleswitch" style="background:#6dcda7"></a>
-                <a href="/assets/themes/remtsoy/" data-source="atlantis" class="styleswitch" style="background:#8cc732"></a>
-                <a href="/assets/themes/remtsoy/" data-source="red" class="styleswitch" style="background:#FF0000"></a>
-                <a href="/assets/themes/remtsoy/" data-source="violet" class="styleswitch" style="background:#D31996"></a>
-                <a href="/assets/themes/remtsoy/" data-source="pomegranate" class="styleswitch" style="background:#F02311"></a>
-                <a href="/assets/themes/remtsoy/" data-source="violet-red" class="styleswitch" style="background:#F23A65"></a>
-                <a href="/assets/themes/remtsoy/" data-source="mexican-red" class="styleswitch" style="background:#9b2139"></a>
-                <a href="/assets/themes/remtsoy/" data-source="victoria" class="styleswitch" style="background:#544AA1"></a>
-                <a href="/assets/themes/remtsoy/" data-source="orient" class="styleswitch" style="background:#025D8C"></a>
-                <a href="/assets/themes/remtsoy/" data-source="jgger" class="styleswitch" style="background:#420943"></a>
-                <a href="/assets/themes/remtsoy/" data-source="de-york" class="styleswitch" style="background:#8CCA91"></a>
-                <a href="/assets/themes/remtsoy/" data-source="blaze-orange" class="styleswitch" style="background:#FF6600"></a>
-                <a href="/assets/themes/remtsoy/" data-source="hot-pink" class="styleswitch" style="background:#FF5EAA"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}?default=true" class="styleswitch" style="background:#2A8FBD"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="apple" class="styleswitch" style="background:#56AD48"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="pink" class="styleswitch" style="background:#FF0066"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="teal" class="styleswitch" style="background:#1693A5"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="gold" class="styleswitch" style="background:#FBB829"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="downy" class="styleswitch" style="background:#6dcda7"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="atlantis" class="styleswitch" style="background:#8cc732"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="red" class="styleswitch" style="background:#FF0000"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="violet" class="styleswitch" style="background:#D31996"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="pomegranate" class="styleswitch" style="background:#F02311"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="violet-red" class="styleswitch" style="background:#F23A65"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="mexican-red" class="styleswitch" style="background:#9b2139"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="victoria" class="styleswitch" style="background:#544AA1"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="orient" class="styleswitch" style="background:#025D8C"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="jgger" class="styleswitch" style="background:#420943"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="de-york" class="styleswitch" style="background:#8CCA91"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="blaze-orange" class="styleswitch" style="background:#FF6600"></a>
+                <a href="{{config('templates.'.$template_name.'.template_path')}}" data-source="hot-pink" class="styleswitch" style="background:#FF5EAA"></a>
             </div>
             <div class="line"></div>
             <p>Layout</p>
@@ -130,227 +130,227 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-2">
-                    <a href="/assets/themes/remtsoy/index.html" class="logo">
-                        <img src="/assets/themes/remtsoy/img/logo-small-dark.png" alt="Image Alternative text" title="Image Title" />
+                    <a href="{{config('templates.'.$template_name.'.template_path')}}index.html" class="logo">
+                        <img src="{{config('templates.'.$template_name.'.template_path')}}img/logo-small-dark.png" alt="Image Alternative text" title="Image Title" />
                     </a>
                 </div>
                 <div class="col-md-6">
                     <div class="flexnav-menu-button" id="flexnav-menu-button">Menu</div>
                     <nav>
                         <ul class="nav nav-pills flexnav" id="flexnav" data-breakpoint="800">
-                            <li class="active"><a href="/assets/themes/remtsoy/index.html">Home</a>
+                            <li class="active"><a href="{{config('templates.'.$template_name.'.template_path')}}index.html">Home</a>
                                 <ul>
-                                    <li><a href="/assets/themes/remtsoy/index-shop-layout-1.html">Shop Layout</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-shop-layout-1.html">Shop Layout</a>
                                         <ul>
-                                            <li><a href="/assets/themes/remtsoy/index-shop-layout-1.html">Layout 1</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-shop-layout-1.html">Layout 1</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-shop-layout-2.html">Layout 2</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-shop-layout-2.html">Layout 2</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-shop-layout-3.html">Layout 3</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-shop-layout-3.html">Layout 3</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-shop-layout-4.html">Layout 4</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-shop-layout-4.html">Layout 4</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-shop-layout-5.html">Layout 5</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-shop-layout-5.html">Layout 5</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="active"><a href="/assets/themes/remtsoy/index-coupon-layout-1.html">Coupon Layout</a>
+                                    <li class="active"><a href="{{config('templates.'.$template_name.'.template_path')}}index-coupon-layout-1.html">Coupon Layout</a>
                                         <ul>
-                                            <li class="active"><a href="/assets/themes/remtsoy/index-coupon-layout-1.html">Layout 1</a>
+                                            <li class="active"><a href="{{config('templates.'.$template_name.'.template_path')}}index-coupon-layout-1.html">Layout 1</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-coupon-layout-2.html">Layout 2</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-coupon-layout-2.html">Layout 2</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-coupon-layout-3.html">Layout 3</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-coupon-layout-3.html">Layout 3</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index.html">Layout 4</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index.html">Layout 4</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-coupon-layout-5.html">Layout 5</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-coupon-layout-5.html">Layout 5</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-coupon-layout-6.html">Layout 6</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-coupon-layout-6.html">Layout 6</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/index-header-layout-1.html">Headers</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-header-layout-1.html">Headers</a>
                                         <ul>
-                                            <li><a href="/assets/themes/remtsoy/index-header-layout-1.html">Layout 1</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-header-layout-1.html">Layout 1</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-header-layout-2.html">Layout 2</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-header-layout-2.html">Layout 2</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-header-layout-3.html">Layout 3</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-header-layout-3.html">Layout 3</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-header-layout-4.html">Layout 4</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-header-layout-4.html">Layout 4</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-header-layout-5.html">Layout 5</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-header-layout-5.html">Layout 5</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/index-header-logged-user.html">Logged User</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-header-logged-user.html">Logged User</a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="/assets/themes/remtsoy/category-page-shop.html">Category</a>
+                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-shop.html">Category</a>
                                 <ul>
-                                    <li><a href="/assets/themes/remtsoy/category-page-shop.html">Shop</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-shop.html">Shop</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/category-page-coupon.html">Coupon</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-coupon.html">Coupon</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-layout-1.html">Thumbnails</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-layout-1.html">Thumbnails</a>
                                         <ul>
-                                            <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-layout-1.html">Shop</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-layout-1.html">Shop</a>
                                                 <ul>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-layout-1.html">Layout 1</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-layout-1.html">Layout 1</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-layout-2.html">Layout 2</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-layout-2.html">Layout 2</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-layout-3.html">Layout 3</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-layout-3.html">Layout 3</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-layout-4.html">layout 4</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-layout-4.html">layout 4</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-layout-5.html">Layout 5</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-layout-5.html">Layout 5</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-layout-6.html">Layout 6</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-layout-6.html">Layout 6</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-shop-horizontal.html">Horizontal</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-shop-horizontal.html">Horizontal</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-1.html">Coupon</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-1.html">Coupon</a>
                                                 <ul>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-1.html">Layout 1</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-1.html">Layout 1</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-2.html">Layout 2</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-2.html">Layout 2</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-3.html">Layout 3</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-3.html">Layout 3</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-4.html">Layout 4</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-4.html">Layout 4</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-5.html">Layout 5</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-5.html">Layout 5</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-6.html">Layout 6</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-6.html">Layout 6</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-7.html">Layout 7</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-7.html">Layout 7</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-layout-8.html">Layout 8</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-layout-8.html">Layout 8</a>
                                                     </li>
-                                                    <li><a href="/assets/themes/remtsoy/category-page-thumbnails-coupon-horizontal.html">Horizontal</a>
+                                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-coupon-horizontal.html">Horizontal</a>
                                                     </li>
                                                 </ul>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/category-page-thumbnails-breadcrumbs.html">Breadcrumbs</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-page-thumbnails-breadcrumbs.html">Breadcrumbs</a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="/assets/themes/remtsoy/product-shop-sidebar.html">Product </a>
+                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-shop-sidebar.html">Product </a>
                                 <ul>
-                                    <li><a href="/assets/themes/remtsoy/product-shop-sidebar.html">Shop</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-shop-sidebar.html">Shop</a>
                                         <ul>
-                                            <li><a href="/assets/themes/remtsoy/product-shop-sidebar.html">Sidebar</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-shop-sidebar.html">Sidebar</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/product-shop-sidebar-left.html">Sidebar Left</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-shop-sidebar-left.html">Sidebar Left</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/product-shop-centered.html">Centered</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-shop-centered.html">Centered</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/product-coupon-default.html">Coupon</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-coupon-default.html">Coupon</a>
                                         <ul>
-                                            <li><a href="/assets/themes/remtsoy/product-coupon-default.html">Default</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-coupon-default.html">Default</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/product-coupon-meta-right.html">Meta right</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-coupon-meta-right.html">Meta right</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/product-coupon-gallery.html">Gallery</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}product-coupon-gallery.html">Gallery</a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="/assets/themes/remtsoy/features-typography.html">Features</a>
+                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-typography.html">Features</a>
                                 <ul>
-                                    <li><a href="/assets/themes/remtsoy/features-typography.html">Typography</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-typography.html">Typography</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/features-elements.html">Elements</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-elements.html">Elements</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/features-grid.html">Grid</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-grid.html">Grid</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/features-icons.html">Icons</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-icons.html">Icons</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/features-image-hover.html">Image Hovers</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-image-hover.html">Image Hovers</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/features-sliders.html">Sliders</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-sliders.html">Sliders</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/features-media.html">Media</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-media.html">Media</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/features-lightbox.html">Lightbox</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}features-lightbox.html">Lightbox</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="/assets/themes/remtsoy/blog-sidebar-right.html">Blog</a>
+                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-sidebar-right.html">Blog</a>
                                 <ul>
-                                    <li><a href="/assets/themes/remtsoy/blog-sidebar-right.html">Sidebar Right</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-sidebar-right.html">Sidebar Right</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/blog-sidebar-left.html">Sidebar Left</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-sidebar-left.html">Sidebar Left</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/blog-full-width.html">Full Width</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-full-width.html">Full Width</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/post-sidebar-right.html">Post</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}post-sidebar-right.html">Post</a>
                                         <ul>
-                                            <li><a href="/assets/themes/remtsoy/post-sidebar-right.html">Sidebar Right</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}post-sidebar-right.html">Sidebar Right</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/post-sidebar-left.html">Sidebar Left</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}post-sidebar-left.html">Sidebar Left</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/post-full-width.html">Full Width</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}post-full-width.html">Full Width</a>
                                             </li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
-                            <li><a href="/assets/themes/remtsoy/page-full-width.html">Pages</a>
+                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-full-width.html">Pages</a>
                                 <ul>
-                                    <li><a href="/assets/themes/remtsoy/page-my-account-settings.html">My Account</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-my-account-settings.html">My Account</a>
                                         <ul>
-                                            <li><a href="/assets/themes/remtsoy/page-my-account-settings.html">Settings</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-my-account-settings.html">Settings</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/page-my-account-addresses.html">Address Book</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-my-account-addresses.html">Address Book</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/page-my-account-orders.html">Orders History</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-my-account-orders.html">Orders History</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/page-my-account-wishlist.html">Wishlist</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-my-account-wishlist.html">Wishlist</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-full-width.html">Full Width</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-full-width.html">Full Width</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-sidebar-right.html">Sidebar Right</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-sidebar-right.html">Sidebar Right</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-sidebar-left.html">Sidebar Left</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-sidebar-left.html">Sidebar Left</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-faq.html">Faq</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-faq.html">Faq</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-about-us.html">About us</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-about-us.html">About us</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-team.html">Team</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-team.html">Team</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-cart.html">Shopping Cart</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-cart.html">Shopping Cart</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-checkout.html">Checkout</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-checkout.html">Checkout</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-404.html">404</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-404.html">404</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-search.html">Search</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-search.html">Search</a>
                                         <ul>
-                                            <li><a href="/assets/themes/remtsoy/page-search-black.html">Black</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-search-black.html">Black</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/page-search-white.html">White</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-search-white.html">White</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/page-search-sticky.html">Sticky</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-search-sticky.html">Sticky</a>
                                             </li>
-                                            <li><a href="/assets/themes/remtsoy/page-search-no-search.html">No Search</a>
+                                            <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-search-no-search.html">No Search</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-contact.html">Contact</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-contact.html">Contact</a>
                                     </li>
                                 </ul>
                             </li>
@@ -359,26 +359,26 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="login-register">
-                        <li class="shopping-cart shopping-cart-white"><a href="/assets/themes/remtsoy/page-cart.html"><i class="fa fa-shopping-cart"></i>My Cart</a>
+                        <li class="shopping-cart shopping-cart-white"><a href="{{config('templates.'.$template_name.'.template_path')}}page-cart.html"><i class="fa fa-shopping-cart"></i>My Cart</a>
                             <div class="shopping-cart-box">
                                 <ul class="shopping-cart-items">
                                     <li>
-                                        <a href="/assets/themes/remtsoy/product-shop-sidebar.html">
-                                            <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
+                                        <a href="{{config('templates.'.$template_name.'.template_path')}}product-shop-sidebar.html">
+                                            <img src="{{config('templates.'.$template_name.'.template_path')}}img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
                                             <h5>New Glass Collection</h5><span class="shopping-cart-item-price">$150</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/assets/themes/remtsoy/product-shop-sidebar.html">
-                                            <img src="/assets/themes/remtsoy/img/gamer_chick_70x70.jpg" alt="Image Alternative text" title="Gamer Chick" />
+                                        <a href="{{config('templates.'.$template_name.'.template_path')}}product-shop-sidebar.html">
+                                            <img src="{{config('templates.'.$template_name.'.template_path')}}img/gamer_chick_70x70.jpg" alt="Image Alternative text" title="Gamer Chick" />
                                             <h5>Playstation Accessories</h5><span class="shopping-cart-item-price">$170</span>
                                         </a>
                                     </li>
                                 </ul>
                                 <ul class="list-inline text-center">
-                                    <li><a href="/assets/themes/remtsoy/page-cart.html"><i class="fa fa-shopping-cart"></i> View Cart</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-cart.html"><i class="fa fa-shopping-cart"></i> View Cart</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-checkout.html"><i class="fa fa-check-square"></i> Checkout</a>
+                                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}page-checkout.html"><i class="fa fa-check-square"></i> Checkout</a>
                                     </li>
                                 </ul>
                             </div>
@@ -485,7 +485,7 @@
         <div class="owl-carousel owl-slider" id="owl-carousel-slider" data-inner-pagination="true" data-white-pagination="true" data-nav="false">
             <div>
                 <div class="bg-holder">
-                    <img src="/assets/themes/remtsoy/img/bridge_1200x480.jpg" alt="Image Alternative text" title="Bridge" />
+                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/bridge_1200x480.jpg" alt="Image Alternative text" title="Bridge" />
                     <div class="bg-mask"></div>
                     <div class="bg-front vert-center text-white text-center">
                         <h2 class="text-hero">London Weekends</h2>
@@ -495,7 +495,7 @@
             </div>
             <div>
                 <div class="bg-holder">
-                    <img src="/assets/themes/remtsoy/img/4_strokes_of_fun_1200x480.jpg" alt="Image Alternative text" title="4 Strokes of Fun" />
+                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/4_strokes_of_fun_1200x480.jpg" alt="Image Alternative text" title="4 Strokes of Fun" />
                     <div class="bg-mask"></div>
                     <div class="bg-front vert-center text-white text-center">
                         <h2 class="text-hero">Adrenaline Madness</h2>
@@ -505,7 +505,7 @@
             </div>
             <div>
                 <div class="bg-holder">
-                    <img src="/assets/themes/remtsoy/img/lhotel_porto_bay_sao_paulo_luxury_suite_1200x480.jpg" alt="Image Alternative text" title="LHOTEL PORTO BAY SAO PAULO luxury suite" />
+                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/lhotel_porto_bay_sao_paulo_luxury_suite_1200x480.jpg" alt="Image Alternative text" title="LHOTEL PORTO BAY SAO PAULO luxury suite" />
                     <div class="bg-mask"></div>
                     <div class="bg-front vert-center text-white text-center">
                         <h2 class="text-hero">Premium Apartments</h2>
@@ -593,7 +593,7 @@
                     <a class="col-md-4" href="#">
                         <div class="product-thumb">
                             <header class="product-header">
-                                <img src="/assets/themes/remtsoy/img/a_turn_800x600.jpg" alt="Image Alternative text" title="a turn" />
+                                <img src="{{config('templates.'.$template_name.'.template_path')}}img/a_turn_800x600.jpg" alt="Image Alternative text" title="a turn" />
                             </header>
                             <div class="product-inner">
                                 <h5 class="product-title">Diving with Sharks</h5>
@@ -615,7 +615,7 @@
                     <a class="col-md-4" href="#">
                         <div class="product-thumb">
                             <header class="product-header">
-                                <img src="/assets/themes/remtsoy/img/amaze_800x600.jpg" alt="Image Alternative text" title="AMaze" />
+                                <img src="{{config('templates.'.$template_name.'.template_path')}}img/amaze_800x600.jpg" alt="Image Alternative text" title="AMaze" />
                             </header>
                             <div class="product-inner">
                                 <h5 class="product-title">New Glass Collection</h5>
@@ -637,7 +637,7 @@
                     <a class="col-md-4" href="#">
                         <div class="product-thumb">
                             <header class="product-header">
-                                <img src="/assets/themes/remtsoy/img/the_best_mode_of_transport_here_in_maldives_800x600.jpg" alt="Image Alternative text" title="the best mode of transport here in maldives" />
+                                <img src="{{config('templates.'.$template_name.'.template_path')}}img/the_best_mode_of_transport_here_in_maldives_800x600.jpg" alt="Image Alternative text" title="the best mode of transport here in maldives" />
                             </header>
                             <div class="product-inner">
                                 <h5 class="product-title">Finshing in Maldives</h5>
@@ -684,8 +684,8 @@
             <div class="container">
                 <div class="row row-wrap">
                     <div class="col-md-3">
-                        <a href="/assets/themes/remtsoy/index.html">
-                            <img src="/assets/themes/remtsoy/img/logo.png" alt="logo" title="logo" class="logo">
+                        <a href="{{config('templates.'.$template_name.'.template_path')}}index.html">
+                            <img src="{{config('templates.'.$template_name.'.template_path')}}img/logo.png" alt="logo" title="logo" class="logo">
                         </a>
                         <ul class="list list-social">
                             <li>
@@ -730,7 +730,7 @@
                         <ul class="thumb-list">
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
@@ -740,7 +740,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
@@ -750,7 +750,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
@@ -773,25 +773,25 @@
                         <div class="pull-right">
                             <ul class="list-inline list-payment">
                                 <li>
-                                    <img src="/assets/themes/remtsoy/img/payment/american-express-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/american-express-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                 </li>
                                 <li>
-                                    <img src="/assets/themes/remtsoy/img/payment/cirrus-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/cirrus-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                 </li>
                                 <li>
-                                    <img src="/assets/themes/remtsoy/img/payment/discover-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/discover-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                 </li>
                                 <li>
-                                    <img src="/assets/themes/remtsoy/img/payment/ebay-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/ebay-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                 </li>
                                 <li>
-                                    <img src="/assets/themes/remtsoy/img/payment/maestro-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/maestro-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                 </li>
                                 <li>
-                                    <img src="/assets/themes/remtsoy/img/payment/mastercard-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/mastercard-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                 </li>
                                 <li>
-                                    <img src="/assets/themes/remtsoy/img/payment/visa-curved-32px.png" alt="Image Alternative text" title="Image Title" />
+                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/visa-curved-32px.png" alt="Image Alternative text" title="Image Title" />
                                 </li>
                             </ul>
                         </div>
@@ -807,26 +807,26 @@
 
 
     <!-- Scripts queries -->
-    <script src="/assets/themes/remtsoy/js/jquery.js"></script>
-    <script src="/assets/themes/remtsoy/js/boostrap.min.js"></script>
-    <script src="/assets/themes/remtsoy/js/countdown.min.js"></script>
-    <script src="/assets/themes/remtsoy/js/flexnav.min.js"></script>
-    <script src="/assets/themes/remtsoy/js/magnific.js"></script>
-    <script src="/assets/themes/remtsoy/js/tweet.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/jquery.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/boostrap.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/countdown.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/flexnav.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/magnific.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/tweet.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script src="/assets/themes/remtsoy/js/fitvids.min.js"></script>
-    <script src="/assets/themes/remtsoy/js/mail.min.js"></script>
-    <script src="/assets/themes/remtsoy/js/ionrangeslider.js"></script>
-    <script src="/assets/themes/remtsoy/js/icheck.js"></script>
-    <script src="/assets/themes/remtsoy/js/fotorama.js"></script>
-    <script src="/assets/themes/remtsoy/js/card-payment.js"></script>
-    <script src="/assets/themes/remtsoy/js/owl-carousel.js"></script>
-    <script src="/assets/themes/remtsoy/js/masonry.js"></script>
-    <script src="/assets/themes/remtsoy/js/nicescroll.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/fitvids.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/mail.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/ionrangeslider.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/icheck.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/fotorama.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/card-payment.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/owl-carousel.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/masonry.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/nicescroll.js"></script>
 
     <!-- Custom scripts -->
-    <script src="/assets/themes/remtsoy/js/custom.js"></script>
-    <script src="/assets/themes/remtsoy/js/switcher.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/custom.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/switcher.js"></script>
 </div>
 </body>
 

@@ -3,21 +3,21 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
-    <link rel="shortcut icon" href="/assets/themes/vegetable/images/favicon.ico"/>
+    <link rel="shortcut icon" href="{{config('templates.'.$template_name.'.template_path')}}images/favicon.ico"/>
     <title>Organici - Organic Store | HTML Template</title>
 
-    <link rel='stylesheet' href='/assets/themes/vegetable/css/bootstrap.min.css' type='text/css' media='all' />
-    <link rel='stylesheet' href='/assets/themes/vegetable/css/owl.carousel.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='/assets/themes/vegetable/css/owl.theme.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='/assets/themes/vegetable/css/font-awesome.min.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='/assets/themes/vegetable///fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic,900italic' type='text/css' media='all'/>
-    <link rel='stylesheet' href='/assets/themes/vegetable///fonts.googleapis.com/css?family=Pacifico:100,300,400,700,900,300italic,400italic,700italic,900italic' type='text/css' media='all'/>
-    <link rel='stylesheet' href='/assets/themes/vegetable///fonts.googleapis.com/css?family=Anonymous+Pro:' type='text/css' media='all'/>
-    <link rel='stylesheet' href='/assets/themes/vegetable/css/style.css' type='text/css' media='all'/>
-    <link rel='stylesheet' href='/assets/themes/vegetable/css/custom.css' type='text/css' media='all'/>
-    <link rel="stylesheet" href='/assets/themes/vegetable/css/magnific-popup.css' type='text/css' media='all' />
-    <link rel="stylesheet" href='/assets/themes/vegetable/css/style-selector.css' type='text/css' media='all' />
-    <link id="style-main-color" rel="stylesheet" href="/assets/themes/vegetable/css/colors/default.css">
+    <link rel='stylesheet' href='{{config('templates.'.$template_name.'.template_path')}}css/bootstrap.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' href='{{config('templates.'.$template_name.'.template_path')}}css/owl.carousel.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='{{config('templates.'.$template_name.'.template_path')}}css/owl.theme.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='{{config('templates.'.$template_name.'.template_path')}}css/font-awesome.min.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic,400italic,700italic,900italic' type='text/css' media='all'/>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Pacifico:100,300,400,700,900,300italic,400italic,700italic,900italic' type='text/css' media='all'/>
+    <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Anonymous+Pro:' type='text/css' media='all'/>
+    <link rel='stylesheet' href='{{config('templates.'.$template_name.'.template_path')}}css/style.css' type='text/css' media='all'/>
+    <link rel='stylesheet' href='{{config('templates.'.$template_name.'.template_path')}}css/custom.css' type='text/css' media='all'/>
+    <link rel="stylesheet" href='{{config('templates.'.$template_name.'.template_path')}}css/magnific-popup.css' type='text/css' media='all' />
+    <link rel="stylesheet" href='{{config('templates.'.$template_name.'.template_path')}}css/style-selector.css' type='text/css' media='all' />
+    <link id="style-main-color" rel="stylesheet" href="{{config('templates.'.$template_name.'.template_path')}}css/colors/default.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,20 +44,20 @@
                     </li>
                     <li>
                         <span><i class="fa fa-envelope"></i></span>
-                        <a href="/assets/themes/vegetable/mailto:contact@organici.com">contact@organici.com</a>
+                        <a href="{{config('templates.'.$template_name.'.template_path')}}mailto:contact@organici.com">contact@organici.com</a>
                     </li>
                 </ul>
                 <ul>
                     <li>
                         <span><i class="fa fa-user"></i></span>
-                        <a href="/assets/themes/vegetable/my-account.html">My Account</a>
+                        <a href="{{config('templates.'.$template_name.'.template_path')}}my-account.html">My Account</a>
                     </li>
                     <li>
                         <span><i class="fa fa-heart-o"></i></span>
-                        <a href="/assets/themes/vegetable/wishlist.html">Wishlist</a>
+                        <a href="{{config('templates.'.$template_name.'.template_path')}}wishlist.html">Wishlist</a>
                     </li>
                     <li>
-                        <a href="/assets/themes/vegetable/cart.html">
+                        <a href="{{config('templates.'.$template_name.'.template_path')}}cart.html">
 									<span class="has-cart">
 										<i class="fa fa-shopping-cart"></i>
 										<em>0</em>
@@ -87,46 +87,46 @@
                                     <span></span>
                                 </div>
                             </div>
-                            <a href="/assets/themes/vegetable/./" class="navbar-brand">
-                                <img class="noo-logo-img noo-logo-normal" src="/assets/themes/vegetable/images/logo.png" alt="Organic Store">
+                            <a href="{{config('templates.'.$template_name.'.template_path')}}./" class="navbar-brand">
+                                <img class="noo-logo-img noo-logo-normal" src="{{config('templates.'.$template_name.'.template_path')}}images/logo.png" alt="Organic Store">
                             </a>
                         </div>
                         <nav class="pull-right noo-main-menu">
                             <ul class="nav-collapse navbar-nav">
                                 <li class="menu-item-has-children current-menu-item">
-                                    <a href="/assets/themes/vegetable/./">Home</a>
+                                    <a href="{{config('templates.'.$template_name.'.template_path')}}./">Home</a>
                                     <ul class="sub-menu">
-                                        <li><a href="/assets/themes/vegetable/index-2.html">Homepage 2</a></li>
-                                        <li><a href="/assets/themes/vegetable/index-3.html">Homepage 3</a></li>
-                                        <li><a href="/assets/themes/vegetable/index-4.html">Homepage 4</a></li>
-                                        <li><a href="/assets/themes/vegetable/index-5.html">Homepage 5</a></li>
-                                        <li><a href="/assets/themes/vegetable/index-6.html">Homepage 6</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-2.html">Homepage 2</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-3.html">Homepage 3</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-4.html">Homepage 4</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-5.html">Homepage 5</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}index-6.html">Homepage 6</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="#">Header</a>
                                     <ul class="sub-menu">
-                                        <li><a href="/assets/themes/vegetable/header-1.html">Header 1</a></li>
-                                        <li><a href="/assets/themes/vegetable/header-2.html">Header 2</a></li>
-                                        <li><a href="/assets/themes/vegetable/header-3.html">Header 3</a></li>
-                                        <li><a href="/assets/themes/vegetable/header-4.html">Header 4</a></li>
-                                        <li><a href="/assets/themes/vegetable/header-5.html">Header 5</a></li>
-                                        <li><a href="/assets/themes/vegetable/header-6.html">Header 6</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}header-1.html">Header 1</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}header-2.html">Header 2</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}header-3.html">Header 3</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}header-4.html">Header 4</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}header-5.html">Header 5</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}header-6.html">Header 6</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/assets/themes/vegetable/our-story.html">Our Story</a></li>
+                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}our-story.html">Our Story</a></li>
                                 <li class="menu-item-has-children noo_megamenu mega-col-columns-4">
-                                    <a href="/assets/themes/vegetable/shop.html">Shop</a>
+                                    <a href="{{config('templates.'.$template_name.'.template_path')}}shop.html">Shop</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item-has-children">
                                             <a href="#">Shop page</a>
                                             <ul class="sub-menu">
-                                                <li><a href="/assets/themes/vegetable/shop-list.html">Shop List</a></li>
-                                                <li><a href="/assets/themes/vegetable/shop-detail.html">Shop Detail</a></li>
-                                                <li><a href="/assets/themes/vegetable/my-account.html">My Account</a></li>
-                                                <li><a href="/assets/themes/vegetable/cart.html">Cart</a></li>
-                                                <li><a href="/assets/themes/vegetable/cart-empty.html">Empty Cart</a></li>
-                                                <li><a href="/assets/themes/vegetable/wishlist.html">Wishlist</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}shop-list.html">Shop List</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">Shop Detail</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}my-account.html">My Account</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}cart.html">Cart</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}cart-empty.html">Empty Cart</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}wishlist.html">Wishlist</a></li>
                                             </ul>
                                         </li>
                                         <li class="menu-item-has-children">
@@ -135,22 +135,22 @@
                                                     <h3 class="widget-title">Products</h3>
                                                     <ul class="product_list_widget">
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_1.png" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_1.png" alt="" />
                                                                 <span class="product-title">French Bread</span>
                                                             </a>
                                                             <span class="amount">&#36;10.00</span>
                                                         </li>
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_2.png" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_2.png" alt="" />
                                                                 <span class="product-title">Cookie</span>
                                                             </a>
                                                             <span class="amount">&#36;15.00</span>
                                                         </li>
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_3.png" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_3.png" alt="" />
                                                                 <span class="product-title">Brown Bread</span>
                                                             </a>
                                                             <span class="amount">&#36;12.00</span>
@@ -165,22 +165,22 @@
                                                     <h3 class="widget-title">Featured</h3>
                                                     <ul class="product_list_widget">
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_4.jpg" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_4.jpg" alt="" />
                                                                 <span class="product-title">French Bread</span>
                                                             </a>
                                                             <span class="amount">&#36;10.00</span>
                                                         </li>
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_2.png" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_2.png" alt="" />
                                                                 <span class="product-title">Cookie</span>
                                                             </a>
                                                             <span class="amount">&#36;15.00</span>
                                                         </li>
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_5.jpg" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_5.jpg" alt="" />
                                                                 <span class="product-title">Brown Bread</span>
                                                             </a>
                                                             <span class="amount">&#36;12.00</span>
@@ -195,22 +195,22 @@
                                                     <h3 class="widget-title">Sales</h3>
                                                     <ul class="product_list_widget">
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_1.png" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_1.png" alt="" />
                                                                 <span class="product-title">French Bread</span>
                                                             </a>
                                                             <span class="amount">&#36;10.00</span>
                                                         </li>
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_2.png" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_2.png" alt="" />
                                                                 <span class="product-title">Cookie</span>
                                                             </a>
                                                             <span class="amount">&#36;15.00</span>
                                                         </li>
                                                         <li>
-                                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                                <img width="100" height="100" src="/assets/themes/vegetable/images/product/thumb/product_3.png" alt="" />
+                                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                                <img width="100" height="100" src="{{config('templates.'.$template_name.'.template_path')}}images/product/thumb/product_3.png" alt="" />
                                                                 <span class="product-title">Brown Bread</span>
                                                             </a>
                                                             <span class="amount">&#36;12.00</span>
@@ -222,30 +222,30 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="/assets/themes/vegetable/boxes.html">Boxes</a>
+                                    <a href="{{config('templates.'.$template_name.'.template_path')}}boxes.html">Boxes</a>
                                     <ul class="sub-menu">
-                                        <li><a href="/assets/themes/vegetable/box-detail.html">Box Detail</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}box-detail.html">Box Detail</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="/assets/themes/vegetable/blog.html">Blog</a>
+                                    <a href="{{config('templates.'.$template_name.'.template_path')}}blog.html">Blog</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item-has-children">
-                                            <a href="/assets/themes/vegetable/blog-masonry.html">Blog Masonry</a>
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}blog-masonry.html">Blog Masonry</a>
                                             <ul class="sub-menu">
-                                                <li><a href="/assets/themes/vegetable/blog-masonry-two-columns.html">2 Columns</a></li>
-                                                <li><a href="/assets/themes/vegetable/blog-masonry.html">3 Columns</a></li>
-                                                <li><a href="/assets/themes/vegetable/blog-masonry-four-columns.html">4 Columns</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-masonry-two-columns.html">2 Columns</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-masonry.html">3 Columns</a></li>
+                                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-masonry-four-columns.html">4 Columns</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="/assets/themes/vegetable/blog.html">Blog Listing</a></li>
-                                        <li><a href="/assets/themes/vegetable/blog-detail.html">Blog Single Default</a></li>
-                                        <li><a href="/assets/themes/vegetable/blog-detail-video.html">Blog Single Video</a></li>
-                                        <li><a href="/assets/themes/vegetable/blog-detail-audio.html">Blog Single SoundCloud</a></li>
-                                        <li><a href="/assets/themes/vegetable/blog-detail-slider.html">Blog Single Slider</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog.html">Blog Listing</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">Blog Single Default</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-detail-video.html">Blog Single Video</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-detail-audio.html">Blog Single SoundCloud</a></li>
+                                        <li><a href="{{config('templates.'.$template_name.'.template_path')}}blog-detail-slider.html">Blog Single Slider</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="/assets/themes/vegetable/contact.html">Contact</a></li>
+                                <li><a href="{{config('templates.'.$template_name.'.template_path')}}contact.html">Contact</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -270,7 +270,7 @@
                     <div class="noo-traslate-atributes col-sm-12 col-md-6 hidden-xs">
                         <div class="pt-5">
                             <div class="noo-atributes">
-                                <img width="494" height="618" src="/assets/themes/vegetable/images/image-01.png" alt="" />
+                                <img width="494" height="618" src="{{config('templates.'.$template_name.'.template_path')}}images/image-01.png" alt="" />
                                 <div class="noo-atributes-item">
                                     <div class="noo-atributes-hover">
                                         <div class="noo-atributes-content">
@@ -281,7 +281,7 @@
                                     <span class="eff">
 												<span class="eff1"></span>
 												<span class="eff2"></span>
-												<img width="64" height="64" src="/assets/themes/vegetable/images/organicfood-1.png" alt=""/>
+												<img width="64" height="64" src="{{config('templates.'.$template_name.'.template_path')}}images/organicfood-1.png" alt=""/>
 											</span>
                                 </div>
                                 <div class="noo-atributes-item noo-atributes-item2 orange">
@@ -294,7 +294,7 @@
                                     <span class="eff">
 												<span class="eff1"></span>
 												<span class="eff2"></span>
-												<img width="53" height="53" src="/assets/themes/vegetable/images/organicfood-2.png" alt=""/>
+												<img width="53" height="53" src="{{config('templates.'.$template_name.'.template_path')}}images/organicfood-2.png" alt=""/>
 											</span>
                                 </div>
                                 <div class="noo-atributes-item noo-atributes-item4 orange">
@@ -307,7 +307,7 @@
                                     <span class="eff">
 												<span class="eff1"></span>
 												<span class="eff2"></span>
-												<img width="53" height="53" src="/assets/themes/vegetable/images/organicfood-3.png" alt=""/>
+												<img width="53" height="53" src="{{config('templates.'.$template_name.'.template_path')}}images/organicfood-3.png" alt=""/>
 											</span>
                                 </div>
                             </div>
@@ -341,31 +341,31 @@
                                 <ul class="noo-header-filter" data-option-key="filter">
                                     <li>
                                         <a data-option-value="*" href="#all" class="selected">
-                                            <img width="30" height="26" src="/assets/themes/vegetable/images/filter/filter-1.png" alt="" />
+                                            <img width="30" height="26" src="{{config('templates.'.$template_name.'.template_path')}}images/filter/filter-1.png" alt="" />
                                             <span>All products</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a data-option-value=".organic-fruits" href="#organic-fruits">
-                                            <img width="30" height="26" src="/assets/themes/vegetable/images/filter/filter-2.png" alt=""/>
+                                            <img width="30" height="26" src="{{config('templates.'.$template_name.'.template_path')}}images/filter/filter-2.png" alt=""/>
                                             <span>Fruits</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a data-option-value=".vegetable" href="#vegetable">
-                                            <img width="30" height="26" src="/assets/themes/vegetable/images/filter/filter-3.png" alt=""/>
+                                            <img width="30" height="26" src="{{config('templates.'.$template_name.'.template_path')}}images/filter/filter-3.png" alt=""/>
                                             <span>Vegetable</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a data-option-value=".bread" href="#bread">
-                                            <img width="30" height="26" src="/assets/themes/vegetable/images/filter/filter-4.png" alt=""/>
+                                            <img width="30" height="26" src="{{config('templates.'.$template_name.'.template_path')}}images/filter/filter-4.png" alt=""/>
                                             <span>Bread</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a data-option-value=".others" href="#others">
-                                            <img width="30" height="26" src="/assets/themes/vegetable/images/filter/filter-5.png" alt=""/>
+                                            <img width="30" height="26" src="{{config('templates.'.$template_name.'.template_path')}}images/filter/filter-5.png" alt=""/>
                                             <span>Others</span>
                                         </a>
                                     </li>
@@ -375,8 +375,8 @@
                                 <div class="fruit organic-fruits masonry-item col-md-4 col-sm-6">
                                     <div class="noo-product-inner">
                                         <div class="noo-product-thumbnail">
-                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                <img width="600" height="760" src="/assets/themes/vegetable/images/product/product_1.jpg" alt="" />
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                <img width="600" height="760" src="{{config('templates.'.$template_name.'.template_path')}}images/product/product_1.jpg" alt="" />
                                             </a>
                                             <div class="noo-rating">
                                                 <div class="star-rating">
@@ -385,7 +385,7 @@
                                             </div>
                                         </div>
                                         <div class="noo-product-title">
-                                            <h3><a href="/assets/themes/vegetable/shop-detail.html">Apples</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">Apples</a></h3>
                                             <span class="price"><span class="amount">&#36;3.95</span></span>
                                             <div class="noo-product-action">
                                                 <div class="noo-action">
@@ -400,8 +400,8 @@
                                 <div class="others vegetable masonry-item col-md-4 col-sm-6">
                                     <div class="noo-product-inner">
                                         <div class="noo-product-thumbnail">
-                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                <img width="600" height="760" src="/assets/themes/vegetable/images/product/product_2.jpg" alt="" />
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                <img width="600" height="760" src="{{config('templates.'.$template_name.'.template_path')}}images/product/product_2.jpg" alt="" />
                                             </a>
                                             <div class="noo-rating">
                                                 <div class="star-rating">
@@ -410,7 +410,7 @@
                                             </div>
                                         </div>
                                         <div class="noo-product-title">
-                                            <h3><a href="/assets/themes/vegetable/shop-detail.html">Broccoli</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">Broccoli</a></h3>
                                             <span class="price"><span class="amount">&#36;2.05</span></span>
                                             <div class="noo-product-action">
                                                 <div class="noo-action">
@@ -425,8 +425,8 @@
                                 <div class="bread masonry-item col-md-4 col-sm-6">
                                     <div class="noo-product-inner">
                                         <div class="noo-product-thumbnail">
-                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                <img width="600" height="760" src="/assets/themes/vegetable/images/product/product_3.jpg" alt="" />
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                <img width="600" height="760" src="{{config('templates.'.$template_name.'.template_path')}}images/product/product_3.jpg" alt="" />
                                             </a>
                                             <div class="noo-rating">
                                                 <div class="star-rating">
@@ -435,7 +435,7 @@
                                             </div>
                                         </div>
                                         <div class="noo-product-title">
-                                            <h3><a href="/assets/themes/vegetable/shop-detail.html">Brown Bread</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">Brown Bread</a></h3>
                                             <span class="price"><span class="amount">&#36;12.00</span></span>
                                             <div class="noo-product-action">
                                                 <div class="noo-action">
@@ -450,8 +450,8 @@
                                 <div class="vegetable masonry-item col-md-4 col-sm-6">
                                     <div class="noo-product-inner">
                                         <div class="noo-product-thumbnail">
-                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                <img width="600" height="760" src="/assets/themes/vegetable/images/product/product_4.jpg" alt="" />
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                <img width="600" height="760" src="{{config('templates.'.$template_name.'.template_path')}}images/product/product_4.jpg" alt="" />
                                             </a>
                                             <div class="noo-rating">
                                                 <div class="star-rating">
@@ -460,7 +460,7 @@
                                             </div>
                                         </div>
                                         <div class="noo-product-title">
-                                            <h3><a href="/assets/themes/vegetable/shop-detail.html">Carrots</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">Carrots</a></h3>
                                             <span class="price"><span class="amount">&#36;1.05</span></span>
                                             <div class="noo-product-action">
                                                 <div class="noo-action">
@@ -475,8 +475,8 @@
                                 <div class="vegetable masonry-item col-md-4 col-sm-6">
                                     <div class="noo-product-inner">
                                         <div class="noo-product-thumbnail">
-                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                <img width="600" height="760" src="/assets/themes/vegetable/images/product/product_5.jpg" alt="" />
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                <img width="600" height="760" src="{{config('templates.'.$template_name.'.template_path')}}images/product/product_5.jpg" alt="" />
                                             </a>
                                             <div class="noo-rating">
                                                 <div class="star-rating">
@@ -485,7 +485,7 @@
                                             </div>
                                         </div>
                                         <div class="noo-product-title">
-                                            <h3><a href="/assets/themes/vegetable/shop-detail.html">Celery</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">Celery</a></h3>
                                             <span class="price"><span class="amount">&#36;2.09</span></span>
                                             <div class="noo-product-action">
                                                 <div class="noo-action">
@@ -500,8 +500,8 @@
                                 <div class="bread masonry-item col-md-4 col-sm-6">
                                     <div class="noo-product-inner">
                                         <div class="noo-product-thumbnail">
-                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                <img width="600" height="760" src="/assets/themes/vegetable/images/product/product_6.jpg" alt="" />
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                <img width="600" height="760" src="{{config('templates.'.$template_name.'.template_path')}}images/product/product_6.jpg" alt="" />
                                             </a>
                                             <div class="noo-rating">
                                                 <div class="star-rating">
@@ -510,7 +510,7 @@
                                             </div>
                                         </div>
                                         <div class="noo-product-title">
-                                            <h3><a href="/assets/themes/vegetable/shop-detail.html">Cookie</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">Cookie</a></h3>
                                             <span class="price"><span class="amount">&#36;15.00</span></span>
                                             <div class="noo-product-action">
                                                 <div class="noo-action">
@@ -525,8 +525,8 @@
                                 <div class="vegetable masonry-item col-md-4 col-sm-6">
                                     <div class="noo-product-inner">
                                         <div class="noo-product-thumbnail">
-                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                <img width="600" height="760" src="/assets/themes/vegetable/images/product/product_7.jpg" alt="" />
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                <img width="600" height="760" src="{{config('templates.'.$template_name.'.template_path')}}images/product/product_7.jpg" alt="" />
                                             </a>
                                             <div class="noo-rating">
                                                 <div class="star-rating">
@@ -535,7 +535,7 @@
                                             </div>
                                         </div>
                                         <div class="noo-product-title">
-                                            <h3><a href="/assets/themes/vegetable/shop-detail.html">Cucumbers</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">Cucumbers</a></h3>
                                             <span class="price"><span class="amount">&#36;1.95</span></span>
                                             <div class="noo-product-action">
                                                 <div class="noo-action">
@@ -550,8 +550,8 @@
                                 <div class="bread masonry-item col-md-4 col-sm-6">
                                     <div class="noo-product-inner">
                                         <div class="noo-product-thumbnail">
-                                            <a href="/assets/themes/vegetable/shop-detail.html">
-                                                <img width="600" height="760" src="/assets/themes/vegetable/images/product/product_8.jpg" alt="" />
+                                            <a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">
+                                                <img width="600" height="760" src="{{config('templates.'.$template_name.'.template_path')}}images/product/product_8.jpg" alt="" />
                                             </a>
                                             <div class="noo-rating">
                                                 <div class="star-rating">
@@ -560,7 +560,7 @@
                                             </div>
                                         </div>
                                         <div class="noo-product-title">
-                                            <h3><a href="/assets/themes/vegetable/shop-detail.html">French Bread</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html">French Bread</a></h3>
                                             <span class="price"><span class="amount">&#36;10.00</span></span>
                                             <div class="noo-product-action">
                                                 <div class="noo-action">
@@ -585,7 +585,7 @@
             </div>
             <div class="noo-product-masonry columns-3">
                 <div class="product-masonry">
-                    <img width="644" height="380" src="/assets/themes/vegetable/images/product/features/product_1.jpg" alt="" />
+                    <img width="644" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/product/features/product_1.jpg" alt="" />
                     <div class="noo-link">
                         <div class="noo-product-table">
                             <div class="noo-product-table-cell">
@@ -597,14 +597,14 @@
 											<a href="#" class="button product_type_simple add_to_cart_button">
 												<span>Add to cart</span>
 											</a>
-											<a class="fa fa-link" href="/assets/themes/vegetable/shop-detail.html"></a>
+											<a class="fa fa-link" href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html"></a>
 										</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-masonry">
-                    <img width="644" height="380" src="/assets/themes/vegetable/images/product/features/product_2.jpg" alt="" />
+                    <img width="644" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/product/features/product_2.jpg" alt="" />
                     <div class="noo-link">
                         <div class="noo-product-table">
                             <div class="noo-product-table-cell">
@@ -616,14 +616,14 @@
 											<a href="#" class="button product_type_simple add_to_cart_button">
 												<span>Add to cart</span>
 											</a>
-											<a class="fa fa-link" href="/assets/themes/vegetable/shop-detail.html"></a>
+											<a class="fa fa-link" href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html"></a>
 										</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-masonry">
-                    <img width="644" height="380" src="/assets/themes/vegetable/images/product/features/product_3.jpg" alt="" />
+                    <img width="644" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/product/features/product_3.jpg" alt="" />
                     <div class="noo-link">
                         <div class="noo-product-table">
                             <div class="noo-product-table-cell">
@@ -635,14 +635,14 @@
 											<a href="#" class="button product_type_simple add_to_cart_button">
 												<span>Add to cart</span>
 											</a>
-											<a class="fa fa-link" href="/assets/themes/vegetable/shop-detail.html"></a>
+											<a class="fa fa-link" href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html"></a>
 										</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-masonry">
-                    <img width="644" height="380" src="/assets/themes/vegetable/images/product/features/product_4.jpg" alt="" />
+                    <img width="644" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/product/features/product_4.jpg" alt="" />
                     <div class="noo-link">
                         <div class="noo-product-table">
                             <div class="noo-product-table-cell">
@@ -654,14 +654,14 @@
 											<a href="#" class="button product_type_simple add_to_cart_button">
 												<span>Add to cart</span>
 											</a>
-											<a class="fa fa-link" href="/assets/themes/vegetable/shop-detail.html"></a>
+											<a class="fa fa-link" href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html"></a>
 										</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-masonry">
-                    <img width="644" height="380" src="/assets/themes/vegetable/images/product/features/product_5.jpg" alt="" />
+                    <img width="644" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/product/features/product_5.jpg" alt="" />
                     <div class="noo-link">
                         <div class="noo-product-table">
                             <div class="noo-product-table-cell">
@@ -673,14 +673,14 @@
 											<a href="#" class="button product_type_simple add_to_cart_button">
 												<span>Add to cart</span>
 											</a>
-											<a class="fa fa-link" href="/assets/themes/vegetable/shop-detail.html"></a>
+											<a class="fa fa-link" href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html"></a>
 										</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-masonry">
-                    <img width="644" height="380" src="/assets/themes/vegetable/images/product/features/product_7.jpg" alt="" />
+                    <img width="644" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/product/features/product_7.jpg" alt="" />
                     <div class="noo-link">
                         <div class="noo-product-table">
                             <div class="noo-product-table-cell">
@@ -692,14 +692,14 @@
 											<a href="#" class="button product_type_simple add_to_cart_button">
 												<span>Add to cart</span>
 											</a>
-											<a class="fa fa-link" href="/assets/themes/vegetable/shop-detail.html"></a>
+											<a class="fa fa-link" href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html"></a>
 										</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="product-masonry">
-                    <img width="644" height="380" src="/assets/themes/vegetable/images/product/features/product_6.jpg" alt="" />
+                    <img width="644" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/product/features/product_6.jpg" alt="" />
                     <div class="noo-link">
                         <div class="noo-product-table">
                             <div class="noo-product-table-cell">
@@ -711,7 +711,7 @@
 											<a href="#" class="button product_type_simple add_to_cart_button">
 												<span>Add to cart</span>
 											</a>
-											<a class="fa fa-link" href="/assets/themes/vegetable/shop-detail.html"></a>
+											<a class="fa fa-link" href="{{config('templates.'.$template_name.'.template_path')}}shop-detail.html"></a>
 										</span>
                             </div>
                         </div>
@@ -735,7 +735,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="noo-farmer">
                             <div class="noo-farmer-thumbnail">
-                                <img width="284" height="380" src="/assets/themes/vegetable/images/team/team_1.png" alt="" />
+                                <img width="284" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/team/team_1.png" alt="" />
                             </div>
                             <div class="noo-farmer-content">
                                 <h4>Tristique</h4>
@@ -753,7 +753,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="noo-farmer">
                             <div class="noo-farmer-thumbnail">
-                                <img width="330" height="380" src="/assets/themes/vegetable/images/team/team_2.png" alt=""/>
+                                <img width="330" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/team/team_2.png" alt=""/>
                             </div>
                             <div class="noo-farmer-content">
                                 <h4>Alyssa Hiyama</h4>
@@ -771,7 +771,7 @@
                     <div class="col-md-4 col-sm-6">
                         <div class="noo-farmer">
                             <div class="noo-farmer-thumbnail">
-                                <img width="285" height="380" src="/assets/themes/vegetable/images/team/team_3.png" alt="" />
+                                <img width="285" height="380" src="{{config('templates.'.$template_name.'.template_path')}}images/team/team_3.png" alt="" />
                             </div>
                             <div class="noo-farmer-content">
                                 <h4>Alberto Trombin</h4>
@@ -794,7 +794,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="noo-represent">
-                            <img width="194" height="66" src="/assets/themes/vegetable/images/since.png" alt=""/>
+                            <img width="194" height="66" src="{{config('templates.'.$template_name.'.template_path')}}images/since.png" alt=""/>
                             <h2>Organic products!</h2>
                             <p>
                                 Maecenas tristique gravida odio, et sagittis justo interdum porta. Duislacus mattis, tincidunt eros ac, consequat tortor.
@@ -828,52 +828,52 @@
                             <div class="row masonry-container">
                                 <div class="masonry-item col-md-4 col-sm-6">
                                     <div class="blog-item">
-                                        <a class="blog-thumbnail" href="/assets/themes/vegetable/blog-detail.html">
-                                            <img width="600" height="440" src="/assets/themes/vegetable/images/blog/blog_1.jpg" alt=""/>
+                                        <a class="blog-thumbnail" href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">
+                                            <img width="600" height="440" src="{{config('templates.'.$template_name.'.template_path')}}images/blog/blog_1.jpg" alt=""/>
                                         </a>
                                         <div class="blog-description">
 													<span class="cat">
 														<a href="#">Organic Food</a>/<a href="#">Tips &amp; Guides</a>
 													</span>
-                                            <h3><a href="/assets/themes/vegetable/blog-detail.html">Tips for Ripening your Fruit</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">Tips for Ripening your Fruit</a></h3>
                                             <p class="blog_excerpt">
                                                 Maecenas tristique gravida, odio et sagi ttis justo. Susp endisse ultricies nisi vel quam suscipit, et rutrum odio porttitor. Donec...
                                             </p>
-                                            <a class="view-more" href="/assets/themes/vegetable/blog-detail.html">View more</a>
+                                            <a class="view-more" href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">View more</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="masonry-item col-md-4 col-sm-6">
                                     <div class="blog-item">
-                                        <a class="blog-thumbnail" href="/assets/themes/vegetable/blog-detail.html">
-                                            <img width="600" height="440" src="/assets/themes/vegetable/images/blog/blog_2.jpg" alt=""/>
+                                        <a class="blog-thumbnail" href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">
+                                            <img width="600" height="440" src="{{config('templates.'.$template_name.'.template_path')}}images/blog/blog_2.jpg" alt=""/>
                                         </a>
                                         <div class="blog-description">
 													<span class="cat">
 														<a href="#">General</a>/<a href="#">Recipes</a>
 													</span>
-                                            <h3><a href="/assets/themes/vegetable/blog-detail.html">Feeding kids organic food</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">Feeding kids organic food</a></h3>
                                             <p class="blog_excerpt">
                                                 Maecenas tristique gravida, odio et sagi ttis justo. Susp endisse ultricies nisi vel quam suscipit, et rutrum odio porttitor. Donec...
                                             </p>
-                                            <a class="view-more" href="/assets/themes/vegetable/blog-detail.html">View more</a>
+                                            <a class="view-more" href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">View more</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="masonry-item col-md-4 col-sm-6">
                                     <div class="blog-item">
-                                        <a class="blog-thumbnail" href="/assets/themes/vegetable/blog-detail.html">
-                                            <img width="600" height="440" src="/assets/themes/vegetable/images/blog/blog_3.jpg" alt=""/>
+                                        <a class="blog-thumbnail" href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">
+                                            <img width="600" height="440" src="{{config('templates.'.$template_name.'.template_path')}}images/blog/blog_3.jpg" alt=""/>
                                         </a>
                                         <div class="blog-description">
 													<span class="cat">
 														<a href="#">Diet</a>/<a href="#">Organic Food</a>
 													</span>
-                                            <h3><a href="/assets/themes/vegetable/blog-detail.html">Health Benefits of a Raw Food</a></h3>
+                                            <h3><a href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">Health Benefits of a Raw Food</a></h3>
                                             <p class="blog_excerpt">
                                                 As more and more people are turning to more organic lifestyles and trying to improve their health through adopting better...
                                             </p>
-                                            <a class="view-more" href="/assets/themes/vegetable/blog-detail.html">View more</a>
+                                            <a class="view-more" href="{{config('templates.'.$template_name.'.template_path')}}blog-detail.html">View more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -885,8 +885,8 @@
         </div>
         <div class="testimonial">
             <div class="noo_testimonial_wrap">
-                <img width="328" height="851" src="/assets/themes/vegetable/images/image_left.png" class="image_left" alt=""/>
-                <img width="329" height="789" src="/assets/themes/vegetable/images/image_right.png" class="image_right" alt="" />
+                <img width="328" height="851" src="{{config('templates.'.$template_name.'.template_path')}}images/image_left.png" class="image_left" alt=""/>
+                <img width="329" height="789" src="{{config('templates.'.$template_name.'.template_path')}}images/image_right.png" class="image_right" alt="" />
                 <div class="noo-testimonial-sync2 testimonial-three">
                     <div class="item">
                         <div class="testimonial-content">
@@ -940,7 +940,7 @@
                 <div class="noo-testimonial-sync1 testimonial-three">
                     <div class="item">
                         <div class="background_image">
-                            <img class="noo_testimonial_avatar" src="/assets/themes/vegetable/images/avatar/avatar_1.jpg" alt=""/>
+                            <img class="noo_testimonial_avatar" src="{{config('templates.'.$template_name.'.template_path')}}images/avatar/avatar_1.jpg" alt=""/>
                         </div>
                         <div class="testimonial-name">
                             <h4 class="noo_testimonial_name">- Taylor -</h4>
@@ -949,7 +949,7 @@
                     </div>
                     <div class="item">
                         <div class="background_image">
-                            <img class="noo_testimonial_avatar" src="/assets/themes/vegetable/images/avatar/avatar_2.jpg" alt=""/>
+                            <img class="noo_testimonial_avatar" src="{{config('templates.'.$template_name.'.template_path')}}images/avatar/avatar_2.jpg" alt=""/>
                         </div>
                         <div class="testimonial-name">
                             <h4 class="noo_testimonial_name">- Ashley -</h4>
@@ -958,7 +958,7 @@
                     </div>
                     <div class="item">
                         <div class="background_image">
-                            <img class="noo_testimonial_avatar" src="/assets/themes/vegetable/images/avatar/avatar_3.jpg" alt=""/>
+                            <img class="noo_testimonial_avatar" src="{{config('templates.'.$template_name.'.template_path')}}images/avatar/avatar_3.jpg" alt=""/>
                         </div>
                         <div class="testimonial-name">
                             <h4 class="noo_testimonial_name">- Olivia -</h4>
@@ -967,7 +967,7 @@
                     </div>
                     <div class="item">
                         <div class="background_image">
-                            <img class="noo_testimonial_avatar" src="/assets/themes/vegetable/images/avatar/avatar_4.jpg" alt=""/>
+                            <img class="noo_testimonial_avatar" src="{{config('templates.'.$template_name.'.template_path')}}images/avatar/avatar_4.jpg" alt=""/>
                         </div>
                         <div class="testimonial-name">
                             <h4 class="noo_testimonial_name">- Tyrion Lannister -</h4>
@@ -1007,7 +1007,7 @@
                     <div class="widget widget_about">
                         <div class="noo_about_widget">
                             <a href="#">
-                                <img src="/assets/themes/vegetable/images/logo.png" alt="" />
+                                <img src="{{config('templates.'.$template_name.'.template_path')}}images/logo.png" alt="" />
                             </a>
                             <p>
                                 Maecenas tristique gravida, odio et sagi ttis justo. Suspendisse ultricies nisi veafn. onec dictum non nulla ut lobortis tellus.
@@ -1047,7 +1047,7 @@
                             </p>
                             <h5>Email</h5>
                             <p>
-                                <a href="/assets/themes/vegetable/mailto:contact@organicistore.com">
+                                <a href="{{config('templates.'.$template_name.'.template_path')}}mailto:contact@organicistore.com">
                                     contact@organicistore.com
                                 </a>
                             </p>
@@ -1094,22 +1094,22 @@
 </div>
 <a href="#" class="go-to-top hidden-print"><i class="fa fa-angle-up"></i></a>
 
-<script type='text/javascript' src='/assets/themes/vegetable/js/jquery.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/bootstrap.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/jquery-migrate.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/modernizr-2.7.1.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/off-cavnass.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/jquery.cookie.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/style.selector.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/script.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/custom.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/imagesloaded.pkgd.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/isotope.pkgd.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/portfolio.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/jquery.touchSwipe.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/jquery.isotope.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/owl.carousel.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/jflickrfeed.min.js'></script>
-<script type='text/javascript' src='/assets/themes/vegetable/js/jquery.magnific-popup.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/jquery.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/bootstrap.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/jquery-migrate.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/modernizr-2.7.1.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/off-cavnass.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/jquery.cookie.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/style.selector.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/script.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/custom.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/imagesloaded.pkgd.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/isotope.pkgd.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/portfolio.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/jquery.touchSwipe.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/jquery.isotope.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/owl.carousel.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/jflickrfeed.min.js'></script>
+<script type='text/javascript' src='{{config('templates.'.$template_name.'.template_path')}}js/jquery.magnific-popup.js'></script>
 </body>
 </html>
