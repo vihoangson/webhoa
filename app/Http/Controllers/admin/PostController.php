@@ -144,32 +144,6 @@ class PostController extends Controller
         //
     }
 
-    public function update_ajax(\Illuminate\Http\Request $requests)
-    {
-        switch ($requests->process) {
-            case 'change_main_img':
-                $p = Post::find($requests->pid);
-                $p->main_img = $requests->id;
-                $p->save();
-                break;
-            case 'delete_img_post':
-                $img = Image::find($requests->id);
-                $img->post()->detach();
-                return response()->json([
-                    'status' => $img->delete(),
-                    'id' => $requests->id,
-                ]);
-                break;
-            case 'sort_group':
-                return response()->json([
-                    'status' => true,
-                    'id' => 123,
-                ]);
-                break;
-        }
-
-    }
-
     /**
      * Update the specified resource in storage.
      *
@@ -191,6 +165,7 @@ class PostController extends Controller
             $p->active = 0;
         }
         $p->save();
+
 //        if(isset($rq['category'])){
 //            // todo: phần này đã lưu được
 //            $p->category()->sync($rq['category']);

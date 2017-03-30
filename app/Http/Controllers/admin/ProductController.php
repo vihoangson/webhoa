@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Category;
 use App\CategoryAllocation;
+use App\Group;
 use App\Image;
 use App\Post;
 use App\Product;
@@ -154,16 +155,42 @@ class ProductController extends Controller
     {
         switch ($requests->process) {
             case 'change_main_img':
-                $p = Product::find($requests->pid);
+                $p = Post::find($requests->pid);
                 $p->main_img = $requests->id;
                 $p->save();
                 break;
-            case 'delete_img_product':
+            case 'delete_img_post':
                 $img = Image::find($requests->id);
-                $img->product()->detach();
+                $img->post()->detach();
                 return response()->json([
                     'status' => $img->delete(),
                     'id' => $requests->id,
+                ]);
+                break;
+            case 'sort_group':
+                $db = json_decode($requests->db);
+                $i = 0;
+                foreach ($db as $group){
+                    echo $group->id;
+                    $parent = Group::find($group->id);
+                    $parent->parent_id = 0;
+                    $parent->sequence = $i;
+                    $i++;
+                    $parent->save();
+                    if(isset($group->children)){
+                        foreach ($group->children as $group2){
+                            $child = Group::find($group2->id);
+                            $child->parent_id = $parent->id;
+                            $child->sequence = $i;
+                            $i++;
+                            $child->save();
+                        }
+                    }
+
+                }
+                return response()->json([
+                    'status' => true,
+                    'id' => $requests->db,
                 ]);
                 break;
         }

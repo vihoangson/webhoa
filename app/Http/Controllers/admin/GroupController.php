@@ -29,7 +29,7 @@ class GroupController extends Controller
     public function index()
     {
 
-        $groups = Group::all();
+        $groups = Group::where('parent_id',0)->orderBy('sequence')->get();
         return view('admin.group.index')->with(compact('groups'));
     }
 
@@ -110,7 +110,7 @@ class GroupController extends Controller
 
     public function sort()
     {
-        $groups = Group::where('parent_id',0)->get();
+        $groups = Group::where('parent_id',0)->orderBy('sequence')->get();
         return view('admin.group.sort',[
             'groups' => $groups,
         ]);
