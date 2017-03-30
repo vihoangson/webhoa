@@ -160,6 +160,12 @@ class PostController extends Controller
                     'id' => $requests->id,
                 ]);
                 break;
+            case 'sort_group':
+                return response()->json([
+                    'status' => true,
+                    'id' => 123,
+                ]);
+                break;
         }
 
     }

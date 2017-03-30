@@ -45,7 +45,9 @@
                     <a href="/admin/product"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Product</span></a>
                     <a href="/admin/category"><i class="fa fa-folder-o "></i> <span class="nav-label">Category</span></a>
                     <a href="/admin/post"><i class="fa fa-file-text"></i> <span class="nav-label">Post</span></a>
-                    <a href="/admin/order"><i class="fa fa-file-text"></i> <span class="nav-label">Order</span></a>
+                    <a href="/admin/group"><i class="fa fa-file-text"></i> <span class="nav-label">Group</span></a>
+                    <a href="/admin/order"><i class="fa fa-tags"></i> <span class="nav-label">Order</span></a>
+                    <a href="/admin/setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span></a>
                 </li>
                 <li class="active">
                     <a href="{{$template_admin_path}}index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
