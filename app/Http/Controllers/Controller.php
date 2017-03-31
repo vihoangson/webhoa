@@ -9,6 +9,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesResources;
+use Lavary\Menu\Menu;
 use View;
 use Illuminate\Support\Facades\Auth;
 
@@ -107,5 +108,6 @@ class Controller extends BaseController
         View::share('template_admin_path', "/assets/tempate_admin/");
 
         View::share('template_name', $this->template_name);
+
     }
 }
