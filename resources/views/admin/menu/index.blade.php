@@ -1,67 +1,84 @@
 @extends('layouts.admin.master')
 @section('custom_header')
     <style>
-        body.dragging, body.dragging * {
-            cursor: move !important;
+        .menu-table tr.parent-level{
+            background: #dcdcdc;
         }
 
-        .dragged {
-            position: absolute;
-            opacity: 0.5;
-            z-index: 2000;
+        .menu-table tr.child-level {
+            background: #f1f1f1;
         }
 
-        ol.example li.placeholder {
-            position: relative;
-            /** More li styles **/
-        }
-        ol.example li.placeholder:before {
-            position: absolute;
-            /** Define arrowhead **/
+        .menu-table tr.child-level td:first-child {
+            padding-left: 40px;
         }
 
-        .example li {
-            list-style: none;
-            margin: 3px;
-            padding: 10px;
-            border:1px solid #ccc;
-        }
-
-        .example {
-            margin: 0px;
-            padding: 0px;
-        }
     </style>
 @endsection
 
+
 @section('content')
-    <ol class='example'>
-        <li>First
-            <ol class=''>
-                <li>First</li>
-                <li>Second</li>
-                <li>Third
-                    <ol class=''>
-                        <li>First</li>
-                        <li>Second</li>
-                        <li>Third</li>
+    <h1>Category</h1>
 
-                </li>
-            </ol>
-        </li>
-        <li>Second</li>
-        <li>Third</li>
-    </ol>
-@endsection
+    <table class="footable table table-stripped toggle-arrow-tiny menu-table" data-page-size="15">
+        <thead>
+        <tr>
+            <th data-sort-ignore="true"></th>
+            <th data-toggle="true">Product Name</th>
+            <th data-hide="phone">Model</th>
+            <th data-hide="all">Description</th>
+            <th data-hide="phone">Price</th>
+            <th data-hide="phone,tablet" >Quantity</th>
+            <th data-hide="phone">Status</th>
+            <th class="text-right" data-sort-ignore="true">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if(isset($menus))
+            @foreach($menus as $menu)
+                <tr  class="parent-level">
+                    <td>{{$menu->name}}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="text-right">
+                        <div class="btn-menu">
+                            <a href="/menu/{{$menu->id}}" class="btn-white btn btn-xs" target="_blank">View</a>
+                            <a href="/admin/menu/{{$menu->id}}/edit" class="btn-white btn btn-xs">Edit</a>
+                        </div>
+                    </td>
+                </tr>
+                @if($menu->children()->get())
+
+                    @foreach($menu->children()->get() as $menu_1)
+                        <tr class="child-level">
+                            <td>{{$menu_1->name}}</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="text-right">
+                                <div class="btn-menu">
+                                    <a href="/menu/{{$menu_1->id}}" class="btn-white btn btn-xs" target="_blank">View</a>
+                                    <a href="/admin/menu/{{$menu_1->id}}/edit" class="btn-white btn btn-xs">Edit</a>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+
+                @endif
+
+            @endforeach
 
 
+        @endif
+        </tbody>
+    </table>
+    <div><a href="/admin/menu/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create menu</a> <a href="/admin/menu/sort" class="btn btn-primary"> Sort</a></div>
 
-@section('custom_footer')
-    <script src="/bower_components/jquery-sortable/source/js/jquery-sortable-min.js"></script>
-    <script>
-        $("ol.example").sortable({
-//            group: 'nested',
-//            delay: 500
-        });
-    </script>
 @endsection

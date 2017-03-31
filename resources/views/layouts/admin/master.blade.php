@@ -16,7 +16,8 @@
 
 </head>
 <body>
-{!! $MyNavBar->asUl() !!}
+
+
 <div id="wrapper">
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
@@ -42,6 +43,9 @@
                     </div>
                 </li>
                 <li>
+                    @foreach($Menu_Admin->all() as $mm)
+                        <a href="{{ $mm->url() }}"><i class="fa fa-shopping-cart"></i> <span class="nav-label">{{ $mm->title }}</span></a>
+                    @endforeach
                     <a href="/"><i class="fa fa-home"></i> <span class="nav-label">Homepage</span></a>
                     <a href="/admin/product"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Product</span></a>
                     <a href="/admin/category"><i class="fa fa-folder-o "></i> <span class="nav-label">Category</span></a>

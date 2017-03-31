@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Post;
 use Closure;
 
 class Menu
@@ -16,12 +17,11 @@ class Menu
     public function handle($request, Closure $next)
     {
         $m = new \Lavary\Menu\Menu;
-        $m->make('MyNavBar', function($menu){
-            $menu->add('Home');
-            $menu->add('About',    'about');
-            $menu->add('services', 'services');
-            $menu->add('Contact',  'contact');
-
+        $m->make('Menu_Admin', function($menu){
+            $db = \App\Menu::where('group_name',$menu->name)->get();
+            foreach ($db as $v){
+                $menu->add($v->name,$v->link);
+            }
         });
         return $next($request);
     }
