@@ -38,15 +38,14 @@
             @foreach($menus as $menu)
                 <tr  class="parent-level">
                     <td>{{$menu->name}}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{$menu->link}}</td>
+                    <td>{{$menu->group_name}}</td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td class="text-right">
                         <div class="btn-menu">
-                            <a href="/menu/{{$menu->id}}" class="btn-white btn btn-xs" target="_blank">View</a>
                             <a href="/admin/menu/{{$menu->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                         </div>
                     </td>
@@ -56,15 +55,14 @@
                     @foreach($menu->children()->get() as $menu_1)
                         <tr class="child-level">
                             <td>{{$menu_1->name}}</td>
-                            <td></td>
-                            <td></td>
+                            <td>{{$menu_1->link}}</td>
+                            <td>{{$menu_1->group_name}}</td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
                             <td class="text-right">
                                 <div class="btn-menu">
-                                    <a href="/menu/{{$menu_1->id}}" class="btn-white btn btn-xs" target="_blank">View</a>
                                     <a href="/admin/menu/{{$menu_1->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                                 </div>
                             </td>
