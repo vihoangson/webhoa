@@ -32,6 +32,9 @@ class PostController extends Controller
      */
     public function index()
     {
+        $post = Post::find(177);
+        dd($post->slug );
+
         $posts = Post::paginate();
         return view('admin.post.index', compact('posts'));
     }

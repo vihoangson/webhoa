@@ -162,6 +162,7 @@ return [
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        Cviebrock\EloquentSluggable\ServiceProvider::class,
     ],
 
     /*
