@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for webhoa
+DROP DATABASE IF EXISTS `webhoa`;
 CREATE DATABASE IF NOT EXISTS `webhoa` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `webhoa`;
 
 
 -- Dumping structure for table webhoa.categories
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
@@ -50,6 +52,7 @@ INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table webhoa.category_product
+DROP TABLE IF EXISTS `category_product`;
 CREATE TABLE IF NOT EXISTS `category_product` (
   `category_id` int(10) unsigned NOT NULL DEFAULT '0',
   `product_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -73,6 +76,7 @@ INSERT INTO `category_product` (`category_id`, `product_id`, `created_at`, `upda
 
 
 -- Dumping structure for table webhoa.contacts
+DROP TABLE IF EXISTS `contacts`;
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -94,6 +98,7 @@ INSERT INTO `contacts` (`id`, `name`, `email`, `text`, `seen`, `created_at`, `up
 
 
 -- Dumping structure for table webhoa.currencies
+DROP TABLE IF EXISTS `currencies`;
 CREATE TABLE IF NOT EXISTS `currencies` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -116,6 +121,7 @@ INSERT INTO `currencies` (`id`, `name`, `code`, `symbol`, `format`, `exchange_ra
 
 
 -- Dumping structure for table webhoa.customers
+DROP TABLE IF EXISTS `customers`;
 CREATE TABLE IF NOT EXISTS `customers` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -160,6 +166,7 @@ INSERT INTO `customers` (`id`, `name`, `address`, `tel`, `city`, `email`, `creat
 
 
 -- Dumping structure for table webhoa.groups
+DROP TABLE IF EXISTS `groups`;
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
@@ -182,6 +189,7 @@ INSERT INTO `groups` (`id`, `name`, `parent_id`, `sequence`, `created_at`, `upda
 
 
 -- Dumping structure for table webhoa.group_post
+DROP TABLE IF EXISTS `group_post`;
 CREATE TABLE IF NOT EXISTS `group_post` (
   `group_id` int(10) unsigned NOT NULL DEFAULT '0',
   `post_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -198,6 +206,7 @@ CREATE TABLE IF NOT EXISTS `group_post` (
 
 
 -- Dumping structure for table webhoa.images
+DROP TABLE IF EXISTS `images`;
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -243,6 +252,7 @@ INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table webhoa.image_product
+DROP TABLE IF EXISTS `image_product`;
 CREATE TABLE IF NOT EXISTS `image_product` (
   `image_id` int(10) unsigned NOT NULL DEFAULT '0',
   `product_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -266,6 +276,7 @@ INSERT INTO `image_product` (`image_id`, `product_id`, `created_at`, `updated_at
 
 
 -- Dumping structure for table webhoa.menus
+DROP TABLE IF EXISTS `menus`;
 CREATE TABLE IF NOT EXISTS `menus` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
@@ -278,7 +289,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.menus: ~0 rows (approximately)
+-- Dumping data for table webhoa.menus: ~4 rows (approximately)
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 INSERT INTO `menus` (`id`, `name`, `link`, `parent_id`, `group_name`, `sequence`, `created_at`, `updated_at`) VALUES
 	(6, 'Menu57', 'admin/menu567', 0, 'Menu_Admin', 1, '2017-03-31 13:30:28', '2017-03-31 07:07:03'),
@@ -289,6 +300,7 @@ INSERT INTO `menus` (`id`, `name`, `link`, `parent_id`, `group_name`, `sequence`
 
 
 -- Dumping structure for table webhoa.migrations
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
@@ -305,6 +317,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 
 
 -- Dumping structure for table webhoa.options
+DROP TABLE IF EXISTS `options`;
 CREATE TABLE IF NOT EXISTS `options` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` tinytext COLLATE utf8_unicode_ci NOT NULL,
@@ -317,11 +330,12 @@ CREATE TABLE IF NOT EXISTS `options` (
 -- Dumping data for table webhoa.options: ~0 rows (approximately)
 /*!40000 ALTER TABLE `options` DISABLE KEYS */;
 INSERT INTO `options` (`id`, `name`, `value`, `created_at`, `updated_at`) VALUES
-	(1, 'template_name', 'vegetable', '2017-03-28 01:49:13', '2017-03-31 02:35:37');
+	(1, 'template_name', 'didong', '2017-03-28 01:49:13', '2017-04-01 02:23:45');
 /*!40000 ALTER TABLE `options` ENABLE KEYS */;
 
 
 -- Dumping structure for table webhoa.orders
+DROP TABLE IF EXISTS `orders`;
 CREATE TABLE IF NOT EXISTS `orders` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_detail_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -352,6 +366,7 @@ INSERT INTO `orders` (`id`, `order_detail_id`, `customer_id`, `data_cache`, `cre
 
 
 -- Dumping structure for table webhoa.order_products
+DROP TABLE IF EXISTS `order_products`;
 CREATE TABLE IF NOT EXISTS `order_products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `order_id` int(10) unsigned NOT NULL DEFAULT '0',
@@ -369,6 +384,7 @@ CREATE TABLE IF NOT EXISTS `order_products` (
 
 
 -- Dumping structure for table webhoa.password_resets
+DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -383,6 +399,7 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 
 
 -- Dumping structure for table webhoa.posts
+DROP TABLE IF EXISTS `posts`;
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
@@ -404,6 +421,7 @@ INSERT INTO `posts` (`id`, `title`, `summary`, `main_img`, `content`, `active`, 
 
 
 -- Dumping structure for table webhoa.products
+DROP TABLE IF EXISTS `products`;
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
@@ -431,6 +449,7 @@ INSERT INTO `products` (`id`, `title`, `summary`, `main_img`, `content`, `price`
 
 
 -- Dumping structure for table webhoa.roles
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -450,6 +469,7 @@ INSERT INTO `roles` (`id`, `title`, `slug`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table webhoa.shoppingcart
+DROP TABLE IF EXISTS `shoppingcart`;
 CREATE TABLE IF NOT EXISTS `shoppingcart` (
   `identifier` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `instance` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -465,6 +485,7 @@ CREATE TABLE IF NOT EXISTS `shoppingcart` (
 
 
 -- Dumping structure for table webhoa.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
