@@ -28,7 +28,7 @@
                         {{$post->summary}}
                     </td>
                     <td>
-
+                        {{$post->slug}}
                     </td>
                     <td>
 
