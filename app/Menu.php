@@ -17,4 +17,8 @@ class Menu extends Model
     {
         return $this->hasMany('App\Menu', 'parent_id');
     }
+
+    static public function groupnname(){
+        return self::attributes['name'];
+    }
 }

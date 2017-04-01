@@ -25,7 +25,7 @@ class MenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-
+        dd(Menu::groupnname());
         $menus = Menu::where( 'parent_id', 0 )->orderBy( 'group_name','sequence' )->get();
         return view( 'admin.menu.index' )->with( compact( 'menus' ) );
     }
