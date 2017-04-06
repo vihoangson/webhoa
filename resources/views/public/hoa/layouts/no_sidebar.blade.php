@@ -12,36 +12,36 @@
     <title>Flowers Shoppe Stores - Bootstrap 3 E-Commerce Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/assets/themes/flower-shoppe/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Web Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- CSS Files -->
-    <link href="/assets/themes/flower-shoppe/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/assets/themes/flower-shoppe/css/owl.carousel.css" rel="stylesheet">
-    <link href="/assets/themes/flower-shoppe/css/style.css" rel="stylesheet">
-    <link href="/assets/themes/flower-shoppe/css/my_style.css" rel="stylesheet">
-    <link href="/assets/themes/flower-shoppe/css/responsive.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}css/owl.carousel.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}css/style.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}css/my_style.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}css/responsive.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
-    <script src="/assets/themes/flower-shoppe/js/ie8-responsive-file-warning.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/ie8-responsive-file-warning.js"></script>
     <![endif]-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="/assets/themes/flower-shoppe/https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="/assets/themes/flower-shoppe/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/themes/flower-shoppe/images/fav-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/themes/flower-shoppe/images/fav-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/themes/flower-shoppe/images/fav-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/assets/themes/flower-shoppe/images/fav-57.png">
-    <link rel="shortcut icon" href="/assets/themes/flower-shoppe/images/fav.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{config('templates.'.$template_name.'.template_path')}}images/fav-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{config('templates.'.$template_name.'.template_path')}}images/fav-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{config('templates.'.$template_name.'.template_path')}}images/fav-72.png">
+    <link rel="apple-touch-icon-precomposed" href="{{config('templates.'.$template_name.'.template_path')}}images/fav-57.png">
+    <link rel="shortcut icon" href="{{config('templates.'.$template_name.'.template_path')}}images/fav.png">
 
 </head>
 <body>
@@ -64,12 +64,12 @@
 
 <!-- Footer Section Ends -->
 <!-- JavaScript Files -->
-<script src="/assets/themes/flower-shoppe/js/jquery-1.11.1.min.js"></script>
-<script src="/assets/themes/flower-shoppe/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="/assets/themes/flower-shoppe/js/bootstrap.min.js"></script>
-<script src="/assets/themes/flower-shoppe/js/bootstrap-hover-dropdown.min.js"></script>
-<script src="/assets/themes/flower-shoppe/js/jquery.magnific-popup.min.js"></script>
-<script src="/assets/themes/flower-shoppe/js/owl.carousel.min.js"></script>
-<script src="/assets/themes/flower-shoppe/js/custom.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/jquery-1.11.1.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/jquery-migrate-1.2.1.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/bootstrap.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/bootstrap-hover-dropdown.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/jquery.magnific-popup.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/owl.carousel.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/custom.js"></script>
 </body>
 </html>

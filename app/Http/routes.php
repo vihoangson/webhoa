@@ -36,6 +36,10 @@ Route::get('/admin/setting', 'admin\DashboardController@setting');
 Route::post('/admin/setting', 'admin\DashboardController@save_setting');
 Route::get('/admin/logout', 'admin\DashboardController@logout');
 Route::get('/admin/product/template', 'admin\ProductController@template');
+Route::get('/admin/menu/sort', 'admin\MenuController@sort');
+Route::resource('/menu', 'MenuController');
+Route::resource('/admin/menu', 'admin\MenuController');
+
 Route::get('/admin/group/sort', 'admin\GroupController@sort');
 Route::resource('/group', 'GroupController');
 Route::resource('/admin/group', 'admin\GroupController');

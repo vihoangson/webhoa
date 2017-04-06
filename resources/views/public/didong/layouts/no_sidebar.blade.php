@@ -14,35 +14,35 @@
     <title>Mobile Shoppe Stores - Bootstrap 3 Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/assets/themes/mobile-shoppe/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Web Fonts -->
-    <link href="/assets/themes/mobile-shoppe/http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700" rel="stylesheet" type="text/css">
-    <link href="/assets/themes/mobile-shoppe/http://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css">
-    <link href="/assets/themes/mobile-shoppe/http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400" rel="stylesheet" type="text/css">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700" rel="stylesheet" type="text/css">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}http://fonts.googleapis.com/css?family=Oswald:400,700,300" rel="stylesheet" type="text/css">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,700,300,600,800,400" rel="stylesheet" type="text/css">
 
     <!-- CSS Files -->
-    <link href="/assets/themes/mobile-shoppe/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="/assets/themes/mobile-shoppe/css/style.css" rel="stylesheet">
-    <link href="/assets/themes/mobile-shoppe/css/responsive.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}css/style.css" rel="stylesheet">
+    <link href="{{config('templates.'.$template_name.'.template_path')}}css/responsive.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
-    <script src="/assets/themes/mobile-shoppe/js/ie8-responsive-file-warning.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}js/ie8-responsive-file-warning.js"></script>
     <![endif]-->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="/assets/themes/mobile-shoppe/https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="/assets/themes/mobile-shoppe/https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="{{config('templates.'.$template_name.'.template_path')}}https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/themes/mobile-shoppe/images/fav-144.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/themes/mobile-shoppe/images/fav-114.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/themes/mobile-shoppe/images/fav-72.png">
-    <link rel="apple-touch-icon-precomposed" href="/assets/themes/mobile-shoppe/images/fav-57.png">
-    <link rel="shortcut icon" href="/assets/themes/mobile-shoppe/images/fav.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{config('templates.'.$template_name.'.template_path')}}images/fav-144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{config('templates.'.$template_name.'.template_path')}}images/fav-114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{config('templates.'.$template_name.'.template_path')}}images/fav-72.png">
+    <link rel="apple-touch-icon-precomposed" href="{{config('templates.'.$template_name.'.template_path')}}images/fav-57.png">
+    <link rel="shortcut icon" href="{{config('templates.'.$template_name.'.template_path')}}images/fav.png">
 
 </head>
 <body>
@@ -58,7 +58,7 @@
                     <div class="header-links">
                         <ul class="nav navbar-nav">
                             <li>
-                                <a href="/assets/themes/mobile-shoppe/index.html">
+                                <a href="{{config('templates.'.$template_name.'.template_path')}}index.html">
                                     <i class="fa fa-home hidden-lg hidden-md" title="Home"></i>
                                     <span class="hidden-sm hidden-xs">
 											Home
@@ -82,7 +82,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/assets/themes/mobile-shoppe/login.html">
+                                <a href="{{config('templates.'.$template_name.'.template_path')}}login.html">
                                     <i class="fa fa-lock hidden-lg hidden-md" title="Login"></i>
                                     <span class="hidden-sm hidden-xs">
 											Login
@@ -90,7 +90,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/assets/themes/mobile-shoppe/register.html">
+                                <a href="{{config('templates.'.$template_name.'.template_path')}}register.html">
                                     <i class="fa fa-unlock hidden-lg hidden-md" title="Register"></i>
                                     <span class="hidden-sm hidden-xs">
 											Register
@@ -146,7 +146,7 @@
                 <!-- Logo Starts -->
                 <div class="col-md-6 col-xs-12">
                     <div id="logo">
-                        <a href="/assets/themes/mobile-shoppe/index.html"><img src="/assets/themes/mobile-shoppe/images/logo.png" title="Mobile Shoppe" alt="Mobile Shoppe" class="img-responsive" /></a>
+                        <a href="{{config('templates.'.$template_name.'.template_path')}}index.html"><img src="{{config('templates.'.$template_name.'.template_path')}}images/logo.png" title="Mobile Shoppe" alt="Mobile Shoppe" class="img-responsive" /></a>
                     </div>
                 </div>
                 <!-- Logo Starts -->
@@ -202,9 +202,9 @@
         <!-- Navbar Cat collapse Starts -->
         <div class="collapse navbar-collapse navbar-cat-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/assets/themes/mobile-shoppe/category-list.html">Digital Cameras</a></li>
+                <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-list.html">Digital Cameras</a></li>
                 <li class="dropdown">
-                    <a href="/assets/themes/mobile-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                    <a href="{{config('templates.'.$template_name.'.template_path')}}category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
                         Sound Devices
                     </a>
                     <ul class="dropdown-menu" role="menu">
@@ -214,7 +214,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="/assets/themes/mobile-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">Televisions </a>
+                    <a href="{{config('templates.'.$template_name.'.template_path')}}category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">Televisions </a>
                     <div class="dropdown-menu">
                         <div class="dropdown-inner">
                             <ul class="list-unstyled">
@@ -238,28 +238,28 @@
                         </div>
                     </div>
                 </li>
-                <li><a href="/assets/themes/mobile-shoppe/category-list.html">Computers </a></li>
-                <li><a href="/assets/themes/mobile-shoppe/category-list.html">Washing Machines</a></li>
-                <li><a href="/assets/themes/mobile-shoppe/category-list.html">Accessories </a></li>
-                <li><a href="/assets/themes/mobile-shoppe/category-list.html">Mobile Phones  </a></li>
+                <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-list.html">Computers </a></li>
+                <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-list.html">Washing Machines</a></li>
+                <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-list.html">Accessories </a></li>
+                <li><a href="{{config('templates.'.$template_name.'.template_path')}}category-list.html">Mobile Phones  </a></li>
                 <li class="dropdown">
-                    <a href="/assets/themes/mobile-shoppe/category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
+                    <a href="{{config('templates.'.$template_name.'.template_path')}}category-list.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="10">
                         Pages
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/index.html">Home</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/about.html">About</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/category-list.html">Category List</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/category-grid.html">Category Grid</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/product.html">Product</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/product-full.html">Product Full Width</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/cart.html">Cart</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/login.html">Login</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/compare.html">Compare Products</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/typography.html">Typography</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/register.html">Register</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/contact.html">Contact</a></li>
-                        <li><a tabindex="-1" href="/assets/themes/mobile-shoppe/404.html">404</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}index.html">Home</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}about.html">About</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}category-list.html">Category List</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}category-grid.html">Category Grid</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}product.html">Product</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}product-full.html">Product Full Width</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}cart.html">Cart</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}login.html">Login</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}compare.html">Compare Products</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}typography.html">Typography</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}register.html">Register</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}contact.html">Contact</a></li>
+                        <li><a tabindex="-1" href="{{config('templates.'.$template_name.'.template_path')}}404.html">404</a></li>
                     </ul>
                 </li>
             </ul>
@@ -275,7 +275,7 @@
 <div id="main-container" class="container hidden">
     <!-- Breadcrumb Starts -->
     <ol class="breadcrumb">
-        <li><a href="/assets/themes/mobile-shoppe/index.html">Home</a></li>
+        <li><a href="{{config('templates.'.$template_name.'.template_path')}}index.html">Home</a></li>
         <li class="active">Register</li>
     </ol>
     <!-- Breadcrumb Ends -->
@@ -514,7 +514,7 @@
             <div class="col-md-2 col-sm-6">
                 <h5>Information</h5>
                 <ul>
-                    <li><a href="/assets/themes/mobile-shoppe/about.html">About Us</a></li>
+                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}about.html">About Us</a></li>
                     <li><a href="#">Delivery Information</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms &amp; Conditions</a></li>
@@ -540,7 +540,7 @@
             <div class="col-md-2 col-sm-6">
                 <h5>Service</h5>
                 <ul>
-                    <li><a href="/assets/themes/mobile-shoppe/contact.html">Contact Us</a></li>
+                    <li><a href="{{config('templates.'.$template_name.'.template_path')}}contact.html">Contact Us</a></li>
                     <li><a href="#">Returns</a></li>
                     <li><a href="#">Site Map</a></li>
                     <li><a href="#">Affiliates</a></li>
@@ -586,25 +586,25 @@
         <div class="container">
             <!-- Starts -->
             <p class="pull-left">
-                &copy; 2015 Mobile Shoppe Stores. Designed By <a href="/assets/themes/mobile-shoppe/http://sainathchillapuram.com">Sainath Chillapuram</a>
+                &copy; 2015 Mobile Shoppe Stores. Designed By <a href="{{config('templates.'.$template_name.'.template_path')}}http://sainathchillapuram.com">Sainath Chillapuram</a>
             </p>
             <!-- Ends -->
             <!-- Payment Gateway Links Starts -->
             <ul class="pull-right list-inline">
                 <li>
-                    <img src="/assets/themes/mobile-shoppe/images/payment-icon/cirrus.png" alt="PaymentGateway" />
+                    <img src="{{config('templates.'.$template_name.'.template_path')}}images/payment-icon/cirrus.png" alt="PaymentGateway" />
                 </li>
                 <li>
-                    <img src="/assets/themes/mobile-shoppe/images/payment-icon/paypal.png" alt="PaymentGateway" />
+                    <img src="{{config('templates.'.$template_name.'.template_path')}}images/payment-icon/paypal.png" alt="PaymentGateway" />
                 </li>
                 <li>
-                    <img src="/assets/themes/mobile-shoppe/images/payment-icon/visa.png" alt="PaymentGateway" />
+                    <img src="{{config('templates.'.$template_name.'.template_path')}}images/payment-icon/visa.png" alt="PaymentGateway" />
                 </li>
                 <li>
-                    <img src="/assets/themes/mobile-shoppe/images/payment-icon/mastercard.png" alt="PaymentGateway" />
+                    <img src="{{config('templates.'.$template_name.'.template_path')}}images/payment-icon/mastercard.png" alt="PaymentGateway" />
                 </li>
                 <li>
-                    <img src="/assets/themes/mobile-shoppe/images/payment-icon/americanexpress.png" alt="PaymentGateway" />
+                    <img src="{{config('templates.'.$template_name.'.template_path')}}images/payment-icon/americanexpress.png" alt="PaymentGateway" />
                 </li>
             </ul>
             <!-- Payment Gateway Links Ends -->
@@ -615,12 +615,12 @@
 </footer>
 <!-- Footer Section Ends -->
 <!-- JavaScript Files -->
-<script src="/assets/themes/mobile-shoppe/js/jquery-1.11.1.min.js"></script>
-<script src="/assets/themes/mobile-shoppe/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="/assets/themes/mobile-shoppe/js/bootstrap.min.js"></script>
-<script src="/assets/themes/mobile-shoppe/js/bootstrap-hover-dropdown.min.js"></script>
-<script src="/assets/themes/mobile-shoppe/js/jquery.magnific-popup.min.js"></script>
-<script src="/assets/themes/mobile-shoppe/js/owl.carousel.min.js"></script>
-<script src="/assets/themes/mobile-shoppe/js/custom.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/jquery-1.11.1.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/jquery-migrate-1.2.1.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/bootstrap.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/bootstrap-hover-dropdown.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/jquery.magnific-popup.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/owl.carousel.min.js"></script>
+<script src="{{config('templates.'.$template_name.'.template_path')}}js/custom.js"></script>
 </body>
 </html>

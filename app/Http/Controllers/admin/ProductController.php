@@ -6,6 +6,7 @@ use App\Category;
 use App\CategoryAllocation;
 use App\Group;
 use App\Image;
+use App\Menu;
 use App\Post;
 use App\Product;
 use Illuminate\Http\Request;
@@ -180,6 +181,32 @@ class ProductController extends Controller
                     if(isset($group->children)){
                         foreach ($group->children as $group2){
                             $child = Group::find($group2->id);
+                            $child->parent_id = $parent->id;
+                            $child->sequence = $i;
+                            $i++;
+                            $child->save();
+                        }
+                    }
+
+                }
+                return response()->json([
+                    'status' => true,
+                    'id' => $requests->db,
+                ]);
+                break;
+            case 'sort_menu':
+                $db = json_decode($requests->db);
+                $i = 0;
+                foreach ($db as $menu){
+                    echo $menu->id;
+                    $parent = menu::find($menu->id);
+                    $parent->parent_id = 0;
+                    $parent->sequence = $i;
+                    $i++;
+                    $parent->save();
+                    if(isset($menu->children)){
+                        foreach ($menu->children as $menu2){
+                            $child = Menu::find($menu2->id);
                             $child->parent_id = $parent->id;
                             $child->sequence = $i;
                             $i++;
