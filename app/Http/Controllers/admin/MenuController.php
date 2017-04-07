@@ -25,8 +25,8 @@ class MenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        dd(Menu::groupnname());
-        $menus = Menu::where( 'parent_id', 0 )->orderBy( 'group_name','sequence' )->get();
+        $menus = Menu::where( 'parent_id', 0 )->orderBy( 'group_name', 'sequence' )->get();
+
         return view( 'admin.menu.index' )->with( compact( 'menus' ) );
     }
 
@@ -47,8 +47,13 @@ class MenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store( Request $request ) {
-        $menu = $request->all();
-        if ( Menu::create( $menu ) ) {
+        $menu          = $request->all();
+        $c             = new Menu();
+        $c->name       = $menu['name'];
+        $c->link       = $menu['link'];
+        $c->group_name = $menu['group_name'];
+
+        if ( $c->save() ) {
             return redirect( '/admin/menu' );
         }
     }
@@ -105,7 +110,9 @@ class MenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( $id ) {
-        //
+        $menu = Menu::find($id);
+        $menu->delete();
+        return redirect('/admin/menu');
     }
 
     public function sort() {

@@ -11,9 +11,9 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for webhoa
-DROP DATABASE IF EXISTS `webhoa`;
-CREATE DATABASE IF NOT EXISTS `webhoa` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `webhoa`;
+DROP DATABASE IF EXISTS `webhoa_tmp`;
+CREATE DATABASE IF NOT EXISTS `webhoa_tmp` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `webhoa_tmp`;
 
 
 -- Dumping structure for table webhoa.categories

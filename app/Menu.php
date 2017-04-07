@@ -19,6 +19,6 @@ class Menu extends Model
     }
 
     static public function groupnname(){
-        return self::attributes['name'];
+        //return self::attributes['name'];
     }
 }

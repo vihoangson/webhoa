@@ -163,7 +163,7 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Cviebrock\EloquentSluggable\ServiceProvider::class,
-        'Lavary\Menu\ServiceProvider',
+        Lavary\Menu\ServiceProvider::class,
 
     ],
 
@@ -214,7 +214,7 @@ return [
         'Html'        => Collective\Html\HtmlFacade::class,
         'Cart'        => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
-        'Menu'       => 'Lavary\Menu\Facade',
+        'Menu'        => Lavary\Menu\Facade::class,
     ],
 
 ];

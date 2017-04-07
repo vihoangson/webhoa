@@ -21,7 +21,7 @@
     <h1>Category</h1>
 
     <table class="footable table table-stripped toggle-arrow-tiny menu-table" data-page-size="15">
-        <thead>
+        <thead class="hidden">
         <tr>
             <th data-sort-ignore="true"></th>
             <th data-toggle="true">Product Name</th>
@@ -40,14 +40,13 @@
                     <td>{{$menu->name}}</td>
                     <td>{{$menu->link}}</td>
                     <td>{{$menu->group_name}}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                     <td class="text-right">
                         <div class="btn-menu">
                             <a href="/admin/menu/{{$menu->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                         </div>
+                        {!! Form::open(['url' => '/admin/menu/'.$menu->id, 'method' => 'delete','class'=>'confirm-action']) !!}
+                        <button type="submit" name="id" value="{{$menu->id}}" href="/admin/menu/{{$menu->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
+                        {!! Form::close() !!}
                     </td>
                 </tr>
                 @if($menu->children()->get())
@@ -57,14 +56,13 @@
                             <td>{{$menu_1->name}}</td>
                             <td>{{$menu_1->link}}</td>
                             <td>{{$menu_1->group_name}}</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                             <td class="text-right">
                                 <div class="btn-menu">
                                     <a href="/admin/menu/{{$menu_1->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                                 </div>
+                                {!! Form::open(['url' => '/admin/menu/'.$menu_1->id, 'method' => 'delete','class'=>'confirm-action']) !!}
+                                <button type="submit" name="id" value="{{$menu_1->id}}" href="/admin/menu/{{$menu_1->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                     @endforeach
