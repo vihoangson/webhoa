@@ -16,7 +16,7 @@ class Menu {
      */
     public function handle( $request, Closure $next ) {
 
-        $menu_names = [ 'MainMenu', 'Menu_Admin' ];
+        $menu_names = [ 'MainMenu', 'Menu_Admin' , 'LeftMenu' ];
         foreach ( $menu_names as $menu_name ) {
             $this->make_menu( $menu_name );
         }

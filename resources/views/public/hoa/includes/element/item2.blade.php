@@ -8,7 +8,7 @@
             {{$product->summary}}
         </div>
         <div class="price">
-            @if($product->price_sale)
+            @if($product->price_sale && $product->date_end_sale_formated_countdown)
                 <span class="price-new">{{$product->price_sale_formated}}</span>
                 <span class="price-old">{{$product->price_formated}}</span>
                 @if($product->date_end_sale_formated_countdown)

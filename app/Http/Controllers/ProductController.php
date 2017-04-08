@@ -37,9 +37,15 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( $id ) {
-        $product = Product::find( $id );
+        $product        = Product::find( $id );
+        $product_relate = $product->product_relate( $id );
 
-        return view( 'public.' . $this->template_name . '.product.show' )->with( [ 'product' => $product ] );
+        return view( 'public.' . $this->template_name . '.product.show' )->with(
+            compact(
+                'product',
+                'product_relate'
+            )
+        );
     }
 
     public function add_cart( $id ) {

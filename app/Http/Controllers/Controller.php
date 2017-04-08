@@ -40,39 +40,14 @@ class Controller extends BaseController {
 
     private function prepare_menu() {
         $menu = [];
-        return $menu ;
+
+        return $menu;
     }
 
     private function set_menu_main() {
 
-        $menus = \Menu::get( 'MainMenu' )->roots();
+        $data_menu_main = $this->get_data_menu( 'MainMenu' );
 
-        foreach ($menus as $menu){
-            if($menu->hasChildren()){
-                foreach ($menu->children() as $sub_menu){
-                    $data_menu_main[$menu->title][$sub_menu->title] = $sub_menu->url();
-                }
-            }else{
-                $data_menu_main[$menu->title] = $menu->url();
-            }
-        }
-        $data_menu_main2 = [
-            'Trang chủ'    => '/',
-            'Hoa tươi'     => [
-                'Cưới hỏi'             => '/category/2-cuoi-hoi',
-                'Sinh nhật'            => '/category/3-sinh-nhat',
-                'Khai trương hội nghị' => '/category/4-khai-truong-hoi-nghi',
-                'Chúc mừng'            => '/category/5-chuc-mung',
-                'Chia buồn'            => '/category/6-chia-buon',
-            ],
-            'Lan hồ điệp'  => [
-                'Từ 1 đến 4 cành'  => '/category/13-tu-1-den-4-canh',
-                'Từ 5 đến 10 cành' => '/category/14-tu-5-den-10-canh',
-                'Trên 10 cành'     => '/category/15-tren-10-canh',
-            ],
-            'Chăm sóc hoa' => '/post/177-cham-soc-hoa',
-            'Liên hệ'      => '/contact',
-        ];
         // Set menu for admin
         if ( ! Auth::guard()->guest() ) {
             $data_menu_main['Admin CP'] = '/admin';
@@ -82,13 +57,8 @@ class Controller extends BaseController {
 
     private function set_menu_left() {
         // Menu cột bên trái
-        $data_menu_left = [
-            'Bó hoa'    => '/category/8',
-            'giỏ hoa'   => '/category/9',
-            'bình hoa'  => '/category/10',
-            'hộp hoa'   => '/category/11',
-            'loại khác' => '/category/12',
-        ];
+        $data_menu_left = $this->get_data_menu( 'LeftMenu' );
+
         View::share( 'menu_left', $data_menu_left );
     }
 
@@ -163,6 +133,33 @@ class Controller extends BaseController {
 
         // Set template_name for view
         View::share( 'template_name', $this->template_name );
+    }
+
+    /**
+     * @param $group_name
+     *
+     * @return array
+     */
+    private function get_data_menu( $group_name ) {
+
+        if(\Menu::get( $group_name ) == null){
+            return [];
+        }
+
+        $menus = \Menu::get( $group_name )->roots();
+
+        $data_menu = [];
+        foreach ( $menus as $menu ) {
+            if ( $menu->hasChildren() ) {
+                foreach ( $menu->children() as $sub_menu ) {
+                    $data_menu[ $menu->title ][ $sub_menu->title ] = $sub_menu->url();
+                }
+            } else {
+                $data_menu[ $menu->title ] = $menu->url();
+            }
+        }
+
+        return $data_menu;
     }
 
 
