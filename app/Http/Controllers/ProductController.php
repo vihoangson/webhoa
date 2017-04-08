@@ -37,10 +37,10 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( $id ) {
-        if((int)($id) > 0){
-            $product = Product::find($id);
-        }else{
-            $product = Product::findBySlug($id);
+        if ( (int) ( $id ) > 0 ) {
+            $product = Product::find( $id );
+        } else {
+            $product = Product::findBySlug( $id );
         }
 
         $product_relate = $product->product_relate( $id );
@@ -54,8 +54,14 @@ class ProductController extends Controller {
     }
 
     public function add_cart( $id ) {
+
         if ( isset( $id ) ) {
-            $product = Product::find( $id );
+            if ( get_id_or_slug( $id ) == 'id' ) {
+                $product = Product::find( $id );
+            }else{
+                $product = Product::findBySlug( $id );
+            }
+
             Cart::add( $product->id, $product->title, 1, ( $product->price_sale ? $product->price_sale : $product->price ), [ 'img_url' => ( $product->main_img ? $product->image->find( $product->main_img )->url : '' ) ] );
 
             return redirect( '/product/checkout' );
@@ -108,6 +114,7 @@ class ProductController extends Controller {
             return redirect( '/' );
         }
         Cart::destroy();
+
         //todo: Xử lý lưu cart
         return view( 'public.' . $this->template_name . '.product.finish' );
     }
