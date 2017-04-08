@@ -25,8 +25,8 @@ Route::post('/product/update_cart', 'ProductController@update_cart');
 Route::get('/product/finish', 'ProductController@finish');
 Route::get('/product/{id}', 'ProductController@show');
 
-
-Route::resource('post', 'PostController');
+Route::get('post/{id}', 'PostController@show');
+//Route::resource('post', 'PostController');
 
 Route::post('/up', 'admin\ProductController@up');
 Route::post('/update_ajax', 'admin\ProductController@update_ajax');
@@ -37,7 +37,7 @@ Route::post('/admin/setting', 'admin\DashboardController@save_setting');
 Route::get('/admin/logout', 'admin\DashboardController@logout');
 Route::get('/admin/product/template', 'admin\ProductController@template');
 Route::get('/admin/menu/sort', 'admin\MenuController@sort');
-Route::resource('/menu', 'MenuController');
+//Route::resource('/menu', 'MenuController');
 Route::resource('/admin/menu', 'admin\MenuController');
 
 Route::get('/admin/group/sort', 'admin\GroupController@sort');

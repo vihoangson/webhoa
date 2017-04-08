@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e1b4a4fd819b5aa8ed121a1a5a525f65",
-    "content-hash": "df8a5fdd88747b82105d384d93f38b20",
+    "hash": "04ce9d9a1435aa68e7ec7a2a567eebed",
+    "content-hash": "939d13df51682222b4bd01de9a78d4e4",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -127,16 +127,16 @@
         },
         {
             "name": "cviebrock/eloquent-sluggable",
-            "version": "4.0.0",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "842ad2a299ace154d995bff89fa5f9f14fee4fd5"
+                "reference": "e9a020fd9d4676add911dd05d03e570735983f3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/842ad2a299ace154d995bff89fa5f9f14fee4fd5",
-                "reference": "842ad2a299ace154d995bff89fa5f9f14fee4fd5",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/e9a020fd9d4676add911dd05d03e570735983f3d",
+                "reference": "e9a020fd9d4676add911dd05d03e570735983f3d",
                 "shasum": ""
             },
             "require": {
@@ -144,7 +144,7 @@
                 "illuminate/config": "5.1.* || 5.2.* || 5.3.*",
                 "illuminate/database": "5.1.* || 5.2.* || 5.3.*",
                 "illuminate/support": "5.1.* || 5.2.* || 5.3.*",
-                "php": "^5.5.9 || ^7.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
                 "mockery/mockery": "^0.9.4",
@@ -174,7 +174,7 @@
                 "laravel",
                 "slug"
             ],
-            "time": "2016-06-10 14:41:04"
+            "time": "2016-09-14 17:44:13"
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
@@ -4272,7 +4272,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.5.9"
+        "php": ">=5.6"
     },
     "platform-dev": []
 }

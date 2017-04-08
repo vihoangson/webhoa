@@ -7,18 +7,16 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class PostController extends Controller
-{
+class PostController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $posts = \App\Post::paginate(3);
+    public function index() {
+        $posts = \App\Post::paginate( 3 );
 
-        echo view("post/index")->with("posts", $posts);
+        echo view( "post/index" )->with( "posts", $posts );
     }
 
     /**
@@ -26,63 +24,70 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        echo view("post/create");
+    public function create() {
+        echo view( "post/create" );
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(\App\Http\Requests\CheckPostsRequest $request)
-    {
+    public function store( \App\Http\Requests\CheckPostsRequest $request ) {
         $dulieu_tu_input = $request->all();
-        \App\Post::create($dulieu_tu_input);
-        return redirect('post');
+        \App\Post::create( $dulieu_tu_input );
+
+        return redirect( 'post' );
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $post = Post::find($id);
-        if ($post == null) {
-            return redirect("/");
+    public function show( $id ) {
+        if ( (int) ( $id ) > 0 ) {
+            $post = Post::find( $id );
+        } else {
+            $post = Post::findBySlug( $id );
         }
-        return view('public.'.$this->template_name.'.post.show')->with(compact("post"));
+        if ( $post == null ) {
+            return redirect( "/" );
+        }
+
+        return view( 'public.' . $this->template_name . '.post.show' )->with( compact( "post" ) );
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $post = \App\Post::FindOrFail($id);
-        return view('post.edit', compact('post'));
+    public function edit( $id ) {
+        $post = \App\Post::FindOrFail( $id );
+
+        return view( 'post.edit', compact( 'post' ) );
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\CheckPostsRequest $request
-     * @param  int $id
+     * @param  int                                  $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(\App\Http\Requests\CheckPostsRequest $request, $id)
-    {
-        $post = \App\Post::FindOrFail($id);
-        $post->update($request->all());
-        return redirect('post');
+    public function update( \App\Http\Requests\CheckPostsRequest $request, $id ) {
+        $post = \App\Post::FindOrFail( $id );
+        $post->update( $request->all() );
+
+        return redirect( 'post' );
 
     }
 
@@ -90,10 +95,10 @@ class PostController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy( $id ) {
         //
     }
 }

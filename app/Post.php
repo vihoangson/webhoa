@@ -4,38 +4,36 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
-class Post extends Model
-{
-    protected $fillable = ['title', 'content'];
-    use Sluggable;
+class Post extends Model {
+    protected $fillable = [ 'title', 'content' ];
+    use Sluggable, SluggableScopeHelpers;
 
     /**
      * Return the sluggable configuration array for this model.
      *
      * @return array
      */
-    public function sluggable()
-    {
+    public function sluggable() {
         return [
             'slug' => [
-                'source' => 'title'
-            ]
+                'source' => 'title',
+            ],
         ];
     }
+
     /**
      * Thay đổi giá trị trước khi lưu xuống db
      *
      * @param $slug
      */
-    public function setSlugAttribute($slug)
-    {
+    public function setSlugAttribute( $slug ) {
         $this->attributes['slug'] = $slug . "_" . time();
     }
 
-    public function group()
-    {
-        return $this->belongsToMany('App\Group')
+    public function group() {
+        return $this->belongsToMany( 'App\Group' )
                     ->withTimestamps();
     }
 }

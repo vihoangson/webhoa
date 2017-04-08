@@ -30,11 +30,11 @@
                     <td>
                     </td>
                     <td>
-                        <div>Name: {{$order->customer->name}}</div>
-                        <div>Address: {{$order->customer->address}}</div>
-                        <div>Tel: {{$order->customer->tel}}</div>
-                        <div>Email: {{$order->customer->email}}</div>
-                        <div>City: {{$order->customer->city}}</div>
+                        <div>Name: {{$order->customer->name or '[Null]'}}</div>
+                        <div>Address: {{$order->customer->address or '[Null]' }}</div>
+                        <div>Tel: {{$order->customer->tel or '[Null]' }}</div>
+                        <div>Email: {{$order->customer->email or '[Null]' }}</div>
+                        <div>City: {{$order->customer->city or '[Null]'   }}</div>
                     </td>
                     <td>
 
@@ -66,5 +66,4 @@
         </tr>
         </tfoot>
     </table>
-    <div><a href="/admin/post/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create post</a></div>
 @endsection

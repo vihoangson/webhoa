@@ -37,7 +37,12 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( $id ) {
-        $product        = Product::find( $id );
+        if((int)($id) > 0){
+            $product = Product::find($id);
+        }else{
+            $product = Product::findBySlug($id);
+        }
+
         $product_relate = $product->product_relate( $id );
 
         return view( 'public.' . $this->template_name . '.product.show' )->with(
@@ -102,7 +107,7 @@ class ProductController extends Controller {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
         }
-        //Cart::destroy();
+        Cart::destroy();
         //todo: Xử lý lưu cart
         return view( 'public.' . $this->template_name . '.product.finish' );
     }
