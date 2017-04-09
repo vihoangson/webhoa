@@ -134,7 +134,7 @@
                             @if(Cart::total()==0)
                                 <span id="cart-total">@lang('common.No item')</span>
                             @else
-                                <span id="cart-total">{{Cart::count()}} item(s) - {{(Cart::total())}} đ</span>
+                                <span id="cart-total">{{Cart::count()}} @lang('common.item(s)') - {{(Cart::total())}} đ</span>
                                 <i class="fa fa-caret-down"></i>
                             @endif
                         </button>
@@ -181,17 +181,17 @@
                                         <td class="text-left">$192.68</td>
                                     </tr>
                                     <tr>
-                                        <td class="text-right"><strong>Total</strong></td>
+                                        <td class="text-right"><strong>@lang('common.Total')</strong></td>
                                         <td class="text-left">{{Cart::total()}}đ</td>
                                     </tr>
                                     </tbody>
                                 </table>
                                 <p class="text-right btn-block1">
                                     <a href="/product/checkout">
-                                        View Cart
+                                        @lang('common.View Cart')
                                     </a>
                                     <a href="/product/payment">
-                                        Checkout
+                                        @lang('common.Checkout')
                                     </a>
                                 </p>
                             </li>

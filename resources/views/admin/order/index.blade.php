@@ -23,9 +23,14 @@
 
                     </td>
                     <td>
-                        @foreach($order->data_cache as $key => $value)
-                            <div><strong>{{$key}}:</strong> {!! (is_array($value)?var_dump($value):$value) !!}</div>
+                        @foreach($order->data_cache_formated as $key => $value)
+                            <div>
+                                <div><a href="/product/{{$value['id']}}">{{$value['name']}}</a></div>
+                                <div>{{number_format($value['price'])}} x {{$value['qty']}} : {{number_format($value['subtotal'])}}</div>
+                            </div>
                         @endforeach
+                        <hr>
+                        <div>Total: {{number_format($order->total_sum)}} đ</div>
                     </td>
                     <td>
                     </td>

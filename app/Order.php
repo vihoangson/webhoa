@@ -6,13 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = ['customer_id', 'product_id', 'data_cache'];
+    protected $fillable = ['customer_id', 'product_id', 'data_cache', 'total_sum'];
 
-    public function getDataCacheAttribute($data_cache)
+    public function getDataCacheFormatedAttribute()
     {
-        return array_values(json_decode($data_cache,true))[0    ];
-        $this->attributes['data_cache'] = $data_cache;
-
+        $m = json_decode($this->attributes['data_cache'] ,true);
+        return $m;
     }
 
     public function customer()

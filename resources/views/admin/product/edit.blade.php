@@ -28,6 +28,12 @@
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('slug','Slug:') !!}</label>
+                    <div class="col-sm-10">
+                        {!! Form::text('slug',(isset($product->slug)?$product->slug:''),['class'=>'form-control','required' => 'required']) !!}
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('price','Price:') !!}</label>
                     <div class="col-sm-10">
                         <div class="input-group m-b"><span class="input-group-addon">$</span>

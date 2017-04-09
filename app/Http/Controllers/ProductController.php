@@ -37,13 +37,14 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( $id ) {
-        if ( (int) ( $id ) > 0 ) {
+
+        if ( get_id_or_slug( $id ) == 'id' ) {
             $product = Product::find( $id );
         } else {
             $product = Product::findBySlug( $id );
         }
 
-        $product_relate = $product->product_relate( $id );
+        $product_relate = $product->product_relate(6);
 
         return view( 'public.' . $this->template_name . '.product.show' )->with(
             compact(
@@ -58,7 +59,7 @@ class ProductController extends Controller {
         if ( isset( $id ) ) {
             if ( get_id_or_slug( $id ) == 'id' ) {
                 $product = Product::find( $id );
-            }else{
+            } else {
                 $product = Product::findBySlug( $id );
             }
 
@@ -103,6 +104,7 @@ class ProductController extends Controller {
 
         $od              = new Order;
         $od->data_cache  = json_encode( Cart::content() );
+        $od->total_sum   = str_replace(',','',Cart::total());
         $od->customer_id = $customer->id;
         $od->save();
 

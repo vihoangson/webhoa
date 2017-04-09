@@ -16,6 +16,7 @@
                 @endif
             @else
                 <span class="price-new">{{$product->price_formated}}</span>
+                <div class="none-countdown"></div>
             @endif
         </div>
         <div class="cart-button button-group">

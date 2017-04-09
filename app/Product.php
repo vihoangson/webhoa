@@ -20,6 +20,7 @@ class Product extends Model {
         'active',
         'summary',
         'main_img',
+        'slug',
     ];
     use Sluggable, SluggableScopeHelpers;
 
@@ -41,17 +42,23 @@ class Product extends Model {
      *
      * @return array
      */
-    public function product_relate() {
+    public function product_relate( $limit = null ) {
         $this->attributes['price'];
         $categories     = ( $this->category()->get() );
         $relate_product = [];
+        $i              = 0;
         foreach ( $categories as $cat ) {
             $product = $cat->product()->get();
             foreach ( $product as $item ) {
-                $relate_product[] = $item;
+                if ( $i >= $limit ) {
+                    continue;
+                } else {
+                    $relate_product[] = $item;
+                    $i ++;
+                }
+
             }
         }
-
         return $relate_product;
     }
 
@@ -156,17 +163,21 @@ class Product extends Model {
     }
 
     public function setDateBeginSaleAttribute( $date ) {
-        if ( ! preg_match( '/\s/', $date ) ) {
-            $date = Carbon::createFromFormat( 'm/d/Y', $date );
+        if ( $date ) {
+            if ( ! preg_match( '/\s/', $date ) ) {
+                $date = Carbon::createFromFormat( 'm/d/Y', $date );
+            }
+            $this->attributes['date_begin_sale'] = $date;
         }
-        $this->attributes['date_begin_sale'] = $date;
     }
 
     public function setDateEndSaleAttribute( $date ) {
-        if ( ! preg_match( '/\s/', $date ) ) {
-            $date = Carbon::createFromFormat( 'm/d/Y', $date );
+        if ( $date ) {
+            if ( ! preg_match( '/\s/', $date ) ) {
+                $date = Carbon::createFromFormat( 'm/d/Y', $date );
+            }
+            $this->attributes['date_end_sale'] = $date;
         }
-        $this->attributes['date_end_sale'] = $date;
     }
 
     public function category() {

@@ -8,7 +8,7 @@
     <div id="main-container" class="container">
         <!-- Main Heading Starts -->
         <h2 class="main-heading text-center">
-            Shopping Cart
+            @lang('common.Shopping Cart')
         </h2>
         <!-- Main Heading Ends -->
         <!-- Shopping Cart Table Starts -->
@@ -18,22 +18,21 @@
                 <thead>
                 <tr>
                     <td class="text-center">
-                        Image
+                        @lang('common.Image')
                     </td>
                     <td class="text-center">
-                        Product Details
+                        @lang('common.Product Details')
                     </td>
                     <td class="text-center">
-                        Quantity
+                        @lang('common.qty')
                     </td>
                     <td class="text-center">
-                        Price
+                        @lang('common.Price')
                     </td>
                     <td class="text-center">
-                        Total
+                        @lang('common.SumTotal')
                     </td>
                     <td class="text-center">
-                        Action
                     </td>
                 </tr>
                 </thead>
@@ -75,7 +74,7 @@
                 <tfoot>
                 <tr>
                     <td colspan="4" class="text-right">
-                        <strong>Total :</strong>
+                        <strong>@lang('common.Total') :</strong>
                     </td>
                     <td colspan="2" class="text-left">
                         {{Cart::total()}} đ
@@ -95,22 +94,22 @@
                     <div class="panel panel-smart ">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                Discount Coupon Code
+                                @lang('common.Discount Coupon Code')
                             </h3>
                         </div>
                         <div class="panel-body">
                             <!-- Form Starts -->
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label for="inputCouponCode" class="col-sm-3 control-label">Coupon Code :</label>
+                                    <label for="inputCouponCode" class="col-sm-3 control-label">@lang('common.Coupon Code') :</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="inputCouponCode" placeholder="Coupon Code">
+                                        <input type="text" class="form-control" id="inputCouponCode" placeholder="@lang('common.Coupon Code')">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-3 col-sm-9">
                                         <button type="submit" class="btn btn-default">
-                                            Apply Coupon
+                                            @lang('common.Apply Coupon')
                                         </button>
                                     </div>
                                 </div>
@@ -147,12 +146,12 @@
                     <div class="panel panel-smart">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                Total
+                                @lang('common.Total')
                             </h3>
                         </div>
                         <div class="panel-body">
                             <dl class="dl-horizontal">
-                                <dt>Coupon Discount :</dt>
+                                <dt>@lang('common.Coupon Discount') :</dt>
                                 <dd>0 đ</dd>
                                 {{--<dt>Shipment Fee :</dt>--}}
                                 {{--<dd>15.000 đ</dd>--}}
@@ -161,17 +160,17 @@
                             </dl>
                             <hr>
                             <dl class="dl-horizontal total">
-                                <dt>Total :</dt>
+                                <dt>@lang('common.Total') :</dt>
                                 <dd>{{Cart::total()}} đ</dd>
                             </dl>
                             <hr>
                             <div class="text-uppercase clearfix">
                                 <a href="/" class="btn btn-default pull-left">
-                                    <span class="hidden-xs">Continue Shopping</span>
+                                    <span class="hidden-xs">@lang('common.Continue Shopping')</span>
                                     <span class="visible-xs">Continue</span>
                                 </a>
                                 <a href="/product/payment" class="btn btn-default pull-right">
-                                    Checkout
+                                    @lang('common.Checkout')
                                 </a>
                             </div>
                         </div>

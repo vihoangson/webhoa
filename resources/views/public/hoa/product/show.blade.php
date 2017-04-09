@@ -34,10 +34,10 @@
             <hr>
             <!-- Manufacturer Starts -->
             <ul class="list-unstyled manufacturer">
-                <li>
+                <li class="hidden">
                     <span>@lang('common.Brand'):</span> Indian spices
                 </li>
-                <li><span>@lang('common.Reward Points'):</span> 300</li>
+                <li class="hidden"><span>@lang('common.Reward Points'):</span> 300</li>
                 <li>
                     <span>@lang('common.Availability'):</span> <strong
                             class="label label-success">@lang('common.In Stock')</strong>
@@ -67,7 +67,7 @@
             {!! Form::open(['url'=>'/product/add_cart/'.$product->id,'method'=>'get']) !!}
             <div class="options">
                 <div class="form-group">
-                    <label class="control-label text-uppercase" for="input-quantity">Qty:</label>
+                    <label class="control-label text-uppercase" for="input-quantity">@lang('common.qty'):</label>
                     <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control">
                 </div>
                 <div class="cart-button button-group">
@@ -96,7 +96,7 @@
 
     <!-- Related Products Starts -->
     <div class="product-info-box">
-        <h4 class="heading">Related Products</h4>
+        <h4 class="heading">@lang("common.Related Products")</h4>
         <!-- Products Row Starts -->
         <div class="row">
             @foreach($product_relate as $item)
