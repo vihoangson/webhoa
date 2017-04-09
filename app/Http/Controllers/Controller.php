@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Http\Middleware\Menu;
 use App\Option;
+use App\Product;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -36,6 +37,8 @@ class Controller extends BaseController {
         $this->set_menu_left();
 
         $this->set_variable_general();
+
+        $this->set_best_seller();
     }
 
     private function prepare_menu() {
@@ -160,6 +163,12 @@ class Controller extends BaseController {
         }
 
         return $data_menu;
+    }
+
+    private function set_best_seller() {
+        // todo: làm điều kiện riêng
+        $products = Product::limit(2)->get();
+        View::share( 'product_best_seller', $products );
     }
 
 

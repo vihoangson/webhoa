@@ -104,7 +104,10 @@
             <!-- Shopping Options Ends -->
             <!-- Bestsellers Links Starts -->
             <h3 class="side-heading">Bestsellers</h3>
-            <div class="product-col">
+            @foreach($product_best_seller as $product)
+                @include('public.hoa.includes.element.item1')
+            @endforeach
+            <div class="product-col hidden">
                 <div class="image">
                     <img src="{{config('templates.'.$template_name.'.template_path')}}images/product-images/9.png" alt="product" class="img-responsive" />
                 </div>

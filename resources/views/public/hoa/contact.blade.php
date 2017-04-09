@@ -48,7 +48,7 @@
                     <h3 class="panel-title">@lang('common.Send us a mail')</h3>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form">
+                    {!! Form::open(['method'=>'post','class'=>'form-horizontal']) !!}
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">
                                 @lang('common.Name')
@@ -86,7 +86,7 @@
                                 <button type="submit" class="btn btn-main text-uppercase">@lang('common.Submit')</button>
                             </div>
                         </div>
-                    </form>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

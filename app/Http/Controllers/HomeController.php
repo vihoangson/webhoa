@@ -46,4 +46,15 @@ class HomeController extends Controller {
     public function contact() {
         return view( 'public.' . $this->template_name . '.contact' );
     }
+
+    public function process_contact(Request $request) {
+        if($request->email){
+            $data['user'] = 123;
+            Mail::send('emails.welcome', $data, function ($message) {
+                $message->from('ngotrichi@gmail.com', 'Laravel');
+                $message->to('vihoangson@gmail.com');
+                //->cc('bar@example.com')
+            });
+        }
+    }
 }

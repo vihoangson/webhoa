@@ -13,6 +13,7 @@
 
 Route::get('/',  ['uses' => 'HomeController@index', 'as' => 'home']);
 Route::get('/contact', 'HomeController@contact');
+Route::post('/contact', 'HomeController@process_contact');
 
 Route::get('/product', 'ProductController@index');
 Route::get('/product/payment', 'ProductController@payment');
