@@ -29,6 +29,10 @@ Route::get('/product/{id}', 'ProductController@show');
 Route::get('post/{id}', 'PostController@show');
 //Route::resource('post', 'PostController');
 
+Route::get('/login33', function(){
+    return view("public.hoa.login");
+});
+
 Route::post('/up', 'admin\ProductController@up');
 Route::post('/update_ajax', 'admin\ProductController@update_ajax');
 

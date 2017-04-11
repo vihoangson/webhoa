@@ -1,19 +1,19 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Server version:               10.1.13-MariaDB - mariadb.org binary distribution
+-- Server version:               5.5.5-10.1.13-MariaDB - mariadb.org binary distribution
 -- Server OS:                    Win32
--- HeidiSQL Version:             9.3.0.4984
+-- HeidiSQL version:             7.0.0.4053
+-- Date/time:                    2017-04-12 05:14:39
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET NAMES utf8mb4 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping database structure for webhoa
-DROP DATABASE IF EXISTS `webhoa_tmp`;
-CREATE DATABASE IF NOT EXISTS `webhoa_tmp` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `webhoa_tmp`;
+DROP DATABASE IF EXISTS `webhoa`;
+CREATE DATABASE IF NOT EXISTS `webhoa` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `webhoa`;
 
 
 -- Dumping structure for table webhoa.categories
@@ -21,33 +21,30 @@ DROP TABLE IF EXISTS `categories`;
 CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` text COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.categories: ~18 rows (approximately)
+-- Dumping data for table webhoa.categories: ~15 rows (approximately)
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` (`id`, `name`, `created_at`, `updated_at`) VALUES
-	(1, 'Hoa tươi', '2017-03-15 14:25:38', '2017-03-19 07:51:18'),
-	(2, 'Cưới hỏi', '2017-03-16 00:00:00', '2017-03-19 07:51:27'),
-	(3, 'Sinh nhật', '2017-03-18 05:54:15', '2017-03-19 07:51:34'),
-	(4, 'Khai trương hội nghị', '2017-03-18 05:54:20', '2017-03-19 07:51:46'),
-	(5, 'Chúc mừng', '2017-03-19 07:51:57', '2017-03-19 07:51:57'),
-	(6, 'Chia buồn', '2017-03-19 07:52:04', '2017-03-19 07:52:04'),
-	(7, 'Lan hồ điệp', '2017-03-19 07:52:20', '2017-03-19 07:52:20'),
-	(8, 'Bó hoa', '2017-03-21 05:56:16', '2017-03-21 05:56:16'),
-	(9, 'Giỏ hoa', '2017-03-21 05:56:25', '2017-03-21 05:56:25'),
-	(10, 'Bình hoa', '2017-03-21 05:56:33', '2017-03-21 05:56:33'),
-	(11, 'Hộp hoa', '2017-03-21 05:56:41', '2017-03-21 05:56:41'),
-	(12, 'Loại khác', '2017-03-21 05:56:49', '2017-03-21 05:56:49'),
-	(13, 'Từ 1 đến 4 cành', '2017-03-21 05:59:52', '2017-03-21 05:59:52'),
-	(14, 'Từ 5 đến 10 cành', '2017-03-21 05:59:59', '2017-03-21 05:59:59'),
-	(15, 'Trên 10 cành', '2017-03-21 06:00:05', '2017-03-21 06:00:05'),
-	(16, '12312', '2017-03-30 11:18:04', '2017-03-30 11:18:04'),
-	(17, '345345', '2017-03-30 11:19:32', '2017-03-30 11:19:32'),
-	(18, '124124', '2017-03-30 11:19:59', '2017-03-30 11:19:59'),
-	(19, '452345', '2017-03-30 11:21:04', '2017-03-30 11:21:04');
+INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
+	(1, 'Hoa tươi', 'hoa-tuoi', '2017-03-15 14:25:38', '2017-03-19 07:51:18'),
+	(2, 'Cưới hỏi', 'cuoi-hoi', '2017-03-16 00:00:00', '2017-03-19 07:51:27'),
+	(3, 'Sinh nhật', 'sinh-nhat', '2017-03-18 05:54:15', '2017-03-19 07:51:34'),
+	(4, 'Khai trương hội nghị', 'khai-truong-hoi-nghi', '2017-03-18 05:54:20', '2017-03-19 07:51:46'),
+	(5, 'Chúc mừng', 'chuc-mung', '2017-03-19 07:51:57', '2017-03-19 07:51:57'),
+	(6, 'Chia buồn', 'chia-buon', '2017-03-19 07:52:04', '2017-03-19 07:52:04'),
+	(7, 'Lan hồ điệp', 'lan-ho-diep', '2017-03-19 07:52:20', '2017-03-19 07:52:20'),
+	(8, 'Bó hoa', 'bo-hoa', '2017-03-21 05:56:16', '2017-03-21 05:56:16'),
+	(9, 'Giỏ hoa', 'gio-hoa', '2017-03-21 05:56:25', '2017-03-21 05:56:25'),
+	(10, 'Bình hoa', 'binh-hoa', '2017-03-21 05:56:33', '2017-03-21 05:56:33'),
+	(11, 'Hộp hoa', 'hop-hoa', '2017-03-21 05:56:41', '2017-03-21 05:56:41'),
+	(12, 'Loại khác', 'loai-khac', '2017-03-21 05:56:49', '2017-03-21 05:56:49'),
+	(13, 'Từ 1 đến 4 cành', 'tu-1-den-4-canh', '2017-03-21 05:59:52', '2017-03-21 05:59:52'),
+	(14, 'Từ 5 đến 10 cành', 'tu-5-den-10-canh', '2017-03-21 05:59:59', '2017-03-21 05:59:59'),
+	(15, 'Trên 10 cành', 'tren-10-canh', '2017-03-21 06:00:05', '2017-03-21 06:00:05');
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 
 
@@ -65,13 +62,35 @@ CREATE TABLE IF NOT EXISTS `category_product` (
   CONSTRAINT `category_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.category_product: ~4 rows (approximately)
+-- Dumping data for table webhoa.category_product: ~23 rows (approximately)
 /*!40000 ALTER TABLE `category_product` DISABLE KEYS */;
 INSERT INTO `category_product` (`category_id`, `product_id`, `created_at`, `updated_at`) VALUES
-	(1, 169, '2017-03-21 06:25:04', '2017-03-21 06:25:04'),
-	(2, 169, '2017-03-21 06:25:04', '2017-03-21 06:25:04'),
-	(7, 169, '2017-03-21 06:25:04', '2017-03-21 06:25:04'),
-	(13, 169, '2017-03-21 06:25:04', '2017-03-21 06:25:04');
+	(1, 176, '2017-03-25 15:41:29', '2017-03-25 15:41:29'),
+	(1, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(1, 178, '2017-03-25 15:42:17', '2017-03-25 15:42:17'),
+	(1, 179, '2017-03-26 09:31:58', '2017-03-26 09:31:58'),
+	(1, 180, '2017-04-08 11:29:02', '2017-04-08 11:29:02'),
+	(2, 176, '2017-03-26 09:24:35', '2017-03-26 09:24:35'),
+	(2, 180, '2017-04-08 11:29:02', '2017-04-08 11:29:02'),
+	(3, 176, '2017-03-25 15:41:29', '2017-03-25 15:41:29'),
+	(3, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(4, 176, '2017-03-26 09:24:35', '2017-03-26 09:24:35'),
+	(4, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(4, 178, '2017-03-25 15:42:17', '2017-03-25 15:42:17'),
+	(5, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(5, 178, '2017-03-25 15:42:17', '2017-03-25 15:42:17'),
+	(6, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(8, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(8, 179, '2017-03-26 09:31:58', '2017-03-26 09:31:58'),
+	(9, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(10, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(10, 179, '2017-03-26 09:31:58', '2017-03-26 09:31:58'),
+	(11, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(11, 179, '2017-03-26 09:31:58', '2017-03-26 09:31:58'),
+	(12, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(13, 180, '2017-04-08 11:29:02', '2017-04-08 11:29:02'),
+	(14, 177, '2017-03-26 09:31:09', '2017-03-26 09:31:09'),
+	(14, 179, '2017-03-26 09:31:58', '2017-03-26 09:31:58');
 /*!40000 ALTER TABLE `category_product` ENABLE KEYS */;
 
 
@@ -132,36 +151,17 @@ CREATE TABLE IF NOT EXISTS `customers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.customers: ~24 rows (approximately)
+-- Dumping data for table webhoa.customers: ~5 rows (approximately)
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
 INSERT INTO `customers` (`id`, `name`, `address`, `tel`, `city`, `email`, `created_at`, `updated_at`) VALUES
-	(1, '234', '234', '234', '', '', '2017-03-18 14:52:51', '2017-03-18 14:52:51'),
-	(2, '234', '234', '234', '', '', '2017-03-18 15:01:37', '2017-03-18 15:01:37'),
-	(3, '', '', '', '', '', '2017-03-18 15:01:51', '2017-03-18 15:01:51'),
-	(4, '', '', '', '', '', '2017-03-18 15:03:50', '2017-03-18 15:03:50'),
-	(5, '345', '345', '', '', '', '2017-03-18 15:11:14', '2017-03-18 15:11:14'),
-	(6, '345', '345', '', '', '', '2017-03-18 15:12:34', '2017-03-18 15:12:34'),
-	(7, '345', '345', '', '', '', '2017-03-18 15:13:20', '2017-03-18 15:13:20'),
-	(8, '345', '345', '', '', '', '2017-03-18 15:13:30', '2017-03-18 15:13:30'),
-	(9, '3456345', '34543', '54325', '', '', '2017-03-18 15:14:26', '2017-03-18 15:14:26'),
-	(10, '2134124', '124', '124', '', '', '2017-03-18 15:15:41', '2017-03-18 15:15:41'),
-	(11, '4234', '234234', '234', '', '', '2017-03-18 15:17:21', '2017-03-18 15:17:21'),
-	(12, '123', '124124', '124', '', '', '2017-03-18 15:18:15', '2017-03-18 15:18:15'),
-	(13, '123', '124124', '124', '', '', '2017-03-18 15:20:23', '2017-03-18 15:20:23'),
-	(14, '123', '124124', '124', '', '', '2017-03-18 16:46:24', '2017-03-18 16:46:24'),
-	(15, '123', '124124', '124', '', '', '2017-03-18 16:46:38', '2017-03-18 16:46:38'),
-	(16, '', '', '', '', '', '2017-03-18 16:56:15', '2017-03-18 16:56:15'),
-	(17, '123@alsdkfj.com', ';lkasjdf', 'l;kasjdf', '', '', '2017-03-19 07:15:25', '2017-03-19 07:15:25'),
-	(18, 'Email@alkfj.com', ';lkajsdf', 'lkasjd', '', '', '2017-03-19 07:16:04', '2017-03-19 07:16:04'),
-	(19, '222', '77', '66', '', '', '2017-03-19 07:17:41', '2017-03-19 07:17:41'),
-	(20, '11', '123123', '123123', '', '', '2017-03-19 07:19:00', '2017-03-19 07:19:00'),
-	(21, '11', '66', '555', '', '', '2017-03-19 07:20:46', '2017-03-19 07:20:46'),
-	(22, '11', '66', '555', '77', '444', '2017-03-19 07:21:20', '2017-03-19 07:21:20'),
-	(23, '11', '66', '555', '77', '444', '2017-03-19 07:21:39', '2017-03-19 07:21:39'),
-	(24, '1', '4', '3', '5', '2@gmail.com', '2017-03-19 07:26:22', '2017-03-19 07:26:22'),
-	(25, '123', '123', '1123', '3123', '123@fmai.com', '2017-03-27 03:12:12', '2017-03-27 03:12:12');
+	(27, 'hoangson', 'safasf adf', '01218851146', '684a6', 'hoangson@gmail.com', '2017-04-08 01:27:31', '2017-04-08 01:27:31'),
+	(28, 'hoang son', '23432', '13421', '234', 'hoangson@gmail.com', '2017-04-08 01:36:45', '2017-04-08 01:36:45'),
+	(29, 'hoang son', 'ádflkjh', '01218851144', 'l;ákjdf', 'vihoangson@gmail.com', '2017-04-08 08:46:19', '2017-04-08 08:46:19'),
+	(30, 'hson', 'sadflk', 'saldfkj', 'laskdfj', 'sasf@fasd.com', '2017-04-08 09:38:45', '2017-04-08 09:38:45'),
+	(31, '123', ';lksadjf', 'lwaekfj', ';lkjas', 'eqw@gmailc.om', '2017-04-08 09:42:48', '2017-04-08 09:42:48'),
+	(32, '345345', 'lksj', 'lkaesrjf', ';lkj', 'ss@fgad.com', '2017-04-08 09:46:20', '2017-04-08 09:46:20');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 
 
@@ -183,8 +183,8 @@ INSERT INTO `groups` (`id`, `name`, `parent_id`, `sequence`, `created_at`, `upda
 	(1, 'asdafas222222222224124', 0, 0, '2017-03-30 11:22:07', '2017-03-30 13:04:16'),
 	(2, '424523433134', 0, 3, '2017-03-30 11:22:11', '2017-03-30 13:03:33'),
 	(3, 'ưerwer', 2, 4, '2017-03-30 12:02:06', '2017-03-30 13:03:44'),
-	(4, 'tưer21512541', 1, 2, '2017-03-30 12:02:09', '2017-03-30 13:04:20'),
-	(5, 'wrtwrt4124123', 1, 1, '2017-03-30 12:57:44', '2017-03-30 13:04:24');
+	(4, 'tưer21512541', 1, 1, '2017-03-30 12:02:09', '2017-04-08 01:46:15'),
+	(5, 'wrtwrt4124123', 1, 2, '2017-03-30 12:57:44', '2017-04-08 01:46:15');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 
 
@@ -214,9 +214,9 @@ CREATE TABLE IF NOT EXISTS `images` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=199 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=202 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.images: ~28 rows (approximately)
+-- Dumping data for table webhoa.images: ~31 rows (approximately)
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
 INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 	(162, '1489760252_64429.jpg', 'uploads/1489760252_64429.jpg', '2017-03-17 14:17:32', '2017-03-17 14:17:32'),
@@ -244,10 +244,14 @@ INSERT INTO `images` (`id`, `title`, `url`, `created_at`, `updated_at`) VALUES
 	(191, '1489828623_96596.jpg', 'uploads/1489828623_96596.jpg', '2017-03-18 09:17:03', '2017-03-18 09:17:03'),
 	(192, '1490060113_15229.jpg', 'uploads/1490060113_15229.jpg', '2017-03-21 01:35:13', '2017-03-21 01:35:13'),
 	(193, '1490060231_96421.jpg', 'uploads/1490060231_96421.jpg', '2017-03-21 01:37:11', '2017-03-21 01:37:11'),
-	(195, '1490665925_78112.png', 'uploads/1490665925_78112.png', '2017-03-28 01:52:05', '2017-03-28 01:52:05'),
-	(196, '1490665934_78323.png', 'uploads/1490665934_78323.png', '2017-03-28 01:52:14', '2017-03-28 01:52:14'),
-	(197, '1490665941_94344.png', 'uploads/1490665941_94344.png', '2017-03-28 01:52:21', '2017-03-28 01:52:21'),
-	(198, '1490665952_84207.png', 'uploads/1490665952_84207.png', '2017-03-28 01:52:32', '2017-03-28 01:52:32');
+	(194, '1490104447_81913.jpg', 'uploads/1490104447_81913.jpg', '2017-03-21 13:54:07', '2017-03-21 13:54:07'),
+	(195, '1490105795_64714.jpg', 'uploads/1490105795_64714.jpg', '2017-03-21 14:16:35', '2017-03-21 14:16:35'),
+	(196, '1490456456_72380.png', 'uploads/1490456456_72380.png', '2017-03-25 15:40:56', '2017-03-25 15:40:56'),
+	(197, '1490456489_14617.png', 'uploads/1490456489_14617.png', '2017-03-25 15:41:29', '2017-03-25 15:41:29'),
+	(198, '1490456512_39503.png', 'uploads/1490456512_39503.png', '2017-03-25 15:41:52', '2017-03-25 15:41:52'),
+	(199, '1490456537_77296.png', 'uploads/1490456537_77296.png', '2017-03-25 15:42:17', '2017-03-25 15:42:17'),
+	(200, '1490520718_23238.png', 'uploads/1490520718_23238.png', '2017-03-26 09:31:58', '2017-03-26 09:31:58'),
+	(201, '1491650942_66258.png', 'uploads/1491650942_66258.png', '2017-04-08 11:29:02', '2017-04-08 11:29:02');
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 
 
@@ -265,13 +269,14 @@ CREATE TABLE IF NOT EXISTS `image_product` (
   CONSTRAINT `image_product_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.image_product: ~3 rows (approximately)
+-- Dumping data for table webhoa.image_product: ~4 rows (approximately)
 /*!40000 ALTER TABLE `image_product` DISABLE KEYS */;
 INSERT INTO `image_product` (`image_id`, `product_id`, `created_at`, `updated_at`) VALUES
-	(195, 170, '2017-03-28 01:52:05', '2017-03-28 01:52:05'),
-	(196, 171, '2017-03-28 01:52:14', '2017-03-28 01:52:14'),
-	(197, 172, '2017-03-28 01:52:21', '2017-03-28 01:52:21'),
-	(198, 169, '2017-03-28 01:52:32', '2017-03-28 01:52:32');
+	(197, 176, '2017-03-25 15:41:29', '2017-03-25 15:41:29'),
+	(198, 177, '2017-03-25 15:41:52', '2017-03-25 15:41:52'),
+	(199, 178, '2017-03-25 15:42:17', '2017-03-25 15:42:17'),
+	(200, 179, '2017-03-26 09:31:58', '2017-03-26 09:31:58'),
+	(201, 180, '2017-04-08 11:29:02', '2017-04-08 11:29:02');
 /*!40000 ALTER TABLE `image_product` ENABLE KEYS */;
 
 
@@ -287,15 +292,29 @@ CREATE TABLE IF NOT EXISTS `menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.menus: ~4 rows (approximately)
+-- Dumping data for table webhoa.menus: ~17 rows (approximately)
 /*!40000 ALTER TABLE `menus` DISABLE KEYS */;
 INSERT INTO `menus` (`id`, `name`, `link`, `parent_id`, `group_name`, `sequence`, `created_at`, `updated_at`) VALUES
-	(6, 'Menu57', 'admin/menu567', 0, 'Menu_Admin', 1, '2017-03-31 13:30:28', '2017-03-31 07:07:03'),
-	(7, 'Menu_child', 'admin/menu', 6, 'Menu_Admin', 2, '2017-03-31 13:30:28', '2017-03-31 07:09:04'),
-	(8, 'Setting', 'admin/setting', 0, 'Menu_Admin', 0, '2017-03-31 07:00:32', '2017-03-31 07:07:02'),
-	(9, 'Menu_child', 'admin/menu', 6, 'Menu_Main', 2, '2017-03-31 13:30:28', '2017-03-31 07:00:41');
+	(10, 'Trang chủ', '', 0, 'MainMenu', 0, '2017-04-06 13:54:41', '2017-04-07 06:57:56'),
+	(11, 'Hoa tươi', 'hoa-tuoi', 0, 'MainMenu', 7, '2017-04-07 06:58:16', '2017-04-07 12:23:04'),
+	(12, 'Cưới hỏi', 'category/cuoi-hoi', 11, 'MainMenu', 11, '2017-04-07 12:19:50', '2017-04-07 12:22:58'),
+	(13, 'Sinh nhật', 'category/sinh-nhat', 11, 'MainMenu', 12, '2017-04-07 12:20:24', '2017-04-07 12:22:58'),
+	(14, 'Khai trương hội nghị', 'category/khai-truong-hoi-nghi', 11, 'MainMenu', 10, '2017-04-07 12:20:46', '2017-04-07 12:23:00'),
+	(15, 'Chúc mừng', 'category/chuc-mung', 11, 'MainMenu', 9, '2017-04-07 12:21:03', '2017-04-07 12:23:02'),
+	(16, 'Chia buồn', 'category/chia-buon', 11, 'MainMenu', 8, '2017-04-07 12:21:20', '2017-04-07 12:23:04'),
+	(17, 'Lan hồ điệp', '', 0, 'MainMenu', 1, '2017-04-07 12:21:34', '2017-04-07 12:23:11'),
+	(18, 'Từ 1 đến 4 cành', 'category/tu-1-den-4-canh', 17, 'MainMenu', 2, '2017-04-07 12:21:49', '2017-04-07 12:23:11'),
+	(19, 'Từ 5 đến 10 cành', 'category/tu-5-den-10-canh', 17, 'MainMenu', 3, '2017-04-07 12:22:04', '2017-04-07 12:23:12'),
+	(20, 'Trên 10 cành', 'category/tren-10-canh', 17, 'MainMenu', 4, '2017-04-07 12:22:19', '2017-04-07 12:23:14'),
+	(21, 'Chăm sóc hoa', 'post/177-cham-soc-hoa', 0, 'MainMenu', 5, '2017-04-07 12:22:33', '2017-04-07 12:23:04'),
+	(22, 'Liên hệ', 'contact', 0, 'MainMenu', 6, '2017-04-07 12:22:46', '2017-04-07 12:23:04'),
+	(23, 'Bó hoa', 'category/bo-hoa', 0, 'LeftMenu', 0, '2017-04-07 12:56:38', '2017-04-07 12:56:38'),
+	(24, 'Giỏ hoa', 'category/gio-hoa', 0, 'LeftMenu', 0, '2017-04-07 12:57:00', '2017-04-07 12:57:00'),
+	(25, 'Bình hoa', 'category/binh-hoa', 0, 'LeftMenu', 0, '2017-04-07 12:57:22', '2017-04-07 12:57:22'),
+	(26, 'Hộp hoa', 'category/hop-hoa', 0, 'LeftMenu', 0, '2017-04-07 12:57:46', '2017-04-07 12:57:46'),
+	(27, 'Loại khác', 'category/loai-khac', 0, 'LeftMenu', 0, '2017-04-07 12:58:07', '2017-04-07 12:58:07');
 /*!40000 ALTER TABLE `menus` ENABLE KEYS */;
 
 
@@ -327,10 +346,10 @@ CREATE TABLE IF NOT EXISTS `options` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.options: ~0 rows (approximately)
+-- Dumping data for table webhoa.options: ~2 rows (approximately)
 /*!40000 ALTER TABLE `options` DISABLE KEYS */;
 INSERT INTO `options` (`id`, `name`, `value`, `created_at`, `updated_at`) VALUES
-	(1, 'template_name', 'didong', '2017-03-28 01:49:13', '2017-04-01 02:23:45');
+	(1, 'template_name', 'hoa', '2017-03-27 14:05:35', '2017-03-31 16:02:23');
 /*!40000 ALTER TABLE `options` ENABLE KEYS */;
 
 
@@ -341,27 +360,17 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `order_detail_id` int(10) unsigned NOT NULL DEFAULT '0',
   `customer_id` int(255) NOT NULL,
   `data_cache` text COLLATE utf8_unicode_ci NOT NULL,
+  `total_sum` bigint(20) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`,`order_detail_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.orders: ~12 rows (approximately)
+-- Dumping data for table webhoa.orders: ~2 rows (approximately)
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` (`id`, `order_detail_id`, `customer_id`, `data_cache`, `created_at`, `updated_at`) VALUES
-	(1, 0, 7, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 15:13:20', '2017-03-18 15:13:20'),
-	(2, 0, 8, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 15:13:30', '2017-03-18 15:13:30'),
-	(4, 0, 10, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 15:15:41', '2017-03-18 15:15:41'),
-	(5, 0, 11, '{"3c142ef00899696a0f01d4466754ca37":{"rowId":"3c142ef00899696a0f01d4466754ca37","id":160,"name":"4tw2","qty":1,"price":3452345,"options":[],"tax":724992.45,"subtotal":3452345}}', '2017-03-18 15:17:21', '2017-03-18 15:17:21'),
-	(6, 0, 15, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 16:46:38', '2017-03-18 16:46:38'),
-	(7, 0, 16, '{"6eb486082e2834b35e3d97fcfd7c5d35":{"rowId":"6eb486082e2834b35e3d97fcfd7c5d35","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":[],"tax":21000,"subtotal":100000}}', '2017-03-18 16:56:15', '2017-03-18 16:56:15'),
-	(8, 0, 17, '{"64c0f00d428dbd52ef0bd8caa284adf4":{"rowId":"64c0f00d428dbd52ef0bd8caa284adf4","id":155,"name":"1341 241 2422 22222222 22","qty":"1","price":100000,"options":{"img_url":"uploads\\/1489760252_10392.jpg"},"tax":21000,"subtotal":100000},"b4524141fe7984a9fdde038b88b95686":{"rowId":"b4524141fe7984a9fdde038b88b95686","id":157,"name":"4tw2","qty":"1","price":3452345,"options":{"img_url":"uploads\\/1489799159_10409.jpg"},"tax":724992.45,"subtotal":3452345}}', '2017-03-19 07:15:25', '2017-03-19 07:15:25'),
-	(9, 0, 18, '{"80e09d8fbf17105de12b1777d6060802":{"rowId":"80e09d8fbf17105de12b1777d6060802","id":156,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489808407_26303.jpg"},"tax":0,"subtotal":3452345}}', '2017-03-19 07:16:04', '2017-03-19 07:16:04'),
-	(10, 0, 19, '{"64c0f00d428dbd52ef0bd8caa284adf4":{"rowId":"64c0f00d428dbd52ef0bd8caa284adf4","id":155,"name":"1341 241 2422 22222222 22","qty":1,"price":100000,"options":{"img_url":"uploads\\/1489760252_10392.jpg"},"tax":0,"subtotal":100000}}', '2017-03-19 07:17:41', '2017-03-19 07:17:41'),
-	(11, 0, 20, '{"80e09d8fbf17105de12b1777d6060802":{"rowId":"80e09d8fbf17105de12b1777d6060802","id":156,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489808407_26303.jpg"},"tax":0,"subtotal":3452345}}', '2017-03-19 07:19:00', '2017-03-19 07:19:00'),
-	(12, 0, 23, '{"80e09d8fbf17105de12b1777d6060802":{"rowId":"80e09d8fbf17105de12b1777d6060802","id":156,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489808407_26303.jpg"},"tax":0,"subtotal":3452345}}', '2017-03-19 07:21:39', '2017-03-19 07:21:39'),
-	(13, 0, 24, '{"80e09d8fbf17105de12b1777d6060802":{"rowId":"80e09d8fbf17105de12b1777d6060802","id":156,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489808407_26303.jpg"},"tax":0,"subtotal":3452345},"90985c92d3f69f7995d1591eaef7fcce":{"rowId":"90985c92d3f69f7995d1591eaef7fcce","id":160,"name":"4tw2","qty":1,"price":3452345,"options":{"img_url":"uploads\\/1489828623_77983.jpg"},"tax":0,"subtotal":3452345}}', '2017-03-19 07:26:22', '2017-03-19 07:26:22'),
-	(14, 0, 25, '{"90ec73253e32aaffbd70ae4b39d5fc5a":{"rowId":"90ec73253e32aaffbd70ae4b39d5fc5a","id":169,"name":"4tw2","qty":6,"price":2345,"options":{"img_url":"uploads\\/1490077504_66642.jpg"},"tax":0,"subtotal":14070}}', '2017-03-27 03:12:12', '2017-03-27 03:12:12');
+INSERT INTO `orders` (`id`, `order_detail_id`, `customer_id`, `data_cache`, `total_sum`, `created_at`, `updated_at`) VALUES
+	(8, 0, 31, '{"eaebb1fe89298729c0c37ee8b0388d71":{"rowId":"eaebb1fe89298729c0c37ee8b0388d71","id":176,"name":"HOA0002","qty":"10","price":90000,"options":{"img_url":"uploads\\/1490456489_14617.png"},"tax":0,"subtotal":900000}}', 900000, '2017-04-08 09:42:48', '2017-04-08 09:42:48'),
+	(9, 0, 32, '{"eaebb1fe89298729c0c37ee8b0388d71":{"rowId":"eaebb1fe89298729c0c37ee8b0388d71","id":176,"name":"HOA0002","qty":"1","price":90000,"options":{"img_url":"uploads\\/1490456489_14617.png"},"tax":0,"subtotal":90000},"c8c5a307d2bfc756c445c29b99b9e794":{"rowId":"c8c5a307d2bfc756c445c29b99b9e794","id":177,"name":"HOA0003","qty":"1","price":1300000,"options":{"img_url":"uploads\\/1490456512_39503.png"},"tax":0,"subtotal":1300000},"f47087958a44d94b37169fb5b0679f2c":{"rowId":"f47087958a44d94b37169fb5b0679f2c","id":178,"name":"HOA0004","qty":"5","price":50000,"options":{"img_url":"uploads\\/1490456537_77296.png"},"tax":0,"subtotal":250000}}', 1640000, '2017-04-08 09:46:20', '2017-04-08 09:46:20');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 
 
@@ -388,7 +397,7 @@ DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   KEY `password_resets_email_index` (`email`),
   KEY `password_resets_token_index` (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -407,16 +416,18 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `main_img` int(4) NOT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `active` int(4) NOT NULL DEFAULT '0',
+  `slug` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=176 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=179 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- Dumping data for table webhoa.posts: ~2 rows (approximately)
 /*!40000 ALTER TABLE `posts` DISABLE KEYS */;
-INSERT INTO `posts` (`id`, `title`, `summary`, `main_img`, `content`, `active`, `created_at`, `updated_at`) VALUES
-	(172, '423456785678', '', 0, '<p><img src="/uploads/1490061312_44525.jpg"><b>2<i style="background-color: rgb(255, 255, 0);">342</i>3</b></p>', 1, '2017-03-21 01:34:55', '2017-03-21 01:55:14'),
-	(175, 'yur5673', '', 0, '<p>3456<img src="/uploads/1490061370_67358.png"></p>', 1, '2017-03-21 01:56:12', '2017-03-21 02:00:37');
+INSERT INTO `posts` (`id`, `title`, `summary`, `main_img`, `content`, `active`, `slug`, `created_at`, `updated_at`) VALUES
+	(177, '221491618429', 'Cách chăm sóc hoa', 0, '<p><img src="/uploads/1490534255_61116.png"><br></p>', 1, '221491618371_1491618371_1491618373_1491618374_1491618429', '2017-03-26 06:50:10', '2017-04-08 02:27:09'),
+	(178, '221491618429', 'Cách chăm sóc hoa', 0, '<p><img src="/uploads/1490534255_61116.png"><br></p>', 1, '221491618429_1491618429_1491618429', '2017-04-08 02:27:09', '2017-04-08 02:27:09');
 /*!40000 ALTER TABLE `posts` ENABLE KEYS */;
 
 
@@ -426,7 +437,8 @@ CREATE TABLE IF NOT EXISTS `products` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` tinytext COLLATE utf8_unicode_ci NOT NULL,
   `summary` text COLLATE utf8_unicode_ci NOT NULL,
-  `main_img` int(4) NOT NULL,
+  `slug` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `main_img` int(4) DEFAULT NULL,
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `price` int(11) NOT NULL,
   `price_sale` int(11) NOT NULL,
@@ -435,16 +447,18 @@ CREATE TABLE IF NOT EXISTS `products` (
   `active` int(4) NOT NULL DEFAULT '0',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `slug` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=181 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table webhoa.products: ~3 rows (approximately)
+-- Dumping data for table webhoa.products: ~5 rows (approximately)
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` (`id`, `title`, `summary`, `main_img`, `content`, `price`, `price_sale`, `date_begin_sale`, `date_end_sale`, `active`, `created_at`, `updated_at`) VALUES
-	(169, '4tw2', '2345', 198, '<p>2345</p>', 3452345, 2345, '2017-03-28 08:52:43', '2017-03-23 01:52:32', 1, '2017-03-16 16:51:49', '2017-03-28 01:52:43'),
-	(170, '4tw2', '2345', 195, '<p>2345</p>', 3452345, 2345, '2017-03-28 08:52:46', '2017-03-23 01:52:05', 1, '2017-03-16 16:51:49', '2017-03-28 01:52:46'),
-	(171, '4tw2', '2345', 196, '<p>2345</p>', 3452345, 2345, '2017-03-28 08:52:49', '2017-03-23 01:52:14', 1, '2017-03-16 16:51:49', '2017-03-28 01:52:49'),
-	(172, '4tw2', '2345', 197, '<p>2345</p>', 3452345, 2345, '2017-03-28 08:52:52', '2017-03-23 01:52:21', 1, '2017-03-16 16:51:49', '2017-03-28 01:52:52');
+INSERT INTO `products` (`id`, `title`, `summary`, `slug`, `main_img`, `content`, `price`, `price_sale`, `date_begin_sale`, `date_end_sale`, `active`, `created_at`, `updated_at`) VALUES
+	(176, 'HOA000233', '', 'hoa0002', 197, '', 1200000, 90000, '2017-03-02 11:22:38', '2017-05-01 11:22:38', 1, '2017-03-25 15:41:29', '2017-04-08 11:22:38'),
+	(177, 'HOA0003', '', 'hoa0003', 198, '', 1300000, 0, '2017-03-10 15:41:52', '2017-03-30 15:41:52', 1, '2017-03-25 15:41:52', '2017-03-25 15:41:52'),
+	(178, 'HOA0004', '', 'hoa0004', 199, '', 1600000, 50000, '2017-03-11 10:29:00', '2017-03-27 10:29:00', 1, '2017-03-25 15:42:17', '2017-03-26 10:29:00'),
+	(179, 'HOA0001', '', 'hoa0001', 200, '', 100000, 99000, '2017-03-23 09:31:58', '2017-03-31 09:31:58', 1, '2017-03-26 09:31:58', '2017-03-26 09:32:22'),
+	(180, 'HOA0010', '', 'hoa0010', 201, '', 100000, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, '2017-04-08 11:29:02', '2017-04-08 11:37:11');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 
@@ -509,11 +523,10 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table webhoa.users: ~4 rows (approximately)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role_id`, `seen`, `valid`, `confirmed`, `confirmation_code`, `created_at`, `updated_at`, `remember_token`) VALUES
-	(1, 'GreatAdmin', 'admin@la.fr', '$2y$10$YCzrrR/n8KebdLvDGkngr.uVV5N3oJLnCiD998F1551JrObQBojXm', 1, 1, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-27 03:56:26', 'jeB0rMYLQiLWsIJmOqJxol5nF0rhtEjOaXuIxG7sZTMw3fStElAVAwd3QdWR'),
+	(1, 'GreatAdmin', 'admin@la.fr', '$2y$10$YCzrrR/n8KebdLvDGkngr.uVV5N3oJLnCiD998F1551JrObQBojXm', 1, 1, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-27 14:54:22', 'ASsozGobUBrZKG1a5C4lo36Z4mOjTOrN2acqeRALGMlFCw6UwYHP1qhrXaGp'),
 	(2, 'GreatRedactor', 'redac@la.fr', '$2y$10$L3ytEP7pFndg5gSeUIORbeQkln4BtA2fyg4SA3n.jNK8RJ.2XvEDG', 2, 1, 1, 1, NULL, '2017-03-11 08:34:20', '2017-03-11 09:29:18', 'FBVAKSyBvwyRf4BkEs1gfcpfVxrsCspuxexv0J8w9GZfsOD4WPDPMAqYq0XZ'),
 	(3, 'Walker', 'walker@la.fr', '$2y$10$pLnINZxl1XqmZWEv94DBh.5y2wsxRI7jB3gLl54cd4YMldQFfY6sy', 3, 0, 0, 1, NULL, '2017-03-11 08:34:20', '2017-03-11 09:10:30', 'oxWicoBWufNOUBpYqimWqefHHfUZyL0Z73K9Jqxw0i2eNqiQu27PU4XxTnqd'),
 	(4, 'Slacker', 'slacker@la.fr', '$2y$10$.0/UgSMYfaQLqDDpEWTIT.7fZuyZJbKNn5RfOZBrgn.Z3YH863VEK', 3, 0, 0, 1, NULL, '2017-03-11 08:34:21', '2017-03-11 08:34:21', NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
-/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
-/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40014 SET FOREIGN_KEY_CHECKS=1 */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
