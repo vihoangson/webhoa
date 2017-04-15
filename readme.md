@@ -33,5 +33,7 @@ Deploy
 2. composer install
 3. chmod -R 777 storage
 4. chmod -R 777 bootstrap
-5. php artisan key:generate
-5. add db
+5. cp .env.example .env
+6. vim .env
+7. php artisan key:generate
+8. add db
