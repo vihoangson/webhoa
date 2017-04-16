@@ -31,6 +31,9 @@ Deploy
 
 1. git clone
 2. composer install
-3. chmod -r storage
-4. chmod -r bootstrap
-5. add db
+3. chmod -R 777 storage
+4. chmod -R 777 bootstrap
+5. cp .env.example .env
+6. vim .env
+7. php artisan key:generate
+8. add db
