@@ -6,6 +6,7 @@ use App\Http\Requests;
 use App\Menu;
 use App\Product;
 use Illuminate\Http\Request;
+use Cache;
 
 class HomeController extends Controller {
     /**
@@ -26,14 +27,21 @@ class HomeController extends Controller {
      */
     public function index() {
 
-        $products         = Product::where( 'active', 1 )->paginate();
-        $feature_products = Product::where( 'active', 1 )->limit( 3 )->paginate();
+        $minutes = 10;
+
+        $products = Cache::remember( 'users', $minutes, function () {
+            return Product::where( 'active', 1 )->paginate();
+        } );
+
+        $feature_products = Cache::remember( 'users', $minutes, function () {
+            return Product::where( 'active', 1 )->limit( 3 )->paginate();
+        } );
 
         return view( 'public.' . $this->template_name . '.product.homepage' )->with( compact( 'products', 'feature_products' ) );
     }
 
     /**
-     * Show the application dashboard.
+     * Show the  application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
@@ -47,16 +55,17 @@ class HomeController extends Controller {
         return view( 'public.' . $this->template_name . '.contact' );
     }
 
-    public function process_contact(Request $request) {
-        if($request->email){
+    public function process_contact( Request $request ) {
+        if ( $request->email ) {
             echo "Send email !";
             echo '<a href="/">Click here to go homepage</a>';
+
             return;
             $data['user'] = 123;
-            \Mail::send('emails.welcome', $data, function ($message) {
-                $message->from('ngotrichi@gmail.com', 'Laravel');
-                $message->to('vihoangson@gmail.com');
-            });
+            \Mail::send( 'emails.welcome', $data, function ( $message ) {
+                $message->from( 'ngotrichi@gmail.com', 'Laravel' );
+                $message->to( 'vihoangson@gmail.com' );
+            } );
         }
     }
 }

@@ -11,9 +11,6 @@
 /*!40014 SET FOREIGN_KEY_CHECKS=0 */;
 
 -- Dumping database structure for webhoa
-DROP DATABASE IF EXISTS `webhoa`;
-CREATE DATABASE IF NOT EXISTS `webhoa` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `webhoa`;
 
 
 -- Dumping structure for table webhoa.categories
