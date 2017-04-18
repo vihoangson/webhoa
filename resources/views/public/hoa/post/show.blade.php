@@ -15,7 +15,9 @@
                 <div class="summary">{!! $post->summary !!}</div>
 
                 <div class="content-page">{!! $post->content !!}</div>
-
+                @if(! Auth::guard()->guest())
+                    <a target="_blank" href="/admin/post/{{$post->id}}/edit">[Edit post]</a>
+                @endif
             </div>
             <!-- Right Ends -->
         </div>

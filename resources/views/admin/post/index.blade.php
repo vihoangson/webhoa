@@ -22,13 +22,12 @@
                     <td>
                     </td>
                     <td>
-                        {{$post->title}}
+                        <a href="/post/{{$post->slug}}" target="_blank">{{$post->title}}</a>
                     </td>
+
                     <td>
-                        {{$post->summary}}
-                    </td>
-                    <td>
-                        {{$post->slug}}
+                        <input type="text" class="form-control" value="/post/{{$post->slug}}">
+
                     </td>
                     <td>
 
@@ -41,7 +40,7 @@
                     </td>
                     <td class="text-right">
                         <div class="btn-group">
-                            <a href="/post/{{$post->id}}" target="_blank" class="btn-white btn btn-xs">View</a>
+                            <a href="/post/{{$post->slug}}" target="_blank" class="btn-white btn btn-xs">View</a>
                             <a href="/admin/post/{{$post->id}}/edit" class="btn-white btn btn-xs">Edit</a>
                             {!! Form::open(['url' => '/admin/post/'.$post->id, 'method' => 'delete' ,'class'=>'confirm-action']) !!}
                             <button type="submit" name="id" value="{{$post->id}}"

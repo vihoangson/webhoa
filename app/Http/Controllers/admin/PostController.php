@@ -83,41 +83,10 @@ class PostController extends Controller
     {
         $rq = $request->all();
         $p = Post::create($rq);
-
-//        $this->upload_file($p,$request);
-//        $p->main_img = $p->image->first()->id;
         $p->save();
         return redirect('admin/post');
     }
 
-    private function upload_file($p, $request)
-    {
-
-        /**
-         * Upload files
-         */
-        if (is_array($request->file("image"))) {
-            $files = $request->file("image");
-            $data_files = [];
-            foreach ($files as $key => $file) {
-                if ($file === null) continue;
-                // todo: Bỏ list ext file ra ngoài config dùng chung
-                // Lọc file
-                if (!in_array(strtolower($file->getClientOriginalExtension()), ['jpg', 'png', 'gif'])) {
-                    continue;
-                }
-
-                $file_name = time() . "_" . rand(10000, 99999) . "." . $file->getClientOriginalExtension();
-                $data_files[$key] = $file->move('uploads', $file_name);
-
-                $img = new Image();
-                $img->title = $file_name;
-                $img->url = 'uploads/' . $file_name;
-                $img->save();
-                $p->image()->attach($img->id);
-            }
-        }
-    }
 
     /**
      * Display the specified resource.
@@ -158,24 +127,13 @@ class PostController extends Controller
         $p->title = $rq['title'];
         $p->summary = $rq['summary'];
         $p->content = $rq['content'];
-
+        $p->slug            = '';
         if (isset($rq['active'])) {
             $p->active = $rq['active'];
         } else {
             $p->active = 0;
         }
         $p->save();
-
-//        if(isset($rq['category'])){
-//            // todo: phần này đã lưu được
-//            $p->category()->sync($rq['category']);
-//        }
-
-//        $this->upload_file($p,$request);
-//        if(!$p->main_img){
-//            $p->main_img = $p->image->first()->id;
-//            $p->save();
-//        }
         return redirect('admin/post');
     }
 

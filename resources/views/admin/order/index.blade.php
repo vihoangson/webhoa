@@ -2,73 +2,37 @@
 @section('content')
     <h1>Order</h1>
 
-    <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
-        <thead>
-        <tr>
-            <th data-sort-ignore="true"></th>
-            <th data-toggle="true">Product Name</th>
-            <th data-hide="phone">Model</th>
-            <th data-hide="all">Description</th>
-            <th data-hide="phone">Price</th>
-            <th data-hide="phone,tablet" >Quantity</th>
-            <th data-hide="phone">Status</th>
-            <th class="text-right hidden" data-sort-ignore="true">Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        @if(isset($orders))
-            @foreach($orders as $order)
-                <tr>
-                    <td>
 
-                    </td>
-                    <td>
-                        @foreach($order->data_cache_formated as $key => $value)
+    @if(isset($orders))
+        @foreach($orders as $order)
+            <div class="order-detail">
+                <div>
+                    <h3>Chi tiết đơn hàng</h3>
+                    @foreach($order->data_cache_formated as $key => $value)
+                        <div>
+                            <div><a href="/product/{{$value['id']}}">{{$value['name']}}</a></div>
                             <div>
-                                <div><a href="/product/{{$value['id']}}">{{$value['name']}}</a></div>
-                                <div>{{number_format($value['price'])}} x {{$value['qty']}} : {{number_format($value['subtotal'])}}</div>
+                                {{number_format($value['price'])}} x {{$value['qty']}}
+                                : {{number_format($value['subtotal'])}}
                             </div>
-                        @endforeach
-                        <hr>
-                        <div>Total: {{number_format($order->total_sum)}} đ</div>
-                    </td>
-                    <td>
-                    </td>
-                    <td>
-                        <div>Name: {{$order->customer->name or '[Null]'}}</div>
-                        <div>Address: {{$order->customer->address or '[Null]' }}</div>
-                        <div>Tel: {{$order->customer->tel or '[Null]' }}</div>
-                        <div>Email: {{$order->customer->email or '[Null]' }}</div>
-                        <div>City: {{$order->customer->city or '[Null]'   }}</div>
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-
-                    </td>
-                    <td>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group hidden">
-                            <a href="/post/{{$order->id}}" target="_blank" class="btn-white btn btn-xs">View</a>
-                            <a href="/admin/post/{{$order->id}}/edit" class="btn-white btn btn-xs">Edit</a>
-                            {!! Form::open(['url' => '/admin/post/'.$order->id, 'method' => 'delete']) !!}
-                            <button type="submit" name="id" value="{{$order->id}}" href="/admin/post/{{$order->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
-                            {!! Form::close() !!}
                         </div>
-                    </td>
-                </tr>
-            @endforeach
-        @endif
-        </tbody>
-        <tfoot>
-        <tr>
-            <td colspan="6">
-                {!! $orders->render() !!}
-                {{--<ul class="pagination pull-right"></ul>--}}
-            </td>
-        </tr>
-        </tfoot>
-    </table>
+                    @endforeach
+
+                    <div><b>Total: {{number_format($order->total_sum)}} đ</b></div>
+                </div>
+                <hr>
+                <div>
+                    <h3>Thông tin KH</h3>
+                    <div>Name: {{$order->customer->name or '[Null]'}}</div>
+                    <div>Address: {{$order->customer->address or '[Null]' }}</div>
+                    <div>Tel: {{$order->customer->tel or '[Null]' }}</div>
+                    <div>Email: {{$order->customer->email or '[Null]' }}</div>
+                    <div>City: {{$order->customer->city or '[Null]'   }}</div>
+                </div>
+            </div>
+        @endforeach
+        <div class="clearfix"></div>
+    @endif
+
+    {!! $orders->render() !!}
 @endsection

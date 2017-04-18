@@ -18,7 +18,7 @@
 
 
 @section('content')
-    <h1>Category</h1>
+    <h1>Nhóm post</h1>
 
     <table class="footable table table-stripped toggle-arrow-tiny group-table" data-page-size="15">
         <thead>

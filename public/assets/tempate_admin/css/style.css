@@ -8093,3 +8093,13 @@ body.md-skin {
 }
 .nav.metismenu li a {
 }
+div {}
+
+.order-detail {
+  background: white;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  float: left;
+  border-radius: 9px;
+}

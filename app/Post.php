@@ -29,7 +29,7 @@ class Post extends Model {
      * @param $slug
      */
     public function setSlugAttribute( $slug ) {
-        $this->attributes['slug'] = $slug . "_" . time();
+        $this->attributes['slug'] = $slug;
     }
 
     public function group() {

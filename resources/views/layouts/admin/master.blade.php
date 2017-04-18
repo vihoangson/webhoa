@@ -43,210 +43,16 @@
                     </div>
                 </li>
                 <li>
-
                     <a href="/"><i class="fa fa-home"></i> <span class="nav-label">Homepage</span></a>
-                    <a href="/admin/product"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Product</span></a>
-                    <a href="/admin/category"><i class="fa fa-folder-o "></i> <span class="nav-label">Category</span></a>
+                    <a href="/admin/product"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Sản phẩm</span></a>
+                    <a href="/admin/category"><i class="fa fa-folder-o "></i> <span class="nav-label">Nhóm sản phẩm</span></a>
                     <a href="/admin/post"><i class="fa fa-file-text"></i> <span class="nav-label">Post</span></a>
-                    <a href="/admin/group"><i class="fa fa-file-text"></i> <span class="nav-label">Group</span></a>
-                    <a href="/admin/order"><i class="fa fa-tags"></i> <span class="nav-label">Order</span></a>
-                    <a href="/admin/setting"><i class="fa fa-cog"></i> <span class="nav-label">Setting</span></a>
-                    <a href="/admin/menu"><i class="fa fa-cog"></i> <span class="nav-label">Menu</span></a>
-                </li>
-                <li class="active">
-                    <a href="{{$template_admin_path}}index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li class="active"><a href="{{$template_admin_path}}index.html">Dashboard v.1</a></li>
-                        <li><a href="{{$template_admin_path}}dashboard_2.html">Dashboard v.2</a></li>
-                        <li><a href="{{$template_admin_path}}dashboard_3.html">Dashboard v.3</a></li>
-                        <li><a href="{{$template_admin_path}}dashboard_4_1.html">Dashboard v.4</a></li>
-                        <li><a href="{{$template_admin_path}}dashboard_5.html">Dashboard v.5 <span class="label label-primary pull-right">NEW</span></a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{$template_admin_path}}layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}graph_flot.html">Flot Charts</a></li>
-                        <li><a href="{{$template_admin_path}}graph_morris.html">Morris.js Charts</a></li>
-                        <li><a href="{{$template_admin_path}}graph_rickshaw.html">Rickshaw Charts</a></li>
-                        <li><a href="{{$template_admin_path}}graph_chartjs.html">Chart.js</a></li>
-                        <li><a href="{{$template_admin_path}}graph_chartist.html">Chartist</a></li>
-                        <li><a href="{{$template_admin_path}}graph_peity.html">Peity Charts</a></li>
-                        <li><a href="{{$template_admin_path}}graph_sparkline.html">Sparkline Charts</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{$template_admin_path}}mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">Mailbox </span><span class="label label-warning pull-right">16/24</span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}mailbox.html">Inbox</a></li>
-                        <li><a href="{{$template_admin_path}}mail_detail.html">Email view</a></li>
-                        <li><a href="{{$template_admin_path}}mail_compose.html">Compose email</a></li>
-                        <li><a href="{{$template_admin_path}}email_template.html">Email templates</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{$template_admin_path}}metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">Metrics</span>  </a>
-                </li>
-                <li>
-                    <a href="{{$template_admin_path}}widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">Widgets</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}form_basic.html">Basic form</a></li>
-                        <li><a href="{{$template_admin_path}}form_advanced.html">Advanced Plugins</a></li>
-                        <li><a href="{{$template_admin_path}}form_wizard.html">Wizard</a></li>
-                        <li><a href="{{$template_admin_path}}form_file_upload.html">File Upload</a></li>
-                        <li><a href="{{$template_admin_path}}form_editors.html">Text Editor</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">App Views</span>  <span class="pull-right label label-primary">SPECIAL</span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}contacts.html">Contacts</a></li>
-                        <li><a href="{{$template_admin_path}}profile.html">Profile</a></li>
-                        <li><a href="{{$template_admin_path}}profile_2.html">Profile v.2</a></li>
-                        <li><a href="{{$template_admin_path}}contacts_2.html">Contacts v.2</a></li>
-                        <li><a href="{{$template_admin_path}}projects.html">Projects</a></li>
-                        <li><a href="{{$template_admin_path}}project_detail.html">Project detail</a></li>
-                        <li><a href="{{$template_admin_path}}teams_board.html">Teams board</a></li>
-                        <li><a href="{{$template_admin_path}}social_feed.html">Social feed</a></li>
-                        <li><a href="{{$template_admin_path}}clients.html">Clients</a></li>
-                        <li><a href="{{$template_admin_path}}full_height.html">Outlook view</a></li>
-                        <li><a href="{{$template_admin_path}}vote_list.html">Vote list</a></li>
-                        <li><a href="{{$template_admin_path}}file_manager.html">File manager</a></li>
-                        <li><a href="{{$template_admin_path}}calendar.html">Calendar</a></li>
-                        <li><a href="{{$template_admin_path}}issue_tracker.html">Issue tracker</a></li>
-                        <li><a href="{{$template_admin_path}}blog.html">Blog</a></li>
-                        <li><a href="{{$template_admin_path}}article.html">Article</a></li>
-                        <li><a href="{{$template_admin_path}}faq.html">FAQ</a></li>
-                        <li><a href="{{$template_admin_path}}timeline.html">Timeline</a></li>
-                        <li><a href="{{$template_admin_path}}pin_board.html">Pin board</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-files-o"></i> <span class="nav-label">Other Pages</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}search_results.html">Search results</a></li>
-                        <li><a href="{{$template_admin_path}}lockscreen.html">Lockscreen</a></li>
-                        <li><a href="{{$template_admin_path}}invoice.html">Invoice</a></li>
-                        <li><a href="{{$template_admin_path}}login.html">Login</a></li>
-                        <li><a href="{{$template_admin_path}}login_two_columns.html">Login v.2</a></li>
-                        <li><a href="{{$template_admin_path}}forgot_password.html">Forget password</a></li>
-                        <li><a href="{{$template_admin_path}}register.html">Register</a></li>
-                        <li><a href="{{$template_admin_path}}404.html">404 Page</a></li>
-                        <li><a href="{{$template_admin_path}}500.html">500 Page</a></li>
-                        <li><a href="{{$template_admin_path}}empty_page.html">Empty page</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Miscellaneous</span><span class="label label-info pull-right">NEW</span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}toastr_notifications.html">Notification</a></li>
-                        <li><a href="{{$template_admin_path}}nestable_list.html">Nestable list</a></li>
-                        <li><a href="{{$template_admin_path}}agile_board.html">Agile board</a></li>
-                        <li><a href="{{$template_admin_path}}timeline_2.html">Timeline v.2</a></li>
-                        <li><a href="{{$template_admin_path}}diff.html">Diff</a></li>
-                        <li><a href="{{$template_admin_path}}sweetalert.html">Sweet alert</a></li>
-                        <li><a href="{{$template_admin_path}}idle_timer.html">Idle timer</a></li>
-                        <li><a href="{{$template_admin_path}}spinners.html">Spinners</a></li>
-                        <li><a href="{{$template_admin_path}}tinycon.html">Live favicon</a></li>
-                        <li><a href="{{$template_admin_path}}google_maps.html">Google maps</a></li>
-                        <li><a href="{{$template_admin_path}}code_editor.html">Code editor</a></li>
-                        <li><a href="{{$template_admin_path}}modal_window.html">Modal window</a></li>
-                        <li><a href="{{$template_admin_path}}forum_main.html">Forum view</a></li>
-                        <li><a href="{{$template_admin_path}}validation.html">Validation</a></li>
-                        <li><a href="{{$template_admin_path}}tree_view.html">Tree view</a></li>
-                        <li><a href="{{$template_admin_path}}chat_view.html">Chat view</a></li>
-                        <li><a href="{{$template_admin_path}}masonry.html">Masonry</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-flask"></i> <span class="nav-label">UI Elements</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}typography.html">Typography</a></li>
-                        <li><a href="{{$template_admin_path}}icons.html">Icons</a></li>
-                        <li><a href="{{$template_admin_path}}draggable_panels.html">Draggable Panels</a></li>
-                        <li><a href="{{$template_admin_path}}buttons.html">Buttons</a></li>
-                        <li><a href="{{$template_admin_path}}video.html">Video</a></li>
-                        <li><a href="{{$template_admin_path}}tabs_panels.html">Panels</a></li>
-                        <li><a href="{{$template_admin_path}}tabs.html">Tabs</a></li>
-                        <li><a href="{{$template_admin_path}}notifications.html">Notifications & Tooltips</a></li>
-                        <li><a href="{{$template_admin_path}}badges_labels.html">Badges, Labels, Progress</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="{{$template_admin_path}}grid_options.html"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}table_basic.html">Static Tables</a></li>
-                        <li><a href="{{$template_admin_path}}table_data_tables.html">Data Tables</a></li>
-                        <li><a href="{{$template_admin_path}}table_foo_table.html">Foo Tables</a></li>
-                        <li><a href="{{$template_admin_path}}jq_grid.html">jqGrid</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}ecommerce_products_grid.html">Products grid</a></li>
-                        <li><a href="{{$template_admin_path}}ecommerce_product_list.html">Products list</a></li>
-                        <li><a href="{{$template_admin_path}}ecommerce_product.html">Product edit</a></li>
-                        <li><a href="{{$template_admin_path}}ecommerce_product_detail.html">Product detail</a></li>
-                        <li><a href="{{$template_admin_path}}ecommerce-orders.html">Orders</a></li>
-                        <li><a href="{{$template_admin_path}}ecommerce_payments.html">Credit Card form</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-picture-o"></i> <span class="nav-label">Gallery</span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li><a href="{{$template_admin_path}}basic_gallery.html">Lightbox Gallery</a></li>
-                        <li><a href="{{$template_admin_path}}slick_carousel.html">Slick Carousel</a></li>
-                        <li><a href="{{$template_admin_path}}carousel.html">Bootstrap Carousel</a></li>
-
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-sitemap"></i> <span class="nav-label">Menu Levels </span><span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level collapse">
-                        <li>
-                            <a href="#">Third Level <span class="fa arrow"></span></a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level Item</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li><a href="#">Second Level Item</a></li>
-                        <li>
-                            <a href="#">Second Level Item</a></li>
-                        <li>
-                            <a href="#">Second Level Item</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="{{$template_admin_path}}css_animation.html"><i class="fa fa-magic"></i> <span class="nav-label">CSS Animations </span><span class="label label-info pull-right">62</span></a>
-                </li>
-                <li class="landing_link">
-                    <a target="_blank" href="{{$template_admin_path}}landing.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
-                </li>
-                <li class="special_link">
-                    <a href="{{$template_admin_path}}package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+                    <a href="/admin/group"><i class="fa fa-file-text"></i> <span class="nav-label">Nhóm post</span></a>
+                    <a href="/admin/order"><i class="fa fa-tags"></i> <span class="nav-label">Quản lý đơn hàng</span></a>
+                    <a href="/admin/menu"><i class="fa fa-cog"></i> <span class="nav-label">Quản lý menu</span></a>
+                    <a href="/admin/setting"><i class="fa fa-cog"></i> <span class="nav-label">Tùy chỉnh</span></a>
                 </li>
             </ul>
-
         </div>
     </nav>
 
@@ -497,14 +303,6 @@
                 </button> </span></div>
         </div>
 
-    </div>
-    <div id="small-chat">
-
-        <span class="badge badge-warning pull-right">5</span>
-        <a class="open-small-chat">
-            <i class="fa fa-comments"></i>
-
-        </a>
     </div>
     <div id="right-sidebar">
         <div class="sidebar-container">
