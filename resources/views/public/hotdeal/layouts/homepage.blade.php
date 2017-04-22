@@ -734,14 +734,7 @@
         {{--Sidebar and week feature--}}
         <div class="row">
             <div class="col-md-3">
-                <aside class="sidebar-left">
-                    <h3 class="mb20">I am Looking For</h3>
-                    <ul class="nav nav-tabs nav-stacked nav-coupon-category nav-coupon-category-left">
-                        @foreach($data_category as $value)
-                            <li><a href="#"><i class="fa fa-cutlery"></i>{{$value->name}}<span>44</span></a></li>
-                        @endforeach
-                    </ul>
-                </aside>
+                @include("public.hotdeal.includes.siderbar",['menu'=>$data_category])
             </div>
             <div class="col-md-9">
                 <h1 class="mb20">Weekly Featured
