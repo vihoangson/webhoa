@@ -7,7 +7,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Post extends Model {
-    protected $fillable = [ 'title', 'content' ];
+    protected $fillable = [ 'title', 'content', 'main_img' ];
     use Sluggable, SluggableScopeHelpers;
 
     /**

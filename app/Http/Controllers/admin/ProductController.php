@@ -160,13 +160,13 @@ class ProductController extends Controller {
     public function update_ajax( \Illuminate\Http\Request $requests ) {
         switch ( $requests->process ) {
             case 'change_main_img':
-                $p           = Post::find( $requests->pid );
+                $p           = Product::find( $requests->pid );
                 $p->main_img = $requests->id;
                 $p->save();
                 break;
-            case 'delete_img_post':
+            case 'delete_img_product':
                 $img = Image::find( $requests->id );
-                $img->post()->detach();
+                $img->product()->detach();
 
                 return response()->json( [
                     'status' => $img->delete(),
