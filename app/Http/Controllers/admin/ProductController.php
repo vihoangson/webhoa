@@ -262,7 +262,8 @@ class ProductController extends Controller {
         }
 
         $this->upload_file( $p, $request );
-        if ( ! $p->main_img ) {
+
+        if ( count($p->image) == 1 ) {
             $p->main_img = $p->image->first()->id;
             $p->save();
         }
