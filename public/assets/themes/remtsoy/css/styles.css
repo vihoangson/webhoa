@@ -6559,3 +6559,11 @@ img.mfp-img {
 /*END DEMO*/
 /*RESPONSIVE*/
 /*END RESPONSIVE*/
+.price-old {
+  color: #bdbdbd;
+  text-decoration: line-through;
+}
+.price-new {
+  font-size: 182%;
+  color: #2a8fbd;
+}

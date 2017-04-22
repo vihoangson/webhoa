@@ -29,15 +29,24 @@ class HomeController extends Controller {
 
         $minutes = 10;
 
-        $products = Cache::remember( 'users', $minutes, function () {
-            return Product::where( 'active', 1 )->paginate();
-        } );
+        if ( \App::environment( 'production' ) ) {
+            $products         = Cache::remember( 'users', $minutes, function () {
+                return Product::where( 'active', 1 )->paginate();
+            } );
+            $feature_products = Cache::remember( 'users', $minutes, function () {
+                return Product::where( 'active', 1 )->limit( 3 )->paginate();
+            } );
+        } else {
+            $products         = Product::where( 'active', 1 )->paginate();
+            $feature_products = Product::where( 'active', 1 )->limit( 3 )->paginate();
+        }
 
-        $feature_products = Cache::remember( 'users', $minutes, function () {
-            return Product::where( 'active', 1 )->limit( 3 )->paginate();
-        } );
-
-        return view( 'public.' . $this->template_name . '.product.homepage' )->with( compact( 'products', 'feature_products' ) );
+        return view( 'public.' . $this->template_name . '.product.homepage' )->with(
+            compact(
+                'products',
+                'feature_products'
+            )
+        );
     }
 
     /**
