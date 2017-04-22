@@ -1,4 +1,4 @@
-@extends('public.'.$template_name.'.layouts.no_sidebar')
+@extends('public.'.$template_name.'.layouts.inside')
 @section('content')
     <h1>Finish</h1>
     Thank you ...

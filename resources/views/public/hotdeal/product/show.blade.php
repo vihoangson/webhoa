@@ -39,9 +39,9 @@
                 </form>
             </div>
             <div class="row">
-                <div class="col-md-7">
+                <div class="col-md-5">
 
-                    <div class="fotorama" data-nav="thumbs" data-allowfullscreen="1" data-thumbheight="150" data-thumbwidth="150">
+                    <div class="fotorama" data-nav="thumbs" data-allowfullscreen="1" data-thumbheight="100" data-thumbwidth="100">
                         @if($product->main_img)
                             <img src="/{{$product->image->find($product->main_img)->url}}" alt="Image Alternative text2" title="Gamer Chick" />
                         @endif
@@ -56,7 +56,7 @@
                         {{--<img src="img/food_is_pride_800x600.jpg" alt="Image Alternative text" title="Food is Pride" />--}}
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-7">
                     <div class="product-info box">
                         <ul class="icon-group icon-list-rating text-color" title="4.5/5 rating">
                             <li><i class="fa fa-star"></i>
@@ -88,9 +88,9 @@
                             <li><i class="fa fa-check"></i>Pulvinar nulla</li>
                         </ul>
                         <ul class="list-inline">
-                            <li><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            <li><a href="/product/add_cart/{{$product->slug}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
                             </li>
-                            <li><a href="#" class="btn"><i class="fa fa-star"></i> To Wishlist</a>
+                            <li><a href="/product/add_wishlist/{{$product->slug}}" class="btn"><i class="fa fa-star"></i> To Wishlist</a>
                             </li>
                         </ul>
                     </div>
@@ -101,17 +101,15 @@
                 <ul class="nav nav-tabs" id="myTab">
                     <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-pencil"></i>Desciption</a>
                     </li>
-                    <li class=""><a href="#tab-2" data-toggle="tab"><i class="fa fa-comments"></i>Reviews</a>
+                    <li class="hidden"><a href="#tab-2" data-toggle="tab"><i class="fa fa-comments"></i>Reviews</a>
                     </li>
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade active in" id="tab-1">
-                        <p>Vel dictumst interdum nam risus viverra aenean nostra lobortis class malesuada et himenaeos vivamus ullamcorper quis fermentum nostra taciti sagittis per lobortis libero neque eros massa erat suspendisse laoreet dolor id sociis aliquam mauris justo eleifend interdum ultricies litora est inceptos inceptos condimentum penatibus gravida in lectus nunc class tincidunt</p>
-                        <p>At tortor viverra habitasse auctor pharetra tempor quam ante placerat class mus commodo cum magna primis sed risus interdum purus et scelerisque porta natoque blandit ultricies platea phasellus gravida id</p>
-                        <p>Eleifend aliquet odio tempus pharetra congue at orci suspendisse taciti duis imperdiet conubia risus dictumst fringilla fermentum sem nascetur dis sagittis lectus libero dolor himenaeos nullam lectus at interdum sodales</p>
+                        {!! $product->content or '' !!}
                     </div>
 
-                    <div class="tab-pane fade " id="tab-2">
+                    <div class="tab-pane fade hidden" id="tab-2">
                         <ul class="comments-list">
                             <li>
                                 <!-- REVIEW -->
@@ -372,182 +370,4 @@
             </aside>
         </div>
     </div>
-@endsection
-@section('content2')
-        <!-- Breadcrumb Ends -->
-        <!-- Product Info Starts -->
-        <div class="row product-info">
-            <!-- Left Starts -->
-            <div class="col-sm-5 images-block">
-                <p>
-                    @if($product->main_img)
-                    <img src="/{{$product->image->find($product->main_img)->url}}" alt="Image" class="img-responsive thumbnail">
-                    @endif
-                </p>
-                <ul class="list-unstyled list-inline">
-                    @foreach($product->image as $img)
-                        @if( $img->url != $product->image->find($product->main_img)->url)
-                        <li>
-                            <img src="/{{$img->url}}" alt="Image" class="img-responsive thumbnail">
-                        </li>
-                        @endif
-                    @endforeach
-                </ul>
-            </div>
-            <!-- Left Ends -->
-            <!-- Right Starts -->
-            <div class="col-sm-7 product-details">
-                <!-- Product Name Starts -->
-                <h2>{{$product->title}}</h2>
-                <!-- Product Name Ends -->
-                <hr>
-                <!-- Manufacturer Starts -->
-                <ul class="list-unstyled manufacturer">
-                    <li>
-                        <span>@lang('common.Brand'):</span> Indian spices
-                    </li>
-                    <li><span>@lang('common.Reward Points'):</span> 300</li>
-                    <li>
-                        <span>@lang('common.Availability'):</span> <strong class="label label-success">@lang('common.In Stock')</strong>
-                    </li>
-                </ul>
-                <!-- Manufacturer Ends -->
-                <hr>
-                <!-- Price Starts -->
-                <div class="price">
-                    @if(!$product->price_sale)
-                        <span class="price-head">@lang('common.Price') :</span>
-                        <span class="price-new">{{$product->price_formated}}</span>
-                    @else
-                        <span class="price-head">@lang('common.Price') :</span>
-                        <span class="price-new">{{$product->price_sale_formated}} </span>
-                        <span class="price-old">{{$product->price_formated}} </span>
-                        @if($product->date_end_sale_formated_countdown)
-                            <div data-countdown="{{$product->date_end_sale_formated_countdown}}"></div>
-                        @endif
-                    @endif
-
-                </div>
-                <!-- Price Ends -->
-                <hr>
-                <!-- Available Options Starts -->
-
-                {!! Form::open(['url'=>'/product/add_cart/'.$product->id,'method'=>'get']) !!}
-                <div class="options">
-                    <div class="form-group">
-                        <label class="control-label text-uppercase" for="input-quantity">Qty:</label>
-                        <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control">
-                    </div>
-                    <div class="cart-button button-group">
-                        <button type="submit" class="btn btn-cart">
-                            @lang('common.order_button')
-                        </button>
-                    </div>
-                </div>
-                {!! Form::close() !!}
-                <!-- Available Options Ends -->
-                <hr>
-            </div>
-            <!-- Right Ends -->
-        </div>
-        <!-- product Info Ends -->
-        <!-- Product Description Starts -->
-        <div class="product-info-box">
-            <h4 class="heading">Description</h4>
-            <div class="content panel-smart">
-                {!! $product->content !!}
-            </div>
-        </div>
-        <!-- Product Description Ends -->
-        <!-- Additional Information Starts -->
-        <div class="product-info-box">
-            <h4 class="heading">Additional Information</h4>
-            <div class="content panel-smart">
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
-            </div>
-        </div>
-        <!-- Additional Information Ends -->
-        <!-- Related Products Starts -->
-        <div class="product-info-box">
-            <h4 class="heading">Related Products</h4>
-            <!-- Products Row Starts -->
-            <div class="row">
-                <!-- Product #1 Starts -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="product-col">
-                        <div class="image">
-                            <img src="/assets/themes/flower-shoppe/images/product-images/1.png" alt="product" class="img-responsive">
-                        </div>
-                        <div class="caption">
-                            <h4><a href="product.html">Flowers</a></h4>
-                            <div class="description">
-                                We are so lucky living in such a wonderful time. Our almost unlimited ...
-                            </div>
-                            <div class="price">
-                                <span class="price-new">$199.50</span>
-                                <span class="price-old">$249.50</span>
-                            </div>
-                            <div class="cart-button button-group">
-                                <button type="button" class="btn btn-cart">
-                                    Add to cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product #1 Ends -->
-                <!-- Product #2 Starts -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="product-col">
-                        <div class="image">
-                            <img src="/assets/themes/flower-shoppe/images/product-images/2.png" alt="product" class="img-responsive">
-                        </div>
-                        <div class="caption">
-                            <h4><a href="product.html">Flowers</a></h4>
-                            <div class="description">
-                                We are so lucky living in such a wonderful time. Our almost unlimited ...
-                            </div>
-                            <div class="price">
-                                <span class="price-new">$199.50</span>
-                                <span class="price-old">$249.50</span>
-                            </div>
-                            <div class="cart-button button-group">
-                                <button type="button" class="btn btn-cart">
-                                    Add to cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product #2 Ends -->
-                <!-- Product #3 Starts -->
-                <div class="col-md-4 col-sm-6">
-                    <div class="product-col">
-                        <div class="image">
-                            <img src="/assets/themes/flower-shoppe/images/product-images/3.png" alt="product" class="img-responsive">
-                        </div>
-                        <div class="caption">
-                            <h4><a href="product.html">Flowers</a></h4>
-                            <div class="description">
-                                We are so lucky living in such a wonderful time. Our almost unlimited ...
-                            </div>
-                            <div class="price">
-                                <span class="price-new">$199.50</span>
-                                <span class="price-old">$249.50</span>
-                            </div>
-                            <div class="cart-button button-group">
-                                <button type="button" class="btn btn-cart">
-                                    Add to cart
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product #3 Ends -->
-            </div>
-            <!-- Products Row Ends -->
-        </div>
-        <!-- Related Products Ends -->
 @endsection

@@ -1,4 +1,4 @@
-<a class="col-md-3" href="/product/{{$product->id}}">
+<a class="col-md-3" href="/product/{{$product->slug}}">
     <div class="product-thumb">
         <header class="product-header">
             <img src="/{{$product->image->find($product->main_img)->url or ''}}" alt="Image Alternative text"

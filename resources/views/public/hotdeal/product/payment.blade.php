@@ -1,4 +1,4 @@
-@extends('public.'.$template_name.'.layouts.no_sidebar')
+@extends('public.'.$template_name.'.layouts.inside.')
 @section('breadcrumb')
     {!! Breadcrumbs::render('product_detail','Thanh toán') !!}
 @endsection

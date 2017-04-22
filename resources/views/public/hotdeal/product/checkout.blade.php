@@ -1,11 +1,11 @@
-@extends('public.'.$template_name.'.layouts.no_sidebar')
+@extends('public.'.$template_name.'.layouts.inside')
 
 @section('breadcrumb')
     {!! Breadcrumbs::render('checkout') !!}
 @endsection
 
 @section('content')
-    <div id="main-container" class="container">
+    <div id="main-container" class="">
         <!-- Main Heading Starts -->
         <h2 class="main-heading text-center">
             Shopping Cart
@@ -42,7 +42,7 @@
                     <tr>
                         <td class="text-center">
                             <a href="/product/{{$row->id}}">
-                                <img src="{{($row->options->has('img_url') ? "/".$row->options->img_url : 'http://placehold.it/100x100')}}" alt="Product Name" title="Product Name" class="img-thumbnail" style="height:100px;">
+                                <img src="{{($row->options->has('img_url') ? "/".$row->options->img_url : 'http://placehold.it/100x100')}}" alt="Product Name" title="Product Name" class="" style="height:100px;width: auto;">
                             </a>
                         </td>
                         <td class="text-center">
