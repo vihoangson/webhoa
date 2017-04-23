@@ -1,4 +1,11 @@
 @extends('public.'.$template_name.'.layouts.homepage')
+@section('feature')
+    <div class="row row-wrap">
+        @foreach($feature_products as $key => $product) @if ($key > 2) @break; @endif
+            @include('public.hotdeal.includes.element.item1',['product'=>$product])
+        @endforeach
+    </div>
+@endsection
 @section('content')
     {{--New Deals--}}
     <h1 class="mb20">New Deals <small><a href="#">View All</a></small></h1>
