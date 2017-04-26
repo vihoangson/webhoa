@@ -183,21 +183,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 clearfix">
-                    <label><i class="fa fa-search"></i><span>I am searching for</span>
+                    <label><i class="fa fa-search"></i><span>@lang('common.I_am_searching_for')</span>
                     </label>
                     <div class="search-area-division search-area-division-input">
-                        <input class="form-control" type="text" placeholder="Travel Vacation"/>
+                        <input class="form-control" type="text" placeholder=""/>
                     </div>
                 </div>
                 <div class="col-md-3 clearfix">
-                    <label><i class="fa fa-map-marker"></i><span>In</span>
+                    <label><i class="fa fa-map-marker"></i><span>Tại</span>
                     </label>
                     <div class="search-area-division search-area-division-location">
-                        <input class="form-control" type="text" placeholder="Boston"/>
+                        <input class="form-control" type="text" placeholder="Tp.HCM"/>
                     </div>
                 </div>
                 <div class="col-md-1">
-                    <button class="btn btn-block btn-white search-btn" type="submit">Search</button>
+                    <button class="btn btn-block btn-white search-btn" type="submit">@lang('common.search')</button>
                 </div>
             </div>
         </div>

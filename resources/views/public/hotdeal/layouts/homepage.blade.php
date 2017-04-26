@@ -196,8 +196,8 @@
                 @include("public.hotdeal.includes.siderbar",['menu'=>$data_category])
             </div>
             <div class="col-md-9">
-                <h1 class="mb20">Weekly Featured
-                    <small><a href="#">View All</a></small>
+                <h1 class="mb20">Mặt hàng giảm giá
+                    <small><a href="#">Xem tất cả</a></small>
                 </h1>
                 @yield('feature')
             </div>
@@ -363,7 +363,7 @@
     <!-- Scripts queries -->
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/jquery.js"></script>
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/boostrap.min.js"></script>
-    <script src="{{config('templates.'.$template_name.'.template_path')}}js/countdown.min.js"></script>
+    {{--<script src="{{config('templates.'.$template_name.'.template_path')}}js/countdown.min.js"></script>--}}
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/flexnav.min.js"></script>
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/magnific.js"></script>
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/tweet.min.js"></script>
@@ -377,6 +377,7 @@
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/owl-carousel.js"></script>
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/masonry.js"></script>
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/nicescroll.js"></script>
+    <script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
 
     <!-- Custom scripts -->
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/custom.js"></script>

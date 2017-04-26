@@ -154,6 +154,19 @@ class Product extends Model {
         return $price;
     }
 
+    public function getPriceSaveAttribute() {
+        if($this->attributes['price'] < $this->attributes['price_sale']){
+            return null;
+        }
+
+        $save = $this->attributes['price'] - $this->attributes['price_sale'];
+        return (round(($save/$this->attributes['price'])*100)).'%';
+    }
+
+    public function getPlaceSaleAttribute() {
+        return 'HCM';
+    }
+
     public function setActiveAttribute( $active ) {
         if ( $active == null ) {
             $this->attributes['active'] = 0;

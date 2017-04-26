@@ -383,7 +383,7 @@
     <!-- Scripts queries -->
     <script src="/assets/themes/remtsoy/js/jquery.js"></script>
     <script src="/assets/themes/remtsoy/js/boostrap.min.js"></script>
-    <script src="/assets/themes/remtsoy/js/countdown.min.js"></script>
+    {{--<script src="/assets/themes/remtsoy/js/countdown.min.js"></script>--}}
     <script src="/assets/themes/remtsoy/js/flexnav.min.js"></script>
     <script src="/assets/themes/remtsoy/js/magnific.js"></script>
     <script src="/assets/themes/remtsoy/js/tweet.min.js"></script>
@@ -397,6 +397,7 @@
     <script src="/assets/themes/remtsoy/js/owl-carousel.js"></script>
     <script src="/assets/themes/remtsoy/js/masonry.js"></script>
     <script src="/assets/themes/remtsoy/js/nicescroll.js"></script>
+    {{--<script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>--}}
 
     <!-- Custom scripts -->
     <script src="/assets/themes/remtsoy/js/custom.js"></script>

@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     {{--New Deals--}}
-    <h1 class="mb20">New Deals <small><a href="#">View All</a></small></h1>
+    <h1 class="mb20">Deal mới <small><a href="#">Xem tất cả</a></small></h1>
     <div class="row row-wrap">
         @foreach($feature_products as $key => $product) @if ($key > 2) @break; @endif
             @include('public.hotdeal.includes.element.item1',['product'=>$product])
@@ -45,7 +45,7 @@
                             </li>
                         </ul>
                     </div>
-                    <p class="product-location"><i class="fa fa-map-marker"></i> Boston</p>
+                    <p class="product-location"><i class="fa fa-map-marker"></i> {{$product->place_sale}}</p>
                 </div>
             </div>
         </a>

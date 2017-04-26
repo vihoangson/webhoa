@@ -75,4 +75,5 @@ return [
     'Coupon Code'          => 'Nhập mã',
     'Shopping Cart'        => 'Thông tin giỏ hàng',
     'SumTotal'             => 'Thành tiền',
+    'I_am_searching_for'   => 'Tìm kiểm sản phẩm',
 ];

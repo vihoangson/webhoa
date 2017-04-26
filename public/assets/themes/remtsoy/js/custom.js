@@ -1,4 +1,11 @@
 "use strict";
+$('[data-countdown]').each(function() {
+    var $this = $(this), finalDate = $(this).data('countdown');
+    $this.countdown(finalDate, function(event) {
+        $this.html(event.strftime('<i class="fa fa-clock-o"></i> Còn %D ngày <b>%H:%M:%S</b>'));
+    });
+});
+
 // Global vars
 var TWITTER_USERNAME = 'envato',
     GOOGLE_MAP_LAT = 40.7564971,
@@ -7,20 +14,20 @@ var TWITTER_USERNAME = 'envato',
 
 // Countdown
 $(function() {
-    $('.countdown').each(function() {
-        var count = $(this);
-        $(this).countdown({
-            zeroCallback: function(options) {
-                var newDate = new Date(),
-                    newDate = newDate.setHours(newDate.getHours() + 130);
-
-                $(count).attr("data-countdown", newDate);
-                $(count).countdown({
-                    unixFormat: true
-                });
-            }
-        });
-    });
+    // $('.countdown').each(function() {
+    //     var count = $(this);
+    //     $(this).countdown({
+    //         zeroCallback: function(options) {
+    //             var newDate = new Date(),
+    //                 newDate = newDate.setHours(newDate.getHours() + 130);
+    //
+    //             $(count).attr("data-countdown", newDate);
+    //             $(count).countdown({
+    //                 unixFormat: true
+    //             });
+    //         }
+    //     });
+    // });
 });
 
 
