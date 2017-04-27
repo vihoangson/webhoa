@@ -8,17 +8,15 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
-{
+class CategoryController extends Controller {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
-        $this->middleware('auth');
+        $this->middleware( 'auth' );
     }
 
     /**
@@ -26,11 +24,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
 
         $categories = Category::all();
-        return view('admin.category.index')->with(compact('categories'));
+
+        return view( 'admin.category.index' )->with( compact( 'categories' ) );
     }
 
     /**
@@ -38,22 +36,21 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('admin.category.edit');
+    public function create() {
+        return view( 'admin.category.edit' );
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store( Request $request ) {
         $category = $request->all();
-        if (Category::create($category)) {
-            return redirect('/admin/category');
+        if ( Category::create( $category ) ) {
+            return redirect( '/admin/category' );
         }
     }
 
@@ -61,10 +58,10 @@ class CategoryController extends Controller
      * Display the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show( $id ) {
         //
     }
 
@@ -72,28 +69,29 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $category = Category::find($id);
-        return view('admin.category.edit')->with(compact('category'));
+    public function edit( $id ) {
+        $category = Category::find( $id );
+
+        return view( 'admin.category.edit' )->with( compact( 'category' ) );
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update( Request $request, $id ) {
         $category = $request->all();
-        $c = Category::find($id);
-        $c->name = $category['name'];
-        if ($c->save()) {
-            return redirect('/admin/category');
+        $c        = Category::find( $id );
+        $c->name  = $category['name'];
+        if ( $c->save() ) {
+            return redirect( '/admin/category' );
         }
     }
 
@@ -101,10 +99,17 @@ class CategoryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy( $id ) {
+        $c = Category::find( $id );
+        if ( $c->product ) {
+            $c->product()->detach();
+        }
+
+        $c->delete();
+
+        return redirect( '/admin/category' );
     }
 }

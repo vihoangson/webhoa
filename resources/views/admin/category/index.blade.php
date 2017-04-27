@@ -30,6 +30,9 @@
                         <div class="btn-group">
                             <a href="/category/{{$category->id}}" class="btn-white btn btn-xs" target="_blank">View</a>
                             <a href="/admin/category/{{$category->id}}/edit" class="btn-white btn btn-xs">Edit</a>
+                            {!! Form::open(['url' => '/admin/category/'.$category->id, 'method' => 'delete','class'=>'confirm-action']) !!}
+                            <button type="submit" name="id" value="{{$category->id}}" href="/admin/product/{{$category->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
+                            {!! Form::close() !!}
                         </div>
                     </td>
                 </tr>
