@@ -106,6 +106,7 @@
                     <li class="hidden"><a href="#tab-2" data-toggle="tab"><i class="fa fa-comments"></i>Reviews</a>
                     </li>
                 </ul>
+                @if($product->content)
                 <div class="tab-content">
                     @if($product->content)
                         <div class="tab-pane fade active in" id="tab-1">
@@ -301,6 +302,7 @@
                         </ul><a class="popup-text btn btn-primary" href="#review-dialog" data-effect="mfp-zoom-out"><i class="fa fa-pencil"></i> Add a review</a>
                     </div>
                 </div>
+                @endif
             </div>
             <div class="gap"></div>
             <h3>Related Porducts</h3>
