@@ -99,16 +99,19 @@
             <div class="gap"></div>
             <div class="tabbable">
                 <ul class="nav nav-tabs" id="myTab">
+                    @if($product->content)
                     <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-pencil"></i>Desciption</a>
                     </li>
+                    @endif
                     <li class="hidden"><a href="#tab-2" data-toggle="tab"><i class="fa fa-comments"></i>Reviews</a>
                     </li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade active in" id="tab-1">
-                        {!! $product->content or '' !!}
-                    </div>
-
+                    @if($product->content)
+                        <div class="tab-pane fade active in" id="tab-1">
+                            {!! $product->content or '' !!}
+                        </div>
+                    @endif
                     <div class="tab-pane fade hidden" id="tab-2">
                         <ul class="comments-list">
                             <li>
