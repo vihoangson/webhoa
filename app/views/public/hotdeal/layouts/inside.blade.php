@@ -134,9 +134,10 @@
         <div class="row">
             <div class="col-md-3">
                 <aside class="sidebar-left">
+
                     <ul class="nav nav-tabs nav-stacked nav-coupon-category">
                         @foreach($data_category as $key => $value)
-                            <li @if($key==1) class="active" @endif><a href="/category/{{$value->slug}}"><i class="fa fa-cutlery"></i>{{$value->name}}<span>44</span></a></li>
+                            <li class="{{(preg_match('/category\/'.$value->slug.'/',Request::url())==true?"active":"")}}" ><a href="/category/{{$value->slug}}"><i class="fa fa-cutlery"></i>{{$value->name}}<span>{{count($value->product)}}</span></a></li>
                         @endforeach
                     </ul>
                     <div class="sidebar-box">
@@ -398,7 +399,7 @@
     <script src="/assets/themes/remtsoy/js/owl-carousel.js"></script>
     <script src="/assets/themes/remtsoy/js/masonry.js"></script>
     <script src="/assets/themes/remtsoy/js/nicescroll.js"></script>
-    {{--<script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>--}}
+    <script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
 
     <!-- Custom scripts -->
     <script src="/assets/themes/remtsoy/js/custom.js"></script>

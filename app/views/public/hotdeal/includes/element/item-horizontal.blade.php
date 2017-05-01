@@ -20,17 +20,17 @@
         <div class="product-meta">
 
             @if($product->price_sale_formated)
+                <ul class="product-price-list">
+                    <li><span class="product-price">{{$product->price_sale_formated}}</span>
+                    </li>
+                    <li><span class="product-old-price">{{$product->price_formated}}</span>
+                    </li>
+                    <li><span class="product-save">Tiết kiệm {{$product->price_save}}</span>
+                    </li>
+                </ul>
                 @if($product->date_end_sale_formated_countdown)
                     <div data-countdown="{{$product->date_end_sale_formated_countdown}}"></div>
                 @endif
-                    <ul class="product-price-list">
-                        <li><span class="product-price">{{$product->price_sale_formated}}</span>
-                        </li>
-                        <li><span class="product-old-price">{{$product->price_formated}}</span>
-                        </li>
-                        <li><span class="product-save">Tiết kiệm {{$product->price_save}}</span>
-                        </li>
-                    </ul>
             @else
                 <ul class="product-price-list">
                     <li><span class="product-price">{{$product->price_formated}}</span>
