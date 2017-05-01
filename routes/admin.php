@@ -1,16 +1,24 @@
 <?php
+Route::get('', 'admin\DashboardController@index');
+
 Route::post('/up', 'admin\ProductController@up');
 Route::post('/update_ajax', 'admin\ProductController@update_ajax');
-Route::get('/admin', 'admin\DashboardController@index');
-Route::get('/admin/setting', 'admin\DashboardController@setting');
-Route::post('/admin/setting', 'admin\DashboardController@save_setting');
-Route::get('/admin/logout', 'admin\DashboardController@logout');
-Route::get('/admin/product/template', 'admin\ProductController@template');
-Route::get('/admin/menu/sort', 'admin\MenuController@sort');
-Route::resource('/admin/menu', 'admin\MenuController');
-Route::get('/admin/group/sort', 'admin\GroupController@sort');
-Route::resource('/admin/group', 'admin\GroupController');
-Route::resource('/admin/product', 'admin\ProductController');
-Route::resource('/admin/post', 'admin\PostController');
-Route::resource('/admin/category', 'admin\CategoryController');
-Route::resource('/admin/order', 'admin\OrderController');
+
+Route::get('/logout', 'admin\DashboardController@logout');
+
+Route::get('/menu/sort', 'admin\MenuController@sort');
+
+Route::resource('/menu', 'admin\MenuController');
+
+Route::resource('/post', 'admin\PostController');
+Route::resource('/category', 'admin\CategoryController');
+Route::resource('/order', 'admin\OrderController');
+
+Route::get('/group/sort', 'admin\GroupController@sort');
+Route::resource('/group', 'admin\GroupController');
+
+Route::get('/setting', 'admin\DashboardController@setting');
+Route::post('/setting', 'admin\DashboardController@save_setting');
+
+Route::get('/product/template', 'admin\ProductController@template');
+Route::resource('/product', 'admin\ProductController');
