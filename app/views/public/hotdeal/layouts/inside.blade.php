@@ -235,6 +235,8 @@
                 </aside>
             </div>
             <div class="col-md-9">
+                {{--@yield('breadcrumb')--}}
+
                 @yield('content')
             </div>
         </div>
@@ -340,7 +342,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <p>Copyright © 2014, Your Store, All Rights Reserved</p>
+                        <p>Copyright © 2014, <a href="/assets/themes/remtsoy/">Your Store</a>, All Rights Reserved</p>
                     </div>
                     <div class="col-md-6 col-md-offset-2">
                         <div class="pull-right">

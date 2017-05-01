@@ -12,26 +12,23 @@
 */
 
 Route::get( '/', [ 'uses' => 'HomeController@index', 'as' => 'home' ] );
-Route::get( '/contact', 'HomeController@contact' );
-Route::post( '/contact', 'HomeController@process_contact' );
+Route::get( '/contact', 'HomeController@contact' )->name('contact');
+Route::post( '/contact', 'HomeController@process_contact' )->name('contact');
 
-Route::get( '/product', 'ProductController@index' );
-Route::get( '/product/payment', 'ProductController@payment' );
-Route::get( '/product/remove_item_in_cart/{rowId}/{redirect}', 'ProductController@remove_item_in_cart' );
-Route::get( '/product/remove_item_in_cart/{rowId}', 'ProductController@remove_item_in_cart' );
+Route::get( '/product', 'ProductController@index' )->name('contact')->name('product.index');
+Route::get( '/product/payment', 'ProductController@payment' )->name('contact')->name('product.payment');
+Route::get( '/product/remove_item_in_cart/{rowId}/{redirect}', 'ProductController@remove_item_in_cart' )->name('');
+Route::get( '/product/remove_item_in_cart/{rowId}', 'ProductController@remove_item_in_cart' )->name('');
 Route::post( '/product/payment', 'ProductController@submit_payment' );
-Route::get( '/product/checkout', 'ProductController@checkout' );
-Route::get( '/product/add_cart/{id}', 'ProductController@add_cart' );
+Route::get( '/product/checkout', 'ProductController@checkout' )->name('contact')->name('product.checkout');
+Route::get( '/product/add_cart/{id}', 'ProductController@add_cart' )->name('product.add_cart');
 Route::post( '/product/update_cart', 'ProductController@update_cart' );
-Route::get( '/product/finish', 'ProductController@finish' );
-Route::get( '/product/{id}', 'ProductController@show' );
+Route::get( '/product/finish', 'ProductController@finish' )->name('product.finish');
+Route::get( '/product/{id}', 'ProductController@show' )->name('product.show');
 
 Route::get( 'post/{id}', 'PostController@show' );
 //Route::resource('post', 'PostController');
 
-Route::get( '/login33', function () {
-    return view( "public.hoa.login" );
-} );
 //Route::resource('/menu', 'MenuController');
 
 Route::resource( '/group', 'GroupController' );
@@ -39,13 +36,10 @@ Route::resource( '/group', 'GroupController' );
 
 Route::resource( '/category', 'CategoryController' );
 
-//
-Route::get( '/welcome', function () {
-    return view( 'welcome' );
-} );
+
 
 Route::auth();
 
-Route::get( '/home', 'HomeController@index' );
+//Route::get( '/home', 'HomeController@index' );
 // Home
 
