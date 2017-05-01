@@ -1,7 +1,15 @@
 @extends('public.'.$template_name.'.layouts.inside')
+
+@section('title_page'){{$post->title}}@endsection
+
+@section('keyword_page'){{$post->keyword or 'Xem ngay mua ngay'}}@endsection
+
+@section('description_page'){{$post->descripton or 'Xem ngay mua ngay'}}@endsection
+
 @section('breadcrumb')
     {!! Breadcrumbs::render('post_detail',$post->title) !!}
 @endsection
+
 @section('content')
         <!-- Breadcrumb Ends -->
         <!-- Product Info Starts -->

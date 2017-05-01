@@ -1,4 +1,11 @@
-@extends('public.'.$template_name.'.layouts.no_sidebar')
+@extends('public.'.$template_name.'.layouts.inside')
+
+@section('title_page')Liên hệ@endsection
+
+@section('keyword_page'){{$group->keyword or 'Xem ngay mua ngay'}}@endsection
+
+@section('description_page'){{$group->descripton or 'Xem ngay mua ngay'}}@endsection
+
 @section('breadcrumb')
     {!! Breadcrumbs::render('contact') !!}
 @endsection

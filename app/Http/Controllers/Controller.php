@@ -32,10 +32,6 @@ class Controller extends BaseController {
 
         $menu = $this->prepare_menu();
 
-        $this->set_menu_main();
-
-        $this->set_menu_left();
-
         $this->set_variable_general();
 
         $this->set_best_seller();
@@ -47,23 +43,8 @@ class Controller extends BaseController {
         return $menu;
     }
 
-    private function set_menu_main() {
 
-        $data_menu_main = $this->get_data_menu( 'MainMenu' );
 
-        // Set menu for admin
-        if ( ! Auth::guard()->guest() ) {
-            $data_menu_main['Admin CP'] = '/admin';
-        }
-        View::share( 'menu_main', $data_menu_main );
-    }
-
-    private function set_menu_left() {
-        // Menu cột bên trái
-        $data_menu_left = $this->get_data_menu( 'LeftMenu' );
-
-        View::share( 'menu_left', $data_menu_left );
-    }
 
     private function set_banner_bottom() {
         $db_banner_bottom = [

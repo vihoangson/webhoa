@@ -1,4 +1,11 @@
 @extends('public.'.$template_name.'.layouts.inside')
+
+@section('title_page'){{$group->title}}@endsection
+
+@section('keyword_page'){{$group->keyword or 'Xem ngay mua ngay'}}@endsection
+
+@section('description_page'){{$group->descripton or 'Xem ngay mua ngay'}}@endsection
+
 @section('breadcrumb')
     {!! Breadcrumbs::render('category',$group->name) !!}
 @endsection
