@@ -36,26 +36,15 @@
         </div>
     </div>
     <div class="row row-wrap">
-
+        @if(count($products)>0)
+            @foreach($products as $key => $product)
+                @include('public.hotdeal.includes.element.item1',['product'=>$product])
+                @if(($key+1)%3 ==0 )<div class="clearfix break-line"></div>@endif
+            @endforeach
+        @else
+            <div class="no-product">Không tìm thấy sản phẩm</div>
+        @endif
     </div>
-    <ul class="pagination">
-        <li class="prev disabled">
-            <a href="#"></a>
-        </li>
-        <li class="active"><a href="#">1</a>
-        </li>
-        <li><a href="#">2</a>
-        </li>
-        <li><a href="#">3</a>
-        </li>
-        <li><a href="#">4</a>
-        </li>
-        <li><a href="#">5</a>
-        </li>
-        <li class="next">
-            <a href="#"></a>
-        </li>
-    </ul>
     <div class="gap"></div>
 @endsection
 

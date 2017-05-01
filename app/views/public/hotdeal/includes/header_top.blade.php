@@ -39,49 +39,49 @@
                                             href="{{config('templates.'.$template_name.'.template_path')}}index.html">Home</a>
                                 </li>
                             @endforeach
-
-
                         </ul>
                     </nav>
                     <!-- END MAIN NAVIGATION -->
                 </div>
                 <div class="col-md-6">
                     <!-- LOGIN REGISTER LINKS -->
+
+
+
                     <ul class="login-register">
-                        <li class="shopping-cart"><a href="/assets/themes/remtsoy/page-cart.html"><i
-                                        class="fa fa-shopping-cart"></i>My Cart</a>
+                        @if(Cart::total()!=0)
+                        <li class="shopping-cart"><a href="/product/checkout"><i class="fa fa-shopping-cart"></i>Giỏ hàng</a>
                             <div class="shopping-cart-box">
                                 <ul class="shopping-cart-items">
+                                    @foreach(Cart::content() as $key => $item)
                                     <li>
-                                        <a href="/assets/themes/remtsoy/product-shop-sidebar.html">
-                                            <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg"
-                                                 alt="Image Alternative text" title="AMaze"/>
-                                            <h5>New Glass Collection</h5><span
-                                                    class="shopping-cart-item-price">$150</span>
+                                        <a href="/product/{{$item->id}}">
+                                            <img src="/{{$item->options->img_url}}" alt="{{$item->name}}" title="{{$item->name}}"/>
+                                            <h5>{{$item->name}}</h5><span class="shopping-cart-item-price">{{number_format($item->price*$item->qty)}}đ</span>
+                                            <a href="/product/remove_item_in_cart/{{$item->rowId}}" class="remove-item-in-cart" data-id="">
+                                                <i class="fa fa-times"></i>
+                                            </a>
                                         </a>
                                     </li>
-                                    <li>
-                                        <a href="/assets/themes/remtsoy/product-shop-sidebar.html">
-                                            <img src="/assets/themes/remtsoy/img/gamer_chick_70x70.jpg"
-                                                 alt="Image Alternative text" title="Gamer Chick"/>
-                                            <h5>Playstation Accessories</h5><span class="shopping-cart-item-price">$170</span>
-                                        </a>
-                                    </li>
+                                    @endforeach
                                 </ul>
                                 <ul class="list-inline text-center">
-                                    <li><a href="/assets/themes/remtsoy/page-cart.html"><i
-                                                    class="fa fa-shopping-cart"></i> View Cart</a>
+                                    <li><a href="/product/checkout"><i
+                                                    class="fa fa-shopping-cart"></i> Giỏ hàng</a>
                                     </li>
-                                    <li><a href="/assets/themes/remtsoy/page-checkout.html"><i
-                                                    class="fa fa-check-square"></i> Checkout</a>
+                                    <li><a href="/product/payment"><i
+                                                    class="fa fa-check-square"></i> Thanh toán</a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li><a class="popup-text" href="#login-dialog" data-effect="mfp-move-from-top"><i
+                        @else
+                            <li class="shopping-cart"><a href="#"><i class="fa fa-shopping-cart"></i>Giỏ hàng - Chưa có sản phẩm</a></li>
+                        @endif
+                        <li><a class="popup-text hidden" href="#login-dialog" data-effect="mfp-move-from-top"><i
                                         class="fa fa-sign-in"></i>Sign in</a>
                         </li>
-                        <li><a class="popup-text" href="#register-dialog" data-effect="mfp-move-from-top"><i
+                        <li><a class="popup-text hidden" href="#register-dialog" data-effect="mfp-move-from-top"><i
                                         class="fa fa-edit"></i>Sign up</a>
                         </li>
                     </ul>

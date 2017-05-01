@@ -63,11 +63,10 @@
     <!-- Product Grid Display Starts -->
     <div class="row">
         @foreach($products as $key => $value)
-        <!-- Product #1 Starts -->
-        <div class="col-md-4 col-sm-6">
-            @include('public.'.$template_name.'.includes.element.item1',['product'=>$value])
-        </div>
-        <!-- Product #1 Ends -->
+            <!-- Product #1 Starts -->
+                @include('public.'.$template_name.'.includes.element.item1',['product'=>$value])
+            <!-- Product #1 Ends -->
+            @if(($key+1)%3 ==0 )<div class="clearfix break-line"></div>@endif
         @endforeach
     </div>
     <!-- Product Grid Display Ends -->

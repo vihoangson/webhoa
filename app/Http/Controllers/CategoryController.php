@@ -15,28 +15,9 @@ class CategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        //
+        return redirect('/');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create() {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store( Request $request ) {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -51,45 +32,13 @@ class CategoryController extends Controller {
         } else {
             $category = Category::findBySlug( $id );
         }
-if(!$category){
-    return view( 'public.' . $this->template_name . '.layouts.404' );
-}
+        
+        if(!$category){
+            return view( 'public.' . $this->template_name . '.layouts.404' );
+        }
         $products = $category->product;
 
         return view( 'public.' . $this->template_name . '.category.list' )->with( compact( 'category', 'products' ) );
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit( $id ) {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update( Request $request, $id ) {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy( $id ) {
-        //
-    }
 }

@@ -1,1 +1,17 @@
 /*YOUR CUSTOM STYLES*/
+.shopping-cart-items li{
+    position: relative;
+}
+.shopping-cart-items i.fa.fa-times {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.login-register > li {
+    border: none;
+}
+
+.clearfix.break-line {
+    margin: 20px 0;
+}

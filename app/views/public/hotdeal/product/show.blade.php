@@ -308,7 +308,7 @@
                 @endif
             </div>
             <div class="gap"></div>
-            <h3>Related Porducts</h3>
+            <h3>Sản phẩm liên quan</h3>
             <div class="gap gap-mini"></div>
             <div class="row row-wrap">
                 @foreach($product_relate as $key => $product)

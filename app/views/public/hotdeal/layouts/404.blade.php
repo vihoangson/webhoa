@@ -189,9 +189,7 @@
 
     <div class="container">
         <h1 class="title-hero">
-
             404
-
         </h1>
         <h1>Xin lỗi, trang này không được tìm thấy.</h1>
         <div class="gap gap-small"></div><a href="/" class="btn btn-primary btn-mega">Trở về trang chủ</a>
