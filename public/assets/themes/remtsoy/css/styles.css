@@ -6570,3 +6570,6 @@ img.mfp-img {
 .shopping-cart-table table {
   background: white;
 }
+ul.dropdown-menu {
+    margin-top: 0px;
+}

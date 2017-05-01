@@ -51,7 +51,9 @@ class CategoryController extends Controller {
         } else {
             $category = Category::findBySlug( $id );
         }
-
+if(!$category){
+    return view( 'public.' . $this->template_name . '.layouts.404' );
+}
         $products = $category->product;
 
         return view( 'public.' . $this->template_name . '.category.list' )->with( compact( 'category', 'products' ) );

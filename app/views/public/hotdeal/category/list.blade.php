@@ -36,9 +36,7 @@
         </div>
     </div>
     <div class="row row-wrap">
-        @foreach($products as $product)
-            @include('public.hotdeal.includes.element.item1',['product'=>$product])
-        @endforeach
+
     </div>
     <ul class="pagination">
         <li class="prev disabled">

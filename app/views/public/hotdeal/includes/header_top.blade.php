@@ -35,7 +35,7 @@
                                 @else
                                     <li><a href="{{$value}}">{{$key}}</a></li>
                                 @endif
-                                <li class="active hidden"><a
+                                <li class="hidden"><a
                                             href="{{config('templates.'.$template_name.'.template_path')}}index.html">Home</a>
                                 </li>
                             @endforeach
