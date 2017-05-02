@@ -30,7 +30,7 @@ class WidgetComposer
     }
 
     private function widget_recent_posts(View $view) {
-        $posts = Post::all();
+        $posts = Post::limit(3)->get();
         $view->with('widget_recent_posts',$posts);
     }
 

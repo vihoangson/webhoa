@@ -96,8 +96,8 @@
             <div class="container">
                 <div class="row row-wrap">
                     <div class="col-md-3">
-                        <a href="{{config('templates.'.$template_name.'.template_path')}}index.html">
-                            <img src="{{config('templates.'.$template_name.'.template_path')}}img/logo.png" alt="logo" title="logo" class="logo">
+                        <a href="/assets/themes/remtsoy/index.html">
+                            <img src="/assets/themes/remtsoy/img/logo.png" alt="logo" title="logo" class="logo">
                         </a>
                         <ul class="list list-social">
                             <li>
@@ -116,20 +116,20 @@
                                 <a class="fa fa-tumblr box-icon" href="#" data-toggle="tooltip" title="Tumblr"></a>
                             </li>
                         </ul>
-                        <p>Pretium hendrerit suspendisse quisque eros tempus sodales sagittis volutpat nullam fames
-                            inceptos himenaeos platea lorem laoreet iaculis penatibus aptent elit</p>
+                        <p>Curae primis aliquet sapien pellentesque velit tristique taciti tincidunt adipiscing pharetra
+                            massa at quisque fermentum faucibus ultrices mi fames himenaeos</p>
                     </div>
                     <div class="col-md-3">
                         <h4>Sign Up to the Newsletter</h4>
                         <div class="box">
-                            <form>
-                                <div class="form-group mb10">
-                                    <label>E-mail</label>
-                                    <input type="text" class="form-control"/>
-                                </div>
-                                <p class="mb10">Integer aliquam pretium pretium varius quam integer</p>
-                                <input type="submit" class="btn btn-primary" value="Sign Up"/>
-                            </form>
+                            {!! Form::open(['url' => '/register_email', 'method' => 'POST','class'=>'form-horizontal', 'files' => false]) !!}
+                            <div class="form-group mb10">
+                                <label>E-mail</label>
+                                <input type="email" class="form-control"/>
+                            </div>
+                            <p class="mb10">Facilisis penatibus integer lacinia semper nibh ullamcorper</p>
+                            <input type="submit" class="btn btn-primary" value="Sign Up"/>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -143,36 +143,34 @@
                         <ul class="thumb-list">
                             <li>
                                 <a href="#">
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg"
+                                    <img src="/assets/themes/remtsoy/img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg"
                                          alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag"/>
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Augue maecenas</a></h5>
-                                    <p class="thumb-list-item-desciption">Ridiculus aliquam suspendisse vulputate
-                                        etiam</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Nunc ad</a></h5>
+                                    <p class="thumb-list-item-desciption">Ornare commodo luctus curabitur mi</p>
                                 </div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/amaze_70x70.jpg"
-                                         alt="Image Alternative text" title="AMaze"/>
+                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze"/>
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Convallis aptent</a></h5>
-                                    <p class="thumb-list-item-desciption">Justo aptent senectus quis volutpat</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Aliquet aliquam</a></h5>
+                                    <p class="thumb-list-item-desciption">Nec sollicitudin fames cubilia elit</p>
                                 </div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/the_hidden_power_of_the_heart_70x70.jpg"
+                                    <img src="/assets/themes/remtsoy/img/the_hidden_power_of_the_heart_70x70.jpg"
                                          alt="Image Alternative text" title="The Hidden Power of the Heart"/>
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                    <h5 class="thumb-list-item-title"><a href="#">Vel at</a></h5>
-                                    <p class="thumb-list-item-desciption">Mus ipsum fames habitant montes</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Donec nostra</a></h5>
+                                    <p class="thumb-list-item-desciption">Cum nullam porta dignissim tortor</p>
                                 </div>
                             </li>
                         </ul>
@@ -184,37 +182,37 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4">
-                        <p>Copyright © 2014, Your Store, All Rights Reserved</p>
+                        <p>Copyright © 2014, <a href="/assets/themes/remtsoy/">Your Store</a>, All Rights Reserved</p>
                     </div>
                     <div class="col-md-6 col-md-offset-2">
                         <div class="pull-right">
                             <ul class="list-inline list-payment">
                                 <li>
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/american-express-curved-32px.png"
+                                    <img src="/assets/themes/remtsoy/img/payment/american-express-curved-32px.png"
                                          alt="Image Alternative text" title="Image Title"/>
                                 </li>
                                 <li>
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/cirrus-curved-32px.png"
+                                    <img src="/assets/themes/remtsoy/img/payment/cirrus-curved-32px.png"
                                          alt="Image Alternative text" title="Image Title"/>
                                 </li>
                                 <li>
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/discover-curved-32px.png"
+                                    <img src="/assets/themes/remtsoy/img/payment/discover-curved-32px.png"
                                          alt="Image Alternative text" title="Image Title"/>
                                 </li>
                                 <li>
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/ebay-curved-32px.png"
+                                    <img src="/assets/themes/remtsoy/img/payment/ebay-curved-32px.png"
                                          alt="Image Alternative text" title="Image Title"/>
                                 </li>
                                 <li>
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/maestro-curved-32px.png"
+                                    <img src="/assets/themes/remtsoy/img/payment/maestro-curved-32px.png"
                                          alt="Image Alternative text" title="Image Title"/>
                                 </li>
                                 <li>
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/mastercard-curved-32px.png"
+                                    <img src="/assets/themes/remtsoy/img/payment/mastercard-curved-32px.png"
                                          alt="Image Alternative text" title="Image Title"/>
                                 </li>
                                 <li>
-                                    <img src="{{config('templates.'.$template_name.'.template_path')}}img/payment/visa-curved-32px.png"
+                                    <img src="/assets/themes/remtsoy/img/payment/visa-curved-32px.png"
                                          alt="Image Alternative text" title="Image Title"/>
                                 </li>
                             </ul>
@@ -251,6 +249,18 @@
     <!-- Custom scripts -->
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/custom.js"></script>
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/switcher.js"></script>
+
+    @include('vendor.common.model')
+
+    @if( \Session::has('modal_message_error'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#popupmodal .modal-title').html('Error');
+                $('#popupmodal .modal-body').html('{{\Session::get('modal_message_error')}}');
+                $('#popupmodal').modal();
+            });
+        </script>
+    @endif
 </div>
 </body>
 

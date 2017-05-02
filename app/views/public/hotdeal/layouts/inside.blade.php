@@ -139,14 +139,14 @@
                     <div class="col-md-3">
                         <h4>Sign Up to the Newsletter</h4>
                         <div class="box">
-                            <form>
+                            {!! Form::open(['url' => '/register_email', 'method' => 'POST','class'=>'form-horizontal', 'files' => false]) !!}
                                 <div class="form-group mb10">
                                     <label>E-mail</label>
-                                    <input type="text" class="form-control"/>
+                                    <input type="email" class="form-control"/>
                                 </div>
                                 <p class="mb10">Facilisis penatibus integer lacinia semper nibh ullamcorper</p>
                                 <input type="submit" class="btn btn-primary" value="Sign Up"/>
-                            </form>
+                            {!! Form::close() !!}
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -265,6 +265,18 @@
     <!-- Custom scripts -->
     <script src="/assets/themes/remtsoy/js/custom.js"></script>
     <script src="/assets/themes/remtsoy/js/switcher.js"></script>
+
+    @include('vendor.common.model')
+
+    @if( \Session::has('modal_message_error'))
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('#popupmodal .modal-body').html('{{\Session::get('modal_message_error')}}');
+                $('#popupmodal').modal();
+            });
+        </script>
+    @endif
+
 </div>
 </body>
 

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Customer;
 use App\Order;
 use App\Product;
+use App\RegisterEmail;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -139,5 +141,16 @@ class ProductController extends Controller {
      */
     public function destroy( $id ) {
         //
+    }
+
+    public function register_email(Request $request){
+
+        if(filter_var($request->email, FILTER_VALIDATE_EMAIL)){
+            RegisterEmail::create(['email'=>$request->email]);
+        }else{
+            Session::flash('modal_message_error' , 'Kiểm tra không dúng email');
+        }
+
+        return redirect('/');
     }
 }
