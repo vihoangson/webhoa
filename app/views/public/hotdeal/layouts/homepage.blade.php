@@ -251,7 +251,6 @@
     <script src="{{config('templates.'.$template_name.'.template_path')}}js/switcher.js"></script>
 
     @include('vendor.common.model')
-
     @if( \Session::has('modal_message_error'))
         <script type="text/javascript">
             $(document).ready(function() {
@@ -261,6 +260,7 @@
             });
         </script>
     @endif
+
 </div>
 </body>
 
