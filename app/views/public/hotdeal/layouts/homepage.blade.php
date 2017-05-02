@@ -67,7 +67,7 @@
             </div>
             <div class="col-md-9">
                 <h1 class="mb20">Mặt hàng giảm giá
-                    <small><a href="#">Xem tất cả</a></small>
+                    <small><a href="/khuyen-mai-hot">Xem tất cả</a></small>
                 </h1>
                 @yield('feature')
             </div>

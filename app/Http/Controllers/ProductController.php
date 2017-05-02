@@ -46,12 +46,12 @@ class ProductController extends Controller {
             $product = Product::findBySlug( $id );
         }
 
-        $product_relate = $product->product_relate(6);
+        $product_relate = $product->product_relate( 6 );
 
-        $id = $product->id;
+        $id          = $product->id;
         $in_favorite = ( count( Cart::instance( 'wishlist' )->search( function ( $m, $n ) use ( $id ) {
             return $m->id == $id;
-        } ) )>0?true:false );
+        } ) ) > 0 ? true : false );
 
         return view( 'public.' . $this->template_name . '.product.show' )->with(
             compact(
@@ -112,7 +112,7 @@ class ProductController extends Controller {
 
         $od              = new Order;
         $od->data_cache  = json_encode( Cart::content() );
-        $od->total_sum   = str_replace(',','',Cart::total());
+        $od->total_sum   = str_replace( ',', '', Cart::total() );
         $od->customer_id = $customer->id;
         $od->save();
 
@@ -149,14 +149,27 @@ class ProductController extends Controller {
         //
     }
 
-    public function register_email(Request $request){
+    public function register_email( Request $request ) {
 
-        if(filter_var($request->email, FILTER_VALIDATE_EMAIL)){
-            RegisterEmail::create(['email'=>$request->email]);
-        }else{
-            Session::flash('modal_message_error' , 'Kiểm tra không dúng email');
+        if ( filter_var( $request->email, FILTER_VALIDATE_EMAIL ) ) {
+            RegisterEmail::create( [ 'email' => $request->email ] );
+        } else {
+            Session::flash( 'modal_message_error', 'Kiểm tra không dúng email' );
         }
 
-        return redirect('/');
+        return redirect( '/' );
     }
+
+    public function khuyenmaihot() {
+        $products = Product::where( [ 'promotion' => 1 ] )->get();
+
+        return view( 'public.' . $this->template_name . '.product.khuyenmaihot', compact( 'products' ) );
+    }
+
+    public function deal_moi() {
+        $products = Product::limit(9)->get();
+
+        return view( 'public.' . $this->template_name . '.product.deal-moi', compact( 'products' ) );
+    }
+
 }

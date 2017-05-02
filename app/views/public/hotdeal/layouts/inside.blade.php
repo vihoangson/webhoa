@@ -67,7 +67,7 @@
 
             <div class="col-md-9">
                 {{--@yield('breadcrumb')--}}
-
+                <h1>@yield('title-header')</h1>
                 @yield('content')
             </div>
             <div class="col-md-3">

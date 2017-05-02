@@ -6,6 +6,10 @@
 
 @section('description_page'){{$category->descripton or 'Xem ngay mua ngay'}}@endsection
 
+@section('title-header')
+    {{$category->name}}
+@endsection
+
 @section('breadcrumb')
     {!! Breadcrumbs::render('category',$category->name) !!}
 @endsection

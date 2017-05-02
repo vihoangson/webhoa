@@ -8,7 +8,7 @@
 @endsection
 @section('content')
     {{--New Deals--}}
-    <h1 class="mb20">Deal mới <small><a href="#">Xem tất cả</a></small></h1>
+    <h1 class="mb20">Deal mới <small><a href="/deal-moi">Xem tất cả</a></small></h1>
     <div class="row row-wrap">
         @foreach($feature_products as $key => $product) @if ($key > 2) @break; @endif
             @include('public.hotdeal.includes.element.product.item1',['product'=>$product])

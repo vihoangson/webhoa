@@ -20,3 +20,12 @@
     border-style: dashed;
     margin: 13px 0;
 }
+
+.blog-category-list span {
+    background: #cecece;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+    color: white;
+    margin-left: 3px;
+}
