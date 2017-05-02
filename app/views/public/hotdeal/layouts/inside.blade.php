@@ -27,40 +27,23 @@
 
     <link rel="stylesheet" href="/assets/themes/remtsoy/css/switcher.css">
     <!-- Demo Examples -->
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/apple.css" title="apple"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/pink.css" title="pink"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/teal.css" title="teal"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/gold.css" title="gold"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/downy.css" title="downy"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/atlantis.css"
-          title="atlantis" media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/red.css" title="red"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/violet.css" title="violet"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/pomegranate.css"
-          title="pomegranate" media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/violet-red.css"
-          title="violet-red" media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/mexican-red.css"
-          title="mexican-red" media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/victoria.css"
-          title="victoria" media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/orient.css" title="orient"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/jgger.css" title="jgger"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/de-york.css"
-          title="de-york" media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/blaze-orange.css"
-          title="blaze-orange" media="all"/>
-    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/hot-pink.css"
-          title="hot-pink" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/apple.css" title="apple" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/pink.css" title="pink" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/teal.css" title="teal" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/gold.css" title="gold" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/downy.css" title="downy" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/atlantis.css" title="atlantis" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/red.css" title="red" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/violet.css" title="violet" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/pomegranate.css" title="pomegranate" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/violet-red.css" title="violet-red" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/mexican-red.css" title="mexican-red" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/victoria.css" title="victoria" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/orient.css" title="orient" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/jgger.css" title="jgger" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/de-york.css" title="de-york" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/blaze-orange.css" title="blaze-orange" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="/assets/themes/remtsoy/css/schemes/hot-pink.css" title="hot-pink" media="all"/>
     <!-- END Demo Examples -->
 
 </head>
@@ -81,7 +64,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
+            <div class="col-md-3 hidden">
                 <aside class="sidebar-left">
 
                     <ul class="nav nav-tabs nav-stacked nav-coupon-category">
@@ -135,8 +118,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text"
-                                         title="AMaze"/>
+                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze"/>
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <h5 class="thumb-list-item-title"><a href="#">New Glass Collection</a></h5>
@@ -170,8 +152,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/old_no7_70x70.jpg" alt="Image Alternative text"
-                                         title="Old No7"/>
+                                    <img src="/assets/themes/remtsoy/img/old_no7_70x70.jpg" alt="Image Alternative text" title="Old No7"/>
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <h5 class="thumb-list-item-title"><a href="#">Fancy Coffe Cup</a></h5>
@@ -196,6 +177,137 @@
                 {{--@yield('breadcrumb')--}}
 
                 @yield('content')
+            </div>
+            <div class="col-md-3">
+                <aside class="hidden-phone">
+                    <div class="sidebar-box">
+                        <h5>Nhóm sản phẩm</h5>
+                        <ul class="icon-list blog-category-list">
+                            @foreach($data_category as $key => $value)
+                                <li>
+                                    <a href="/category/{{$value->slug}}"><i class="fa fa-angle-right"></i>{{$value->name}}
+                                        <span>{{count($value->product)}}</span></a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+
+
+                    <div class="sidebar-box">
+
+                        <h5>Newsletter singup</h5>
+                        <form class="sign-up">
+                            <input type="text" class="form-control" placeholder="E-mail">
+                            <small class="help-block">*We never send spam</small>
+                            <input type="submit" class="btn btn-primary" value="Subscribe">
+                        </form>
+                    </div>
+
+
+                    <div class="sidebar-box">
+                        <h5>Recent Posts</h5>
+                        <ul class="thumb-list">
+                            <li>
+                                <a href="#">
+                                    <img src="img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Dictumst penatibus</a></h5>
+                                    <p class="thumb-list-item-desciption">Placerat est sociosqu felis hac</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Lectus velit</a></h5>
+                                    <p class="thumb-list-item-desciption">Suscipit amet congue mattis taciti</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">Jul 18, 2014</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Ligula non</a></h5>
+                                    <p class="thumb-list-item-desciption">Vestibulum lectus sit sagittis facilisis</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h5>Twitter Feed</h5>
+                        <!-- START TWITTER -->
+                        <div class="twitter" id="twitter"></div>
+                        <!-- END TWITTER -->
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h5>Popular Tags</h5>
+                        <ul class="tags-list">
+                            <li><a href="#">Lifestyle</a>
+                            </li>
+                            <li><a href="#">Design</a>
+                            </li>
+                            <li><a href="#">Business</a>
+                            </li>
+                            <li><a href="#">Travel</a>
+                            </li>
+                            <li><a href="#">Discounts</a>
+                            </li>
+                            <li><a href="#">Shopping</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h5>Recent Comments</h5>
+                        <ul class="thumb-list thumb-list-right">
+                            <li>
+                                <a href="#">
+                                    <img src="img/gamer_chick_50x50.jpg" alt="Image Alternative text" title="Gamer Chick" class="rounded">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">8 minutes ago</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Oliver Ross</a></h5>
+                                    <p class="thumb-list-item-desciption">Ipsum tortor leo...</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="img/ana_29_50x50.jpg" alt="Image Alternative text" title="Ana 29"
+                                         class="rounded">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">8 minutes ago</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">John Doe</a></h5>
+                                    <p class="thumb-list-item-desciption">Habitasse velit consectetur auctor
+                                        elementum...</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="img/afro_50x50.jpg" alt="Image Alternative text" title="Afro"
+                                         class="rounded">
+                                </a>
+                                <div class="thumb-list-item-caption">
+                                    <p class="thumb-list-item-meta">7 minutes ago</p>
+                                    <h5 class="thumb-list-item-title"><a href="#">Leah Kerr</a></h5>
+                                    <p class="thumb-list-item-desciption">Nisi potenti fermentum vehicula
+                                        eleifend...</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </aside>
+
+
             </div>
         </div>
 
@@ -274,8 +386,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text"
-                                         title="AMaze"/>
+                                    <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze"/>
                                 </a>
                                 <div class="thumb-list-item-caption">
                                     <p class="thumb-list-item-meta">Jul 18, 2014</p>
@@ -351,7 +462,6 @@
     <!-- Scripts queries -->
     <script src="/assets/themes/remtsoy/js/jquery.js"></script>
     <script src="/assets/themes/remtsoy/js/boostrap.min.js"></script>
-    {{--<script src="/assets/themes/remtsoy/js/countdown.min.js"></script>--}}
     <script src="/assets/themes/remtsoy/js/flexnav.min.js"></script>
     <script src="/assets/themes/remtsoy/js/magnific.js"></script>
     <script src="/assets/themes/remtsoy/js/tweet.min.js"></script>

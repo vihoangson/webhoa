@@ -27,53 +27,23 @@
 
     <link rel="stylesheet" href="{{config('templates.'.$template_name.'.template_path')}}css/switcher.css">
     <!-- Demo Examples -->
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/apple.css" title="apple"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/pink.css" title="pink" media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/teal.css" title="teal" media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/gold.css" title="gold" media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/downy.css" title="downy"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/atlantis.css" title="atlantis"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/red.css" title="red" media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/violet.css" title="violet"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/pomegranate.css" title="pomegranate"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/violet-red.css" title="violet-red"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/mexican-red.css" title="mexican-red"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/victoria.css" title="victoria"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/orient.css" title="orient"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/jgger.css" title="jgger"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/de-york.css" title="de-york"
-          media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/blaze-orange.css"
-          title="blaze-orange" media="all"/>
-    <link rel="alternate stylesheet" type="text/css"
-          href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/hot-pink.css" title="hot-pink"
-          media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/apple.css" title="apple" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/pink.css" title="pink" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/teal.css" title="teal" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/gold.css" title="gold" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/downy.css" title="downy" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/atlantis.css" title="atlantis" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/red.css" title="red" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/violet.css" title="violet" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/pomegranate.css" title="pomegranate" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/violet-red.css" title="violet-red" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/mexican-red.css" title="mexican-red" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/victoria.css" title="victoria" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/orient.css" title="orient" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/jgger.css" title="jgger" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/de-york.css" title="de-york" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/blaze-orange.css" title="blaze-orange" media="all"/>
+    <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/hot-pink.css" title="hot-pink" media="all"/>
     <!-- END Demo Examples -->
 
 </head>
@@ -127,8 +97,7 @@
                 <div class="row row-wrap">
                     <div class="col-md-3">
                         <a href="{{config('templates.'.$template_name.'.template_path')}}index.html">
-                            <img src="{{config('templates.'.$template_name.'.template_path')}}img/logo.png" alt="logo"
-                                 title="logo" class="logo">
+                            <img src="{{config('templates.'.$template_name.'.template_path')}}img/logo.png" alt="logo" title="logo" class="logo">
                         </a>
                         <ul class="list list-social">
                             <li>
