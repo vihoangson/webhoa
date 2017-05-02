@@ -48,10 +48,16 @@ class ProductController extends Controller {
 
         $product_relate = $product->product_relate(6);
 
+        $id = $product->id;
+        $in_favorite = ( count( Cart::instance( 'wishlist' )->search( function ( $m, $n ) use ( $id ) {
+            return $m->id == $id;
+        } ) )>0?true:false );
+
         return view( 'public.' . $this->template_name . '.product.show' )->with(
             compact(
                 'product',
-                'product_relate'
+                'product_relate',
+                'in_favorite'
             )
         );
     }

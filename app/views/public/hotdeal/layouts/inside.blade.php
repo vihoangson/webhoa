@@ -266,7 +266,7 @@
     <script src="/assets/themes/remtsoy/js/custom.js"></script>
     <script src="/assets/themes/remtsoy/js/switcher.js"></script>
 
-    @include('vendor.common.model')
+    @include('vendor.common.modal')
 
     @if( \Session::has('modal_message_error'))
         <script type="text/javascript">

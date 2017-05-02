@@ -15,6 +15,8 @@ Route::get( '/', [ 'uses' => 'HomeController@index', 'as' => 'home' ] );
 Route::get( '/contact', 'HomeController@contact' )->name('contact');
 Route::post( '/contact', 'HomeController@process_contact' )->name('contact');
 
+Route::post( '/customer/add_wishlist', 'common\AjaxController@add_wishlist' )->name('add_wishlist');
+
 Route::get( '/product', 'ProductController@index' )->name('contact')->name('product.index');
 Route::get( '/product/payment', 'ProductController@payment' )->name('contact')->name('product.payment');
 Route::get( '/product/remove_item_in_cart/{rowId}/{redirect}', 'ProductController@remove_item_in_cart' )->name('');

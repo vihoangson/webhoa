@@ -46,11 +46,11 @@
 
                     <div class="fotorama" data-nav="thumbs" data-allowfullscreen="1" data-thumbheight="100" data-thumbwidth="100">
                         @if($product->main_img)
-                            <img src="/{{$product->image->find($product->main_img)->url}}" alt="Image Alternative text2" title="Gamer Chick" />
+                            <img src="/{{$product->image->find($product->main_img)->url}}" alt="Image Alternative text2" title="Gamer Chick"/>
                         @endif
                         @foreach($product->image as $img)
                             @if( $img->url != $product->image->find($product->main_img)->url)
-                                <img src="/{{$img->url}}" alt="Image Alternative text" title="Gamer Chick" />
+                                <img src="/{{$img->url}}" alt="Image Alternative text" title="Gamer Chick"/>
                             @endif
                         @endforeach
                         {{--<img src="img/gamer_chick_800x600.jpg" alt="Image Alternative text" title="Gamer Chick" />--}}
@@ -72,7 +72,8 @@
                             </li>
                             <li><i class="fa fa-star-half-empty"></i>
                             </li>
-                        </ul>	<small><a href="#" class="text-muted">based on 8 reviews</a></small>
+                        </ul>
+                        <small><a href="#" class="text-muted">based on 8 reviews</a></small>
                         <h3>{{$product->title}}</h3>
                         <p class=" hidden product-info-price">{{$product->price_formated}}</p>
                         @if(!$product->price_sale)
@@ -91,9 +92,17 @@
                             <li><i class="fa fa-check"></i>Pulvinar nulla</li>
                         </ul>
                         <ul class="list-inline">
-                            <li><a href="/product/add_cart/{{$product->slug}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a>
+                            <li>
+                                <a href="/product/add_cart/{{$product->slug}}" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Mua hàng</a>
                             </li>
-                            <li><a href="/product/add_wishlist/{{$product->slug}}" class="btn"><i class="fa fa-star"></i> To Wishlist</a>
+                            <li>
+                                <a href="javascript:void(0)" class="add_wishlist" data-id="{{$product->id}}" data-title="{{$product->title}}">
+                                    @if($in_favorite==true)
+                                        <i class="fa fa-heart"></i>
+                                    @else
+                                        <i class="fa fa-heart-o"></i>
+                                    @endif
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -103,208 +112,217 @@
             <div class="tabbable">
                 <ul class="nav nav-tabs" id="myTab">
                     @if($product->content)
-                    <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-pencil"></i>Desciption</a>
-                    </li>
+                        <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-pencil"></i>Desciption</a>
+                        </li>
                     @endif
                     <li class="hidden"><a href="#tab-2" data-toggle="tab"><i class="fa fa-comments"></i>Reviews</a>
                     </li>
                 </ul>
                 @if($product->content)
-                <div class="tab-content">
-                    @if($product->content)
-                        <div class="tab-pane fade active in" id="tab-1">
-                            {!! $product->content or '' !!}
+                    <div class="tab-content">
+                        @if($product->content)
+                            <div class="tab-pane fade active in" id="tab-1">
+                                {!! $product->content or '' !!}
+                            </div>
+                        @endif
+                        <div class="tab-pane fade hidden" id="tab-2">
+                            <ul class="comments-list">
+                                <li>
+                                    <!-- REVIEW -->
+                                    <article class="comment">
+                                        <div class="comment-author">
+                                            <img src="img/gamer_chick_50x50.jpg" alt="Image Alternative text" title="Gamer Chick">
+                                        </div>
+                                        <div class="comment-inner">
+                                            <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star-o"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="comment-author-name">Alison Mackenzie</span>
+                                            <p class="comment-content">Potenti diam ridiculus enim per orci aliquet quam proin sit neque porta conubia nam iaculis phasellus nam dignissim tincidunt sapien eros nam bibendum nunc vehicula accumsan lacus</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <!-- REVIEW -->
+                                    <article class="comment">
+                                        <div class="comment-author">
+                                            <img src="img/ana_29_50x50.jpg" alt="Image Alternative text" title="Ana 29">
+                                        </div>
+                                        <div class="comment-inner">
+                                            <ul class="icon-group icon-list-rating comment-review-rate" title="5/5 rating">
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="comment-author-name">Olivia Slater</span>
+                                            <p class="comment-content">Nisl justo natoque pharetra adipiscing ultricies aliquam erat in condimentum hendrerit vulputate lacus fames aliquet volutpat habitasse himenaeos adipiscing sociosqu tincidunt</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <!-- REVIEW -->
+                                    <article class="comment">
+                                        <div class="comment-author">
+                                            <img src="img/afro_50x50.jpg" alt="Image Alternative text" title="Afro">
+                                        </div>
+                                        <div class="comment-inner">
+                                            <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star-o"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="comment-author-name">Oliver Ross</span>
+                                            <p class="comment-content">Vivamus lacinia accumsan facilisi feugiat lectus etiam nostra dis curabitur conubia pulvinar nascetur</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <!-- REVIEW -->
+                                    <article class="comment">
+                                        <div class="comment-author">
+                                            <img src="img/bubbles_50x50.jpg" alt="Image Alternative text" title="Bubbles">
+                                        </div>
+                                        <div class="comment-inner">
+                                            <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star-o"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="comment-author-name">Frank Mills</span>
+                                            <p class="comment-content">Montes venenatis maecenas aptent tellus tempus praesent pretium elit porttitor penatibus mi tempus erat facilisi ante massa tristique bibendum inceptos feugiat lobortis vulputate</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <!-- REVIEW -->
+                                    <article class="comment">
+                                        <div class="comment-author">
+                                            <img src="img/me_with_the_uke_50x50.jpg" alt="Image Alternative text" title="Me with the Uke">
+                                        </div>
+                                        <div class="comment-inner">
+                                            <ul class="icon-group icon-list-rating comment-review-rate" title="5/5 rating">
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="comment-author-name">Alison Mackenzie</span>
+                                            <p class="comment-content">Bibendum faucibus dictumst suspendisse imperdiet pharetra vel euismod hac at at vitae</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <!-- REVIEW -->
+                                    <article class="comment">
+                                        <div class="comment-author">
+                                            <img src="img/amaze_50x50.jpg" alt="Image Alternative text" title="AMaze">
+                                        </div>
+                                        <div class="comment-inner">
+                                            <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star-o"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="comment-author-name">Dylan Taylor</span>
+                                            <p class="comment-content">Erat sagittis scelerisque molestie dignissim massa tristique id purus euismod non netus enim nisi ac himenaeos nascetur interdum porta leo adipiscing dictumst quisque aliquet lobortis torquent</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <!-- REVIEW -->
+                                    <article class="comment">
+                                        <div class="comment-author">
+                                            <img src="img/chiara_50x50.jpg" alt="Image Alternative text" title="Chiara">
+                                        </div>
+                                        <div class="comment-inner">
+                                            <ul class="icon-group icon-list-rating comment-review-rate" title="5/5 rating">
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="comment-author-name">Joseph Hudson</span>
+                                            <p class="comment-content">Urna dui lectus erat massa velit mattis lobortis arcu sagittis proin malesuada senectus montes bibendum vehicula</p>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li>
+                                    <!-- REVIEW -->
+                                    <article class="comment">
+                                        <div class="comment-author">
+                                            <img src="img/andrea_50x50.jpg" alt="Image Alternative text" title="Andrea">
+                                        </div>
+                                        <div class="comment-inner">
+                                            <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star"></i>
+                                                </li>
+                                                <li><i class="fa fa-star-o"></i>
+                                                </li>
+                                            </ul>
+                                            <span class="comment-author-name">Frank Mills</span>
+                                            <p class="comment-content">Porta fusce litora id enim montes neque facilisi sit class vel commodo est vel diam massa ultrices netus fusce</p>
+                                        </div>
+                                    </article>
+                                </li>
+                            </ul>
+                            <a class="popup-text btn btn-primary" href="#review-dialog" data-effect="mfp-zoom-out"><i class="fa fa-pencil"></i> Add a review</a>
                         </div>
-                    @endif
-                    <div class="tab-pane fade hidden" id="tab-2">
-                        <ul class="comments-list">
-                            <li>
-                                <!-- REVIEW -->
-                                <article class="comment">
-                                    <div class="comment-author">
-                                        <img src="img/gamer_chick_50x50.jpg" alt="Image Alternative text" title="Gamer Chick">
-                                    </div>
-                                    <div class="comment-inner">
-                                        <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star-o"></i>
-                                            </li>
-                                        </ul><span class="comment-author-name">Alison Mackenzie</span>
-                                        <p class="comment-content">Potenti diam ridiculus enim per orci aliquet quam proin sit neque porta conubia nam iaculis phasellus nam dignissim tincidunt sapien eros nam bibendum nunc vehicula accumsan lacus</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- REVIEW -->
-                                <article class="comment">
-                                    <div class="comment-author">
-                                        <img src="img/ana_29_50x50.jpg" alt="Image Alternative text" title="Ana 29">
-                                    </div>
-                                    <div class="comment-inner">
-                                        <ul class="icon-group icon-list-rating comment-review-rate" title="5/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                        </ul><span class="comment-author-name">Olivia Slater</span>
-                                        <p class="comment-content">Nisl justo natoque pharetra adipiscing ultricies aliquam erat in condimentum hendrerit vulputate lacus fames aliquet volutpat habitasse himenaeos adipiscing sociosqu tincidunt</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- REVIEW -->
-                                <article class="comment">
-                                    <div class="comment-author">
-                                        <img src="img/afro_50x50.jpg" alt="Image Alternative text" title="Afro">
-                                    </div>
-                                    <div class="comment-inner">
-                                        <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star-o"></i>
-                                            </li>
-                                        </ul><span class="comment-author-name">Oliver Ross</span>
-                                        <p class="comment-content">Vivamus lacinia accumsan facilisi feugiat lectus etiam nostra dis curabitur conubia pulvinar nascetur</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- REVIEW -->
-                                <article class="comment">
-                                    <div class="comment-author">
-                                        <img src="img/bubbles_50x50.jpg" alt="Image Alternative text" title="Bubbles">
-                                    </div>
-                                    <div class="comment-inner">
-                                        <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star-o"></i>
-                                            </li>
-                                        </ul><span class="comment-author-name">Frank Mills</span>
-                                        <p class="comment-content">Montes venenatis maecenas aptent tellus tempus praesent pretium elit porttitor penatibus mi tempus erat facilisi ante massa tristique bibendum inceptos feugiat lobortis vulputate</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- REVIEW -->
-                                <article class="comment">
-                                    <div class="comment-author">
-                                        <img src="img/me_with_the_uke_50x50.jpg" alt="Image Alternative text" title="Me with the Uke">
-                                    </div>
-                                    <div class="comment-inner">
-                                        <ul class="icon-group icon-list-rating comment-review-rate" title="5/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                        </ul><span class="comment-author-name">Alison Mackenzie</span>
-                                        <p class="comment-content">Bibendum faucibus dictumst suspendisse imperdiet pharetra vel euismod hac at at vitae</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- REVIEW -->
-                                <article class="comment">
-                                    <div class="comment-author">
-                                        <img src="img/amaze_50x50.jpg" alt="Image Alternative text" title="AMaze">
-                                    </div>
-                                    <div class="comment-inner">
-                                        <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star-o"></i>
-                                            </li>
-                                        </ul><span class="comment-author-name">Dylan Taylor</span>
-                                        <p class="comment-content">Erat sagittis scelerisque molestie dignissim massa tristique id purus euismod non netus enim nisi ac himenaeos nascetur interdum porta leo adipiscing dictumst quisque aliquet lobortis torquent</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- REVIEW -->
-                                <article class="comment">
-                                    <div class="comment-author">
-                                        <img src="img/chiara_50x50.jpg" alt="Image Alternative text" title="Chiara">
-                                    </div>
-                                    <div class="comment-inner">
-                                        <ul class="icon-group icon-list-rating comment-review-rate" title="5/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                        </ul><span class="comment-author-name">Joseph Hudson</span>
-                                        <p class="comment-content">Urna dui lectus erat massa velit mattis lobortis arcu sagittis proin malesuada senectus montes bibendum vehicula</p>
-                                    </div>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- REVIEW -->
-                                <article class="comment">
-                                    <div class="comment-author">
-                                        <img src="img/andrea_50x50.jpg" alt="Image Alternative text" title="Andrea">
-                                    </div>
-                                    <div class="comment-inner">
-                                        <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star"></i>
-                                            </li>
-                                            <li><i class="fa fa-star-o"></i>
-                                            </li>
-                                        </ul><span class="comment-author-name">Frank Mills</span>
-                                        <p class="comment-content">Porta fusce litora id enim montes neque facilisi sit class vel commodo est vel diam massa ultrices netus fusce</p>
-                                    </div>
-                                </article>
-                            </li>
-                        </ul><a class="popup-text btn btn-primary" href="#review-dialog" data-effect="mfp-zoom-out"><i class="fa fa-pencil"></i> Add a review</a>
                     </div>
-                </div>
                 @endif
             </div>
             <div class="gap"></div>
@@ -312,8 +330,9 @@
             <div class="gap gap-mini"></div>
             <div class="row row-wrap">
                 @foreach($product_relate as $key => $product)
-                    @if($key % 3 == 0)</div><div class="row row-wrap">@endif
-                    @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
+                    @if($key % 3 == 0)</div>
+            <div class="row row-wrap">@endif
+                @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
                 @endforeach
             </div>
 
