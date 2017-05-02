@@ -28,6 +28,11 @@ class ComposerServiceProvider extends ServiceProvider
             '*', 'App\Http\ViewComposers\MetaHeaderComposer'
         );
 
+        // Using class based composers...
+        View::composer(
+            '*', 'App\Http\ViewComposers\WidgetComposer'
+        );
+
     }
 
     /**
