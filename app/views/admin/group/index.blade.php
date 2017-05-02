@@ -46,8 +46,12 @@
                     <td></td>
                     <td class="text-right">
                         <div class="btn-group">
-                            <a href="/group/{{$group->id}}" class="btn-white btn btn-xs" target="_blank">View</a>
+                            <a href="/group/{{$group->slug}}" class="btn-white btn btn-xs" target="_blank">View</a>
                             <a href="/admin/group/{{$group->id}}/edit" class="btn-white btn btn-xs">Edit</a>
+
+                            {!! Form::open(['url' => '/admin/group/'.$group->id, 'method' => 'delete','class'=>'confirm-action']) !!}
+                            <button type="submit" name="id" value="{{$group->id}}" href="/admin/group/{{$group->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
+                            {!! Form::close() !!}
                         </div>
                     </td>
                 </tr>
@@ -64,8 +68,11 @@
                             <td></td>
                             <td class="text-right">
                                 <div class="btn-group">
-                                    <a href="/group/{{$group_1->id}}" class="btn-white btn btn-xs" target="_blank">View</a>
+                                    <a href="/group/{{$group_1->slug}}" class="btn-white btn btn-xs" target="_blank">View</a>
                                     <a href="/admin/group/{{$group_1->id}}/edit" class="btn-white btn btn-xs">Edit</a>
+                                    {!! Form::open(['url' => '/admin/group/'.$group->id, 'method' => 'delete','class'=>'confirm-action']) !!}
+                                    <button type="submit" name="id" value="{{$group->id}}" href="/admin/group/{{$group->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
+                                    {!! Form::close() !!}
                                 </div>
                             </td>
                         </tr>

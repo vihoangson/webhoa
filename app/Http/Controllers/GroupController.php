@@ -47,7 +47,12 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        $group = Group::find($id);
+        if ( get_id_or_slug( $id ) == 'id' ) {
+            $group = Group::find( $id );
+        } else {
+            $group = Group::findBySlug( $id );
+        }
+
         $posts = $group->post;
         return view('public.'.$this->template_name.'.group.list')->with(compact('group', 'posts'));
     }

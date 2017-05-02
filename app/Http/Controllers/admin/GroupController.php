@@ -105,7 +105,11 @@ class GroupController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $group = Group::find( $id );
+        $group->post()->detach();
+        $group->delete();
+
+        return redirect( '/admin/group' );
     }
 
     public function sort()

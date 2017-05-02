@@ -100,7 +100,7 @@
     });
     $(document).on("click",".dl_img",function(){
         var this_btn = $(this);
-        $.post('/update_ajax',{'process':'delete_img_product','id':$(this).data('id')},function(data) {
+        $.post('/admin/update_ajax',{'process':'delete_img_product','id':$(this).data('id')},function(data) {
             if(data.status == true){
                 $(".thumb_img[data-id='"+data.id+"']").remove();
                 this_btn.remove();
@@ -110,7 +110,7 @@
     })
 $(".thumb_img").click(function(){
     var this_select = $(this);
-    $.post('/update_ajax',{'process':'change_main_img','id':$(this).data('id'),'pid':$(this).data('pid')},function(data){
+    $.post('/admin/update_ajax',{'process':'change_main_img','id':$(this).data('id'),'pid':$(this).data('pid')},function(data){
         $(".thumb_img").removeClass('active_box');
         this_select.addClass('active_box');
     })
@@ -130,7 +130,7 @@ $(".thumb_img").click(function(){
             var data = new FormData();
             data.append("image_editor", image);
             $.ajax({
-                url: '/up',
+                url: '/admin/up',
                 cache: false,
                 contentType: false,
                 processData: false,

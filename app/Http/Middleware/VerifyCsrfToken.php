@@ -12,7 +12,7 @@ class VerifyCsrfToken extends BaseVerifier
      * @var array
      */
     protected $except = [
-        'up',
-        'update_ajax'
+        'admin/up',
+        'admin/update_ajax'
     ];
 }

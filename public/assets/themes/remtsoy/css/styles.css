@@ -703,11 +703,11 @@ label {
 }
 @media (max-width: 1200px) {
   .search-area .search-area-division-location {
-    width: 120px;
+    width: 119px;
   }
 }
 .search-area .search-area-division-input {
-  width: 510px;
+  width: 417px;
 }
 @media (max-width: 1200px) {
   .search-area .search-area-division-input {
