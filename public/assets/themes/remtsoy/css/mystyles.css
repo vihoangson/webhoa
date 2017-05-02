@@ -15,3 +15,8 @@
 .clearfix.break-line {
     margin: 20px 0;
 }
+
+.product-thumb hr.dot-hr {
+    border-style: dashed;
+    margin: 13px 0;
+}

@@ -104,7 +104,7 @@
             </div>
             <div class="line"></div>
             <p>Background images</p>
-            <div class="predefined_styles" id="bgimageswitch_area">
+            <div class="predefined_styles hidden" id="bgimageswitch_area">
                 <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/bike.jpg')" data-source="img/backgrounds/bike.jpg"></a>
                 <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/flowers.jpg')" data-source="img/backgrounds/flowers.jpg"></a>
                 <a href="#" class="bgimageswitch" style="background-image: url('img/switcher/wood.jpg')" data-source="img/backgrounds/wood.jpg"></a>

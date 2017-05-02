@@ -306,7 +306,7 @@ $(document).ready(function() {
             ticker();
         }, 5000);
     };
-    ticker();
+    //ticker();
 
 
      // footer always on bottom

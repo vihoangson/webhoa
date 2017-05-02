@@ -1,11 +1,15 @@
-<a class="col-md-3" href="/product/{{$product->slug}}">
+<div class="col-md-3">
     <div class="product-thumb">
         <header class="product-header">
+            <a href="/product/{{$product->slug}}">
             <img src="/{{$product->image->find($product->main_img)->url or ''}}" alt="Image Alternative text"
                  title="Food is Pride"/>
+            </a>
         </header>
         <div class="product-inner">
+            <a href="/product/{{$product->slug}}>
             <h5 class="product-title">{{$product->title}}</h5>
+            </a>
             <p class="product-desciption"></p>
             <div class="product-meta">
 
@@ -30,8 +34,10 @@
                         </li>
                     </ul>
                 @endif
+                <hr class="dot-hr">
             </div>
+            <a href="/product/add_cart/{{$product->slug}}" class="btn btn-primary btn-block "><i class="fa fa-shopping-cart"></i> Mua ngay</a>
             <p class="product-location"><i class="fa fa-map-marker"></i> {{$product->place_sale}}</p>
         </div>
     </div>
-</a>
+</div>
