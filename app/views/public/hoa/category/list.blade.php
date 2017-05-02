@@ -65,7 +65,7 @@
         @foreach($products as $key => $product)
         <!-- Product #1 Starts -->
         <div class="col-md-4 col-sm-6">
-            @include('public.'.$template_name.'.includes.product.item1',['product'=>$product])
+            @include('public.'.$template_name.'.includes.element.product.item1',['product'=>$product])
         </div>
         <!-- Product #1 Ends -->
         @endforeach
