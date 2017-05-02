@@ -11,29 +11,22 @@
 @endsection
 
 @section('content')
-        <!-- Breadcrumb Ends -->
-        <!-- Product Info Starts -->
-        <div class="row product-info">
-            <!-- Right Starts -->
-            <div class="col-sm-12 product-details">
-                <!-- Product Name Starts -->
-                <h2>{{$post->title}}</h2>
-                <!-- Available Options Ends -->
-
-                <div class="summary">{!! $post->summary !!}</div>
-
-                <div class="content-page">{!! $post->content !!}</div>
-
-            </div>
-            <!-- Right Ends -->
+    <article class="post">
+        <div class="post-inner">
+            <h3 class="post-title">{{$post->title}}</h3>
+            <ul class="post-meta">
+                <li><i class="fa fa-calendar"></i><a href="#">03 August, 2013</a>
+                </li>
+                <li><i class="fa fa-user"></i>by <a href="#">Oliver Ross</a>
+                </li>
+                <li><i class="fa fa-tags"></i><a href="#">Design</a>, <a href="#">Digital</a>
+                </li>
+                <li><i class="fa fa-comments"></i><a href="#">14 Comments</a>
+                </li>
+            </ul>
+            <div class="gap gap-mini"></div>
+            {!! $post->content !!}
         </div>
-        <!-- product Info Ends -->
-        <!-- Product Description Starts -->
-        <div class="product-info-box hidden">
-            <h4 class="heading">Description</h4>
-            <div class="content panel-smart">
-            </div>
-        </div>
-        <!-- Product Description Ends -->
+    </article>
 
 @endsection

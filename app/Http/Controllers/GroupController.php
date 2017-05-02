@@ -52,8 +52,8 @@ class GroupController extends Controller
         } else {
             $group = Group::findBySlug( $id );
         }
-
         $posts = $group->post;
+
         return view('public.'.$this->template_name.'.group.list')->with(compact('group', 'posts'));
     }
 

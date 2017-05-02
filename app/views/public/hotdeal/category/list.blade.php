@@ -34,9 +34,9 @@
         @if(count($products)>0)
             @foreach($products as $key => $product)
                 @if($type_show == 'th-horizontal')
-                    @include('public.hotdeal.includes.element.item-horizontal',['product'=>$product])
+                    @include('public.hotdeal.includes.element.product.item-horizontal',['product'=>$product])
                 @else
-                    @include('public.hotdeal.includes.element.item1',['product'=>$product])
+                    @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
                     @if(($key+1)%3 ==0 )<div class="clearfix break-line"></div>@endif
                 @endif
 

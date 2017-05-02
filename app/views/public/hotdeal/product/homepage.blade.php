@@ -2,7 +2,7 @@
 @section('feature')
     <div class="row row-wrap">
         @foreach($feature_products as $key => $product) @if ($key > 2) @break; @endif
-            @include('public.hotdeal.includes.element.item1',['product'=>$product])
+            @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
         @endforeach
     </div>
 @endsection
@@ -11,12 +11,12 @@
     <h1 class="mb20">Deal mới <small><a href="#">Xem tất cả</a></small></h1>
     <div class="row row-wrap">
         @foreach($feature_products as $key => $product) @if ($key > 2) @break; @endif
-            @include('public.hotdeal.includes.element.item1',['product'=>$product])
+            @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
         @endforeach
     </div>
     <div class="row row-wrap">
         @foreach($products as $key => $product) @if ($key > 3) @break; @endif
-            @include('public.hotdeal.includes.element.item2',['product'=>$product])
+            @include('public.hotdeal.includes.element.product.item2',['product'=>$product])
         @endforeach
     </div>
     <div class="gap gap-small"></div>
@@ -25,7 +25,7 @@
     <h1 class="mb20 hidden">Popular <small><a href="#">View All</a></small></h1>
     <div class="row row-wrap hidden">
         @foreach($feature_products as $key => $product) @if ($key > 2) @break; @endif
-            @include('public.hotdeal.includes.element.item2',['$product'=>$product])
+            @include('public.hotdeal.includes.element.product.item2',['$product'=>$product])
         @endforeach
         <a class="col-md-4" href="#">
             <div class="product-thumb">

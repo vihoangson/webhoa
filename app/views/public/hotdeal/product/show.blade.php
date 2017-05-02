@@ -313,7 +313,7 @@
             <div class="row row-wrap">
                 @foreach($product_relate as $key => $product)
                     @if($key % 3 == 0)</div><div class="row row-wrap">@endif
-                    @include('public.hotdeal.includes.element.item1',['product'=>$product])
+                    @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
                 @endforeach
             </div>
 

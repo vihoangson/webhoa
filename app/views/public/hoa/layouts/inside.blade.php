@@ -105,7 +105,7 @@
             <!-- Bestsellers Links Starts -->
             <h3 class="side-heading">Bestsellers</h3>
             @foreach($product_best_seller as $product)
-                @include('public.hoa.includes.element.item1')
+                @include('public.hoa.includes.element.product.item1')
             @endforeach
             <div class="product-col hidden">
                 <div class="image">

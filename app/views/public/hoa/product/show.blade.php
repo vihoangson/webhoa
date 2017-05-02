@@ -102,7 +102,7 @@
             @foreach($product_relate as $item)
             <!-- Product Starts -->
                 <div class="col-md-4 col-sm-6">
-                    @include('public.hoa.includes.element.item1',['product'=>$item])
+                    @include('public.hoa.includes.element.product.item1',['product'=>$item])
                 </div>
             <!-- Product Ends -->
             @endforeach

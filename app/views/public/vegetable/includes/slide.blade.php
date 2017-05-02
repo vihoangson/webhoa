@@ -10,7 +10,7 @@
 <!-- Product Carousel Starts -->
 <div id="owl-product" class="owl-carousel">
     @foreach($products as $key => $product)
-        @include('public.'.$template_name.'.includes.element.item1')
+        @include('public.'.$template_name.'.includes.element.product.item1')
     @endforeach
 </div>
 <!-- Product Carousel Ends -->

@@ -70,11 +70,9 @@
     <!-- Product Grid Display Starts -->
     <div class="row">
         @foreach($posts as $key => $post)
-        <!-- Product #1 Starts -->
-        <div class="col-md-4 col-sm-6">
-            @include('public.'.$template_name.'.includes.element.item1',['product'=>$post])
-        </div>
-        <!-- Product #1 Ends -->
+            <!-- Product #1 Starts -->
+                @include('public.'.$template_name.'.includes.element.post.item1',['post'=>$post])
+            <!-- Product #1 Ends -->
         @endforeach
     </div>
     <!-- Product Grid Display Ends -->

@@ -49,7 +49,7 @@
                 <!-- Product Carousel Starts -->
                 <div id="owl-product" class="owl-carousel">
                     @foreach($products as $product)
-                        @include('public.'.$template_name.'.includes.element.item2')
+                        @include('public.'.$template_name.'.includes.element.product.item2')
                     @endforeach
                 </div>
                 <!-- Product Carousel Ends -->
@@ -73,7 +73,7 @@
             <!-- Product #1 Starts -->
             <div class="col-md-4 col-sm-6">
                 @foreach($products as $product)
-                    @include('public.'.$template_name.'.includes.element.item1')
+                    @include('public.'.$template_name.'.includes.element.product.item1')
                 @endforeach
             </div>
         </div>
