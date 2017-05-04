@@ -15,10 +15,10 @@ class CreateReview extends Migration {
 		Schema::create('review', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->tinyInteger('product_id');
+            $table->smallInteger('product_id');
             $table->string('name',100);
             $table->string('email',100);
-            $table->tinyInteger('star');
+            $table->smallInteger('star');
             $table->text('note_review')->nullable();
 			$table->timestamps();
 		});

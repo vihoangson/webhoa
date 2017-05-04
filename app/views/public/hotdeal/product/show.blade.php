@@ -123,42 +123,43 @@
                     <li class=" "><a href="#tab-2" data-toggle="tab"><i class="fa fa-comments"></i>Reviews</a>
                     </li>
                 </ul>
-                    <div class="tab-content">
-                        @if($product->content)
-                            <div class="tab-pane fade active in" id="tab-1">
-                                {!! $product->content or '' !!}
-                            </div>
-                        @endif
-                        <div class="tab-pane fade " id="tab-2">
-                            <ul class="comments-list">
+                <div class="tab-content">
+                    @if($product->content)
+                        <div class="tab-pane fade active in" id="tab-1">
+                            {!! $product->content or '' !!}
+                        </div>
+                    @endif
+                    <div class="tab-pane fade " id="tab-2">
+                        <ul class="comments-list">
+                            @foreach($product->reviews as $review)
                                 <li>
                                     <!-- REVIEW -->
                                     <article class="comment">
                                         <div class="comment-author">
-                                            <img src="img/gamer_chick_50x50.jpg" alt="Image Alternative text" title="Gamer Chick">
+                                            @php
+
+                                                $m = md5( strtolower( trim( $review->email ) ) );
+                                            //$m = md5( strtolower( trim( 'vihoangson@gmail.com' ) ) )
+                                            @endphp
+
+                                            <img src="http://www.gravatar.com/avatar/{{$m}}" alt="Image Alternative text" title="Gamer Chick">
                                         </div>
                                         <div class="comment-inner">
                                             <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-o"></i>
-                                                </li>
+                                                @for($i=0;$i<$review->star ;$i++)
+                                                    <li><i class="fa fa-star"></i></li>
+                                                @endfor
                                             </ul>
-                                            <span class="comment-author-name">Alison Mackenzie</span>
-                                            <p class="comment-content">Potenti diam ridiculus enim per orci aliquet quam proin sit neque porta conubia nam iaculis phasellus nam dignissim tincidunt sapien eros nam bibendum nunc vehicula accumsan lacus</p>
+                                            <span class="comment-author-name">{{$review->name}}</span>
+                                            <p class="comment-content">{{$review->note_review}}</p>
                                         </div>
                                     </article>
                                 </li>
-                            </ul>
-                            <a class="popup-text btn btn-primary" href="#review-dialog" data-effect="mfp-zoom-out"><i class="fa fa-pencil"></i> Add a review</a>
-                        </div>
+                            @endforeach
+                        </ul>
+                        <a class="popup-text btn btn-primary" href="#review-dialog" data-effect="mfp-zoom-out"><i class="fa fa-pencil"></i> Add a review</a>
                     </div>
+                </div>
             </div>
             <div class="gap"></div>
             <h3>Sản phẩm liên quan</h3>
