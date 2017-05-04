@@ -39,8 +39,18 @@ class AjaxController extends Controller {
                 'status'  => 'error',
             ] );
         }
+    }
 
+    public function process_review( Request $request ) {
+        $post_data = $request->all();
+        echo $post_data['name'];
+        echo $post_data['email'];
+        echo $post_data['review'];
+        echo "<hr>";
+        echo $post_data['starvote']+1;
+        return redirect($post_data['backlink']);
 
     }
+
 
 }

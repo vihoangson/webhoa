@@ -140,6 +140,7 @@ $('#star-rating > li').each(function () {
                 }
             }
             ;
+            $("#add-a-review #star-vote").val(itemIndex);
         });
     }, function () {
         listItems.removeClass('hovered');
