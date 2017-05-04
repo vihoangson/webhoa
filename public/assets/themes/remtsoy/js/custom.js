@@ -390,5 +390,5 @@ $(".add_wishlist").click(function () {
 
 
 if($("#myTab .active").length==0){
-    $("#myTab li").first().trigger("click");
+    $("#myTab li:first a").trigger("click");
 }
