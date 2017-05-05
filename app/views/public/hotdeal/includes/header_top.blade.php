@@ -21,9 +21,7 @@
                             @foreach($menu_main as $key => $value)
                                 @if(is_array($value))
                                     <li class="dropdown">
-                                        <a href="/assets/themes/flower-shoppe/category-list.html"
-                                           class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
-                                           data-delay="10">
+                                        <a href="#">
                                             {{$key}}
                                         </a>
                                         <ul class="dropdown-menu" role="menu">

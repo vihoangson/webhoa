@@ -66,19 +66,21 @@
                 </div>
                 <div class="col-md-7">
                     <div class="product-info box">
-                        <ul class="icon-group icon-list-rating text-color" title="4.5/5 rating">
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star"></i>
-                            </li>
-                            <li><i class="fa fa-star-half-empty"></i>
-                            </li>
-                        </ul>
-                        <small><a href="#" class="text-muted">based on 8 reviews</a></small>
+
+                        @if(count($product->reviews)>0)
+                            <ul class="icon-group icon-list-rating text-color" title="4.5/5 rating">
+                                @for($i=0;$i<5;$i++)
+                                    @if($i<$product->total_star_review)
+                                        <li><i class="fa fa-star"></i></li>
+                                    @else
+                                        <li><i class="fa fa-star-o"></i></li>
+                                    @endif
+                                @endfor
+                            </ul>
+                            <small><a href="#" class="text-muted">Đã có {{count($product->reviews)}} đánh giá</a>
+                            </small>
+                        @endif
+
                         <h3>{{$product->title}}</h3>
                         <p class=" hidden product-info-price">{{$product->price_formated}}</p>
                         @if(!$product->price_sale)
@@ -117,11 +119,10 @@
             <div class="tabbable">
                 <ul class="nav nav-tabs" id="myTab">
                     @if($product->content)
-                        <li class="active"><a href="#tab-1" data-toggle="tab"><i class="fa fa-pencil"></i>Desciption</a>
-                        </li>
+                        <li class="active">
+                            <a href="#tab-1" data-toggle="tab"><i class="fa fa-pencil"></i>Chi tiết về sản phẩm</a></li>
                     @endif
-                    <li class=" "><a href="#tab-2" data-toggle="tab"><i class="fa fa-comments"></i>Reviews</a>
-                    </li>
+                    <li class=" "><a href="#tab-2" data-toggle="tab"><i class="fa fa-comments"></i>Đánh giá</a></li>
                 </ul>
                 <div class="tab-content">
                     @if($product->content)
@@ -137,17 +138,19 @@
                                     <article class="comment">
                                         <div class="comment-author">
                                             @php
-
-                                                $m = md5( strtolower( trim( $review->email ) ) );
-                                            //$m = md5( strtolower( trim( 'vihoangson@gmail.com' ) ) )
+                                                $hash_email_for_gravatar = md5( strtolower( trim( $review->email ) ) );
                                             @endphp
 
-                                            <img src="http://www.gravatar.com/avatar/{{$m}}" alt="Image Alternative text" title="Gamer Chick">
+                                            <img src="http://www.gravatar.com/avatar/{{$hash_email_for_gravatar}}" alt="Image Alternative text" title="Gamer Chick">
                                         </div>
                                         <div class="comment-inner">
                                             <ul class="icon-group icon-list-rating comment-review-rate" title="4/5 rating">
-                                                @for($i=0;$i<$review->star ;$i++)
-                                                    <li><i class="fa fa-star"></i></li>
+                                                @for($i=0;$i<5;$i++)
+                                                    @if($i<$review->star)
+                                                        <li><i class="fa fa-star"></i></li>
+                                                    @else
+                                                        <li><i class="fa fa-star-o"></i></li>
+                                                    @endif
                                                 @endfor
                                             </ul>
                                             <span class="comment-author-name">{{$review->name}}</span>

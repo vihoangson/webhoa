@@ -205,4 +205,14 @@ class Product extends Model {
     public function reviews() {
         return $this->hasMany( 'App\Review' );
     }
+
+    public function getTotalStarReviewAttribute(  ) {
+        $sum = 0;
+        foreach ($this->reviews as $review){
+            $sum += $review->star;
+        }
+
+        return round(($sum / (count($this->reviews)*5))/0.2);
+
+    }
 }
