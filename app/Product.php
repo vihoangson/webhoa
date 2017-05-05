@@ -202,5 +202,7 @@ class Product extends Model {
         return $this->belongsToMany( 'App\Image' )
                     ->withTimestamps();
     }
-
+    public function reviews() {
+        return $this->hasMany( 'App\Review' );
+    }
 }

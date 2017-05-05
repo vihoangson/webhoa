@@ -140,6 +140,7 @@ $('#star-rating > li').each(function () {
                 }
             }
             ;
+            $("#add-a-review #star-vote").val(itemIndex);
         });
     }, function () {
         listItems.removeClass('hovered');
@@ -386,3 +387,8 @@ $(".add_wishlist").click(function () {
 
     })
 });
+
+
+if($("#myTab .active").length==0){
+    $("#myTab li:first a").trigger("click");
+}
