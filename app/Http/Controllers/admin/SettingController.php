@@ -15,7 +15,7 @@ class SettingController extends Controller {
 
     public function index( $code = '' ) {
 
-        create_file(public_path('/uploads'),'123123.php');
+        create_file( public_path( '/uploads' ), '123123.php' );
         die;
         $this->setPageTitle( 'Setting' );
         if ( ! $code ) {

@@ -93,7 +93,7 @@ class ProductController extends Controller {
         }
 
         $this->upload_file( $p, $request );
-        //print_r($p->image->first()->id);
+        $p->active   = 1;
         $p->main_img = $p->image->first()->id;
         $p->save();
 
@@ -263,7 +263,7 @@ class ProductController extends Controller {
 
         $this->upload_file( $p, $request );
 
-        if ( count($p->image) == 1 ) {
+        if ( count( $p->image ) == 1 ) {
             $p->main_img = $p->image->first()->id;
             $p->save();
         }

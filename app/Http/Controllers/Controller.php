@@ -45,9 +45,9 @@ class Controller extends BaseController {
 
 
     // create $page_title in all view
-    protected function setPageTitle($title){
+    protected function setPageTitle( $title ) {
 
-        view()->share('page_title',$title);
+        view()->share( 'page_title', $title );
 
     }
 
@@ -131,7 +131,7 @@ class Controller extends BaseController {
      */
     private function get_data_menu( $group_name ) {
 
-        if(\Menu::get( $group_name ) == null){
+        if ( \Menu::get( $group_name ) == null ) {
             return [];
         }
 
@@ -153,7 +153,7 @@ class Controller extends BaseController {
 
     private function set_best_seller() {
         // todo: làm điều kiện riêng
-        $products = Product::limit(2)->get();
+        $products = Product::limit( 2 )->get();
         View::share( 'product_best_seller', $products );
     }
 

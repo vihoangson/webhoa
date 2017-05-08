@@ -37,8 +37,8 @@ class HomeController extends Controller {
                 return Product::where( 'active', 1 )->limit( 3 )->paginate();
             } );
         } else {
-            $products         = Product::where( 'active', 1 )->paginate();
-            $feature_products = Product::where( 'active', 1 )->limit( 3 )->paginate();
+            $products         = Product::where( 'active', 1 )->get();
+            $feature_products = Product::where( 'active', 1 )->get();
         }
 
         return view( 'public.' . $this->template_name . '.product.homepage' )->with(

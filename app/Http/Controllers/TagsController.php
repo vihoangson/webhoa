@@ -6,10 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class TagsController extends Controller
-{
-    public function index()
-    {
+class TagsController extends Controller {
+    public function index() {
         $tags = \App\Tags::all();
         //dd($tags);
 
@@ -17,7 +15,7 @@ class TagsController extends Controller
 //        $tag->tag = "son";
 //        $tag->save();
 
-        echo view('homepage');
+        echo view( 'homepage' );
 
     }
 }

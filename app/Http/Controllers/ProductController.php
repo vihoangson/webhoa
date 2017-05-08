@@ -161,13 +161,13 @@ class ProductController extends Controller {
     }
 
     public function khuyenmaihot() {
-        $products = Product::where( [ 'promotion' => 1 ] )->get();
+        $products = Product::where( 'price_sale', '>', '0' )->get();
 
         return view( 'public.' . $this->template_name . '.product.khuyenmaihot', compact( 'products' ) );
     }
 
     public function deal_moi() {
-        $products = Product::limit(9)->get();
+        $products = Product::limit( 9 )->get();
 
         return view( 'public.' . $this->template_name . '.product.deal-moi', compact( 'products' ) );
     }

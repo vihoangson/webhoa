@@ -7,15 +7,13 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class GroupController extends Controller
-{
+class GroupController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
     }
 
     /**
@@ -23,8 +21,7 @@ class GroupController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -32,10 +29,10 @@ class GroupController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store( Request $request ) {
         //
     }
 
@@ -43,10 +40,10 @@ class GroupController extends Controller
      * Display the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show( $id ) {
         if ( get_id_or_slug( $id ) == 'id' ) {
             $group = Group::find( $id );
         } else {
@@ -54,17 +51,17 @@ class GroupController extends Controller
         }
         $posts = $group->post;
 
-        return view('public.'.$this->template_name.'.group.list')->with(compact('group', 'posts'));
+        return view( 'public.' . $this->template_name . '.group.list' )->with( compact( 'group', 'posts' ) );
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit( $id ) {
         //
     }
 
@@ -72,11 +69,11 @@ class GroupController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  int $id
+     * @param  int                      $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update( Request $request, $id ) {
         //
     }
 
@@ -84,10 +81,10 @@ class GroupController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy( $id ) {
         //
     }
 }

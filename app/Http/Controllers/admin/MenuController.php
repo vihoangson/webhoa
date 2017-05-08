@@ -110,9 +110,10 @@ class MenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy( $id ) {
-        $menu = Menu::find($id);
+        $menu = Menu::find( $id );
         $menu->delete();
-        return redirect('/admin/menu');
+
+        return redirect( '/admin/menu' );
     }
 
     public function sort() {

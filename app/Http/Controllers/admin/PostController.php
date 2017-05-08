@@ -48,7 +48,6 @@ class PostController extends Controller {
     }
 
 
-
     /**
      * Store a newly created resource in storage.
      *
@@ -61,7 +60,7 @@ class PostController extends Controller {
         $p  = Post::create( $rq );
         $p->save();
 
-        if(isset($rq['groups'])){
+        if ( isset( $rq['groups'] ) ) {
             $p->group()->sync( $rq['groups'] );
         }
 
@@ -149,6 +148,7 @@ class PostController extends Controller {
     public function template() {
         return view( 'admin.post.template' );
     }
+
     /**
      * @param Request $request
      */
