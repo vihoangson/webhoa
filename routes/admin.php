@@ -12,7 +12,7 @@ Route::resource('/menu', 'admin\MenuController');
 
 Route::resource('/post', 'admin\PostController');
 Route::resource('/category', 'admin\CategoryController');
-Route::resource('/order', 'admin\OrderưController');
+Route::resource('/order', 'admin\OrderController');
 
 Route::get('/group/sort', 'admin\GroupController@sort');
 Route::resource('/group', 'admin\GroupController');
