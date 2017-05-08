@@ -44,7 +44,7 @@ class AjaxController extends Controller {
 
     public function process_review( Request $request ) {
         $post_data = $request->all();
-        preg_match('/\/([\w_]+?)$/',$post_data['backlink'],$match);
+        preg_match('/\/([\w_-]+?)$/',$post_data['backlink'],$match);
         $product_id = (Product::findBySlug($match[1])->id);
         $post_data['star'] = (int)$post_data['starvote']+1;
         $post_data['note_review'] = $post_data['note-review'];
