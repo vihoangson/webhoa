@@ -44,7 +44,12 @@ class Controller extends BaseController {
     }
 
 
+    // create $page_title in all view
+    protected function setPageTitle($title){
 
+        view()->share('page_title',$title);
+
+    }
 
     private function set_banner_bottom() {
         $db_banner_bottom = [

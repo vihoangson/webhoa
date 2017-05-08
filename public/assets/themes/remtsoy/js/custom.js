@@ -392,3 +392,12 @@ $(".add_wishlist").click(function () {
 if($("#myTab .active").length==0){
     $("#myTab li:first a").trigger("click");
 }
+
+$(window).bind('load', function() {
+$('img').each(function() {
+    if((typeof this.naturalWidth != "undefined" &&
+        this.naturalWidth == 0 ) 
+        || this.readyState == 'uninitialized' ) {
+        $(this).attr('src', 'http://placehold.it/200x200');
+    }
+}); })
