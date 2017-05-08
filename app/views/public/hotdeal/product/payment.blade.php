@@ -18,8 +18,8 @@
                 <!-- Form Starts -->
                 <form class="form-horizontal" role="form">
                     <div class="form-group">
-                        <label for="inputCountry" class="col-sm-3 control-label">Country :</label>
-                        <div class="col-sm-9">
+                        <label for="inputCountry" class="col-sm-4 control-label">Country :</label>
+                        <div class="col-sm-8">
                             <select class="form-control" id="inputCountry">
                                 <option>- All Countries -</option>
                                 <option>India</option>
@@ -30,16 +30,16 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputRegion" class="col-sm-3 control-label">Region :</label>
-                        <div class="col-sm-9">
+                        <label for="inputRegion" class="col-sm-4 control-label">Region :</label>
+                        <div class="col-sm-8">
                             <select class="form-control" id="inputRegion">
                                 <option>- All Regions -</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputZipCode" class="col-sm-3 control-label">Zip Code :</label>
-                        <div class="col-sm-9">
+                        <label for="inputZipCode" class="col-sm-4 control-label">Zip Code :</label>
+                        <div class="col-sm-8">
                             <input type="text" class="form-control" id="inputZipCode" placeholder="">
                         </div>
                     </div>
@@ -65,39 +65,48 @@
             <div class="panel-body">
                 <!-- Form Starts -->
                     <div class="form-group">
-                        <label for="inputFname" class="col-sm-3 control-label">Họ tên :</label>
-                        <div class="col-sm-9">
+                        <label for="inputFname" class="col-sm-4 control-label">Họ tên :</label>
+                        <div class="col-sm-8">
                             <input type="text" required="required" name="name" class="form-control" id="inputFname" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputEmail" class="col-sm-3 control-label">Email :</label>
-                        <div class="col-sm-9">
+                        <label for="inputEmail" class="col-sm-4 control-label">Email :</label>
+                        <div class="col-sm-8">
                             <input type="email" required="required" name="email" class="form-control" id="inputEmail" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress1" class="col-sm-3 control-label">Điện thoại :</label>
-                        <div class="col-sm-9">
+                        <label for="inputAddress1" class="col-sm-4 control-label">Điện thoại :</label>
+                        <div class="col-sm-8">
                             <input type="tel" required="required" name="tel" class="form-control" id="inputAddress1" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputAddress1" class="col-sm-3 control-label">Địa chỉ :</label>
-                        <div class="col-sm-9">
+                        <label for="inputAddress1" class="col-sm-4 control-label">Địa chỉ :</label>
+                        <div class="col-sm-8">
                             <input type="text" required="required" name="address" class="form-control" id="Address" placeholder="">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="inputCity" class="col-sm-3 control-label">Thành phố :</label>
-                        <div class="col-sm-9">
+                        <label for="inputCity" class="col-sm-4 control-label">Thành phố :</label>
+                        <div class="col-sm-8">
                             <input type="text" required="required" name="city" class="form-control" id="inputCity" placeholder="">
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="inputCity" class="col-sm-4 control-label">Phương thức thanh toán :</label>
+                        <div class="col-sm-8">
+                            <input type="radio" required="required" name="payment_method" class="" id="inputCity" placeholder="" checked> COD (Giao hàng & nhận tiền tại nhà)
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-9">
-                            <button type="submit" class="btn btn-main">
+                            <a href="/product/checkout" type="submit" class="btn btn-default">
+                                Trở lại giỏ hàng
+                            </a>
+                            <button type="submit" class="btn btn-primary">
                                 Hoàn tất
                             </button>
                         </div>

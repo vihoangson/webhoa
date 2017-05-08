@@ -8,7 +8,7 @@
     <div id="main-container" class="">
         <!-- Main Heading Starts -->
         <h2 class="main-heading text-center">
-            Shopping Cart
+            Giỏ hàng
         </h2>
         <!-- Main Heading Ends -->
         <!-- Shopping Cart Table Starts -->
@@ -18,22 +18,22 @@
                 <thead>
                 <tr>
                     <td class="text-center">
-                        Image
+                        Hình ảnh sản phẩm
                     </td>
                     <td class="text-center">
-                        Product Details
+                        Tên sản phẩm
                     </td>
                     <td class="text-center">
-                        Quantity
+                        Số lượng
                     </td>
                     <td class="text-center">
-                        Price
+                        Đơn giá
                     </td>
                     <td class="text-center">
-                        Total
+                        Thành tiền
                     </td>
                     <td class="text-center">
-                        Action
+
                     </td>
                 </tr>
                 </thead>
@@ -75,7 +75,7 @@
                 <tfoot>
                 <tr>
                     <td colspan="4" class="text-right">
-                        <strong>Total :</strong>
+                        <strong>Tổng cộng :</strong>
                     </td>
                     <td colspan="2" class="text-left">
                         {{Cart::total()}} đ
@@ -95,15 +95,15 @@
                     <div class="panel panel-smart ">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                Discount Coupon Code
+                                Coupon giảm giá
                             </h3>
                         </div>
                         <div class="panel-body">
                             <!-- Form Starts -->
                             <form class="form-horizontal" role="form">
                                 <div class="form-group">
-                                    <label for="inputCouponCode" class="col-sm-3 control-label">Coupon Code :</label>
-                                    <div class="col-sm-9">
+                                    <label for="inputCouponCode" class="col-sm-4 control-label">Mã coupon :</label>
+                                    <div class="col-sm-8">
                                         <input type="text" class="form-control" id="inputCouponCode" placeholder="Coupon Code">
                                     </div>
                                 </div>
@@ -147,12 +147,12 @@
                     <div class="panel panel-smart">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                Total
+                                Tổng đơn hàng
                             </h3>
                         </div>
                         <div class="panel-body">
                             <dl class="dl-horizontal">
-                                <dt>Coupon Discount :</dt>
+                                <dt>Giảm giá Coupon :</dt>
                                 <dd>0 đ</dd>
                                 {{--<dt>Shipment Fee :</dt>--}}
                                 {{--<dd>15.000 đ</dd>--}}
@@ -161,17 +161,17 @@
                             </dl>
                             <hr>
                             <dl class="dl-horizontal total">
-                                <dt>Total :</dt>
+                                <dt>Thành tiền đơn hàng :</dt>
                                 <dd>{{Cart::total()}} đ</dd>
                             </dl>
                             <hr>
                             <div class="text-uppercase clearfix">
                                 <a href="/" class="btn btn-default pull-left">
-                                    <span class="hidden-xs">Continue Shopping</span>
-                                    <span class="visible-xs">Continue</span>
+                                    <span class="hidden-xs">Tiếp tục mua hàng</span>
+                                    <span class="visible-xs">Thanh toán</span>
                                 </a>
-                                <a href="/product/payment" class="btn btn-default pull-right">
-                                    Checkout
+                                <a href="/product/payment" class="btn btn-primary pull-right">
+                                    Thanh toán
                                 </a>
                             </div>
                         </div>

@@ -9,26 +9,26 @@
     <div class="row">
         <div class="col-md-12">
             <div id="review-dialog" class="mfp-with-anim mfp-hide mfp-dialog clearfix">
-                <h3>Add a Review</h3>
+                <h3>Đánh giá sản phẩm</h3>
 
                 {!! Form::open(['url' => '/product/process_review', 'method' => 'POST','class'=>'form-horizontal','id'=>'add-a-review', 'files' => false]) !!}
                 <input type="hidden" name="backlink" value="/product/{{$product->slug}}">
                 <input id='star-vote' type="hidden" name="starvote" value="0">
 
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Họ và tên</label>
                     <input type="text" required="required" name="name" placeholder="e.g. John Doe" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>E-mail</label>
-                    <input type="text" required="required" name="email" placeholder="e.g. jogndoe@gmail.com" class="form-control">
+                    <input type="email" required="required" name="email" placeholder="e.g. jogndoe@gmail.com" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>Review</label>
+                    <label>Nội dung</label>
                     <textarea class="form-control" required="required" name="note-review"></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Rating</label>
+                    <label>Đánh giá</label>
                     <ul class="icon-list icon-list-inline star-rating" id="star-rating">
                         <li><i class="fa fa-star"></i>
                         </li>
@@ -160,7 +160,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                        <a class="popup-text btn btn-primary" href="#review-dialog" data-effect="mfp-zoom-out"><i class="fa fa-pencil"></i> Add a review</a>
+                        <a class="popup-text btn btn-primary" href="#review-dialog" data-effect="mfp-zoom-out"><i class="fa fa-pencil"></i> Đánh giá sản phẩm</a>
                     </div>
                 </div>
             </div>
