@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
-                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('title','Title:') !!}</label>
+                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('title','Tên sản phẩm:') !!}</label>
                     <div class="col-sm-10">
                         {!! Form::text('title',(isset($product->title)?$product->title:''),['class'=>'form-control','required' => 'required']) !!}
                     </div>
@@ -30,19 +30,20 @@
                 <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('slug','Slug:') !!}</label>
                     <div class="col-sm-10">
+                        <div class="alert alert-warning">Không cần nhập ô này</div>
                         {!! Form::text('slug',(isset($product->slug)?$product->slug:''),['class'=>'form-control']) !!}
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
-                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('price','Price:') !!}</label>
+                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('price','Giá:') !!}</label>
                     <div class="col-sm-10">
                         <div class="input-group m-b"><span class="input-group-addon">$</span>
-                            {!! Form::text('price',(isset($product->price)?$product->price:''),['class'=>'form-control']) !!}
+                            {!! Form::text('price',(isset($product->price)?$product->price:''),['class'=>'form-control','requied'=>'required']) !!}
                             <span class="input-group-addon">.00</span></div>
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
-                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('price_sale','Price sale:') !!}</label>
+                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('price_sale','Giá khuyến mãi:') !!}</label>
                     <div class="col-sm-10">
                         <div class="input-group m-b"><span class="input-group-addon">$</span>
                             {!! Form::text('price_sale',(isset($product->price_sale)?$product->price_sale:''),['class'=>'form-control']) !!}
@@ -50,7 +51,7 @@
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
-                <div class="form-group"><label class="col-sm-2 control-label">Category</label>
+                <div class="form-group"><label class="col-sm-2 control-label">Nhóm sản phẩm</label>
                     <div class="col-sm-10">
                     @foreach($data_category as $category)
                             <label class="checkbox-inline">
@@ -61,13 +62,13 @@
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
-                <div class="form-group"><label class="col-sm-2 control-label">Summary</label>
+                <div class="form-group"><label class="col-sm-2 control-label">Giới thiệu ngắn</label>
                     <div class="col-sm-10">
                         <textarea class="form-control" name="summary">{{(isset($product->summary)?$product->summary:'')}}</textarea>
                     </div>
                 </div>
                 <div class="hr-line-dashed"></div>
-                <div class="form-group"><label class="col-sm-2 control-label">Category</label>
+                <div class="form-group"><label class="col-sm-2 control-label">Giới thiệu chi tiết sản phẩm</label>
                     <div class="col-sm-10">
                         <textarea class="summernote" name="content">{{(isset($product->content)?$product->content:'')}}</textarea>
                     </div>
@@ -75,7 +76,9 @@
                 <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">Images</label>
                     <div class="col-sm-10">
+                        <div class="alert alert-warning">Hình ảnh nên up hình vuông dàn trang sẽ đều và đẹp hơn</div>
                         {!! Form::file('image[]',['multiple' => "multiple" ]) !!}
+                        <hr>
                         @if(isset($product->image))
                             @foreach($product->image as $img)
                                 <img data-id="{{$img->id}}" class="thumb_img {{($product->main_img == $img->id?'active_box':'')}}" src="/{{$img->url}}" style="width:100px;" data-id="{{$img->id}}" data-pid="{{$product->id}}">
@@ -86,7 +89,7 @@
                 </div>
 
                 <div class="hr-line-dashed"></div>
-                <div class="form-group"><label class="col-sm-2 control-label">Range select</label>
+                <div class="form-group"><label class="col-sm-2 control-label">Thời hạn khuyến mãi</label>
                     <div class="col-sm-10">
                         <div class="form-group" id="data_5">
                             <div class="input-daterange input-group" id="datepicker">

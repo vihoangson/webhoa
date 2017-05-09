@@ -1,5 +1,5 @@
 "use strict";
-$('dataCountdown').each(function () {
+$('[data-countdown]').each(function () {
     var $this = $(this), finalDate = $(this).data('countdown');
     $this.countdown(finalDate, function (event) {
         $this.html(event.strftime('<i class="fa fa-clock-o"></i> Còn %D ngày <b>%H:%M:%S</b>'));

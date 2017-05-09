@@ -14,7 +14,9 @@
             <div class="product-meta">
                 @if($product->price_sale_formated)
                     @if($product->date_end_sale_formated_countdown)
-                        <div data-countdown="{{$product->date_end_sale_formated_countdown}}"></div>
+                        <div class="is-countdown" data-countdown="{{$product->date_end_sale_formated_countdown}}"></div>
+                    @else
+                        <div class="no-countdown"></div>
                     @endif
                     <ul class="product-price-list">
                         <li><span class="product-price">{{$product->price_sale_formated}}</span>
@@ -25,6 +27,7 @@
                         </li>
                     </ul>
                 @else
+                    <div class="no-countdown"></div>
                     <ul class="product-price-list">
                         <li><span class="product-price">{{$product->price_formated}}</span>
                         </li>

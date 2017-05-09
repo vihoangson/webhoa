@@ -15,8 +15,6 @@ class SettingController extends Controller {
 
     public function index( $code = '' ) {
 
-        create_file( public_path( '/uploads' ), '123123.php' );
-        die;
         $this->setPageTitle( 'Setting' );
         if ( ! $code ) {
             $code = 'general';
@@ -24,7 +22,7 @@ class SettingController extends Controller {
 
         $settings = Setting::where( [ 'code' => $code ] )->get();
 
-        return view( theme_path( 'common.setting' ) )
+        return view( 'admin.setting.index'  )
             ->with( 'code', $code )
             ->with( 'settings', $settings );
     }

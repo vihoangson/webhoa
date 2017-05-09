@@ -301,7 +301,7 @@ function get_setting($setting_key, $default_value = '')
 
         $setting_value = Cache::remember($setting_key, 1000, function () use ($setting_key) {
 
-            $object = App\Models\Setting::where('setting_key', $setting_key)->first();
+            $object = App\Setting::where('setting_key', $setting_key)->first();
 
             if ($object) {
                 return $object->setting_value;

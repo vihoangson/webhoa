@@ -23,3 +23,7 @@ Route::resource('/group', 'admin\GroupController');
 Route::get('/product/template', 'admin\ProductController@template');
 Route::resource('/product', 'admin\ProductController');
 
+Route::post('/add_setting', 'admin\SettingController@add_setting')->name('admin.common.setting.add_setting');
+Route::post('/save_setting', 'admin\SettingController@save_setting')->name('admin.common.setting.save');
+
+

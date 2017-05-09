@@ -29,3 +29,7 @@
     color: white;
     margin-left: 3px;
 }
+
+.is-countdown,.no-countdown {
+    height: 24px;
+}
