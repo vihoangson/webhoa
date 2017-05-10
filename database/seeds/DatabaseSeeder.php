@@ -13,10 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        if(!\App::environment("local")){
+            return;
+        }
         \Illuminate\Database\Eloquent\Model::unguard();
-        \Illuminate\Support\Facades\DB::table('customers')->delete();
-        $this->call(\CustomersTableSeeder::class);
-        // $this->call(UsersTableSeeder::class);
+        $this->call(\ProductsSeeder::class);
         \Illuminate\Database\Eloquent\Model::reguard();
     }
 }

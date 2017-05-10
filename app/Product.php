@@ -43,7 +43,6 @@ class Product extends Model {
      * @return array
      */
     public function product_relate( $limit = null ) {
-        $this->attributes['price'];
         $categories     = ( $this->category()->get() );
         $relate_product = [];
         $i              = 0;

@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 class Controller extends BaseController {
     use AuthorizesRequests, AuthorizesResources, DispatchesJobs, ValidatesRequests;
 
-    protected $template_name = 'hoa';
+    protected $template_name = 'hotdeal';
 
     public function __construct() {
 
@@ -102,7 +102,7 @@ class Controller extends BaseController {
     private function get_template_name_from_database() {
         // Set template name
         $m = Option::firstOrNew( [ 'name' => 'template_name' ] );
-        if ( $m ) {
+        if ( $m->value ) {
             $this->template_name = $m->value;
         }
     }
