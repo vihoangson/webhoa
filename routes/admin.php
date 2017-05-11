@@ -26,4 +26,4 @@ Route::resource('/product', 'admin\ProductController');
 Route::post('/add_setting', 'admin\SettingController@add_setting')->name('admin.common.setting.add_setting');
 Route::post('/save_setting', 'admin\SettingController@save_setting')->name('admin.common.setting.save');
 
-
+Route::get('/import_file', 'common\AjaxController@import_file');

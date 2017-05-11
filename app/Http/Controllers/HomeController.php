@@ -7,7 +7,7 @@ use App\Menu;
 use App\Product;
 use Illuminate\Http\Request;
 use Cache;
-use Excel;
+
 class HomeController extends Controller {
     /**
      * Create a new controller instance.
@@ -26,21 +26,6 @@ class HomeController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-
-//        \Excel::create('Laravel Excel', function($excel) {
-//            $excel->sheet('Excel sheet', function($sheet) {
-//                $sheet->setOrientation('landscape');
-//            });
-//        })->export('xls');
-
-        $m = Excel::load('list.xls', function($reader) {
-
-
-        })->get();
-
-        dd($m->toArray());
-
-        die;
         $minutes = 10;
 
         if ( \App::environment( 'production' ) ) {
