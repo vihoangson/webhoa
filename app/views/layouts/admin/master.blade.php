@@ -45,6 +45,7 @@
                 <li>
                     <a href="/"><i class="fa fa-home"></i> <span class="nav-label">Homepage</span></a>
                     <a href="/admin/product"><i class="fa fa-shopping-cart"></i> <span class="nav-label">Sản phẩm</span></a>
+                    <a href="/admin/import_file"><i class="fa fa-cog"></i> <span class="nav-label">Import sản phẩm</span></a>
                     <a href="/admin/category"><i class="fa fa-folder-o "></i> <span class="nav-label">Nhóm sản phẩm</span></a>
                     <a href="/admin/post"><i class="fa fa-file-text"></i> <span class="nav-label">Post</span></a>
                     <a href="/admin/group"><i class="fa fa-file-text"></i> <span class="nav-label">Nhóm post</span></a>

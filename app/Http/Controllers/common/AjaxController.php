@@ -54,27 +54,5 @@ class AjaxController extends Controller {
         return redirect( $post_data['backlink'] );
     }
 
-    public function import_file(){
-        $m = Excel::load( storage_path( 'import_file/list.xls' ) )->get();
-        foreach ( $m as $n ) {
-            if ( ! ( $product = Product::findBySlug( $n['slug'] ) ) ) {
-                $product       = new Product();
-                $product->slug = $n['slug'];
-            }
-            if(($product->main_img)){
-                continue;
-            }
-            echo $product->main_img;
-            $image = $product->image()->find($product->main_img);
-            $image->url = $n['main_img'];
-            $image->save();
-            $product->date_begin_sale = $n['date_begin_sale'];
-            $product->date_end_sale   = $n['date_end_sale'];
-            $product->price           = $n['price'];
-            $product->price_sale      = $n['price_sale'];
-            $product->title           = $n['name'];
-            $product->save();
-        }
-    }
 
 }
