@@ -26,5 +26,5 @@ Route::resource('/product', 'admin\ProductController');
 Route::post('/add_setting', 'admin\SettingController@add_setting')->name('admin.common.setting.add_setting');
 Route::post('/save_setting', 'admin\SettingController@save_setting')->name('admin.common.setting.save');
 
-Route::get('/import_file', 'admin\ImportFileController@import_file');
+Route::get('/import_file', 'admin\ImportFileController@import_file')->name('admin.import');
 Route::post('/import_file', 'admin\ImportFileController@process_import_file')->name('admin.import.process');

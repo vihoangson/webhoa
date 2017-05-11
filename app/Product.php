@@ -61,6 +61,18 @@ class Product extends Model {
         return $relate_product;
     }
 
+    /**
+     * Add custom attributes to Eloquent models
+     *
+     * price_formated
+     * @return string
+     */
+    public function getObjMainImgAttribute() {
+        if($this->attributes['main_img']==0){
+            return false;
+        }
+        return $this->image()->find($this->attributes['main_img']);
+    }
 
     /**
      * Add custom attributes to Eloquent models

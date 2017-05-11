@@ -35,6 +35,10 @@ class ImportFileController extends Controller {
 
         $m = \Excel::load( $rs->getRealPath() )->get();
         foreach ( $m as $n ) {
+            if ( $n['slug'] == '' ) {
+                continue;
+            }
+
             if ( ! ( $product = Product::findBySlug( $n['slug'] ) ) ) {
                 $product       = new Product();
                 $product->slug = $n['slug'];
@@ -45,20 +49,20 @@ class ImportFileController extends Controller {
             $product->price_sale      = $n['price_sale'];
             $product->title           = $n['name'];
             $product->active          = $n['active'];
+            $product->brand           = $n['brand'];
+            $product->homepage        = $n['homepage'];
+            $product->promotion       = $n['promotion'];
             $product->save();
 
+            $n['main_img'] = preg_replace( '/(\\\)/', "/", $n['main_img'] );
+            $n['main_img'] = preg_replace( '/^(\/)/', "", $n['main_img'] );
             // Kiểm tra có main img không
-            if ( isset( $product->main_img ) && $product->main_img > 0 && $image = $product->image()->find( $product->main_img ) ) {
+            if ( isset( $product->main_img ) && $product->main_img > 0 && $image = $product->obj_main_img ) {
                 // Kiểm tra có hình không
-                if ( ! is_array( $n['main_img'] ) ) {
-                    // Import 1 hình
-                    $image->url = $n['main_img'];
-                    $image->save();
-                } else {
-                    // Import nhiều hình 1 lúc
-                    $image->url = $n['main_img'][0];
-                    $image->save();
-                }
+
+                // Import 1 hình
+                $image->url = $n['main_img'];
+                $image->save();
             } else {
                 $image      = new Image();
                 $image->url = $n['main_img'];
@@ -68,5 +72,7 @@ class ImportFileController extends Controller {
                 $product->save();
             }
         }
+
+        return redirect( route( 'admin.import' ) );
     }
 }

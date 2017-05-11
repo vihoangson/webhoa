@@ -5,9 +5,10 @@
     <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
         <thead>
         <tr>
+            <th data-hide="phone">Slug</th>
             <th data-sort-ignore="true"></th>
             <th data-toggle="true">Product Name</th>
-            <th data-hide="phone"></th>
+            <th data-hide="phone">Brand</th>
             <th data-hide="all">Price</th>
             <th data-hide="phone">Price sale</th>
             <th data-hide="phone,tablet" >Categirt</th>
@@ -20,13 +21,16 @@
             @foreach($products as $product)
                 <tr>
                     <td>
+                        {{$product->slug}}
+                    </td>
+                    <td>
                         <div class="" style="width:40px; height:40px;background:url('/{{$product->image->find($product->main_img)->url or ''}}') center center no-repeat;background-size: 100% ;"></div>
                     </td>
                     <td>
                         {{$product->title}}
                     </td>
                     <td>
-                        {{$product->summary}}
+                        {{$product->brand}}
                     </td>
                     <td>
                         {{$product->price_formated}}

@@ -10,12 +10,12 @@
     {{--New Deals--}}
     <h1 class="mb20">Deal mới <small><a href="/deal-moi">Xem tất cả</a></small></h1>
     <div class="row row-wrap">
-        @foreach($feature_products as $key => $product) @if ($key > 2) @break; @endif
+        @foreach($products as $key => $product) @if ($key > 2) @break; @endif
             @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
         @endforeach
     </div>
     <div class="row row-wrap">
-        @foreach($products as $key => $product) @if ($key > 3) @break; @endif
+        @foreach($products as $key => $product) @if ($key < 3) @continue; @endif
             @include('public.hotdeal.includes.element.product.item2',['product'=>$product])
         @endforeach
     </div>
