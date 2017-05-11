@@ -166,6 +166,7 @@ return [
         Cviebrock\EloquentSluggable\ServiceProvider::class,
         Lavary\Menu\ServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*
@@ -216,7 +217,8 @@ return [
         'Cart'        => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
         'Menu'        => Lavary\Menu\Facade::class,
-        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Debugbar'    => Barryvdh\Debugbar\Facade::class,
+        'Excel'       => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
 ];
