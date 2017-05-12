@@ -62,6 +62,13 @@ class ProductController extends Controller {
         );
     }
 
+    /**
+     * Thêm sản phẩm vào giỏ hàng
+     *
+     * @param $id
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|void
+     */
     public function add_cart( $id ) {
 
         if ( isset( $id ) ) {
@@ -77,6 +84,13 @@ class ProductController extends Controller {
         }
     }
 
+    /**
+     * Cập nhật giỏ hàng
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|void
+     */
     public function update_cart( Request $request ) {
         $rq = $request->all();
         foreach ( $rq['ql'] as $key => $item ) {
@@ -86,6 +100,11 @@ class ProductController extends Controller {
         return redirect( '/product/checkout' );
     }
 
+    /**
+     * Trang checkout
+     *
+     * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|void
+     */
     public function checkout() {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
@@ -94,6 +113,10 @@ class ProductController extends Controller {
         return view( 'public.' . $this->template_name . '.product.checkout' )->with( 'cart', Cart::content() );
     }
 
+    /**
+     * Hiển thị thanh toán
+     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View|mixed|void
+     */
     public function payment() {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
@@ -103,6 +126,13 @@ class ProductController extends Controller {
         return view( 'public.' . $this->template_name . '.product.payment' );
     }
 
+    /**
+     * Xử lý thanh toán
+     *
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|void
+     */
     public function submit_payment( Request $request ) {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
@@ -119,6 +149,11 @@ class ProductController extends Controller {
         return redirect( "/product/finish" );
     }
 
+    /**
+     * Trang hoàn thành
+     *
+     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View|mixed|void
+     */
     public function finish() {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
@@ -129,6 +164,14 @@ class ProductController extends Controller {
         return view( 'public.' . $this->template_name . '.product.finish' );
     }
 
+    /**
+     * Xử lý xóa đơn hàng
+     *
+     * @param      $rowId
+     * @param null $redirect
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|void
+     */
     public function remove_item_in_cart( $rowId, $redirect = null ) {
         Cart::remove( $rowId );
         if ( $redirect == 'checkout' ) {
@@ -149,23 +192,24 @@ class ProductController extends Controller {
         //
     }
 
-    public function register_email( Request $request ) {
 
-        if ( filter_var( $request->email, FILTER_VALIDATE_EMAIL ) ) {
-            RegisterEmail::create( [ 'email' => $request->email ] );
-        } else {
-            Session::flash( 'modal_message_error', 'Kiểm tra không dúng email' );
-        }
 
-        return redirect( '/' );
-    }
-
+    /**
+     * Trang khuyến mãi hot
+     *
+     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed
+     */
     public function khuyenmaihot() {
         $products = Product::where( 'price_sale', '>', '0' )->get();
 
         return view( 'public.' . $this->template_name . '.product.khuyenmaihot', compact( 'products' ) );
     }
 
+    /**
+     * Hiển thị sản phẩm mới
+     *
+     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed
+     */
     public function deal_moi() {
         $products = Product::limit( 9 )->get();
 

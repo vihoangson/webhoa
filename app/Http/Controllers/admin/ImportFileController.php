@@ -50,7 +50,6 @@ class ImportFileController extends Controller {
             }
         }
 
-die;
         return redirect( route( 'admin.import' ) );
     }
 

@@ -33,7 +33,7 @@ Route::post( '/product/update_cart', 'ProductController@update_cart' );
 Route::get( '/product/finish', 'ProductController@finish' )->name('product.finish');
 Route::get( '/product/{id}', 'ProductController@show' )->name('product.show');
 
-Route::post( '/register_email', 'ProductController@register_email' )->name('register_email');
+Route::post( '/register_email', 'common\CommonController@register_email' )->name('register_email');
 
 Route::get( 'post/{id}', 'PostController@show' );
 //Route::resource('post', 'PostController');
