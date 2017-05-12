@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Setting;
 use Auth;
+use Maatwebsite\Excel\Collections\RowCollection;
 use Route;
 
 
@@ -34,8 +35,27 @@ class ImportFileController extends Controller {
             return false;
         }
 
-        $m = \Excel::load( $rs->getRealPath() )->get();
-        foreach ( $m as $n ) {
+        /** @var RowCollection $m */
+        $data_file = \Excel::load( $rs->getRealPath() )->get();
+
+        /** @var RowCollection $sheet */
+        foreach ( $data_file as $sheet ) {
+            switch($sheet->getTitle()){
+                case "product":
+                    $this->_import_product($sheet);
+                    break;
+                case "category":
+                    $this->_import_category($sheet);
+                    break;
+            }
+        }
+
+die;
+        return redirect( route( 'admin.import' ) );
+    }
+
+    private function _import_product($sheet){
+        foreach ( $sheet as $n ) {
             if ( $n['slug'] == '' ) {
                 continue;
             }
@@ -93,7 +113,20 @@ class ImportFileController extends Controller {
                 $product->save();
             }
         }
+    }
 
-        return redirect( route( 'admin.import' ) );
+    private function _import_category( $sheet ) {
+        foreach ( $sheet as $n ) {
+            if ( $n['slug'] == '' ) {
+                continue;
+            }
+
+            if ( ! ( $category = Category::findBySlug( $n['slug'] ) ) ) {
+                $category       = new Category();
+                $category->slug = $n['slug'];
+            }
+            $category->name = $n['name'];
+            $category->save();
+        }
     }
 }
