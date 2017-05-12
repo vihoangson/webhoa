@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Category;
 use App\Image;
 use App\Product;
 use Illuminate\Http\Request;
@@ -52,7 +53,27 @@ class ImportFileController extends Controller {
             $product->brand           = $n['brand'];
             $product->homepage        = $n['homepage'];
             $product->promotion       = $n['promotion'];
+
+
+            if ( trim( $n['content'] ) != "" && base64_encode( base64_decode( $n['content'] ) ) === $n['content'] ) {
+                $product->content = base64_decode( $n['content'] );
+            }
             $product->save();
+
+            if ( ! empty( $n['category'] ) ) {
+                $array_category    = explode( ',', $n['category'] );
+                $array_id_category = [];
+                foreach ( $array_category as $value ) {
+                    $value = trim( $value );
+                    if ( (int) $value == 0 ) {
+                        $array_id_category[] = Category::findBySlug( $value )->id;
+                    } else {
+                        $array_id_category[] = $value;
+                    }
+                }
+
+                $product->category()->sync( $array_id_category );
+            }
 
             $n['main_img'] = preg_replace( '/(\\\)/', "/", $n['main_img'] );
             $n['main_img'] = preg_replace( '/^(\/)/', "", $n['main_img'] );
