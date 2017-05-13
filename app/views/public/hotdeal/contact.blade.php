@@ -55,7 +55,7 @@
                     <h3 class="panel-title">@lang('common.Send us a mail')</h3>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form">
+                    {!! Form::open(['route' => 'contact.process', 'method' => 'post','class'=>'form-horizontal']) !!}
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">
                                 @lang('common.Name')
@@ -89,11 +89,23 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-main text-uppercase">@lang('common.Submit')</button>
+                            <label for="message" class="col-sm-2 control-label">
+
+                            </label>
+                            <div class="col-sm-10">
+                                <div class="g-recaptcha" data-sitekey="6LeMRyEUAAAAAFijB-ZfJndPEXaEA-FHkRCZr2y4"></div>
                             </div>
                         </div>
-                    </form>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary text-uppercase">@lang('common.Submit')</button>
+                                @if(App::environment('local'))
+                                    <button type="button" class="btn btn-danger auto-fill">Auto fill</button>
+                                @endif
+                            </div>
+                        </div>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

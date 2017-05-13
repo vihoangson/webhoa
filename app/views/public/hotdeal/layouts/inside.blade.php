@@ -132,7 +132,7 @@
     <script src="/assets/themes/remtsoy/js/masonry.js"></script>
     <script src="/assets/themes/remtsoy/js/nicescroll.js"></script>
     <script src="/bower_components/jquery.countdown/dist/jquery.countdown.js"></script>
-
+    <script src='https://www.google.com/recaptcha/api.js?hl=vi'></script>
     <!-- Custom scripts -->
     <script src="/assets/themes/remtsoy/js/custom.js"></script>
     <script src="/assets/themes/remtsoy/js/switcher.js"></script>

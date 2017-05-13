@@ -13,7 +13,7 @@
 
 Route::get( '/', [ 'uses' => 'HomeController@index', 'as' => 'home' ] );
 Route::get( '/contact', 'HomeController@contact' )->name('contact');
-Route::post( '/contact', 'HomeController@process_contact' )->name('contact');
+Route::post( '/contact', 'HomeController@process_contact' )->name('contact.process');
 
 Route::post( '/customer/add_wishlist', 'common\AjaxController@add_wishlist' )->name('add_wishlist');
 Route::post( '/product/process_review', 'common\AjaxController@process_review' )->name('process_review');

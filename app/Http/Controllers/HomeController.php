@@ -67,6 +67,19 @@ class HomeController extends Controller {
     }
 
     public function process_contact( Request $request ) {
+        $captcha  = '6LeMRyEUAAAAAFb9SAZUmE7M2_3rTRs7K8BPUY_l';
+        $url      = "https://www.google.com/recaptcha/api/siteverify?secret=6LedT9wSAAAAAHRdSVndnSjeiDtkx6hKWQ-NuWQw&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR'];
+
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        );
+
+        $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
+
+        dd($response);
         if ( $request->email ) {
             echo "Send email !";
             echo '<a href="/">Click here to go homepage</a>';
