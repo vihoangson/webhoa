@@ -1,9 +1,69 @@
 @extends('layouts.admin.master')
 @section('content')
     <h1>Order</h1>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @if(isset($orders))
+            @foreach($orders as $order)
+                <tr>
+                    <td>
+                        {{$order->id}}
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        @foreach($order->data_cache_formated as $key => $value)
+                            <div>
+                                <div><a href="/product/{{$value['id']}}">{{$value['name']}}</a></div>
+                                <div>
+                                    {{number_format($value['price'])}} x {{$value['qty']}}
+                                    : {{number_format($value['subtotal'])}}
+                                </div>
+                            </div>
+                        @endforeach
+                            <hr>
+                            <div><b>Tổng tiền đơn hàng: {{number_format($order->total_sum)}} đ</b></div>
+
+                            @if($order->coupon_discount)
+                                <div><span>Giảm giá: {{($order->coupon_discount?$order->coupon_discount."%":"")}}</span></div>
+                                <div><b>Giá sau khi giảm: {{generate_discount($order->coupon_discount,number_format($order->total_sum),'GET_PRICE')}} đ</b></div>
+                            @endif
 
 
-    @if(isset($orders))
+
+                    </td>
+
+                    <td>
+                        <div>
+                            <div>Name: {{$order->customer->name or '[Null]'}}</div>
+                            <div>Address: {{$order->customer->address or '[Null]' }}</div>
+                            <div>Tel: {{$order->customer->tel or '[Null]' }}</div>
+                            <div>Email: {{$order->customer->email or '[Null]' }}</div>
+                            <div>City: {{$order->customer->city or '[Null]'   }}</div>
+                        </div>
+                    </td>
+                    <td>
+                        {{$order->created_at}}
+                    </td>
+                    <td>{{$order->payment_method}}</td>
+                    <td>{{($order->coupon_discount?$order->coupon_discount."%":"")}}</td>
+                    <td>{{$order->coupon_code}}</td>
+                    <td>{{$order->button_change_status}}</td>
+                </tr>
+
+            @endforeach
+            <div class="clearfix"></div>
+        @endif
+
+        </tbody>
+    </table>
+
+    @if(isset($orders) && false)
         @foreach($orders as $order)
             <div class="order-detail">
                 <div>
@@ -20,6 +80,9 @@
 
                     <div><b>Total: {{number_format($order->total_sum)}} đ</b></div>
                 </div>
+                <p>{{$order->payment_method}}</p>
+                <p>{{$order->coupon_discount}}</p>
+                <p>{{$order->coupon_code}}</p>
                 <hr>
                 <div>
                     <h3>Thông tin KH</h3>

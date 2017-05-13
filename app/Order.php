@@ -19,5 +19,16 @@ class Order extends Model
         return $this->hasOne('App\Customer','id','customer_id');
     }
 
+    public function getButtonChangeStatusAttribute(){
+        switch ($this->attributes['status']){
+            case 0:
+                return "Sẵn sàng giao hàng";
+                break;
+            default:
+                return "Hủy";
+                break;
+        }
+    }
+
 
 }

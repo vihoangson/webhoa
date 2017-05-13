@@ -76,11 +76,12 @@ class ProductController extends Controller {
 
     /**
      * Clear coupon info
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function remove_coupon_code() {
 
-        if ( Session::has( "coupon_code" ) ) {
+        if ( Session::has( "coupon_code" ) || Session::forget( "coupon_discount" ) ) {
 
             Session::forget( "coupon_code" );
             Session::forget( "coupon_discount" );
@@ -173,6 +174,7 @@ class ProductController extends Controller {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
         }
+
         return view( 'public.' . $this->template_name . '.product.checkout' )->with( 'cart', Cart::content() );
     }
 
@@ -202,8 +204,8 @@ class ProductController extends Controller {
         }
         $rq       = $request->all();
         $customer = Customer::create( $rq );
-
         $od                  = new Order;
+        $od->payment_method  = $request->payment_method;
         $od->data_cache      = json_encode( Cart::content() );
         $od->coupon_discount = Session::get( "coupon_discount" );
         $od->coupon_code     = Session::get( "coupon_code" );

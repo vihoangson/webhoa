@@ -95,10 +95,17 @@
                             <input type="text" required="required" name="city" class="form-control" id="inputCity" placeholder="">
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group payment_method">
                         <label for="inputCity" class="col-sm-4 control-label">Phương thức thanh toán :</label>
                         <div class="col-sm-8">
-                            <input type="radio" required="required" name="payment_method" class="" id="inputCity" placeholder="" checked> COD (Giao hàng & nhận tiền tại nhà)
+                            <div><input type="radio" required="required" name="payment_method" value="cod" class="" id="cod" placeholder="" checked> <label for="cod">COD (Giao hàng & nhận tiền tại nhà)</label></div>
+                            <div>
+                                <input type="radio" required="required" name="payment_method" value="chuyenkhoanw" class="" id="chuyenkhoan" placeholder="" > <label for="chuyenkhoan">Chuyển khoản ngân hàng</label>
+                                <div id="tttk" class="well" style="display:none;">
+                                    <h2>THÔNG TIN TÀI KHOẢN</h2>
+                                    <p>Đang cập nhật</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
