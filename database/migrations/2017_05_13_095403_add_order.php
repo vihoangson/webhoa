@@ -14,7 +14,8 @@ class AddOrder extends Migration {
 	{
 		Schema::table('orders', function(Blueprint $table)
 		{
-			$table->integer('coupon_discount');
+			$table->integer('coupon_discount')->nullable();
+            $table->string('coupon_code')->nullable();
 		});
 	}
 
@@ -29,6 +30,8 @@ class AddOrder extends Migration {
 		Schema::table('orders', function(Blueprint $table)
 		{
             $table->dropColumn('coupon_discount');
+            $table->dropColumn('coupon_code');
+
 		});
 	}
 

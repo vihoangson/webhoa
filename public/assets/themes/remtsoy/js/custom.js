@@ -417,3 +417,8 @@ $("#remove_coupon_code").click(function(){
     });
     
 });
+$(".auto-fill").click(function(){
+    $("input[type='text']").val("sample text");
+    $("input[type='tel']").val("01218851144");    
+    $("input[type='email']").val("sample@gmail.com");
+})

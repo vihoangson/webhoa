@@ -106,9 +106,10 @@
                             <a href="/product/checkout" type="submit" class="btn btn-default">
                                 Trở lại giỏ hàng
                             </a>
-                            <button type="submit" class="btn btn-primary">
-                                Hoàn tất
-                            </button>
+                            <button type="submit" class="btn btn-primary">Hoàn tất</button>
+                            @if(App::environment('local'))
+                                <button type="button" class="btn btn-danger auto-fill">Auto fill</button>
+                            @endif
                         </div>
                     </div>
                 <!-- Form Ends -->
