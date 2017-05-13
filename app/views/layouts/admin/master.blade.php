@@ -701,10 +701,10 @@
 <!-- Page-Level Scripts -->
 
 <script src="/assets/scripts/general.js"></script>
-<script src="/bower_components/speakingurl/speakingurl.min.js"></script>
-<script src="/assets/scripts/script_admin.js"></script>
-<script>
 
-</script>
+<script src="/bower_components/speakingurl/speakingurl.min.js"></script>
+
+<script src="/assets/scripts/script_admin.js"></script>
+
 </body>
 </html>

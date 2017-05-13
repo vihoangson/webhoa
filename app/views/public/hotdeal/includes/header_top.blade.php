@@ -177,14 +177,15 @@
 
 
     <!-- SEARCH AREA -->
-    <form class="search-area form-group">
+    {!! Form::open(['route'=>'product.search','method'=>'get','class'=>'search-area form-group']) !!}
+
         <div class="container">
             <div class="row">
                 <div class="col-md-8 clearfix">
                     <label><i class="fa fa-search"></i><span>@lang('common.I_am_searching_for')</span>
                     </label>
                     <div class="search-area-division search-area-division-input">
-                        <input class="form-control" type="text" placeholder=""/>
+                        <input class="form-control" type="text" placeholder="" name="keywords"/>
                     </div>
                 </div>
                 <div class="col-md-3 clearfix">
@@ -199,7 +200,7 @@
                 </div>
             </div>
         </div>
-    </form>
+    {!! Form::close() !!}
     <!-- END SEARCH AREA -->
 
     <div class="gap"></div>

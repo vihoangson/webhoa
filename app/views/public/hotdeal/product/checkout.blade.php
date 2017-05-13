@@ -99,12 +99,17 @@
                             </h3>
                         </div>
                         <div class="panel-body">
+                            {!! (Session::has("message_success_get_coupon")?'<div class="alert alert-success">'.Session::get("message_success_get_coupon").'</div>':'') !!}
+                            {!! (Session::has("message_error_get_coupon")?'<div class="alert alert-danger">'.Session::get("message_error_get_coupon").'</div>':'') !!}
                             <!-- Form Starts -->
-                            <form class="form-horizontal" role="form">
+                            {!! Form::open(['route'=>'product.add_coupon','class'=>'form-horizontal','method'=>'post','id'=>'form-coupon']) !!}
+                                {!! Form::hidden('backlink','/product/checkout',['class'=>'form-control']) !!}
+                                {!! Form::hidden('cart_id',Cart::content()) !!}
                                 <div class="form-group">
                                     <label for="inputCouponCode" class="col-sm-4 control-label">Mã coupon :</label>
                                     <div class="col-sm-8">
-                                        <input type="text" class="form-control" id="inputCouponCode" placeholder="Coupon Code">
+                                        <input type="text" class="form-control" id="inputCouponCode" placeholder="Coupon Code" name="coupon_code" value="{{(Session::has('coupon_code')?Session::get('coupon_code'):'')}}">
+                                        {!! (Session::has('coupon_code')?'<a href="javascript:void(0)" id="remove_coupon_code">Remove code</a>':'') !!}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -114,7 +119,7 @@
                                         </button>
                                     </div>
                                 </div>
-                            </form>
+                            {!! Form::close() !!}
                             <!-- Form Ends -->
                         </div>
                     </div>

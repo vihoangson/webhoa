@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Coupon;
 use Session;
 use App\Customer;
 use App\Order;
@@ -31,6 +32,58 @@ class ProductController extends Controller {
         $products = Product::where( 'active', 1 )->paginate();
 
         return view( 'public.' . $this->template_name . '.product.index' )->with( [ 'products' => $products ] );
+    }
+
+    /**
+     * Page search
+     *
+     * @param Request $request
+     *
+     * @return $this
+     */
+    public function search(Request $request) {
+        $keywords = $request->get('keywords');
+        if(!empty($keywords)){
+            /** @var Product $products */
+            $products = Product::where( 'title','like', '%'.$keywords.'%' )->get();
+        }else{
+            abort('404');
+        }
+
+        return view( 'public.' . $this->template_name . '.product.index' )->with( [ 'products' => $products ] );
+    }
+
+    /**
+     * Process add_coupon
+     *
+     * @param Request $request
+     */
+    public function add_coupon(Request $request) {
+        if(!empty($request->coupon_code)){
+            if(Coupon::where('code',$request->coupon_code)->get()->count() != 0){
+                Session::put('coupon_code',$request->coupon_code);
+                Session::flash("message_success_get_coupon","Thêm code thành công.");
+            }else{
+                Session::flash("message_error_get_coupon","Code không đúng, vui lòng kiểm tra lại.");
+            }
+        }
+
+        return \redirect(preg_replace('/^\//','',$request->backlink));
+    }
+
+    public function remove_coupon_code() {
+        if(Session::has("coupon_code")){
+            Session::forget("coupon_code");
+            return response()->json( [
+                'status'  => 'success',
+            ] );
+        }else{
+            return response()->json( [
+                'message' => 'Không xóa được coupon',
+                'status'  => 'error',
+            ] );
+        }
+
     }
 
     /**

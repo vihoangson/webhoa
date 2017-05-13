@@ -403,3 +403,17 @@ $(window).bind('load', function() {
     });
 });
 
+$("#remove_coupon_code").click(function(){
+    
+    $("#form-coupon input").val('');
+    $("#remove_coupon_code").remove();
+    $.get('/remove_coupon_code',function(data){
+
+        if(data.status == 'success'){
+            location.reload();    
+        }else{
+            alert(data.message);
+        }       
+    });
+    
+});
