@@ -59,12 +59,15 @@ class ProductController extends Controller {
      * @param Request $request
      */
     public function add_coupon(Request $request) {
+
         if(!empty($request->coupon_code)){
-            if(Coupon::where('code',$request->coupon_code)->get()->count() != 0){
+            $coupon = Coupon::where('code',$request->coupon_code)->first();
+            if($coupon->count() != 0){
                 Session::put('coupon_code',$request->coupon_code);
-                Session::flash("message_success_get_coupon","Thêm code thành công.");
+                Session::put('coupon_discount',$coupon->discount);
+                flash('Thêm code thành công')->success();
             }else{
-                Session::flash("message_error_get_coupon","Code không đúng, vui lòng kiểm tra lại.");
+                flash('Code không đúng, vui lòng kiểm tra lại')->error();
             }
         }
 

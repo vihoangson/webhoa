@@ -17,7 +17,8 @@
         "lavary/laravel-menu": "^1.6",
         "barryvdh/laravel-debugbar": "^2.3",
         "fzaninotto/faker": "^1.6",
-        "maatwebsite/excel": "^2.1"
+        "maatwebsite/excel": "^2.1",
+        "laracasts/flash": "^3.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

@@ -66,6 +66,8 @@
         <div class="row">
 
             <div class="col-md-9">
+                @include('flash::message')
+
                 {{--@yield('breadcrumb')--}}
                 <h1>@yield('title-header')</h1>
                 @yield('content')
