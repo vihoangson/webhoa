@@ -41,13 +41,13 @@ class ProductController extends Controller {
      *
      * @return $this
      */
-    public function search(Request $request) {
-        $keywords = $request->get('keywords');
-        if(!empty($keywords)){
+    public function search( Request $request ) {
+        $keywords = $request->get( 'keywords' );
+        if ( ! empty( $keywords ) ) {
             /** @var Product $products */
-            $products = Product::where( 'title','like', '%'.$keywords.'%' )->get();
-        }else{
-            abort('404');
+            $products = Product::where( 'title', 'like', '%' . $keywords . '%' )->get();
+        } else {
+            abort( '404' );
         }
 
         return view( 'public.' . $this->template_name . '.product.index' )->with( [ 'products' => $products ] );
@@ -58,29 +58,30 @@ class ProductController extends Controller {
      *
      * @param Request $request
      */
-    public function add_coupon(Request $request) {
+    public function add_coupon( Request $request ) {
 
-        if(!empty($request->coupon_code)){
-            $coupon = Coupon::where('code',$request->coupon_code)->first();
-            if($coupon->count() != 0){
-                Session::put('coupon_code',$request->coupon_code);
-                Session::put('coupon_discount',$coupon->discount);
-                flash('Thêm code thành công')->success();
-            }else{
-                flash('Code không đúng, vui lòng kiểm tra lại')->error();
+        if ( ! empty( $request->coupon_code ) ) {
+            $coupon = Coupon::where( 'code', $request->coupon_code )->first();
+            if ( $coupon->count() != 0 ) {
+                Session::put( 'coupon_code', $request->coupon_code );
+                Session::put( 'coupon_discount', $coupon->discount );
+                flash( 'Thêm code thành công' )->success();
+            } else {
+                flash( 'Code không đúng, vui lòng kiểm tra lại' )->error();
             }
         }
 
-        return \redirect(preg_replace('/^\//','',$request->backlink));
+        return \redirect( preg_replace( '/^\//', '', $request->backlink ) );
     }
 
     public function remove_coupon_code() {
-        if(Session::has("coupon_code")){
-            Session::forget("coupon_code");
+        if ( Session::has( "coupon_code" ) ) {
+            Session::forget( "coupon_code" );
+
             return response()->json( [
-                'status'  => 'success',
+                'status' => 'success',
             ] );
-        }else{
+        } else {
             return response()->json( [
                 'message' => 'Không xóa được coupon',
                 'status'  => 'error',
@@ -196,11 +197,13 @@ class ProductController extends Controller {
         $rq       = $request->all();
         $customer = Customer::create( $rq );
 
-        $od              = new Order;
-        $od->data_cache  = json_encode( Cart::content() );
-        $od->total_sum   = str_replace( ',', '', Cart::total() );
-        $od->customer_id = $customer->id;
+        $od                  = new Order;
+        $od->data_cache      = json_encode( Cart::content() );
+        $od->coupon_discount = Session::get( "coupon_discount" );
+        $od->total_sum       = str_replace( ',', '', Cart::total() );
+        $od->customer_id     = $customer->id;
         $od->save();
+        $this->remove_coupon_code();
 
         return redirect( "/product/finish" );
     }
@@ -247,7 +250,6 @@ class ProductController extends Controller {
     public function destroy( $id ) {
         //
     }
-
 
 
     /**

@@ -16,7 +16,7 @@ class Menu {
      */
     public function handle( $request, Closure $next ) {
 
-        $menu_names = [ 'MainMenu', 'Menu_Admin' , 'LeftMenu' ];
+        $menu_names = [ 'MainMenu', 'Menu_Admin', 'LeftMenu' ];
         foreach ( $menu_names as $menu_name ) {
             $this->make_menu( $menu_name );
         }
@@ -26,15 +26,15 @@ class Menu {
 
     private function make_menu( $menu_name ) {
         \Menu::make( $menu_name, function ( $menu ) {
-            $db = \App\Menu::where( 'group_name', $menu->name )->where('parent_id',0)->get();
+            $db = \App\Menu::where( 'group_name', $menu->name )->where( 'parent_id', 0 )->get();
             foreach ( $db as $v ) {
-                if($v->children()){
+                if ( $v->children() ) {
                     $children = $v->children()->get();
-                    $mm = $menu->add( $v->name, $v->link );
-                    foreach ($children as $sub_menu){
-                       $mm->add($sub_menu->name,$sub_menu->link);
+                    $mm       = $menu->add( $v->name, $v->link );
+                    foreach ( $children as $sub_menu ) {
+                        $mm->add( $sub_menu->name, $sub_menu->link );
                     }
-                }else{
+                } else {
                     $menu->add( $v->name, $v->link );
                 }
             }

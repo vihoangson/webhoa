@@ -158,16 +158,12 @@
                         <div class="panel-body">
                             <dl class="dl-horizontal">
                                 <dt>Giảm giá Coupon :</dt>
-                                <dd>0 đ</dd>
-                                {{--<dt>Shipment Fee :</dt>--}}
-                                {{--<dd>15.000 đ</dd>--}}
-                                {{--<dt>Subtotal :</dt>--}}
-                                {{--<dd>{{Cart::total()}}</dd>--}}
+                                <dd>{{ generate_discount(Session::get("coupon_discount"),Cart::total(),"GET_DISCOUNT")}} đ</dd>
                             </dl>
                             <hr>
                             <dl class="dl-horizontal total">
                                 <dt>Thành tiền đơn hàng :</dt>
-                                <dd>{{Cart::total()}} đ</dd>
+                                <dd>{{ generate_discount(Session::get("coupon_discount"),Cart::total(),"GET_PRICE") }} đ</dd>
                             </dl>
                             <hr>
                             <div class="text-uppercase clearfix">

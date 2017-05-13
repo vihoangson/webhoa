@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Controller;
 use \Cart;
 use Excel;
+
 class CommonController extends Controller {
     /**
      * Create a new controller instance.

@@ -4,8 +4,7 @@ namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
 
-class MenuComposer
-{
+class MenuComposer {
     /**
      * The user repository implementation.
      *
@@ -16,28 +15,28 @@ class MenuComposer
     /**
      * Create a new profile composer.
      *
-     * @param  UserRepository  $users
+     * @param  UserRepository $users
+     *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
 
     }
 
     /**
      * Bind data to the view.
      *
-     * @param  View  $view
+     * @param  View $view
+     *
      * @return void
      */
-    public function compose(View $view)
-    {
+    public function compose( View $view ) {
 
-        $this->set_menu_main($view);
-        $this->set_menu_left($view);
+        $this->set_menu_main( $view );
+        $this->set_menu_left( $view );
     }
 
-    private function set_menu_main(View $view) {
+    private function set_menu_main( View $view ) {
         $data_menu_main = $this->get_data_menu( 'MainMenu' );
 
         // Set menu for admin
@@ -48,7 +47,7 @@ class MenuComposer
         $view->with( 'menu_main', $data_menu_main );
     }
 
-    private function set_menu_left(View $view) {
+    private function set_menu_left( View $view ) {
         // Menu cột bên trái
         $data_menu_left = $this->get_data_menu( 'LeftMenu' );
 
@@ -62,7 +61,7 @@ class MenuComposer
      */
     private function get_data_menu( $group_name ) {
 
-        if(\Menu::get( $group_name ) == null){
+        if ( \Menu::get( $group_name ) == null ) {
             return [];
         }
 

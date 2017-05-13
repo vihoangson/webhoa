@@ -4,8 +4,7 @@ namespace App\Http\ViewComposers;
 
 use Illuminate\View\View;
 
-class ProfileComposer
-{
+class ProfileComposer {
     /**
      * The user repository implementation.
      *
@@ -16,22 +15,22 @@ class ProfileComposer
     /**
      * Create a new profile composer.
      *
-     * @param  UserRepository  $users
+     * @param  UserRepository $users
+     *
      * @return void
      */
-    public function __construct()
-    {
+    public function __construct() {
 
     }
 
     /**
      * Bind data to the view.
      *
-     * @param  View  $view
+     * @param  View $view
+     *
      * @return void
      */
-    public function compose(View $view)
-    {
+    public function compose( View $view ) {
 
     }
 }

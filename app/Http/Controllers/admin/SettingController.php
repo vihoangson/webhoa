@@ -22,7 +22,7 @@ class SettingController extends Controller {
 
         $settings = Setting::where( [ 'code' => $code ] )->get();
 
-        return view( 'admin.setting.index'  )
+        return view( 'admin.setting.index' )
             ->with( 'code', $code )
             ->with( 'settings', $settings );
     }

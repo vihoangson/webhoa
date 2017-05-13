@@ -36,11 +36,11 @@ class HomeController extends Controller {
                 return Product::where( 'active', 1 )->limit( 3 )->paginate();
             } );
         } else {
-            $products         = Product::where( 'active', 1 )->where('homepage',1)->get();
-            $feature_products = Product::where( 'active', 1 )->where('homepage',1)->where('promotion',1)->get();
+            $products         = Product::where( 'active', 1 )->where( 'homepage', 1 )->get();
+            $feature_products = Product::where( 'active', 1 )->where( 'homepage', 1 )->where( 'promotion', 1 )->get();
         }
-        if(count($products)==0){
-            abort(404);
+        if ( count( $products ) == 0 ) {
+            abort( 404 );
         }
 
         return view( 'public.' . $this->template_name . '.product.homepage' )->with(

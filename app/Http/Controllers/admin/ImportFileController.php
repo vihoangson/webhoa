@@ -40,12 +40,12 @@ class ImportFileController extends Controller {
 
         /** @var RowCollection $sheet */
         foreach ( $data_file as $sheet ) {
-            switch($sheet->getTitle()){
+            switch ( $sheet->getTitle() ) {
                 case "product":
-                    $this->_import_product($sheet);
+                    $this->_import_product( $sheet );
                     break;
                 case "category":
-                    $this->_import_category($sheet);
+                    $this->_import_category( $sheet );
                     break;
             }
         }
@@ -53,7 +53,7 @@ class ImportFileController extends Controller {
         return redirect( route( 'admin.import' ) );
     }
 
-    private function _import_product($sheet){
+    private function _import_product( $sheet ) {
         foreach ( $sheet as $n ) {
             if ( $n['slug'] == '' ) {
                 continue;
