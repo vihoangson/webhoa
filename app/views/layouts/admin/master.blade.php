@@ -222,6 +222,8 @@
             <div class="col-lg-12">
                 <div class="ibox">
                     <div class="ibox-content">
+                        @include('flash::message')
+
                         @yield("content")
                     </div>
                 </div>

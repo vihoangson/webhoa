@@ -5,8 +5,8 @@
     <h1>Order</h1>
     {!! Form::open(['route' => 'admin.setting.process.add_setting', 'method' => 'post']) !!}
 
-        {!! Form::text('text', 'Text', ['class' => 'form-control']) !!}
-        <textarea class="summernote" name="content"></textarea>
+        {!! Form::text('key', 'Text', ['class' => 'form-control']) !!}
+        <textarea class="summernote" name="value"></textarea>
         {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
     {!! Form::close() !!}
 

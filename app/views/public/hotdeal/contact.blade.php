@@ -19,31 +19,7 @@
                     <h3 class="panel-title">@lang('common.Contact Details')</h3>
                 </div>
                 <div class="panel-body">
-                    <ul class="list-unstyled contact-details">
-                        <li class="clearfix">
-                            <i class="fa fa-home pull-left"></i>
-                            <span class="pull-left">
-									My Company <br />
-									1247 LB Nagar Road, Hyderabad, <br />
-									Telangana - 500 035
-								</span>
-                        </li>
-                        <li class="clearfix">
-                            <i class="fa fa-phone pull-left"></i>
-                            <span class="pull-left">
-									91 99887 74455 <br />
-									001 123 974 9856
-								</span>
-                        </li>
-                        <li class="clearfix">
-                            <i class="fa fa-envelope-o pull-left"></i>
-                            <span class="pull-left">
-									info@demolink.com <br />
-									admin@demolink.com <br />
-									support@demolink.com
-								</span>
-                        </li>
-                    </ul>
+                    {!! get_setting_page('contact_content') !!}
                 </div>
             </div>
         </div>

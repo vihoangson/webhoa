@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Setting;
 use Auth;
+use Illuminate\Support\Facades\Redirect;
 use Route;
 
 
@@ -37,14 +38,18 @@ class SettingController extends Controller {
     }
 
     public function process_add_setting( Request $request ) {
+
+        if(Setting::where('setting_key',$request->get( 'key' ))->count()!=0){
+            flash('Key đã bị trùng')->error();
+            return Redirect::back();
+        }
         $setting                = new Setting;
         $setting->code          = 'general';
-        $setting->setting_key   = 1;
-        $setting->setting_value = $request->get( 'content' );
+        $setting->setting_key   = $request->get( 'key' );
+        $setting->setting_value = $request->get( 'value' );
         $setting->save();
-        die;
 
-        return redirect( 'admin.setting.add_setting' );
+        return redirect( route('admin.setting') );
     }
 
 }

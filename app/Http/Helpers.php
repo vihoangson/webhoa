@@ -17,3 +17,8 @@ function generate_discount( $percent, $price, $option ) {
         return number_format( round( ( $percent * (int) $price ) / 100 ) );
     }
 }
+
+function get_setting_page($key){
+    return \App\Setting::where('setting_key',$key)->first()->setting_value;
+}
+
