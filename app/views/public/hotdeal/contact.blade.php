@@ -102,6 +102,7 @@
                                 <button type="submit" class="btn btn-primary text-uppercase">@lang('common.Submit')</button>
                                 @if(App::environment('local'))
                                     <button type="button" class="btn btn-danger auto-fill">Auto fill</button>
+                                    <div>Lưu ý email gửi bằng mail trap</div>
                                 @endif
                             </div>
                         </div>

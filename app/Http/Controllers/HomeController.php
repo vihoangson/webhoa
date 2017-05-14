@@ -66,30 +66,69 @@ class HomeController extends Controller {
         return view( 'public.' . $this->template_name . '.contact' );
     }
 
+    /**
+     * Check capcha
+     *
+     * @param Request $request
+     *
+     * @return bool
+     */
+    private function process_capcha( $request ) {
+        $api_url    = 'https://www.google.com/recaptcha/api/siteverify';
+        $site_key   = '6LeMRyEUAAAAAFijB-ZfJndPEXaEA-FHkRCZr2y4';
+        $secret_key = '6LeMRyEUAAAAAFb9SAZUmE7M2_3rTRs7K8BPUY_l';
+
+
+        $post_data     = $request->all();
+        $site_key_post = $post_data['g-recaptcha-response'];
+
+        //lấy IP của khach
+        if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
+            $remoteip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
+            $remoteip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $remoteip = $_SERVER['REMOTE_ADDR'];
+        }
+
+        //tạo link kết nối
+        $api_url = $api_url . '?secret=' . $secret_key . '&response=' . $site_key_post . '&remoteip=' . $remoteip;
+        //lấy kết quả trả về từ google
+        $response     = file_get_contents( $api_url );
+        $obj_response = json_decode( $response );
+        if ( $obj_response->success == true ) {
+            return true;
+        }
+
+        return false;
+    }
+
     public function process_contact( Request $request ) {
-        $captcha  = '6LeMRyEUAAAAAFb9SAZUmE7M2_3rTRs7K8BPUY_l';
-        $url      = "https://www.google.com/recaptcha/api/siteverify?secret=6LedT9wSAAAAAHRdSVndnSjeiDtkx6hKWQ-NuWQw&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR'];
 
-        $arrContextOptions=array(
-            "ssl"=>array(
-                "verify_peer"=>false,
-                "verify_peer_name"=>false,
-            ),
-        );
+        $check_capcha = $this->process_capcha( $request );
+        if ( $check_capcha == false ) {
+//            flash( 'Form không hợp lệ' )->error();
+//
+//            return \Redirect::back();
+        }
 
-        $response = file_get_contents($url, false, stream_context_create($arrContextOptions));
-
-        dd($response);
         if ( $request->email ) {
-            echo "Send email !";
-            echo '<a href="/">Click here to go homepage</a>';
+            $data[ 'content_name' ]    = $request->name;
+            $data[ 'content_email' ]   = $request->email;
+            $data[ 'content_subject' ] = $request->subject;
+            $data[ 'content_message' ] = $request->message;
 
-            return;
-            $data['user'] = 123;
-            \Mail::send( 'emails.welcome', $data, function ( $message ) {
+            \Mail::send( 'emails.contact', $data, function ( $message ) {
                 $message->from( 'ngotrichi@gmail.com', 'Laravel' );
                 $message->to( 'vihoangson@gmail.com' );
             } );
+
+            flash( 'Email đã được gửi' )->success();
+
+            return \Redirect::back();
+            $data['user'] = 123;
+
         }
     }
+
 }

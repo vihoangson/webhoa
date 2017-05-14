@@ -2,7 +2,12 @@
 
 Route::get('', 'admin\DashboardController@index');
 
-Route::get('/setting','admin\SettingController@index');
+Route::get('/setting','admin\SettingController@index')->name('admin.setting');
+Route::get('/setting/add_setting','admin\SettingController@add_setting')->name('admin.setting.add_setting');
+Route::post('/setting/process_add_setting','admin\SettingController@process_add_setting')->name('admin.setting.process.add_setting');
+
+//Route::post('/add_setting', 'admin\SettingController@add_setting')->name('admin.common.setting.add_setting');
+//Route::post('/save_setting', 'admin\SettingController@save_setting')->name('admin.common.setting.save');
 
 Route::post('/up', 'admin\ProductController@up');
 Route::post('/update_ajax', 'admin\ProductController@update_ajax');
@@ -23,8 +28,7 @@ Route::resource('/group', 'admin\GroupController');
 Route::get('/product/template', 'admin\ProductController@template');
 Route::resource('/product', 'admin\ProductController');
 
-Route::post('/add_setting', 'admin\SettingController@add_setting')->name('admin.common.setting.add_setting');
-Route::post('/save_setting', 'admin\SettingController@save_setting')->name('admin.common.setting.save');
+
 
 Route::get('/import_file', 'admin\ImportFileController@import_file')->name('admin.import');
 Route::post('/import_file', 'admin\ImportFileController@process_import_file')->name('admin.import.process');
