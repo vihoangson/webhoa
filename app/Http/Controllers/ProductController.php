@@ -202,8 +202,8 @@ class ProductController extends Controller {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
         }
-        $rq       = $request->all();
-        $customer = Customer::create( $rq );
+        $rq                  = $request->all();
+        $customer            = Customer::create( $rq );
         $od                  = new Order;
         $od->payment_method  = $request->payment_method;
         $od->data_cache      = json_encode( Cart::content() );

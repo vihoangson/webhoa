@@ -47,37 +47,6 @@ class ProductController extends Controller {
     }
 
     /**
-     * @param Request $request
-     */
-    public function up( Request $request ) {
-
-
-        /**
-         * Upload in editor
-         */
-        if ( isset( $request->image_editor ) ) {
-
-            // todo: Bỏ list ext file ra ngoài config dùng chung
-            // Lọc file
-            if ( ! in_array( strtolower( $request->image_editor->getClientOriginalExtension() ), [
-                'jpg',
-                'png',
-                'gif',
-            ] )
-            ) {
-
-            }
-
-            $extension       = $request->image_editor->getClientOriginalExtension();
-            $destinationPath = 'uploads'; // upload path
-            $fileName        = time() . "_" . rand( 11111, 99999 ) . '.' . $extension; // renameing image_editor
-            $request->image_editor->move( $destinationPath, $fileName );
-            header( 'Content-Type: application/json' );
-            echo $destinationPath . '/' . $fileName;
-        }
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -157,79 +126,6 @@ class ProductController extends Controller {
         //
     }
 
-    public function update_ajax( \Illuminate\Http\Request $requests ) {
-        switch ( $requests->process ) {
-            case 'change_main_img':
-                $p           = Product::find( $requests->pid );
-                $p->main_img = $requests->id;
-                $p->save();
-                break;
-            case 'delete_img_product':
-                $img = Image::find( $requests->id );
-                $img->product()->detach();
-
-                return response()->json( [
-                    'status' => $img->delete(),
-                    'id'     => $requests->id,
-                ] );
-                break;
-            case 'sort_group':
-                $db = json_decode( $requests->db );
-                $i  = 0;
-                foreach ( $db as $group ) {
-                    echo $group->id;
-                    $parent            = Group::find( $group->id );
-                    $parent->parent_id = 0;
-                    $parent->sequence  = $i;
-                    $i ++;
-                    $parent->save();
-                    if ( isset( $group->children ) ) {
-                        foreach ( $group->children as $group2 ) {
-                            $child            = Group::find( $group2->id );
-                            $child->parent_id = $parent->id;
-                            $child->sequence  = $i;
-                            $i ++;
-                            $child->save();
-                        }
-                    }
-
-                }
-
-                return response()->json( [
-                    'status' => true,
-                    'id'     => $requests->db,
-                ] );
-                break;
-            case 'sort_menu':
-                $db = json_decode( $requests->db );
-                $i  = 0;
-                foreach ( $db as $menu ) {
-                    echo $menu->id;
-                    $parent            = menu::find( $menu->id );
-                    $parent->parent_id = 0;
-                    $parent->sequence  = $i;
-                    $i ++;
-                    $parent->save();
-                    if ( isset( $menu->children ) ) {
-                        foreach ( $menu->children as $menu2 ) {
-                            $child            = Menu::find( $menu2->id );
-                            $child->parent_id = $parent->id;
-                            $child->sequence  = $i;
-                            $i ++;
-                            $child->save();
-                        }
-                    }
-
-                }
-
-                return response()->json( [
-                    'status' => true,
-                    'id'     => $requests->db,
-                ] );
-                break;
-        }
-
-    }
 
     /**
      * Update the specified resource in storage.

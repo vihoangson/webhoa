@@ -113,10 +113,10 @@ class HomeController extends Controller {
         }
 
         if ( $request->email ) {
-            $data[ 'content_name' ]    = $request->name;
-            $data[ 'content_email' ]   = $request->email;
-            $data[ 'content_subject' ] = $request->subject;
-            $data[ 'content_message' ] = $request->message;
+            $data['content_name']    = $request->name;
+            $data['content_email']   = $request->email;
+            $data['content_subject'] = $request->subject;
+            $data['content_message'] = $request->message;
 
             \Mail::send( 'emails.contact', $data, function ( $message ) {
                 $message->from( 'ngotrichi@gmail.com', 'Laravel' );

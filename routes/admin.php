@@ -4,13 +4,13 @@ Route::get('', 'admin\DashboardController@index');
 
 Route::get('/setting','admin\SettingController@index')->name('admin.setting');
 Route::get('/setting/add_setting','admin\SettingController@add_setting')->name('admin.setting.add_setting');
-Route::post('/setting/process_add_setting','admin\SettingController@process_add_setting')->name('admin.setting.process.add_setting');
+Route::post('/setting/add_setting','admin\SettingController@process_add_setting')->name('admin.setting.process.add_setting');
 
 //Route::post('/add_setting', 'admin\SettingController@add_setting')->name('admin.common.setting.add_setting');
 //Route::post('/save_setting', 'admin\SettingController@save_setting')->name('admin.common.setting.save');
 
-Route::post('/up', 'admin\ProductController@up');
-Route::post('/update_ajax', 'admin\ProductController@update_ajax');
+Route::post('/up_photo_ajax', 'common\AjaxController@up_photo_ajax')->name('photo.ajax.upload');
+Route::post('/update_ajax', 'common\AjaxController@update_ajax')->name('ajax.update');
 
 Route::get('/logout', 'admin\DashboardController@logout');
 

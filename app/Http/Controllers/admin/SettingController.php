@@ -28,7 +28,7 @@ class SettingController extends Controller {
     }
 
     public function add_setting( Request $request ) {
-        $code = '';
+        $code     = '';
         $settings = '';
 
         return view( 'admin.setting.add_setting' )
@@ -37,9 +37,14 @@ class SettingController extends Controller {
     }
 
     public function process_add_setting( Request $request ) {
-        dd($request->all());
+        $setting                = new Setting;
+        $setting->code          = 'general';
+        $setting->setting_key   = 1;
+        $setting->setting_value = $request->get( 'content' );
+        $setting->save();
+        die;
 
-        return redirect('admin.setting.add_setting');
+        return redirect( 'admin.setting.add_setting' );
     }
 
 }
