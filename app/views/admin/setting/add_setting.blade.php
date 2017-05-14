@@ -3,10 +3,16 @@
 @section('content')
 
     <h1>Order</h1>
-    {!! Form::open(['route' => 'admin.setting.process.add_setting', 'method' => 'post']) !!}
 
-        {!! Form::text('key', 'Text', ['class' => 'form-control']) !!}
-        <textarea class="summernote" name="value"></textarea>
+        @if($setting->id)
+            {!! Form::open(['route' => 'admin.setting.process.edit_setting', 'method' => 'post']) !!}
+            {!! Form::hidden('id', $setting->id, ['id' => 'id']) !!}
+        @else
+            {!! Form::open(['route' => 'admin.setting.process.add_setting', 'method' => 'post']) !!}
+        @endif
+
+        {!! Form::text('key', (isset($setting->setting_key)?$setting->setting_key:'') , ['class' => 'form-control']) !!}
+        <textarea class="summernote" name="value">{{$setting->setting_value or ''}}</textarea>
         {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
     {!! Form::close() !!}
 

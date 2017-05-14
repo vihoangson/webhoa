@@ -18,7 +18,7 @@
                 <td>{{$setting->name}}</td>
                 <td>{{$setting->type}}</td>
                 <td>{{$setting->data}}</td>
-                <td>Edit | Delete</td>
+                <td><a href="{{route('admin.setting.edit_setting',['id'=>$setting->id])}}">Edit</a> | Delete</td>
             </tr>
         @endforeach
         </tbody>

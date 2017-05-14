@@ -29,6 +29,7 @@ class SettingController extends Controller {
     }
 
     public function add_setting( Request $request ) {
+
         $code     = '';
         $settings = '';
 
@@ -37,10 +38,30 @@ class SettingController extends Controller {
             ->with( 'settings', $settings );
     }
 
+    public function edit_setting( $id = 0, Request $request ) {
+        $setting = Setting::find( $id );
+
+
+        return view( 'admin.setting.add_setting' )
+            ->with( 'setting', $setting );
+    }
+
+    public function process_edit_setting( Request $request ) {
+        $id                     = $request->id;
+        $setting                = Setting::find( $id );
+        $setting->code          = 'general';
+        $setting->setting_key   = $request->get( 'key' );
+        $setting->setting_value = $request->get( 'value' );
+        $setting->save();
+
+        return redirect( route( 'admin.setting' ) );
+    }
+
     public function process_add_setting( Request $request ) {
 
-        if(Setting::where('setting_key',$request->get( 'key' ))->count()!=0){
-            flash('Key đã bị trùng')->error();
+        if ( Setting::where( 'setting_key', $request->get( 'key' ) )->count() != 0 ) {
+            flash( 'Key đã bị trùng' )->error();
+
             return Redirect::back();
         }
         $setting                = new Setting;
@@ -49,7 +70,7 @@ class SettingController extends Controller {
         $setting->setting_value = $request->get( 'value' );
         $setting->save();
 
-        return redirect( route('admin.setting') );
+        return redirect( route( 'admin.setting' ) );
     }
 
 }
