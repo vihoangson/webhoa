@@ -24,7 +24,11 @@ Route::resource('/menu', 'admin\MenuController');
 
 Route::resource('/post', 'admin\PostController');
 Route::resource('/category', 'admin\CategoryController');
+Route::post('/order/change_status', 'admin\OrderController@change_status')->name('admin.order.change_status');
+Route::get('/order/{status}', 'admin\OrderController@index')->name('admin.order.show');
 Route::resource('/order', 'admin\OrderController');
+
+
 
 Route::get('/group/sort', 'admin\GroupController@sort');
 Route::resource('/group', 'admin\GroupController');

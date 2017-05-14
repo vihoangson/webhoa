@@ -1,6 +1,13 @@
 @extends('layouts.admin.master')
 @section('content')
     <h1>Order</h1>
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="{{route('admin.order.show',-1)}}">All</a></li>
+        <li role="presentation"><a href="{{route('admin.order.show',0)}}">Đang chờ xử lý</a></li>
+        <li role="presentation"><a href="{{route('admin.order.show',1)}}">Đang giao hàng</a></li>
+        <li role="presentation"><a href="{{route('admin.order.show',2)}}">Giao hàng thành công</a></li>
+        <li role="presentation"><a href="{{route('admin.order.show',3)}}">Đã hủy</a></li>
+    </ul>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -53,7 +60,7 @@
                     <td>{{$order->payment_method}}</td>
                     <td>{{($order->coupon_discount?$order->coupon_discount."%":"")}}</td>
                     <td>{{$order->coupon_code}}</td>
-                    <td>{{$order->button_change_status}}</td>
+                    <td>{!! $order->button_change_status !!}</td>
                 </tr>
 
             @endforeach

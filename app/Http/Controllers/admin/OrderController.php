@@ -14,10 +14,31 @@ class OrderController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $orders = Order::orderBy( 'id', 'desc' )->paginate();
+    public function index($status=0) {
+
+        if($status == -1){
+            $orders = Order::orderBy( 'id', 'desc' )->paginate();
+        }else{
+            $orders = Order::orderBy( 'id', 'desc' )->where('status',$status)->paginate();
+        }
 
         return view( 'admin.order.index', compact( 'orders' ) );
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function change_status(Request $request) {
+
+        $order = Order::find($request->id);
+        $order->status = $request->status;
+        $order->save();
+
+        flash("done")->success();
+        return \Redirect::back();
     }
 
     /**
