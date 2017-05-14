@@ -4,7 +4,7 @@
 
     <h1>Order</h1>
 
-        @if($setting->id)
+        @if(isset($setting->id))
             {!! Form::open(['route' => 'admin.setting.process.edit_setting', 'method' => 'post']) !!}
             {!! Form::hidden('id', $setting->id, ['id' => 'id']) !!}
         @else

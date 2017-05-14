@@ -160,4 +160,32 @@ class AjaxController extends Controller {
         }
 
     }
+
+    public function payment_baokim(){
+        $baokim = new \BaoKimPayment();
+        /**
+         * Hàm xây dựng url chuyển đến BaoKim.vn thực hiện thanh toán, trong đó có tham số mã hóa (còn gọi là public key)
+         * @param $order_id				Mã đơn hàng
+         * @param $business 			Email tài khoản người bán
+         * @param $total_amount			Giá trị đơn hàng
+         * @param $shipping_fee			Phí vận chuyển
+         * @param $tax_fee				Thuế
+         * @param $order_description	Mô tả đơn hàng
+         * @param $url_success			Url trả về khi thanh toán thành công
+         * @param $url_cancel			Url trả về khi hủy thanh toán
+         * @param $url_detail			Url chi tiết đơn hàng
+         * @return url cần tạo
+         */
+        $order_id          = '2231';
+        $business          = 'vn_sos@yahoo.com';
+        $total_amount      = '500000';
+        $shipping_fee      = '0';
+        $tax_fee           = '0';
+        $order_description = '123123';
+        $url_success       = 'http://xemngaymuangay.vn';
+        $url_cancel        = 'http://xemngaymuangay.vn';
+        $url_detail        = 'http://xemngaymuangay.vn';
+
+        echo $baokim->createRequestUrl($order_id, $business, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail);
+    }
 }

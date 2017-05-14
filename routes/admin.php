@@ -6,6 +6,7 @@ Route::get('/setting','admin\SettingController@index')->name('admin.setting');
 Route::get('/setting/add_setting','admin\SettingController@add_setting')->name('admin.setting.add_setting');
 Route::post('/setting/add_setting','admin\SettingController@process_add_setting')->name('admin.setting.process.add_setting');
 
+Route::delete('/setting/{id}','admin\SettingController@destroy')->name('admin.setting.delete_setting');
 Route::get('/setting/edit_setting/{id}','admin\SettingController@edit_setting')->name('admin.setting.edit_setting');
 Route::post('/setting/edit_setting','admin\SettingController@process_edit_setting')->name('admin.setting.process.edit_setting');
 

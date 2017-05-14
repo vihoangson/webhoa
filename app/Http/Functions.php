@@ -289,7 +289,7 @@ function get_image_url( $image, $thumb = false ) {
  */
 function get_setting( $setting_key, $default_value = '' ) {
     $setting_value = '';
-    if ( ! App::environment( 'dev' ) ) {
+    if ( ! App::environment( 'local' ) ) {
 
         $setting_value = Cache::remember( $setting_key, 1000, function () use ( $setting_key ) {
 
@@ -303,7 +303,7 @@ function get_setting( $setting_key, $default_value = '' ) {
         } );
 
     } else {
-        $object = App\Models\Setting::where( 'setting_key', $setting_key )->first();
+        $object = App\Setting::where( 'setting_key', $setting_key )->first();
         if ( $object ) {
             $setting_value = $object->setting_value;
         }

@@ -1,7 +1,7 @@
 @extends('layouts.admin.master')
 
 @section('content')
-    <h1>Order</h1>
+    <h1>Setting</h1>
     <table class="table table-hover">
         <thead>
         <tr>
@@ -18,7 +18,11 @@
                 <td>{{$setting->name}}</td>
                 <td>{{$setting->type}}</td>
                 <td>{{$setting->data}}</td>
-                <td><a href="{{route('admin.setting.edit_setting',['id'=>$setting->id])}}">Edit</a> | Delete</td>
+                <td><a class='btn-white btn btn-xs' href="{{route('admin.setting.edit_setting',['id'=>$setting->id])}}">Edit</a>
+                    {!! Form::open(['url' => '/admin/setting/'.$setting->id, 'method' => 'delete','class'=>'confirm-action']) !!}
+                    <button type="submit" name="id" value="{{$setting->id}}" href="/admin/setting/{{$setting->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
+                    {!! Form::close() !!}
+                </td>
             </tr>
         @endforeach
         </tbody>

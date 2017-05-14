@@ -103,7 +103,8 @@
                                 <input type="radio" required="required" name="payment_method" value="chuyenkhoanw" class="" id="chuyenkhoan" placeholder="" > <label for="chuyenkhoan">Chuyển khoản ngân hàng</label>
                                 <div id="tttk" class="well" style="display:none;">
                                     <h2>THÔNG TIN TÀI KHOẢN</h2>
-                                    <p>Đang cập nhật</p>
+                                    {!! get_setting('account_info') !!}
+
                                 </div>
                             </div>
                         </div>

@@ -15,7 +15,6 @@ use Route;
 class SettingController extends Controller {
 
     public function index( $code = '' ) {
-
         $this->setPageTitle( 'Setting' );
         if ( ! $code ) {
             $code = 'general';
@@ -73,4 +72,9 @@ class SettingController extends Controller {
         return redirect( route( 'admin.setting' ) );
     }
 
+    public function destroy( $id ) {
+        Setting::find( $id )->delete();
+
+        return Redirect::back();
+    }
 }
