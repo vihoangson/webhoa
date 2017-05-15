@@ -8103,3 +8103,11 @@ div {}
   float: left;
   border-radius: 9px;
 }
+.ibox-content .nav span {
+  font-size: 80%;
+  background: #dadada;
+  padding: 4px 8px;
+  margin-left: 2px;
+  border-radius: 7px;
+  color: white;
+}

@@ -14,15 +14,24 @@ class OrderController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($status=0) {
+    public function index( $status = 0 ) {
 
-        if($status == -1){
+        if ( $status == - 1 ) {
             $orders = Order::orderBy( 'id', 'desc' )->paginate();
-        }else{
-            $orders = Order::orderBy( 'id', 'desc' )->where('status',$status)->paginate();
+        } else {
+            $orders = Order::orderBy( 'id', 'desc' )->where( 'status', $status )->paginate();
         }
 
-        return view( 'admin.order.index', compact( 'orders' ) );
+        $count_menu_array = (Order::select(\DB::raw('count(*) as count'))->groupBy('status')->get()->toArray());
+        foreach($count_menu_array as $row){
+            $count_menu[] = $row['count'];
+        }
+
+        return view( 'admin.order.index' )
+            ->with( 'orders', $orders )
+            ->with( 'status', $status )
+            ->with( 'count_menu', $count_menu )
+            ;
     }
 
 
@@ -31,13 +40,14 @@ class OrderController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function change_status(Request $request) {
+    public function change_status( Request $request ) {
 
-        $order = Order::find($request->id);
+        $order         = Order::find( $request->id );
         $order->status = $request->status;
         $order->save();
 
-        flash("done")->success();
+        flash( "done" )->success();
+
         return \Redirect::back();
     }
 
