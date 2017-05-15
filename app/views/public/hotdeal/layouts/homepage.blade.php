@@ -5,8 +5,8 @@
     <title>@yield('title_page','Xem Ngay Mua Ngay')</title>
     <!-- meta info -->
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="keywords" content="{{$keyword_page or 'Xem Ngay Mua Ngay'}}"/>
-    <meta name="description" content="{{$description_page or 'Xem Ngay Mua Ngay'}}">
+    <meta name="keywords" content="{{$keyword_page or get_setting('default_keyword','string')}}"/>
+    <meta name="description" content="{{$description_page or get_setting('default_description','string')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google fonts -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>

@@ -287,7 +287,7 @@ function get_image_url( $image, $thumb = false ) {
  *
  * @return string
  */
-function get_setting( $setting_key, $default_value = '' ) {
+function get_setting( $setting_key, $data_type = string, $default_value = '' ) {
     $setting_value = '';
     if ( ! App::environment( 'local' ) ) {
 
@@ -309,9 +309,19 @@ function get_setting( $setting_key, $default_value = '' ) {
         }
     }
 
+
     if ( ! $setting_value ) {
         return $default_value;
     } else {
+        switch ( $data_type ) {
+            case "string":
+                $setting_value = strip_tags($setting_value);
+                break;
+            case "int":
+                $setting_value = (int) ( $setting_value );
+                break;
+        }
+
         return $setting_value;
     }
 

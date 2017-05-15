@@ -61,6 +61,7 @@
                     <td>{{($order->coupon_discount?$order->coupon_discount."%":"")}}</td>
                     <td>{{$order->coupon_code}}</td>
                     <td>{!! $order->button_change_status !!}</td>
+                    <td>{!! $order->cancel_button !!}</td>
                 </tr>
 
             @endforeach

@@ -33,3 +33,7 @@
 .is-countdown,.no-countdown {
     height: 24px;
 }
+
+.col-md-3 {
+    /* height: 501px; */
+}

@@ -267,7 +267,7 @@ class ProductController extends Controller {
      * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed
      */
     public function khuyenmaihot() {
-        $products = Product::where( 'price_sale', '>', '0' )->get();
+        $products = Product::where( 'price_sale', '>', '0' )->paginate(9);
 
         return view( 'public.' . $this->template_name . '.product.khuyenmaihot', compact( 'products' ) );
     }
@@ -278,7 +278,7 @@ class ProductController extends Controller {
      * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed
      */
     public function deal_moi() {
-        $products = Product::limit( 9 )->get();
+        $products = Product::paginate(9);
 
         return view( 'public.' . $this->template_name . '.product.deal-moi', compact( 'products' ) );
     }

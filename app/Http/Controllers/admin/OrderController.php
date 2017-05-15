@@ -46,7 +46,7 @@ class OrderController extends Controller {
         $order->status = $request->status;
         $order->save();
 
-        flash( "done" )->success();
+        flash( "Hoàn thành thao tác" )->success();
 
         return \Redirect::back();
     }
@@ -114,5 +114,15 @@ class OrderController extends Controller {
      */
     public function destroy( $id ) {
         //
+    }
+
+    public function cancel( $id ) {
+        $order = Order::find($id);
+        if($order->status != 2){
+            $order->status = 3;
+            $order->save();
+            flash("Hủy thành công")->success();
+        }
+        return \Redirect::back();
     }
 }

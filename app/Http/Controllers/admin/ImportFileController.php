@@ -73,9 +73,12 @@ class ImportFileController extends Controller {
             $product->homepage        = $n['homepage'];
             $product->promotion       = $n['promotion'];
 
-
-            if ( trim( $n['content'] ) != "" && base64_encode( base64_decode( $n['content'] ) ) === $n['content'] ) {
-                $product->content = base64_decode( $n['content'] );
+            if ( trim( $n['content'] ) != "" ) {
+                if ( is_base64( $n['content'] ) ) {
+                    $product->content = base64_decode( $n['content'] );
+                }else{
+                    $product->content = $n['content'];
+                }
             }
             $product->save();
 

@@ -26,6 +26,8 @@ Route::resource('/post', 'admin\PostController');
 Route::resource('/category', 'admin\CategoryController');
 Route::post('/order/change_status', 'admin\OrderController@change_status')->name('admin.order.change_status');
 Route::get('/order/{status}', 'admin\OrderController@index')->name('admin.order.show');
+Route::get('/order/cancel/{id}', 'admin\OrderController@cancel')->name('admin.order.cancel');
+
 Route::resource('/order', 'admin\OrderController');
 
 

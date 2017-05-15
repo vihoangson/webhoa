@@ -26,7 +26,7 @@ class Order extends Model
                 $string = Form::open(['route' => 'admin.order.change_status', 'method' => 'post']);
                 $string .= Form::hidden('id',$this->attributes['id']);
                 $string .= Form::hidden('status',1);
-                $string .= Form::submit('Sẵn sàng giao hàng',['class'=>'btn btn-default']);
+                $string .= Form::submit('Sẵn sàng giao hàng',['class'=>'btn btn-primary']);
                 $string .= Form::close();
                 return $string;
                 break;
@@ -34,7 +34,7 @@ class Order extends Model
                 $string = Form::open(['route' => 'admin.order.change_status', 'method' => 'post']);
                 $string .= Form::hidden('id',$this->attributes['id']);
                 $string .= Form::hidden('status',2);
-                $string .= Form::submit('Hoàn tất giao hàng',['class'=>'btn btn-default']);
+                $string .= Form::submit('Hoàn tất giao hàng',['class'=>'btn btn-primary']);
                 $string .= Form::close();
                 return $string;
                 break;
@@ -42,9 +42,16 @@ class Order extends Model
                 return '    Giao hàng thành công    ';
                 break;
             default:
-                return "Hủy";
+                return "Đã Hủy";
                 break;
         }
+    }
+
+    public function getCancelButtonAttribute(){
+        if($this->attributes['status'] < 2){
+            return '<a class="btn btn-default" href="'.route('admin.order.cancel',$this->id).'"><i class="fa-remove fa"></i> Hủy</a>';
+        }
+        return '';
     }
 
 

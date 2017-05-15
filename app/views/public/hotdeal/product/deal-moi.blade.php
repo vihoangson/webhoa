@@ -59,6 +59,7 @@
             @if(($key+1)%3 ==0 )<div class="clearfix break-line"></div>@endif
         @endforeach
     </div>
+    {!! $products->render() !!}
     <!-- Product Grid Display Ends -->
 @endsection
 
