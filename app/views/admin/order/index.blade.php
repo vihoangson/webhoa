@@ -3,10 +3,10 @@
     <h1>Order</h1>
     <ul class="nav nav-tabs">
         <li role="presentation" class="{{($status==-1?'active':"")}}"><a href="{{route('admin.order.show',-1)}}">All <span>{{array_sum($count_menu)}}</span></a></li>
-        <li role="presentation" class="{{($status==0?'active':"")}}"><a href="{{route('admin.order.show',0)}}">Đang chờ xử lý <span>{{$count_menu[0]}}</span></a></li>
-        <li role="presentation" class="{{($status==1?'active':"")}}"><a href="{{route('admin.order.show',1)}}">Đang giao hàng <span>{{$count_menu[1]}}</span></a></li>
-        <li role="presentation" class="{{($status==2?'active':"")}}"><a href="{{route('admin.order.show',2)}}">Giao hàng thành công <span>{{$count_menu[2]}}</span></a></li>
-        <li role="presentation" class="{{($status==-3?'active':"")}}"><a href="{{route('admin.order.show',3)}}">Đã hủy <span>{{$count_menu[3]}}</span></a></li>
+        <li role="presentation" class="{{($status==0?'active':"")}}"><a href="{{route('admin.order.show',0)}}">Đang chờ xử lý {!! isset($count_menu[0])?'<span>'.$count_menu[0].'</span>':''!!}</a></li>
+        <li role="presentation" class="{{($status==1?'active':"")}}"><a href="{{route('admin.order.show',1)}}">Đang giao hàng {!! isset($count_menu[1])?'<span>'.$count_menu[1].'</span>':''!!}</a></li>
+        <li role="presentation" class="{{($status==2?'active':"")}}"><a href="{{route('admin.order.show',2)}}">Giao hàng thành công {!! isset($count_menu[2])?'<span>'.$count_menu[2].'</span>':''!!}</a></li>
+        <li role="presentation" class="{{($status==-3?'active':"")}}"><a href="{{route('admin.order.show',3)}}">Đã hủy {!! isset($count_menu[3])?'<span>'.$count_menu[3].'</span>':''!!}</a></li>
     </ul>
     <table class="table table-hover">
         <thead>

@@ -22,9 +22,9 @@ class OrderController extends Controller {
             $orders = Order::orderBy( 'id', 'desc' )->where( 'status', $status )->paginate();
         }
 
-        $count_menu_array = (Order::select(\DB::raw('count(*) as count'))->groupBy('status')->get()->toArray());
+        $count_menu_array = (Order::select(\DB::raw('count(*) as count, status'))->groupBy('status')->get()->toArray());
         foreach($count_menu_array as $row){
-            $count_menu[] = $row['count'];
+            $count_menu[$row['status']] = $row['count'];
         }
 
         return view( 'admin.order.index' )
