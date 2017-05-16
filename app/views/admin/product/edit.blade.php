@@ -76,7 +76,10 @@
                 <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">Images</label>
                     <div class="col-sm-10">
-                        <div class="alert alert-warning">Hình ảnh nên up hình vuông dàn trang sẽ đều và đẹp hơn</div>
+                        <div class="row">
+                            <div class="col-md-6"><div class="alert alert-warning">Hình ảnh nên up hình vuông dàn trang sẽ đều và đẹp hơn</div></div>
+                            <div class="col-md-6"><div class="alert alert-info">Bạn vui lòng up file tối đa {{ini_get('upload_max_filesize')}}</div></div>
+                        </div>
                         {!! Form::file('image[]',['multiple' => "multiple" ]) !!}
                         <hr>
                         @if(isset($product->image))
