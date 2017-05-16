@@ -14,45 +14,7 @@
                     Shipping &amp; Taxes
                 </h3>
             </div>
-            <div class="panel-body">
-                <!-- Form Starts -->
-                <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                        <label for="inputCountry" class="col-sm-4 control-label">Country :</label>
-                        <div class="col-sm-8">
-                            <select class="form-control" id="inputCountry">
-                                <option>- All Countries -</option>
-                                <option>India</option>
-                                <option>USA</option>
-                                <option>UK</option>
-                                <option>China</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputRegion" class="col-sm-4 control-label">Region :</label>
-                        <div class="col-sm-8">
-                            <select class="form-control" id="inputRegion">
-                                <option>- All Regions -</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputZipCode" class="col-sm-4 control-label">Zip Code :</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="inputZipCode" placeholder="">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-9">
-                            <button type="submit" class="btn btn-default">
-                                Get Info
-                            </button>
-                        </div>
-                    </div>
-                </form>
-                <!-- Form Ends -->
-            </div>
+
         </div>
         <!-- Taxes Block Ends -->
         <!-- Shipment Information Block Starts -->

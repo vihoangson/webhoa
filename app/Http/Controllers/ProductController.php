@@ -213,6 +213,32 @@ class ProductController extends Controller {
         $od->customer_id     = $customer->id;
         $od->save();
         $this->remove_coupon_code();
+        // todo: sent email
+
+        if ( $customer->email ) {
+
+            $string_content = $customer->name . "<br>" .
+                              $customer->email . "<br>" .
+                              $customer->tel . "<br>" .
+                              $customer->address . "<br>" .
+                              $customer->city . "<br>" .
+                              $customer->updated_at . "<br>" .
+                              $customer->created_at . "<br>" .
+                              $customer->id . "<br>";
+
+            $data_email['content_name']    = $customer->name;
+            $data_email['content_email']   = $customer->email;
+            $data_email['content_subject'] = 'Đơn hàng đặt thành công';
+            $data_email['content_message'] = $string_content;
+
+            \Mail::send( 'emails.product.success', $data_email, function ( $message )  use ($data_email) {
+                $message->from( $data_email['content_email'] );
+                $message->to( 'vihoangson@gmail.com' );
+            } );
+
+            flash( 'Email đã được gửi' )->success();
+
+        }
 
         return redirect( "/product/finish" );
     }
@@ -267,7 +293,7 @@ class ProductController extends Controller {
      * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed
      */
     public function khuyenmaihot() {
-        $products = Product::where( 'price_sale', '>', '0' )->paginate(9);
+        $products = Product::where( 'price_sale', '>', '0' )->paginate( 9 );
 
         return view( 'public.' . $this->template_name . '.product.khuyenmaihot', compact( 'products' ) );
     }
@@ -278,7 +304,7 @@ class ProductController extends Controller {
      * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed
      */
     public function deal_moi() {
-        $products = Product::paginate(9);
+        $products = Product::paginate( 9 );
 
         return view( 'public.' . $this->template_name . '.product.deal-moi', compact( 'products' ) );
     }

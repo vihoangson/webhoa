@@ -287,7 +287,7 @@ function get_image_url( $image, $thumb = false ) {
  *
  * @return string
  */
-function get_setting( $setting_key, $data_type = string, $default_value = '' ) {
+function get_setting( $setting_key, $data_type = 'string', $default_value = '' ) {
     $setting_value = '';
     if ( ! App::environment( 'local' ) ) {
 

@@ -107,9 +107,8 @@ class HomeController extends Controller {
 
         $check_capcha = $this->process_capcha( $request );
         if ( $check_capcha == false ) {
-//            flash( 'Form không hợp lệ' )->error();
-//
-//            return \Redirect::back();
+            flash( 'Form không hợp lệ' )->error();
+            return \Redirect::back();
         }
 
         if ( $request->email ) {
@@ -126,8 +125,6 @@ class HomeController extends Controller {
             flash( 'Email đã được gửi' )->success();
 
             return \Redirect::back();
-            $data['user'] = 123;
-
         }
     }
 
