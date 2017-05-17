@@ -230,8 +230,15 @@ class ProductController extends Controller {
             $data_email['content_email']   = $customer->email;
             $data_email['content_subject'] = 'Đơn hàng đặt thành công';
             $data_email['content_message'] = $string_content;
+            return view('emails.product.success')
+                ->with('data_email',$data_email)
+                ->with('order',$od);
+            die;
 
-            \Mail::send( 'emails.product.success', $data_email, function ( $message )  use ($data_email) {
+            \Mail::send( 'emails.product.success', [
+                'data_email' => $data_email,
+                'order'      => $od,
+            ], function ( $message ) use ( $data_email ) {
                 $message->from( $data_email['content_email'] );
                 $message->to( 'vihoangson@gmail.com' );
             } );

@@ -267,6 +267,27 @@
                 background-color: #34495e !important;
                 border-color: #34495e !important; } }
 
+        /* -------------------------------------
+        PRESERVE THESE STYLES IN THE HEAD
+        ------------------------------------- */
+        table td, table th {
+            text-align: left;
+        }
+        table.table {
+            border-collapse: collapse;
+        }
+
+        table.table,table.table th,table.table td {
+            border: 1px solid black;
+        }
+
+        table.table th,table.table td {
+            padding:3px;
+        }
+        table.table{
+            margin:10px 0;
+        }
+
     </style>
 </head>
 <body class="">
@@ -291,13 +312,35 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <p>Hi there,</p>
-                                        <p>Sometimes you just want to send a simple HTML email with a simple design and clear call to action. This is it.</p>
-                                        <div><b>name:</b> {{$content_name}}</div>
-                                        <div><b>email:</b> {{$content_email}}</div>
-                                        <div><b>subject:</b> {{$content_subject}}</div>
-                                        <div><b>message:</b> {{$content_message}}</div>
-
+                                        <div><b>Name:</b> {{$data_email['content_name']}}</div>
+                                        <div><b>Email:</b> {{$data_email['content_email']}}</div>
+                                        <div><b>Subject:</b> {{$data_email['content_subject']}}</div>
+                                        <div><b>Message:</b> {!! $data_email['content_message'] !!}</div>
+                                        @php
+                                            $data_order = json_decode($order->data_cache);
+                                        @endphp
+                                        <table class="table">
+                                            <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>name</th>
+                                                <th>qty</th>
+                                                <th>price</th>
+                                                <th>tax</th>
+                                                <th>subtotal</th>
+                                            </tr>
+                                            </thead>
+                                            @foreach($data_order as $key => $value)
+                                                <tr>
+                                                    <td>{{$value->id}}</td>
+                                                    <td>{{$value->name}}</td>
+                                                    <td>{{$value->qty}}</td>
+                                                    <td>{{$value->price}}</td>
+                                                    <td>{{$value->tax}}</td>
+                                                    <td>{{$value->subtotal}}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
                                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
                                             <tbody>
                                             <tr>
@@ -305,7 +348,9 @@
                                                     <table border="0" cellpadding="0" cellspacing="0">
                                                         <tbody>
                                                         <tr>
-                                                            <td> <a href="http://htmlemail.io" target="_blank">Call To Action</a> </td>
+                                                            <td>
+                                                                <a href="http://htmlemail.io" target="_blank">Xem chi tiết đơn hàng</a>
+                                                            </td>
                                                         </tr>
                                                         </tbody>
                                                     </table>
@@ -313,8 +358,7 @@
                                             </tr>
                                             </tbody>
                                         </table>
-                                        <p>This is a really simple email template. Its sole purpose is to get the recipient to click the button with no distractions.</p>
-                                        <p>Good luck! Hope it works.</p>
+
                                     </td>
                                 </tr>
                             </table>
