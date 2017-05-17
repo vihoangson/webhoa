@@ -25,7 +25,7 @@ if ( ! function_exists( 'get_id_or_slug' ) ) {
     }
 }
 
-function generate_discount( $percent, $price, $option ) {
+function generate_discount( $percent, $price, $option = 'GET_DISCOUNT' ) {
     $price = (int) str_replace( ",", "", $price );
     if ( $option == 'GET_PRICE' ) {
         return number_format( round( ( ( 100 - $percent ) * (int) $price ) / 100 ) );

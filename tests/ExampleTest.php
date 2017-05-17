@@ -13,7 +13,8 @@ class ExampleTest extends TestCase
      */
     public function testBasicExample()
     {
-        $this->visit('/')
-             ->see('Laravel 5');
+        $this->assertFalse(env('PREVIEW_EMAIL'),'Preview email đang bật');
+//        $this->visit('/')
+//             ->see('Laravel 5');
     }
 }

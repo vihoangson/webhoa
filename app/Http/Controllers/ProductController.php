@@ -212,40 +212,35 @@ class ProductController extends Controller {
         $od->total_sum       = str_replace( ',', '', Cart::total() );
         $od->customer_id     = $customer->id;
         $od->save();
-        $this->remove_coupon_code();
         // todo: sent email
 
         if ( $customer->email ) {
 
-            $string_content = $customer->name . "<br>" .
-                              $customer->email . "<br>" .
-                              $customer->tel . "<br>" .
-                              $customer->address . "<br>" .
-                              $customer->city . "<br>" .
-                              $customer->updated_at . "<br>" .
-                              $customer->created_at . "<br>" .
-                              $customer->id . "<br>";
-
+            $string_content                = 'Đơn hàng đang được xử lý và giao tới cho bạn trong thời gian sớm nhất';
+            $data_email['customer']        = $customer;
             $data_email['content_name']    = $customer->name;
             $data_email['content_email']   = $customer->email;
-            $data_email['content_subject'] = 'Đơn hàng đặt thành công';
+            $data_email['content_subject'] = 'Bạn đã đặt hàng thành công';
             $data_email['content_message'] = $string_content;
-            return view('emails.product.success')
-                ->with('data_email',$data_email)
-                ->with('order',$od);
-            die;
 
-            \Mail::send( 'emails.product.success', [
-                'data_email' => $data_email,
-                'order'      => $od,
-            ], function ( $message ) use ( $data_email ) {
-                $message->from( $data_email['content_email'] );
-                $message->to( 'vihoangson@gmail.com' );
-            } );
-
-            flash( 'Email đã được gửi' )->success();
-
+            $preview_email = env( 'PREVIEW_EMAIL', false );
+            if ( $preview_email == true ) {
+                return view( 'emails.product.success' )
+                    ->with( 'data_email', $data_email )
+                    ->with( 'order', $od );
+            } else {
+                \Mail::send( 'emails.product.success', [
+                    'data_email' => $data_email,
+                    'order'      => $od,
+                ], function ( $message ) use ( $data_email ) {
+                    $message->from( $data_email['content_email'] );
+                    $message->to( 'vihoangson@gmail.com' );
+                } );
+                flash( 'Email đã được gửi' )->success();
+                $this->remove_coupon_code();
+            }
         }
+
 
         return redirect( "/product/finish" );
     }
@@ -259,6 +254,7 @@ class ProductController extends Controller {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
         }
+
         Cart::destroy();
 
         //todo: Xử lý lưu cart

@@ -303,9 +303,16 @@ function get_setting( $setting_key, $data_type = 'string', $default_value = '' )
         } );
 
     } else {
+        // Dev environment
         $object = App\Setting::where( 'setting_key', $setting_key )->first();
+
         if ( $object ) {
             $setting_value = $object->setting_value;
+        }else{
+            $new_setting              = new App\Setting;
+            $new_setting->code        = 'custom';
+            $new_setting->setting_key = $setting_key;
+            $new_setting->save();
         }
     }
 

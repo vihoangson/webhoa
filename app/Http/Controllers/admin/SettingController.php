@@ -17,10 +17,10 @@ class SettingController extends Controller {
     public function index( $code = '' ) {
         $this->setPageTitle( 'Setting' );
         if ( ! $code ) {
-            $code = 'general';
+            //$code = 'general';
         }
 
-        $settings = Setting::where( [ 'code' => $code ] )->get();
+        $settings = Setting::get();
 
         return view( 'admin.setting.index' )
             ->with( 'code', $code )

@@ -303,7 +303,7 @@
             <div class="content">
 
                 <!-- START CENTERED WHITE CONTAINER -->
-                <span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>
+                <span class="preheader">Cảm ơn bạn đã đặt hàng! </span>
                 <table class="main">
 
                     <!-- START MAIN CONTENT AREA -->
@@ -312,36 +312,61 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <div><b>Name:</b> {{$data_email['content_name']}}</div>
+
+
+
+
+                                        <div><b></b> {{$data_email['content_subject']}}</div>
+                                        <div><b></b> {!! $data_email['content_message'] !!}</div>
+                                        <hr>
+                                        <div><h3>Thông tin khách hàng</h3></div>
+                                        <div><b>Tên khách hàng:</b> {{$data_email['content_name']}}</div>
                                         <div><b>Email:</b> {{$data_email['content_email']}}</div>
-                                        <div><b>Subject:</b> {{$data_email['content_subject']}}</div>
-                                        <div><b>Message:</b> {!! $data_email['content_message'] !!}</div>
+                                        <div><b>Địa chỉ:</b> {{$data_email['customer']->address}}</div>
+
                                         @php
                                             $data_order = json_decode($order->data_cache);
                                         @endphp
+                                        <hr>
+                                        <div><h3>Thông tin đơn hàng</h3></div>
                                         <table class="table">
                                             <thead>
                                             <tr>
-                                                <th>id</th>
-                                                <th>name</th>
-                                                <th>qty</th>
-                                                <th>price</th>
-                                                <th>tax</th>
-                                                <th>subtotal</th>
+                                                <th>Tên sản phẩm</th>
+                                                <th style="text-align: right;">Số lượng</th >
+                                                <th style="text-align: right;">Đơn giá</th>
+                                                <th style="text-align: right;">Thành tiền</th>
                                             </tr>
                                             </thead>
                                             @foreach($data_order as $key => $value)
                                                 <tr>
-                                                    <td>{{$value->id}}</td>
                                                     <td>{{$value->name}}</td>
-                                                    <td>{{$value->qty}}</td>
-                                                    <td>{{$value->price}}</td>
-                                                    <td>{{$value->tax}}</td>
-                                                    <td>{{$value->subtotal}}</td>
+                                                    <td style="text-align: right;">{{$value->qty}}</td>
+                                                    <td style="text-align: right;">{{number_format($value->price) }}VNĐ</td>
+                                                    <td style="text-align: right;">{{number_format($value->subtotal) }}VNĐ</td>
                                                 </tr>
                                             @endforeach
+                                            <tr  style="border:none;">
+                                                <td style="border:none;" colspan="2"></td>
+                                                <td style="border:none;">Tổng đơn hàng: </td>
+                                                <td style="border:none;text-align: right;">{{number_format($order->total_sum  )}}VNĐ</td>
+                                            </tr>
+                                            @if($order->coupon_discount)
+                                                <tr  style="border:none;">
+                                                    <td style="border:none;" colspan="2"></td>
+                                                    <td style="border:none;">Giảm giá ({{$order->coupon_discount}}%): </td>
+                                                    <td style="border:none;text-align: right;"> {{(generate_discount($order->coupon_discount,$order->total_sum))}}VNĐ</td>
+                                                </tr>
+                                                <tr  style="border:none;">
+                                                    <td style="border:none;" colspan="2"></td>
+                                                    <td style="border:none;">Giá sau giảm giá: </td>
+                                                    <td style="border:none;text-align: right;">{{(generate_discount($order->coupon_discount,$order->total_sum,'GET_PRICE'))}}VNĐ</td>
+                                                </tr>
+                                            @endif
+
                                         </table>
-                                        <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary">
+
+                                        <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="display:none;">
                                             <tbody>
                                             <tr>
                                                 <td align="left">
@@ -367,19 +392,19 @@
 
                     <!-- END MAIN CONTENT AREA -->
                 </table>
-
                 <!-- START FOOTER -->
                 <div class="footer">
                     <table border="0" cellpadding="0" cellspacing="0">
                         <tr>
                             <td class="content-block">
-                                <span class="apple-link">Company Inc, 3 Abbey Road, San Francisco CA 94102</span>
-                                <br> Don't like these emails? <a href="http://i.imgur.com/CScmqnj.gif">Unsubscribe</a>.
+                                <span class="apple-link">Địa chỉ công ty: {{get_setting('address_company','string')}}</span>
+                                <br> <span class="apple-link">Hotline: {{get_setting('hotline','string')}}</span>
+                                <br> Don't like these emails? <a href="{{route('unsubscribe',$data_email['content_email'])}}">Unsubscribe</a>.
                             </td>
                         </tr>
                         <tr>
                             <td class="content-block powered-by">
-                                Powered by <a href="http://htmlemail.io">HTMLemail</a>.
+                                Powered by <a href="http://vihoangson.com" target="_blank">vihoangson.com</a>.
                             </td>
                         </tr>
                     </table>

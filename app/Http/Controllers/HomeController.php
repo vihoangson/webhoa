@@ -128,4 +128,7 @@ class HomeController extends Controller {
         }
     }
 
+    public function unsubscribe(Request $request){
+
+    }
 }
