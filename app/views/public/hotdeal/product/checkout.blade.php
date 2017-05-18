@@ -13,7 +13,8 @@
         <!-- Main Heading Ends -->
         <!-- Shopping Cart Table Starts -->
         <div class="table-responsive shopping-cart-table">
-            {!! Form::open(['url'=>'/product/update_cart','method'=>'post']) !!}
+            {!! Form::open(['url'=>'/product/update_cart','method'=>'post','id'=>'form-cart']) !!}
+            {!! Form::hidden('step', '', ['id' => 'step']) !!}
             <table class="table table-bordered">
                 <thead>
                 <tr>
@@ -171,7 +172,7 @@
                                     <span class="hidden-xs">Tiếp tục mua hàng</span>
                                     <span class="visible-xs">Thanh toán</span>
                                 </a>
-                                <a href="/product/payment" class="btn btn-primary pull-right">
+                                <a href="/product/payment" class="btn btn-primary pull-right checkout-button">
                                     Thanh toán
                                 </a>
                             </div>

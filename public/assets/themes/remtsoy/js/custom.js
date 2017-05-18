@@ -431,3 +431,8 @@ $(".payment_method input").change(function(){
         $("#tttk").hide();
     }
 })
+$(".checkout-button").click(function(e){    
+    $("#form-cart input[name='step']").val('payment');
+    $("#form-cart").submit();
+    e.preventDefault();
+})
