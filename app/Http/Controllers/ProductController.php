@@ -157,10 +157,11 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|void
      */
     public function update_cart( Request $request ) {
-        if($request->step=='payment'){
-            return \redirect(route())
+        if ( $request->step == 'payment' ) {
+            return \redirect( route( 'product.payment' ) );
         }
         $rq = $request->all();
+        
         foreach ( $rq['ql'] as $key => $item ) {
             Cart::update( $key, $item );
         }
