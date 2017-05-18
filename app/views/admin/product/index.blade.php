@@ -41,14 +41,16 @@
                     <td>
                         @if(isset($product->category ))
                             @foreach($product->category as $cat)
-                                <div>{{$cat->name}}</div>
+                                <div class="label label-success">{{$cat->name}}</div>
                             @endforeach
                         @endif
                     </td>
                     <td>
                         {!! ($product->active == 1 ?'<span class="label label-primary">Enable</span>':'<span class="label label-danger">Disable</span>') !!}
+                        {!! ($product->homepage == 1 ?'<span class="label label-info">Trang chủ</span>':'') !!}
+                        {!! ($product->promotion == 1 ?'<span class="label label-warning">Quảng cáo</span>':'') !!}
                     </td>
-                    <td class="text-right">
+                    <td class="text-right col-md-1">
                         <div class="btn-group">
                             <a href="/product/{{$product->id}}" target="_blank" class="btn-white btn btn-xs">View</a>
                             <a href="/admin/product/{{$product->id}}/edit" class="btn-white btn btn-xs">Edit</a>

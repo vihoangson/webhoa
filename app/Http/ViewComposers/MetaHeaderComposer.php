@@ -17,9 +17,9 @@ class MetaHeaderComposer {
      * @return void
      */
     public function compose( View $view ) {
-        $view->with( 'title_default', 'Xem Ngay Mua Ngay' );
-        $view->with( 'keyword_default', 'Xem Ngay Mua Ngay' );
-        $view->with( 'description_default', 'Xem Ngay Mua Ngay' );
+        $view->with( 'title_default', get_setting('default_title','string') );
+        $view->with( 'keyword_default', get_setting('default_keyword','string') );
+        $view->with( 'description_default', get_setting('default_description','string') );
     }
 
 }

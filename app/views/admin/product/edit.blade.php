@@ -90,7 +90,27 @@
                         <button class="btn btn-danger delete-img" type="button">Delete img</button>
                     </div>
                 </div>
-
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('brand','Thương hiệu:') !!}</label>
+                    <div class="col-sm-10">
+                        {!! Form::text('brand',(isset($product->brand)?$product->brand:''),['class'=>'form-control']) !!}
+                    </div>
+                </div>
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">Options</label>
+                    <div class="col-sm-10">
+                        <div class="form-group" id="data_5">
+                            <label>
+                            	{!! \Form::checkbox('homepage', '1', (isset($product->home)&&$product->home==1?true:false),  ['id' => 'name']) !!}
+                            	Xuất hiện trang chủ
+                            </label>
+                            <label>
+                                {!! \Form::checkbox('promotion', '1', (isset($product->home)&&$product->home==1?true:false),  ['id' => 'name']) !!}
+                                Xuất hiện trang quảng cáo
+                            </label>
+                        </div>
+                    </div>
+                </div>
                 <div class="hr-line-dashed"></div>
                 <div class="form-group"><label class="col-sm-2 control-label">Thời hạn khuyến mãi</label>
                     <div class="col-sm-10">

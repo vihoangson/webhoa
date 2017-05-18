@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Coupon;
+use Carbon\Carbon;
 use Session;
 use App\Customer;
 use App\Order;
@@ -61,13 +62,20 @@ class ProductController extends Controller {
     public function add_coupon( Request $request ) {
 
         if ( ! empty( $request->coupon_code ) ) {
-            $coupon = Coupon::where( 'code', $request->coupon_code )->first();
-            if ( $coupon->count() != 0 ) {
+            $dt = Carbon::now();
+
+            $coupon = Coupon::where( 'code', $request->coupon_code )
+                            ->where('starts_at','<=',$dt)
+                            ->where('ends_at','>=', $dt)
+                            ->where('active',1)
+                            ->first();
+
+            if (!is_null($coupon) && $coupon->count() != 0 ) {
                 Session::put( 'coupon_code', $request->coupon_code );
                 Session::put( 'coupon_discount', $coupon->discount );
                 flash( 'Thêm code thành công' )->success();
             } else {
-                flash( 'Code không đúng, vui lòng kiểm tra lại' )->error();
+                flash( 'Code không đúng hoặc đã hết hạn, vui lòng kiểm tra lại' )->error();
             }
         }
 
@@ -101,6 +109,8 @@ class ProductController extends Controller {
     /**
      * Show the application dashboard.
      *
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show( $id ) {
@@ -109,6 +119,10 @@ class ProductController extends Controller {
             $product = Product::find( $id );
         } else {
             $product = Product::findBySlug( $id );
+        }
+
+        if(is_null($product)){
+            abort('404');
         }
 
         $product_relate = $product->product_relate( 6 );
@@ -161,7 +175,7 @@ class ProductController extends Controller {
             return \redirect( route( 'product.payment' ) );
         }
         $rq = $request->all();
-        
+
         foreach ( $rq['ql'] as $key => $item ) {
             Cart::update( $key, $item );
         }

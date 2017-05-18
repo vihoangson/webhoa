@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Category;
 use App\CategoryAllocation;
+use App\Coupon;
 use App\Group;
 use App\Image;
 use App\Menu;
@@ -136,7 +137,9 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update( Requests\CheckProductRequest $request, $id ) {
+
         $rq                 = $request->all();
+
         $p                  = Product::find( $id );
         $p->title           = $rq['title'];
         $p->summary         = $rq['summary'];
@@ -146,12 +149,12 @@ class ProductController extends Controller {
         $p->price_sale      = $rq['price_sale'];
         $p->date_begin_sale = $rq['date_begin_sale'];
         $p->date_end_sale   = $rq['date_end_sale'];
-        if ( isset( $rq['active'] ) ) {
-            $p->active = $rq['active'];
-        } else {
-            $p->active = 0;
-        }
+        $p->homepage        = isset( $rq['homepage'] ) ? $rq['homepage'] : 0;
+        $p->promotion       = isset( $rq['promotion'] ) ? $rq['promotion'] : 0;
+        $p->promotion       = isset( $rq['active'] ) ? $rq['active'] : 0;
+        $p->active          = $rq['active'];
         $p->save();
+
         if ( isset( $rq['category'] ) ) {
             // todo: phần này đã lưu được
             $p->category()->sync( $rq['category'] );
@@ -188,5 +191,16 @@ class ProductController extends Controller {
      */
     public function template() {
         return view( 'admin.product.template' );
+    }
+
+
+    public function coupon(){
+        $coupons = Coupon::paginate();
+        return view( 'admin.product.coupon_index' )
+            ->with('coupons',$coupons)
+            ;
+    }
+    public function process_coupon(){
+echo 2;
     }
 }
