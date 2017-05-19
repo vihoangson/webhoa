@@ -15,8 +15,19 @@ class CouponController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function index() {
-        $coupons = Coupon::paginate();
+    public function index( Request $request ) {
+        $coupons = Coupon::get();
+
+        switch ( $request->show ) {
+            case "all":
+                break;
+            case "close":
+                $coupons = $coupons->where( 'active', 0 );
+                break;
+            default:
+                $coupons = $coupons->where( 'active', 1 );
+                break;
+        }
 
         return view( 'admin.coupon.coupon_index' )
             ->with( 'coupons', $coupons );
@@ -40,13 +51,15 @@ class CouponController extends Controller {
      */
     public function store( Request $request ) {
         $data = $request->all();
-        if(Coupon::where('code',$data['code'])->get()->count()!=0){
-            flash("Code đã tồn tại trong hệ thống vui lòng chọn code khác")->error();
+        if ( Coupon::where( 'code', $data['code'] )->get()->count() != 0 ) {
+            flash( "Code đã tồn tại trong hệ thống vui lòng chọn code khác" )->error();
+
             return Redirect::back();
         }
         Coupon::create( $request->all() );
-        flash("Đã save")->success();
-        return Redirect::route('admin.coupon.index');
+        flash( "Đã save" )->success();
+
+        return Redirect::route( 'admin.coupon.index' );
     }
 
     /**
@@ -68,10 +81,10 @@ class CouponController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit( $id ) {
-        $coupon = Coupon::find($id );
+        $coupon = Coupon::find( $id );
+
         return view( 'admin.coupon.edit' )
-            ->with('coupon',$coupon)
-            ;
+            ->with( 'coupon', $coupon );
     }
 
     /**
@@ -83,9 +96,15 @@ class CouponController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update( Request $request, $id ) {
-        Coupon::updateOrCreate(['id'=>$id],$request->all());
-        flash("Đã save")->success();
-        return Redirect::route('admin.coupon.index');
+
+        $data = $request->all();
+        if ( ! isset( $request->active ) ) {
+            $data['active'] = 0;
+        }
+        Coupon::updateOrCreate( [ 'id' => $id ], $data );
+        flash( "Đã save" )->success();
+
+        return Redirect::route( 'admin.coupon.index' );
     }
 
     /**

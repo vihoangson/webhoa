@@ -76,6 +76,7 @@
 
         // datepicker
         $('.input-daterange').datepicker({
+            format: "dd/mm/yyyy",
             keyboardNavigation: false,
             forceParse: false,
             autoclose: true

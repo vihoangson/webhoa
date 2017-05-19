@@ -17,7 +17,7 @@ class Coupon extends Model {
     public function setStartsAtAttribute($date){
         if ( $date ) {
             if ( ! preg_match( '/\s/', $date ) ) {
-                $date = Carbon::createFromFormat( 'm/d/Y', $date );
+                $date = Carbon::createFromFormat( 'd/m/Y', $date );
             }
             $date->hour(0);
             $date->minute(0);
@@ -30,7 +30,7 @@ class Coupon extends Model {
     public function setEndsAtAttribute($date){
         if ( $date ) {
             if ( ! preg_match( '/\s/', $date ) ) {
-                $date = Carbon::createFromFormat( 'm/d/Y', $date );
+                $date = Carbon::createFromFormat( 'd/m/Y', $date );
             }
             $date->hour(0);
             $date->minute(0);
@@ -41,8 +41,13 @@ class Coupon extends Model {
 
     public function getStartsAtFormatedAttribute(){
         if ( $this->attributes['starts_at'] && $this->attributes['starts_at'] != '0000-00-00 00:00:00' ) {
+            $dt          = Carbon::now();
             $carbon_date = Carbon::createFromFormat( 'Y-m-d H:i:s', $this->attributes['starts_at'] );
-            return $carbon_date->format( 'm/d/Y' );
+            // Nếu đã qua thời hạn thì return null
+            if ( $dt->diffInDays( $carbon_date, false ) < 0 ) {
+                //return '<span style="color:red">'.$carbon_date->format( 'd/m/Y' ).'</span>';
+            }
+            return $carbon_date->format( 'd/m/Y' );
         }
 
         return null;
@@ -55,10 +60,10 @@ class Coupon extends Model {
 
             // Nếu đã qua thời hạn thì return null
             if ( $dt->diffInDays( $carbon_date, false ) < 0 ) {
-                return null;
+                //return '<span style="color:red">'.$carbon_date->format( 'd/m/Y' ).'</span>';
             }
 
-            return $carbon_date->format( 'm/d/Y' );
+            return $carbon_date->format( 'd/m/Y' );
         }
 
         return null;

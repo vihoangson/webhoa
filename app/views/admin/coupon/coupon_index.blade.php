@@ -1,6 +1,10 @@
 @extends('layouts.admin.master')
 @section('content')
-    <h1>Product</h1>
+    <h1>Coupon</h1>
+
+    <a class="btn btn-default " href="{{route('admin.coupon.index',['show'=>"all"])}}" >View all</a>
+    <a class="btn btn-default" href="{{route('admin.coupon.index')}}" >View active</a>
+    <a class="btn btn-default" href="{{route('admin.coupon.index',['show'=>"close"])}}" >View close</a>
 
     <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
         <thead>
@@ -18,8 +22,8 @@
                 <tr>
                     <td>{{$coupon->code}}</td>
                     <td>{{$coupon->discount}}%</td>
-                    <td>{{$coupon->starts_at}}</td>
-                    <td>{{$coupon->ends_at}}</td>
+                    <td>{{$coupon->starts_at_formated}}</td>
+                    <td>{{$coupon->ends_at_formated}}</td>
                     <td>{!! ($coupon->active==1?'<span class="label label-success">Active</span>':'<span class="label label-danger">Close</span>') !!}</td>
                     <td><a href="{{route('admin.coupon.edit',$coupon->id)}}" class="btn-white btn btn-xs">Edit</a></td>
                 </tr>
@@ -29,7 +33,7 @@
         <tfoot>
         <tr>
             <td colspan="6">
-                {!! $coupons->render() !!}
+
                 {{--<ul class="pagination pull-right"></ul>--}}
             </td>
         </tr>

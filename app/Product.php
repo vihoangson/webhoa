@@ -113,7 +113,7 @@ class Product extends Model {
         if ( $this->attributes['date_begin_sale'] && $this->attributes['date_begin_sale'] != '0000-00-00 00:00:00' ) {
             $carbon_date = Carbon::createFromFormat( 'Y-m-d H:i:s', $this->attributes['date_begin_sale'] );
 
-            return $carbon_date->format( 'm/d/Y' );
+            return $carbon_date->format( 'd/m/Y' );
         }
 
         return '';
@@ -129,7 +129,7 @@ class Product extends Model {
         if ( $this->attributes['date_end_sale'] && $this->attributes['date_end_sale'] != '0000-00-00 00:00:00' ) {
             $carbon_date = Carbon::createFromFormat( 'Y-m-d H:i:s', $this->attributes['date_end_sale'] );
 
-            return $carbon_date->format( 'm/d/Y' );
+            return $carbon_date->format( 'd/m/Y' );
         }
 
         return '';
@@ -189,7 +189,7 @@ class Product extends Model {
     public function setDateBeginSaleAttribute( $date ) {
         if ( $date ) {
             if ( ! preg_match( '/\s/', $date ) ) {
-                $date = Carbon::createFromFormat( 'm/d/Y', $date );
+                $date = Carbon::createFromFormat( 'd/m/Y', $date );
             }
             $this->attributes['date_begin_sale'] = $date;
         }
@@ -198,7 +198,7 @@ class Product extends Model {
     public function setDateEndSaleAttribute( $date ) {
         if ( $date ) {
             if ( ! preg_match( '/\s/', $date ) ) {
-                $date = Carbon::createFromFormat( 'm/d/Y', $date );
+                $date = Carbon::createFromFormat( 'd/m/Y', $date );
             }
             $this->attributes['date_end_sale'] = $date;
         }

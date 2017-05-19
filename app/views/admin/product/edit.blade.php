@@ -196,6 +196,7 @@
 
     // Datepicker cho input
     $('#data_5 .input-daterange').datepicker({
+        format: "dd/mm/yyyy",
         keyboardNavigation: false,
         forceParse: false,
         autoclose: true
