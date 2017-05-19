@@ -126,7 +126,7 @@
 
                 <div class="form-group">
                     <div class="col-sm-4 col-sm-offset-2">
-                        <button class="btn btn-white" type="submit">Cancel</button>
+                        <a class="btn btn-white" href="/admin/product">Cancel</a>
                         <button class="btn btn-primary" type="submit">Save changes</button>
                     </div>
                 </div>
@@ -157,15 +157,20 @@
     <script src="{{$template_admin_path}}js/plugins/datapicker/bootstrap-datepicker.js"></script>
     <script src="/bower_components/summernote/dist/summernote.min.js"></script>
 <script>
+
     if($(".thumb_img").length==0){
         $(".delete-img").hide();
     }
+
+    // Mở nút xóa hình
     $(".delete-img").click(function(){
         $(".thumb_img").each(function(){
             $(this).after("<button class='btn btn-default dl_img' type='button' data-id='"+$(this).data('id')+"'>Delete</button>");
         })
 
     });
+
+    // Click vào để xóa sản phẩm
     $(document).on("click",".dl_img",function(){
         var this_btn = $(this);
         $.post('/admin/update_ajax',{'process':'delete_img_product','id':$(this).data('id')},function(data) {
@@ -176,17 +181,20 @@
         });
 
     })
-$(".thumb_img").click(function(){
-    var this_select = $(this);
-    $.post('/admin/update_ajax',{'process':'change_main_img','id':$(this).data('id'),'pid':$(this).data('pid')},function(data){
-        $(".thumb_img").removeClass('active_box');
-        this_select.addClass('active_box');
-    })
-})
+
+    // Chọn hình chính của sản phẩm
+    $(".thumb_img").click(function(){
+        var this_select = $(this);
+        $.post('/admin/update_ajax',{'process':'change_main_img','id':$(this).data('id'),'pid':$(this).data('pid')},function(data){
+            $(".thumb_img").removeClass('active_box');
+            this_select.addClass('active_box');
+        })
+    });
+
     var elem = document.querySelector('.js-switch');
     var switchery = new Switchery(elem, { color: '#1AB394' });
 
-    // datepicker
+    // Datepicker cho input
     $('#data_5 .input-daterange').datepicker({
         keyboardNavigation: false,
         forceParse: false,
@@ -194,6 +202,8 @@ $(".thumb_img").click(function(){
     });
 
     $(document).ready(function() {
+
+        // Action upload hình ảnh của editor
         function uploadImage(image) {
             var data = new FormData();
             data.append("image_editor", image);
@@ -214,6 +224,7 @@ $(".thumb_img").click(function(){
             });
         }
 
+        // Khai báo editor
         $('.summernote').summernote({
             height: 300,
             toolbar : [

@@ -50,7 +50,7 @@
                     <a href="/admin/post"><i class="fa fa-file-text"></i> <span class="nav-label">Post</span></a>
                     <a href="/admin/group"><i class="fa fa-file-text"></i> <span class="nav-label">Nhóm post</span></a>
                     <a href="/admin/order"><i class="fa fa-tags"></i> <span class="nav-label">Quản lý đơn hàng</span></a>
-                    <a href="{{route('admin.coupon')}}"><i class="fa fa-cog"></i> <span class="nav-label">Coupon</span></a>
+                    <a href="{{route('admin.coupon.index')}}"><i class="fa fa-cog"></i> <span class="nav-label">Coupon</span></a>
                     <a href="/admin/menu"><i class="fa fa-cog"></i> <span class="nav-label">Quản lý menu</span></a>
                     <a href="/admin/setting"><i class="fa fa-cog"></i> <span class="nav-label">Tùy chỉnh</span></a>
                 </li>

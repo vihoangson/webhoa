@@ -34,7 +34,6 @@ class ProductController extends Controller {
     public function index() {
         $products = Product::paginate();
 
-        //dd($products[0]->category[0]->name);
         return view( 'admin.product.index', compact( 'products' ) );
     }
 
@@ -193,14 +192,4 @@ class ProductController extends Controller {
         return view( 'admin.product.template' );
     }
 
-
-    public function coupon(){
-        $coupons = Coupon::paginate();
-        return view( 'admin.product.coupon_index' )
-            ->with('coupons',$coupons)
-            ;
-    }
-    public function process_coupon(){
-echo 2;
-    }
 }

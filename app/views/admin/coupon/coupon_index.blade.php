@@ -21,6 +21,7 @@
                     <td>{{$coupon->starts_at}}</td>
                     <td>{{$coupon->ends_at}}</td>
                     <td>{!! ($coupon->active==1?'<span class="label label-success">Active</span>':'<span class="label label-danger">Close</span>') !!}</td>
+                    <td><a href="{{route('admin.coupon.edit',$coupon->id)}}" class="btn-white btn btn-xs">Edit</a></td>
                 </tr>
             @endforeach
         @endif
@@ -34,7 +35,7 @@
         </tr>
         </tfoot>
     </table>
-    <div><a href="/admin/product/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create product</a></div>
+    <div><a href="{{route('admin.coupon.create')}}" class="btn btn-primary"><i class="glyphicon-plus"></i> Create coupon</a></div>
 @endsection
 
 @section('custom_footer')
