@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers;
 
 use App\Post;
+use App\Tag;
 use Illuminate\View\View;
 
 class WidgetComposer {
@@ -26,6 +27,8 @@ class WidgetComposer {
      */
     public function compose( View $view ) {
         $this->widget_recent_posts( $view );
+        $this->widget_tags( $view );
+
     }
 
     private function widget_recent_posts( View $view ) {
@@ -33,5 +36,9 @@ class WidgetComposer {
         $view->with( 'widget_recent_posts', $posts );
     }
 
+    private function widget_tags( View $view ) {
+        $tags = Tag::limit( 3 )->get();
+        $view->with( 'widget_tags', $tags );
+    }
 
 }
