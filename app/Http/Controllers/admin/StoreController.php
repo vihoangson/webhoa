@@ -18,9 +18,22 @@ class StoreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
         $stores = Store::get();
+
+        switch ( $request->show ) {
+            case "all":
+                break;
+            case "close":
+                $stores = $stores->where( 'active', 0 );
+                break;
+            default:
+                $stores = $stores->where( 'active', 1 );
+                break;
+        }
+
         return view( 'admin.store.index' )
             ->with( 'stores', $stores );
     }
@@ -43,14 +56,17 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'name' => 'required',
+        ]);
+
         $data = $request->all();
 
-        Store::create( $request->all() );
+        Store::create( $data );
         flash( "Đã save" )->success();
 
         return Redirect::route( 'admin.store.index' );
     }
-
     /**
      * Display the specified resource.
      *
@@ -85,6 +101,9 @@ class StoreController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+            'name' => 'required',
+        ]);
 
         $data = $request->all();
         if ( ! isset( $request->active ) ) {
@@ -104,6 +123,8 @@ class StoreController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $store = Store::find($id);
+        $store->delete();
+        return Redirect::back();
     }
 }

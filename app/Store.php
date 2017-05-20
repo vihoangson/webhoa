@@ -29,4 +29,10 @@ class Store extends Model
         'active',
         'slug',
     ];
+
+    public function user(){
+        return $this->belongsToMany('App\User')
+             ->withTimestamps();
+    }
+
 }

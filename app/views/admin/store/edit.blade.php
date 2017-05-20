@@ -20,11 +20,16 @@
             <div class="hr-line-dashed"></div>
             <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('title','Tên gian hàng:') !!}</label>
                 <div class="col-sm-10">
-                    {!! Form::text('name',(isset($store->name)?$store->name:''),['class'=>'form-control','required' => 'required']) !!}
+                    {!! Form::text('name',(isset($store->name)?$store->name:''),['class'=>'form-control']) !!}
                 </div>
             </div>
 
-
+                <div class="hr-line-dashed"></div>
+                <div class="form-group"><label class="col-sm-2 control-label">{!! Form::label('summary','Giới thiệu về gian hàng:') !!}</label>
+                    <div class="col-sm-10">
+                        {!! Form::textarea('summary',(isset($store->summary)?$store->summary:''),['class'=>'form-control']) !!}
+                    </div>
+                </div>
 
             <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-2">

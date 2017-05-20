@@ -1,6 +1,6 @@
 @extends('layouts.admin.master')
 @section('content')
-    <h1>Coupon</h1>
+    <h1>Store</h1>
 
     <a class="btn btn-default " href="{{route('admin.store.index',['show'=>"all"])}}" >View all</a>
     <a class="btn btn-default" href="{{route('admin.store.index')}}" >View active</a>
@@ -9,11 +9,9 @@
     <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
         <thead>
         <tr>
-            <th>Code</th>
-            <th>Discount</th>
-            <th>Ngày bắt đầu</th>
-            <th>Ngày kết thúc</th>
-            <th>Tình trạng</th>
+            <th>Tên gian hàng</th>
+            <th>Giới thiệu</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
@@ -21,7 +19,14 @@
             @foreach($stores as $store)
                 <tr>
                     <td>{{$store->name}}</td>
-                    <td><a href="{{route('admin.store.edit',$store->id)}}" class="btn-white btn btn-xs">Edit</a></td>
+                    <td>{{$store->summary}}</td>
+                    <td>{!! ($store->active==1?'<span class="label label-success">Active</span>':'<span class="label label-danger">Close</span>') !!}</td>
+                    <td>
+                        <a href="{{route('admin.store.edit',$store->id)}}" class="btn-white btn btn-xs">Edit</a>
+                        {!! Form::open(['url' => '/admin/store/'.$store->id, 'method' => 'delete','class'=>'confirm-action']) !!}
+                        {{--<button type="submit" name="id" value="{{$store->id}}" href="/admin/store/{{$store->id}}/destroy" class="btn-white btn btn-xs">Delete</button>--}}
+                        {!! Form::close() !!}
+                    </td>
                 </tr>
             @endforeach
         @endif

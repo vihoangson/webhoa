@@ -29,4 +29,9 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role', 'foreign_key', 'role_id');
 
     }
+
+    public function store(){
+        return $this->belongsToMany('App\Store')
+             ->withTimestamps();
+    }
 }
