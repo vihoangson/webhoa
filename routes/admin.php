@@ -44,3 +44,5 @@ Route::get('/import_file', 'admin\ImportFileController@import_file')->name('admi
 Route::post('/import_file', 'admin\ImportFileController@process_import_file')->name('admin.import.process');
 
 Route::resource('/coupon', 'admin\CouponController');
+
+Route::resource('/store', 'admin\StoreController');

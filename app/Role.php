@@ -15,5 +15,9 @@ class Role extends Authenticatable
         'title', 'slug'
     ];
 
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
 
 }

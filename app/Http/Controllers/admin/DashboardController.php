@@ -8,6 +8,8 @@ use App\Image;
 use App\Option;
 use App\Post;
 use App\Product;
+use App\Role;
+use App\User;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
