@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\common;
 
+use App\Http\Controllers\ProductController;
 use App\Review;
 use Session;
 use App\Customer;
@@ -40,6 +41,16 @@ class CommonController extends Controller {
         }
 
         return redirect( '/' );
+    }
+
+    public function tags( $tag ) {
+
+        $pc      = new ProductController;
+        $request = new Request;
+        $request->query->add( [ 'tags' => $tag ] );
+
+        return $pc->tags( $request );
+
     }
 
 }

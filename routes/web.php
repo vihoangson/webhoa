@@ -21,7 +21,7 @@ Route::post( '/customer/add_wishlist', 'common\AjaxController@add_wishlist' )->n
 Route::post( '/product/process_review', 'common\AjaxController@process_review' )->name('process_review');
 
 
-Route::get( '/khuyen-mai-hot', 'ProductController@khuyenmaihot' )->name('khuyenmaihot');
+Route::get( '/khuyen-mai-hot', 'CategoryController@khuyenmaihot' )->name('khuyenmaihot');
 Route::get( '/deal-moi', 'ProductController@deal_moi' )->name('deal-moi');
 
 Route::post( '/product/add_coupon', 'ProductController@add_coupon' )->name('product.add_coupon');
@@ -39,6 +39,8 @@ Route::post( '/product/update_cart', 'ProductController@update_cart' );
 Route::get( '/product/finish', 'ProductController@finish' )->name('product.finish');
 Route::get( 'product/search', 'ProductController@search' )->name('product.search');
 Route::get( '/product/{id}', 'ProductController@show' )->name('product.show');
+
+Route::get( '/tags/{tag}', 'common\CommonController@tags' )->name('tags.show');
 
 Route::post( '/register_email', 'common\CommonController@register_email' )->name('register_email');
 

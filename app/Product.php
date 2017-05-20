@@ -43,11 +43,13 @@ class Product extends Model {
      * @return array
      */
     public function product_relate( $limit = null ) {
-        $categories     = ( $this->category()->get() );
+        $categories = ( $this->category()->get() );
         $relate_product = [];
         $i              = 0;
+
         foreach ( $categories as $cat ) {
-            $product = $cat->product()->get();
+            $product = $cat->product()->where( 'id', '<>', $this->attributes['id'] )->get();
+
             foreach ( $product as $item ) {
                 if ( $i >= $limit ) {
                     continue;
@@ -58,6 +60,7 @@ class Product extends Model {
 
             }
         }
+
         return $relate_product;
     }
 
@@ -68,10 +71,11 @@ class Product extends Model {
      * @return string
      */
     public function getObjMainImgAttribute() {
-        if($this->attributes['main_img']==0){
+        if ( $this->attributes['main_img'] == 0 ) {
             return false;
         }
-        return $this->image()->find($this->attributes['main_img']);
+
+        return $this->image()->find( $this->attributes['main_img'] );
     }
 
     /**
@@ -166,12 +170,13 @@ class Product extends Model {
     }
 
     public function getPriceSaveAttribute() {
-        if($this->attributes['price'] < $this->attributes['price_sale']){
+        if ( $this->attributes['price'] < $this->attributes['price_sale'] ) {
             return null;
         }
 
         $save = $this->attributes['price'] - $this->attributes['price_sale'];
-        return (round(($save/$this->attributes['price'])*100)).'%';
+
+        return ( round( ( $save / $this->attributes['price'] ) * 100 ) ) . '%';
     }
 
     public function getPlaceSaleAttribute() {
@@ -213,17 +218,18 @@ class Product extends Model {
         return $this->belongsToMany( 'App\Image' )
                     ->withTimestamps();
     }
+
     public function reviews() {
         return $this->hasMany( 'App\Review' );
     }
 
-    public function getTotalStarReviewAttribute(  ) {
+    public function getTotalStarReviewAttribute() {
         $sum = 0;
-        foreach ($this->reviews as $review){
+        foreach ( $this->reviews as $review ) {
             $sum += $review->star;
         }
 
-        return round(($sum / (count($this->reviews)*5))/0.2);
+        return round( ( $sum / ( count( $this->reviews ) * 5 ) ) / 0.2 );
 
     }
 }

@@ -27,18 +27,51 @@ class CategoryController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( Request $request, $id ) {
+        $params = [
+            'show_category' => [ 'id' => $id ],
+        ];
 
-        if ( get_id_or_slug( $id ) == 'id' ) {
-            $category = Category::find( $id );
-        } else {
-            $category = Category::findBySlug( $id );
+        return $this->process_show_cat( $request, $params );
+    }
+
+    public function khuyenmaihot( Request $request ) {
+        $params = [
+            'show_khuyenmai' => true,
+        ];
+
+        return $this->process_show_cat( $request, $params );
+    }
+
+    /**
+     * @param Request $request
+     * @param         $params
+     *
+     * @return $this
+     */
+    private function process_show_cat( Request $request, $params ) {
+
+        if ( isset($params['show_category']) ) {
+            $id = $params['show_category']['id'];
+            if ( get_id_or_slug( $id ) == 'id' ) {
+                $category = Category::find( $id );
+            } else {
+                $category = Category::findBySlug( $id );
+            }
+            if ( ! $category ) {
+                return view( 'public.' . $this->template_name . '.layouts.404' );
+            }
+            $products_obj = $category->product();
         }
 
-        if ( ! $category ) {
-            return view( 'public.' . $this->template_name . '.layouts.404' );
-        }
 
-        $products_obj = $category->product();
+        if ( isset($params['show_khuyenmai']) ) {
+            $category = new Category();
+            $category->name = 'Khuyến mãi hot';
+            $category->keyword = get_setting('default_keyword');
+            $category->descripton = get_setting('default_descripton');
+            $products_obj = new Product();
+
+        }
 
         switch ( $request->get( 'sort' ) ) {
 

@@ -23,7 +23,7 @@
                             <a class="fa fa-tumblr box-icon" href="#" data-toggle="tooltip" title="Tumblr"></a>
                         </li>
                     </ul>
-                    <p>Pretium hendrerit suspendisse quisque eros tempus sodales sagittis volutpat nullam fames inceptos himenaeos platea lorem laoreet iaculis penatibus aptent elit</p>
+                    <p>{{get_setting('footer_content','string')}}</p>
                 </div>
                 <div class="col-md-3">
                     <h4>Sign Up to the Newsletter</h4>

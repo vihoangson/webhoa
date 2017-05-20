@@ -30,9 +30,11 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
+
         $products = Product::where( 'active', 1 )->paginate();
 
         return view( 'public.' . $this->template_name . '.product.index' )->with( [ 'products' => $products ] );
+
     }
 
     /**
@@ -55,6 +57,25 @@ class ProductController extends Controller {
     }
 
     /**
+     * Page search
+     *
+     * @param Request $request
+     *
+     * @return $this
+     */
+    public function tags( Request $request ) {
+        $tags = $request->get( 'tags' );
+        if ( ! empty( $tags ) ) {
+            /** @var Product $products */
+            $products = Product::where('tags', 'like', '%' . $tags . '%' )->get();
+        } else {
+            abort( '404' );
+        }
+
+        return view( 'public.' . $this->template_name . '.product.index' )->with( [ 'products' => $products ] );
+    }
+
+    /**
      * Process add_coupon
      *
      * @param Request $request
@@ -65,12 +86,12 @@ class ProductController extends Controller {
             $dt = Carbon::now();
 
             $coupon = Coupon::where( 'code', $request->coupon_code )
-                            ->where('starts_at','<=',$dt)
-                            ->where('ends_at','>=', $dt)
-                            ->where('active',1)
+                            ->where( 'starts_at', '<=', $dt )
+                            ->where( 'ends_at', '>=', $dt )
+                            ->where( 'active', 1 )
                             ->first();
 
-            if (!is_null($coupon) && $coupon->count() != 0 ) {
+            if ( ! is_null( $coupon ) && $coupon->count() != 0 ) {
                 Session::put( 'coupon_code', $request->coupon_code );
                 Session::put( 'coupon_discount', $coupon->discount );
                 flash( 'Thêm code thành công' )->success();
@@ -121,8 +142,8 @@ class ProductController extends Controller {
             $product = Product::findBySlug( $id );
         }
 
-        if(is_null($product)){
-            abort('404');
+        if ( is_null( $product ) ) {
+            abort( '404' );
         }
 
         $product_relate = $product->product_relate( 6 );
