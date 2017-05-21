@@ -35,6 +35,7 @@
             </div>
         </div>
     </div>
+    <a class="hidden label lable-danger" href="{{route('admin.product.destroy_all')}}">destroy_all</a>
 @endsection
 
 @section('custom_footer')

@@ -36,6 +36,7 @@ Route::get('/group/sort', 'admin\GroupController@sort');
 Route::resource('/group', 'admin\GroupController');
 
 Route::get('/product/template', 'admin\ProductController@template');
+Route::get('/product/destroy_all', 'admin\ProductController@destroy_all')->name('admin.product.destroy_all');
 Route::resource('/product', 'admin\ProductController');
 
 
@@ -46,3 +47,6 @@ Route::post('/import_file', 'admin\ImportFileController@process_import_file')->n
 Route::resource('/coupon', 'admin\CouponController');
 
 Route::resource('/store', 'admin\StoreController');
+
+
+

