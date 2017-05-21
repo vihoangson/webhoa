@@ -32,7 +32,7 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $products = Product::paginate();
+        $products = Product::orderBy('id','desc')->paginate();
 
         return view( 'admin.product.index', compact( 'products' ) );
     }
@@ -55,14 +55,15 @@ class ProductController extends Controller {
      */
     public function store( Requests\CheckProductRequest $request ) {
         $rq = $request->all();
-        $p  = Product::create( $request->all() );
+        $p  = Product::create( $rq );
+
         if ( isset( $rq['category'] ) ) {
             // todo: phần này đã lưu được
             $p->category()->sync( $rq['category'] );
         }
 
         $this->upload_file( $p, $request );
-        $p->active   = 1;
+
         $p->main_img = $p->image->first()->id;
         $p->save();
 

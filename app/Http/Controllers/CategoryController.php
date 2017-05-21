@@ -50,7 +50,7 @@ class CategoryController extends Controller {
      */
     private function process_show_cat( Request $request, $params ) {
 
-        if ( isset($params['show_category']) ) {
+        if ( isset( $params['show_category'] ) ) {
             $id = $params['show_category']['id'];
             if ( get_id_or_slug( $id ) == 'id' ) {
                 $category = Category::find( $id );
@@ -64,12 +64,12 @@ class CategoryController extends Controller {
         }
 
 
-        if ( isset($params['show_khuyenmai']) ) {
-            $category = new Category();
-            $category->name = 'Khuyến mãi hot';
-            $category->keyword = get_setting('default_keyword');
-            $category->descripton = get_setting('default_descripton');
-            $products_obj = new Product();
+        if ( isset( $params['show_khuyenmai'] ) ) {
+            $category             = new Category();
+            $category->name       = 'Khuyến mãi hot';
+            $category->keyword    = get_setting( 'default_keyword' );
+            $category->descripton = get_setting( 'default_descripton' );
+            $products_obj         = Product::where( 'active', 1 );
 
         }
 

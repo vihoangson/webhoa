@@ -2,6 +2,8 @@
 @section('content')
     <h1>Product</h1>
 
+    <div><a href="/admin/product/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create product</a></div>
+
     <table class="footable table table-stripped toggle-arrow-tiny" data-page-size="15">
         <thead>
         <tr>

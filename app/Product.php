@@ -21,6 +21,9 @@ class Product extends Model {
         'summary',
         'main_img',
         'slug',
+        'promotion',
+        'homepage',
+        'brand'
     ];
     use Sluggable, SluggableScopeHelpers;
 
