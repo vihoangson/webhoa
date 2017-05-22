@@ -88,6 +88,8 @@
 
                     @include('public.hotdeal.includes.element.widget.newletter-signup')
 
+                    @include('public.hotdeal.includes.element.widget.promotion-product')
+
                     @include('public.hotdeal.includes.element.widget.recent-posts')
 
                     @include('public.hotdeal.includes.element.widget.popular-tags')

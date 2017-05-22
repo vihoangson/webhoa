@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers;
 
 use App\Post;
+use App\Product;
 use App\Tag;
 use Illuminate\View\View;
 
@@ -28,6 +29,7 @@ class WidgetComposer {
     public function compose( View $view ) {
         $this->widget_recent_posts( $view );
         $this->widget_tags( $view );
+        $this->widget_promotion_product( $view );
 
     }
 
@@ -41,4 +43,8 @@ class WidgetComposer {
         $view->with( 'widget_tags', $tags );
     }
 
+    private function widget_promotion_product( View $view ) {
+        $promotion_product = Product::where( 'promotion', 1 )->limit(3)->get();
+        $view->with( 'widget_promotion_product', $promotion_product );
+    }
 }
