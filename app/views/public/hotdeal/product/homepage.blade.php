@@ -1,4 +1,20 @@
 @extends('public.'.$template_name.'.layouts.homepage')
+@section('banner_top_homepage')
+    <!-- Slider main container -->
+<div style="height:300px">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src = "/assets/themes/remtsoy/img/4_strokes_of_fun_1200x480.jpg"></div>
+            <div class="swiper-slide"><img src = "/assets/themes/remtsoy/img/a_turn_800x600.jpg"></div>
+            <div class="swiper-slide"><img src = "/assets/themes/remtsoy/img/branding__ipad_interactive_design_1200x480.jpg"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<hr>
+@endsection()
+
 @section('feature')
     <div class="row row-wrap">
         @foreach($feature_products as $key => $product) @if ($key > 2) @break; @endif
@@ -95,4 +111,42 @@
         </a>
     </div>
 @endsection
+@section('custom_header')
+    <link rel="stylesheet" href="/bower_components/swiper/dist/css/swiper.min.css">
+    <style>    .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }  </style>
+@endsection
+
+@section('custom_footer')
+    <script src="/bower_components/swiper/dist/js/swiper.jquery.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    </script>
+
+@endsection
+
+
 

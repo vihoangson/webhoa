@@ -45,6 +45,7 @@
     <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/blaze-orange.css" title="blaze-orange" media="all"/>
     <link rel="alternate stylesheet" type="text/css" href="{{config('templates.'.$template_name.'.template_path')}}css/schemes/hot-pink.css" title="hot-pink" media="all"/>
     <!-- END Demo Examples -->
+    @yield('custom_header')
 
 </head>
 
@@ -58,9 +59,10 @@
 //////////////PAGE CONTENT/////////////
 ////////////////////////////////////-->
 
-
     <div class="container">
+
         {{--Sidebar and week feature--}}
+        @yield('banner_top_homepage')
         <div class="row">
             <div class="col-md-3">
                 @include("public.hotdeal.includes.siderbar",['menu'=>$data_category])
@@ -74,6 +76,7 @@
         </div>
 
         <div class="gap gap-small"></div>
+
 
         @yield('content')
 
@@ -132,6 +135,7 @@
     @endif
 
 </div>
+    @yield('custom_footer')
 </body>
 
 </html>
