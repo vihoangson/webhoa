@@ -1,4 +1,37 @@
 <?php
+
+/**
+ * @param $code_order
+ *
+ * @return mixed
+ */
+function encode_code_order($code_order){
+    return $code_order;
+    return str_replace( '=', '', base64_encode( "_" . $code_order ) );
+}
+
+/**
+ * @param $order_code
+ */
+function decode_code_order($order_code){
+    return $order_code;
+    $i = 0;
+    while ( true ) {
+        $string = base64_decode( $order_code );
+        if ( preg_match( '/^_(\d+?)$/', $string, $match ) ) {
+            break;
+        }
+        $order_code = $order_code . "=";
+        $i ++;
+        if ( $i > 5 ) {
+            Log::error( "Không tìm thấy order code" );
+            abort( 404, 'Không tìm thấy order code' );
+            break;
+        }
+    }
+    return $match[1];
+}
+
 /**
  *
  * @param string $hash
