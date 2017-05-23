@@ -26,7 +26,7 @@
                     <p>{{get_setting('footer_content','string')}}</p>
                 </div>
                 <div class="col-md-3">
-                    <h4>Sign Up to the Newsletter</h4>
+                    <h4>Đăng ký nhận email</h4>
                     <div class="box">
 
                         {!! Form::open(['url' => '/register_email', 'method' => 'POST','class'=>'form-horizontal', 'files' => false]) !!}
@@ -34,8 +34,8 @@
                                 <label>E-mail</label>
                                 <input type="email" class="form-control" name = 'email' />
                             </div>
-                            <p class="mb10">Integer aliquam pretium pretium varius quam integer</p>
-                            <input type="submit" class="btn btn-primary" value="Sign Up" />
+                            <p class="mb10">*Chúng tôi không bao giờ spam</p>
+                            <input type="submit" class="btn btn-primary" value="Đăng ký" />
                         {!! Form::close() !!}
                     </div>
                 </div>
@@ -46,39 +46,7 @@
                     <!-- END TWITTER -->
                 </div>
                 <div class="col-md-3">
-                    <h4>Recent News</h4>
-                    <ul class="thumb-list">
-                        <li>
-                            <a href="#">
-                                <img src="/assets/themes/remtsoy/img/urbex_esch_lux_with_laney_and_laaaaag_70x70.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />
-                            </a>
-                            <div class="thumb-list-item-caption">
-                                <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                <h5 class="thumb-list-item-title"><a href="#">Augue maecenas</a></h5>
-                                <p class="thumb-list-item-desciption">Ridiculus aliquam suspendisse vulputate etiam</p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/assets/themes/remtsoy/img/amaze_70x70.jpg" alt="Image Alternative text" title="AMaze" />
-                            </a>
-                            <div class="thumb-list-item-caption">
-                                <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                <h5 class="thumb-list-item-title"><a href="#">Convallis aptent</a></h5>
-                                <p class="thumb-list-item-desciption">Justo aptent senectus quis volutpat</p>
-                            </div>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="/assets/themes/remtsoy/img/the_hidden_power_of_the_heart_70x70.jpg" alt="Image Alternative text" title="The Hidden Power of the Heart" />
-                            </a>
-                            <div class="thumb-list-item-caption">
-                                <p class="thumb-list-item-meta">Jul 18, 2014</p>
-                                <h5 class="thumb-list-item-title"><a href="#">Vel at</a></h5>
-                                <p class="thumb-list-item-desciption">Mus ipsum fames habitant montes</p>
-                            </div>
-                        </li>
-                    </ul>
+                    <img src="/assets/images/dathongbao.png">
                 </div>
             </div>
         </div>

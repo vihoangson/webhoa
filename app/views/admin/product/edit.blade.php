@@ -209,7 +209,7 @@
             var data = new FormData();
             data.append("image_editor", image);
             $.ajax({
-                url: '/admin/up',
+                url: '/admin/up_photo_ajax',
                 cache: false,
                 contentType: false,
                 processData: false,
