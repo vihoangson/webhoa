@@ -153,7 +153,7 @@ class ProductController extends Controller {
         $p->homepage        = isset( $rq['homepage'] ) ? $rq['homepage'] : 0;
         $p->promotion       = isset( $rq['promotion'] ) ? $rq['promotion'] : 0;
         $p->promotion       = isset( $rq['active'] ) ? $rq['active'] : 0;
-        $p->active          = $rq['active'];
+        $p->active          = isset($rq['active'])?$rq['active']:0;
         $p->save();
 
         if ( isset( $rq['category'] ) ) {
