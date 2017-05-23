@@ -21,8 +21,8 @@ class Order extends Model
     }
 
     public function getButtonChangeStatusAttribute(){
-        switch ($this->attributes['status']){
-            case 0:
+        switch ($this->getStringStatusAttribute()){
+            case 'Sẵn sàng giao hàng':
                 $string = Form::open(['route' => 'admin.order.change_status', 'method' => 'post']);
                 $string .= Form::hidden('id',$this->attributes['id']);
                 $string .= Form::hidden('status',1);
@@ -30,7 +30,7 @@ class Order extends Model
                 $string .= Form::close();
                 return $string;
                 break;
-            case 1:
+            case 'Hoàn tất giao hàng':
                 $string = Form::open(['route' => 'admin.order.change_status', 'method' => 'post']);
                 $string .= Form::hidden('id',$this->attributes['id']);
                 $string .= Form::hidden('status',2);
@@ -38,10 +38,10 @@ class Order extends Model
                 $string .= Form::close();
                 return $string;
                 break;
-            case 2:
-                return '    Giao hàng thành công    ';
+            case 'Giao hàng thành công':
+                return 'Giao hàng thành công';
                 break;
-            default:
+            case 'Đã Hủy':
                 return "Đã Hủy";
                 break;
         }
@@ -54,5 +54,20 @@ class Order extends Model
         return '';
     }
 
-
+    public function getStringStatusAttribute(){
+        switch ($this->attributes['status']){
+            case 0:
+                return 'Sẵn sàng giao hàng';
+                break;
+            case 1:
+                return 'Hoàn tất giao hàng';
+                break;
+            case 2:
+                return 'Giao hàng thành công';
+                break;
+            default:
+                return "Đã Hủy";
+                break;
+        }
+    }
 }

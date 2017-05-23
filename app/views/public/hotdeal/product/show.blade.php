@@ -164,18 +164,23 @@
                     </div>
                 </div>
             </div>
-            <div class="gap"></div>
-            <h3>Sản phẩm liên quan</h3>
-            <div class="gap gap-mini"></div>
-            <div class="row row-wrap">
-                @foreach($product_relate as $key => $product)
-                    @if($key % 3 == 0)</div>
-            <div class="row row-wrap">@endif
-                @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
-                @endforeach
-            </div>
 
-            <div class="gap gap-small"></div>
+            @if($product_relate)
+            <div>
+                <div class="gap"></div>
+                <h3>Sản phẩm liên quan</h3>
+                <div class="gap gap-mini"></div>
+                <div class="row row-wrap">
+                    @foreach($product_relate as $key => $product)
+                        @if($key % 3 == 0)</div>
+                <div class="row row-wrap">@endif
+                    @include('public.hotdeal.includes.element.product.item1',['product'=>$product])
+                    @endforeach
+                </div>
+
+                <div class="gap gap-small"></div>
+            </div>
+            @endif
         </div>
         <div class="col-md-3 hidden">
             <aside class="sidebar-right">

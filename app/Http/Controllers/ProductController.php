@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Coupon;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
 use Session;
 use App\Customer;
 use App\Order;
@@ -67,7 +68,7 @@ class ProductController extends Controller {
         $tags = $request->get( 'tags' );
         if ( ! empty( $tags ) ) {
             /** @var Product $products */
-            $products = Product::where('tags', 'like', '%' . $tags . '%' )->get();
+            $products = Product::where( 'tags', 'like', '%' . $tags . '%' )->get();
         } else {
             abort( '404' );
         }
@@ -253,9 +254,16 @@ class ProductController extends Controller {
         $od->save();
         // todo: sent email
 
-        if ( $customer->email ) {
+        Session::put( 'code_order', $od->id );
 
-            $string_content                = 'Đơn hàng đang được xử lý và giao tới cho bạn trong thời gian sớm nhất';
+        if ( $customer->email ) {
+            $link_check_order = route('product.check_order',encode_code_order($od->id));
+            $string_content                = '
+<b>Mã đơn hàng của bạn:</b> '.encode_code_order($od->id).'<br>
+Đơn hàng đang được chúng tôi xử lý và giao tới cho bạn trong thời gian sớm nhất. <hr><br> 
+Bạn có thể kiểm tra trạng thái đơn hàng tại đường link bên dưới: <a href="'.$link_check_order.'">'.$link_check_order.'</a>
+
+';
             $data_email['customer']        = $customer;
             $data_email['content_name']    = $customer->name;
             $data_email['content_email']   = $customer->email;
@@ -263,6 +271,7 @@ class ProductController extends Controller {
             $data_email['content_message'] = $string_content;
 
             $preview_email = env( 'PREVIEW_EMAIL', false );
+
             if ( $preview_email == true ) {
                 return view( 'emails.product.success' )
                     ->with( 'data_email', $data_email )
@@ -293,11 +302,13 @@ class ProductController extends Controller {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
         }
-
+        $code_order = Session::get( 'code_order' );
+        Session::forget( 'code_order' );
         Cart::destroy();
 
         //todo: Xử lý lưu cart
-        return view( 'public.' . $this->template_name . '.product.finish' );
+        return view( 'public.' . $this->template_name . '.product.finish' )
+            ->with( 'code_order', decode_code_order($code_order) );
     }
 
     /**
@@ -349,6 +360,20 @@ class ProductController extends Controller {
         $products = Product::paginate( 9 );
 
         return view( 'public.' . $this->template_name . '.product.deal-moi', compact( 'products' ) );
+    }
+
+    public function check_order( Request $request, $order_code ) {
+        $order_code = decode_code_order($order_code);
+        $order = Order::find( (int) $order_code );
+
+        $string_status = $order->string_status;
+
+        return view( 'public.' . $this->template_name . '.product.check_order' )
+            ->with('string_status' , $string_status)
+            ->with('order_code' , $order_code)
+            ;
+
+
     }
 
 }

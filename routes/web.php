@@ -24,6 +24,7 @@ Route::post( '/product/process_review', 'common\AjaxController@process_review' )
 Route::get( '/khuyen-mai-hot', 'CategoryController@khuyenmaihot' )->name('khuyenmaihot');
 Route::get( '/deal-moi', 'ProductController@deal_moi' )->name('deal-moi');
 
+Route::get( '/product/check_order/{order_code}', 'ProductController@check_order' )->name('product.check_order');
 Route::post( '/product/add_coupon', 'ProductController@add_coupon' )->name('product.add_coupon');
 Route::get( '/remove_coupon_code', 'ProductController@remove_coupon_code' )->name('product.remove_coupon_code');
 

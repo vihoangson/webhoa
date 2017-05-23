@@ -316,7 +316,7 @@
 
 
 
-                                        <div><b></b> {{$data_email['content_subject']}}</div>
+                                        <div><h2>{{$data_email['content_subject']}}</h2></div>
                                         <div><b></b> {!! $data_email['content_message'] !!}</div>
                                         <hr>
                                         <div><h3>Thông tin khách hàng</h3></div>
