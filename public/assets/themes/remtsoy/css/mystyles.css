@@ -37,3 +37,24 @@
 .col-md-3 {
     /* height: 501px; */
 }
+
+@media (max-width: 768px) {
+
+}
+@media (min-width: 768px) and (max-width: 992px) {
+
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    header.product-header {
+        max-height: 294px;
+        display: block;
+        overflow: hidden;
+    }
+}
+@media (min-width: 1200px) {
+    header.product-header {
+        max-height: 359px;
+        display: block;
+        overflow: hidden;
+    }
+}
