@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Coupon;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Session;
 use App\Customer;
@@ -242,7 +243,18 @@ class ProductController extends Controller {
         if ( Cart::count() == 0 ) {
             return redirect( '/' );
         }
-        $rq                  = $request->all();
+        $rq = $request->all();
+
+        if ( Auth::check() ) {
+            $rq['name']    = Auth::user()->username;
+            $rq['email']   = Auth::user()->email;
+            $rq['tel']     = Auth::user()->user_info->phone;
+            $rq['address'] = Auth::user()->user_info->address;
+            $rq['user_id'] = Auth::user()->id;
+        } else {
+            $rq['user_id'] = 0;
+        }
+
         $customer            = Customer::create( $rq );
         $od                  = new Order;
         $od->payment_method  = $request->payment_method;
@@ -257,11 +269,11 @@ class ProductController extends Controller {
         Session::put( 'code_order', $od->id );
 
         if ( $customer->email ) {
-            $link_check_order = route('product.check_order',encode_code_order($od->id));
+            $link_check_order              = route( 'product.check_order', encode_code_order( $od->id ) );
             $string_content                = '
-<b>Mã đơn hàng của bạn:</b> '.encode_code_order($od->id).'<br>
+<b>Mã đơn hàng của bạn:</b> ' . encode_code_order( $od->id ) . '<br>
 Đơn hàng đang được chúng tôi xử lý và giao tới cho bạn trong thời gian sớm nhất. <hr><br> 
-Bạn có thể kiểm tra trạng thái đơn hàng tại đường link bên dưới: <a href="'.$link_check_order.'">'.$link_check_order.'</a>
+Bạn có thể kiểm tra trạng thái đơn hàng tại đường link bên dưới: <a href="' . $link_check_order . '">' . $link_check_order . '</a>
 
 ';
             $data_email['customer']        = $customer;
@@ -308,7 +320,7 @@ Bạn có thể kiểm tra trạng thái đơn hàng tại đường link bên d
 
         //todo: Xử lý lưu cart
         return view( 'public.' . $this->template_name . '.product.finish' )
-            ->with( 'code_order', decode_code_order($code_order) );
+            ->with( 'code_order', decode_code_order( $code_order ) );
     }
 
     /**
@@ -363,15 +375,14 @@ Bạn có thể kiểm tra trạng thái đơn hàng tại đường link bên d
     }
 
     public function check_order( Request $request, $order_code ) {
-        $order_code = decode_code_order($order_code);
-        $order = Order::find( (int) $order_code );
+        $order_code = decode_code_order( $order_code );
+        $order      = Order::find( (int) $order_code );
 
         $string_status = $order->string_status;
 
         return view( 'public.' . $this->template_name . '.product.check_order' )
-            ->with('string_status' , $string_status)
-            ->with('order_code' , $order_code)
-            ;
+            ->with( 'string_status', $string_status )
+            ->with( 'order_code', $order_code );
 
 
     }

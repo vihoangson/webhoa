@@ -11,7 +11,12 @@
 |
 */
 
+
+
 Route::get( '/', [ 'uses' => 'HomeController@index', 'as' => 'home' ] );
+
+Route::get( '/logout', 'UserController@logout' )->name('logout');
+
 Route::get( '/contact', 'HomeController@contact' )->name('contact');
 Route::post( '/contact', 'HomeController@process_contact' )->name('contact.process');
 
@@ -46,6 +51,9 @@ Route::get( '/tags/{tag}', 'common\CommonController@tags' )->name('tags.show');
 Route::post( '/register_email', 'common\CommonController@register_email' )->name('register_email');
 
 
+
+Route::post( '/user/login', 'UserController@login' )->name('user.login');
+Route::get( '/user/register', 'UserController@register' )->name('user.register');
 
 Route::get( 'post/{id}', 'PostController@show' );
 //Route::resource('post', 'PostController');

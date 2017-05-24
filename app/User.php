@@ -4,15 +4,17 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable {
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password','role_id'
+        'username',
+        'email',
+        'password',
+        'role_id',
     ];
 
     /**
@@ -21,17 +23,20 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
-    public function role()
-    {
-        return $this->belongsTo('App\Role', 'foreign_key', 'role_id');
-
+    public function role() {
+        return $this->belongsTo( 'App\Role', 'foreign_key', 'role_id' );
     }
 
-    public function store(){
-        return $this->belongsToMany('App\Store')
-             ->withTimestamps();
+    public function user_info() {
+        return $this->hasOne( 'App\UserInfo', 'user_id' );
+    }
+
+    public function store() {
+        return $this->belongsToMany( 'App\Store' )
+                    ->withTimestamps();
     }
 }
