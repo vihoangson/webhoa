@@ -46,24 +46,24 @@
 }
 @media (min-width: 992px) and (max-width: 1200px) {
     .col-md-3     header.product-header {
-        max-height: 213px;
+        height: 213px;
         display: block;
         overflow: hidden;
     }
     .col-md-4     header.product-header {
-        max-height: 293px;
+        height: 293px;
         display: block;
         overflow: hidden;
     }
 }
 @media (min-width: 1200px) {
     .col-md-3     header.product-header {
-        max-height: 264px;
+        height: 264px;
         display: block;
         overflow: hidden;
     }
     .col-md-4     header.product-header {
-        max-height: 360px;
+        height: 360px;
         display: block;
         overflow: hidden;
     }
