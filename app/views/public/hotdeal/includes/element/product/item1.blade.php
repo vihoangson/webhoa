@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-4 item1">
     <div class="product-thumb">
         <header class="product-header">
             <a href="/product/{{$product->slug}}">

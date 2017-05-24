@@ -1,4 +1,4 @@
-<div class="">
+<div class="item-production">
     <div class="product-thumb">
         <header class="product-header">
             <a href="/product/{{$product->slug}}">
