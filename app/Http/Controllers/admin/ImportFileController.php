@@ -12,17 +12,21 @@ use App\Http\Controllers\Controller;
 use App\Setting;
 use Auth;
 use Maatwebsite\Excel\Collections\RowCollection;
+use Maatwebsite\Excel\Facades\Excel;
 use Route;
 
 
 class ImportFileController extends Controller {
 
+    private $name_sheet_product = 'product';
+    private $name_sheet_category = 'category';
 
     public function import_file() {
 
         return view( 'admin.product.import' );
 
     }
+
 
     public function process_import_file( Request $request ) {
 
@@ -36,15 +40,15 @@ class ImportFileController extends Controller {
         }
 
         /** @var RowCollection $m */
-        $data_file = \Excel::load( $rs->getRealPath() )->get();
+        $data_file = Excel::load( $rs->getRealPath() )->get();
 
         /** @var RowCollection $sheet */
         foreach ( $data_file as $sheet ) {
             switch ( $sheet->getTitle() ) {
-                case "product":
+                case $this->name_sheet_product:
                     $this->_import_product( $sheet );
                     break;
-                case "category":
+                case $this->name_sheet_category:
                     $this->_import_category( $sheet );
                     break;
             }
@@ -76,7 +80,7 @@ class ImportFileController extends Controller {
             if ( trim( $n['content'] ) != "" ) {
                 if ( is_base64( $n['content'] ) ) {
                     $product->content = base64_decode( $n['content'] );
-                }else{
+                } else {
                     $product->content = $n['content'];
                 }
             }
@@ -130,5 +134,38 @@ class ImportFileController extends Controller {
             $category->name = $n['name'];
             $category->save();
         }
+    }
+
+
+    public function process_export_file( Request $request ) {
+        $products = Product::all();
+        foreach ( $products as $product ) {
+            $data[] = [
+                'slug'            => $product->slug,
+                'name'            => $product->title,
+                'main_img'        => $product->obj_main_img->url,
+                'price'           => $product->price,
+                'price_sale'      => $product->price_sale,
+                'date_begin_sale' => $product->date_begin_sale,
+                'date_end_sale'   => $product->date_end_sale,
+                'brand'           => $product->brand,
+                'content'         => $product->content_encode,
+                'category'        => $product->categories_as_string,
+                'active'          => ( $product->active == 0 ) ? 0 : $product->active,
+                'promotion'       => ( $product->promotion == 0 ) ? 0 : $product->promotion,
+                'homepage'        => ( $product->homepage == 0 ) ? 0 : $product->homepage,
+            ];
+        }
+
+        Excel::create( 'Filename' . time(), function ( $excel ) use ( $data ) {
+            $excel->sheet( $this->name_sheet_product, function ( $sheet ) use ( $data ) {
+                $sheet->fromArray( $data, null, 'A1', true );
+            } );
+            $excel->sheet( $this->name_sheet_category, function ( $sheet ) use ( $data ) {
+                //$sheet->fromArray( $data, null, 'A1', true );
+            } );
+        } )
+            //->export('xls');
+             ->download( 'xls' );
     }
 }

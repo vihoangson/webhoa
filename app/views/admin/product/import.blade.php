@@ -9,6 +9,7 @@
             {!! Form::file('file', ['class' => 'form-control']) !!}
             <hr>
             {!! Form::submit('Upload file', ['class' => 'btn btn-primary btn-block']) !!}
+            <a href="{{route('admin.export_file')}}" class="btn btn-info btn-block">Export from data </a>
             <a href="/file_import_sample/list.sample.xls" class="btn btn-success btn-block">Download file sample excel </a>
             {!! Form::close() !!}
         </div>
@@ -35,6 +36,7 @@
             </div>
         </div>
     </div>
+
     <a class="hidden label lable-danger" href="{{route('admin.product.destroy_all')}}">destroy_all</a>
 @endsection
 

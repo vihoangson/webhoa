@@ -41,6 +41,7 @@ Route::resource('/product', 'admin\ProductController');
 
 
 
+Route::get('/export_file', 'admin\ImportFileController@process_export_file')->name('admin.export_file');
 Route::get('/import_file', 'admin\ImportFileController@import_file')->name('admin.import');
 Route::post('/import_file', 'admin\ImportFileController@process_import_file')->name('admin.import.process');
 

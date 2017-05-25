@@ -23,7 +23,7 @@ class Product extends Model {
         'slug',
         'promotion',
         'homepage',
-        'brand'
+        'brand',
     ];
     use Sluggable, SluggableScopeHelpers;
 
@@ -46,7 +46,7 @@ class Product extends Model {
      * @return array
      */
     public function product_relate( $limit = null ) {
-        $categories = ( $this->category()->get() );
+        $categories     = ( $this->category()->get() );
         $relate_product = [];
         $i              = 0;
 
@@ -70,7 +70,7 @@ class Product extends Model {
     /**
      * Add custom attributes to Eloquent models
      *
-     * price_formated
+     * obj_main_img
      * @return string
      */
     public function getObjMainImgAttribute() {
@@ -226,6 +226,11 @@ class Product extends Model {
         return $this->hasMany( 'App\Review' );
     }
 
+    /**
+     * total_star_review
+     * @example $product->total_star_review
+     * @return float
+     */
     public function getTotalStarReviewAttribute() {
         $sum = 0;
         foreach ( $this->reviews as $review ) {
@@ -234,5 +239,30 @@ class Product extends Model {
 
         return round( ( $sum / ( count( $this->reviews ) * 5 ) ) / 0.2 );
 
+    }
+
+    /**
+     * > categories_as_string
+     * @example $product->categories_as_string
+     *
+     * @return string
+     */
+    public function getCategoriesAsStringAttribute() {
+        $category_slug = $this->category()->select( 'slug' )->get()->toArray();
+        foreach ( $category_slug as $cat ) {
+            $array_cat [] = $cat['slug'];
+        }
+        $string_cat = ( implode( ',', $array_cat ) );
+
+        return $string_cat;
+    }
+    /**
+     * > categories_as_string
+     * @example $product->categories_as_string
+     *
+     * @return string
+     */
+    public function getContentEncodeAttribute() {
+        return base64_encode($this->content);
     }
 }
