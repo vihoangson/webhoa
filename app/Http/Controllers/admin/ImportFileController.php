@@ -59,33 +59,48 @@ class ImportFileController extends Controller {
 
     private function _import_product( $sheet ) {
         foreach ( $sheet as $n ) {
+
+            // Don't allow null slug
             if ( $n['slug'] == '' ) {
                 continue;
             }
 
             if ( ! ( $product = Product::findBySlug( $n['slug'] ) ) ) {
                 $product       = new Product();
-                $product->slug = $n['slug'];
             }
-            $product->date_begin_sale = $n['date_begin_sale'];
-            $product->date_end_sale   = $n['date_end_sale'];
-            $product->price           = $n['price'];
-            $product->price_sale      = $n['price_sale'];
-            $product->title           = $n['name'];
-            $product->active          = $n['active'];
-            $product->brand           = $n['brand'];
-            $product->homepage        = $n['homepage'];
-            $product->promotion       = $n['promotion'];
 
-            if ( trim( $n['content'] ) != "" ) {
-                if ( is_base64( $n['content'] ) ) {
-                    $product->content = base64_decode( $n['content'] );
+            //<editor-fold desc="col in product">
+            $column_name = [
+                'slug',
+                'date_begin_sale',
+                'date_end_sale',
+                'price',
+                'price_sale',
+                'name',
+                'active',
+                'brand',
+                'homepage',
+                'promotion',
+                'content',
+            ];
+            foreach ($column_name as $col) {
+                if ($col == 'content' && trim($n[$col]) != "") {
+                    if (is_base64($n[$col])) {
+                        $product->$col = base64_decode($n[$col]);
+                    } else {
+                        $product->$col = $n['content'];
+                    }
+                } elseif ($col == 'name') {
+                    $product->title = $n[$col];
                 } else {
-                    $product->content = $n['content'];
+                    $product->$col = $n[$col];
                 }
+
             }
             $product->save();
+            //</editor-fold>
 
+            //<editor-fold desc="col category">
             if ( ! empty( $n['category'] ) ) {
                 $array_category    = explode( ',', $n['category'] );
                 $array_id_category = [];
@@ -100,7 +115,9 @@ class ImportFileController extends Controller {
 
                 $product->category()->sync( $array_id_category );
             }
+            //</editor-fold>
 
+            //<editor-fold desc="main_img">
             $n['main_img'] = preg_replace( '/(\\\)/', "/", $n['main_img'] );
             $n['main_img'] = preg_replace( '/^(\/)/', "", $n['main_img'] );
             // Kiểm tra có main img không
@@ -118,9 +135,15 @@ class ImportFileController extends Controller {
                 $product->main_img = $image->id;
                 $product->save();
             }
+            //</editor-fold>
+
+
         }
     }
 
+    /**
+     * @param $sheet
+     */
     private function _import_category( $sheet ) {
         foreach ( $sheet as $n ) {
             if ( $n['slug'] == '' ) {
@@ -137,6 +160,11 @@ class ImportFileController extends Controller {
     }
 
 
+    /**
+     * Export db to file excel
+     *
+     * @param Request $request
+     */
     public function process_export_file( Request $request ) {
         $products = Product::all();
         foreach ( $products as $product ) {
