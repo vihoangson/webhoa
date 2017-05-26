@@ -249,13 +249,18 @@ class Product extends Model {
      */
     public function getCategoriesAsStringAttribute() {
         $category_slug = $this->category()->select( 'slug' )->get()->toArray();
+        $array_cat     = [];
         foreach ( $category_slug as $cat ) {
             $array_cat [] = $cat['slug'];
         }
-        $string_cat = ( implode( ',', $array_cat ) );
+        $string_cat = '';
+        if ( $array_cat ) {
+            $string_cat = ( implode( ',', $array_cat ) );
+        }
 
         return $string_cat;
     }
+
     /**
      * > categories_as_string
      * @example $product->categories_as_string
@@ -263,6 +268,6 @@ class Product extends Model {
      * @return string
      */
     public function getContentEncodeAttribute() {
-        return base64_encode($this->content);
+        return base64_encode( $this->content );
     }
 }

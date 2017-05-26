@@ -11,8 +11,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Setting;
 use Auth;
+use Illuminate\Support\Facades\Redirect;
 use Maatwebsite\Excel\Collections\RowCollection;
 use Maatwebsite\Excel\Facades\Excel;
+use Mockery\Exception;
 use Route;
 
 
@@ -27,10 +29,13 @@ class ImportFileController extends Controller {
 
     }
 
-
     public function process_import_file( Request $request ) {
 
         $file = $request->file( "file" );
+        if($file==null){
+            flash('Không có file')->error();
+            return Redirect::back();
+        }
 
         $exten     = ( $file->getClientOriginalExtension() );
         $file_name = "file_" . time() . "." . $exten;
@@ -53,7 +58,7 @@ class ImportFileController extends Controller {
                     break;
             }
         }
-
+        flash('Success')->success();
         return redirect( route( 'admin.import' ) );
     }
 
@@ -62,6 +67,7 @@ class ImportFileController extends Controller {
             if ( $n['slug'] == '' ) {
                 continue;
             }
+            $this->check_data_import( $n );
 
             if ( ! ( $product = Product::findBySlug( $n['slug'] ) ) ) {
                 $product       = new Product();
@@ -81,7 +87,7 @@ class ImportFileController extends Controller {
                 if ( is_base64( $n['content'] ) ) {
                     $product->content = base64_decode( $n['content'] );
                 } else {
-                    $product->content = $n['content'];
+                    flash( "Nội dung ô content cả slug " . $product->slug . ' không đúng base64 vui lòng xem hướng dẫn bến dưới' );
                 }
             }
             $product->save();
@@ -92,13 +98,18 @@ class ImportFileController extends Controller {
                 foreach ( $array_category as $value ) {
                     $value = trim( $value );
                     if ( (int) $value == 0 ) {
-                        $array_id_category[] = Category::findBySlug( $value )->id;
+                        if ( Category::findBySlug( $value ) != null ) {
+                            $array_id_category[] = Category::findBySlug( $value )->id;
+                        } else {
+                            flash( 'Không có nhóm sản phẩm <b>' . $value . '</b> tại dòng slug: <b>'.$product->slug.'</b>' );
+                        }
                     } else {
                         $array_id_category[] = $value;
                     }
                 }
-
-                $product->category()->sync( $array_id_category );
+                if($array_id_category){
+                    $product->category()->sync( $array_id_category );
+                }
             }
 
             $n['main_img'] = preg_replace( '/(\\\)/', "/", $n['main_img'] );
@@ -136,7 +147,6 @@ class ImportFileController extends Controller {
         }
     }
 
-
     public function process_export_file( Request $request ) {
         $products = Product::all();
         foreach ( $products as $product ) {
@@ -167,5 +177,17 @@ class ImportFileController extends Controller {
         } )
             //->export('xls');
              ->download( 'xls' );
+    }
+
+    private function check_data_import( $n = [] ) {
+        if ( $n == [] ) {
+            flash( "Nội dung không đúng" );
+
+            return false;
+        }
+
+        if ( trim( $n['slug'] ) == '' ) {
+            flash( "Slug không được bỏ trống" );
+        }
     }
 }

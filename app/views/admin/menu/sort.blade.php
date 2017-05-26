@@ -27,7 +27,7 @@
 @endsection
 
 @section('custom_footer')
-    <script src='/admin/bower_components/jquery-nestable/jquery.nestable.js'></script>
+    <script src='/bower_components/jquery-nestable/jquery.nestable.js'></script>
     <script>
         $('.dd').nestable({maxDepth: 2});
         $('.dd').on('change', function () {
