@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 
 class MenuController extends Controller {
     /**
@@ -25,11 +26,21 @@ class MenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $menus = Menu::where( 'parent_id', 0 )->orderBy( 'group_name', 'sequence' )->get();
+        $group_name = Menu::groupBy('group_name')->get();
 
-        return view( 'admin.menu.index' )->with( compact( 'menus' ) );
+        return view( 'admin.menu.index' )->with( compact( 'group_name' ) );
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function list_menu(Request $request) {
 
+        $menus = Menu::where("group_name",$request->menu)->where( 'parent_id', 0 )->orderBy( 'group_name', 'sequence' )->get();
+
+        return view( 'admin.menu.list' )->with( compact( 'menus' ) );
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -113,7 +124,7 @@ class MenuController extends Controller {
         $menu = Menu::find( $id );
         $menu->delete();
 
-        return redirect( '/admin/menu' );
+        return Redirect::back();
     }
 
     public function sort() {

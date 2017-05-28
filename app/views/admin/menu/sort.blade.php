@@ -32,7 +32,7 @@
         $('.dd').nestable({maxDepth: 2});
         $('.dd').on('change', function () {
             var json_sort = JSON.stringify($('.dd').nestable('serialize'))
-            $.post('/admin/update_ajax', {'process': 'sort_menu', 'db': json_sort}, function (data) {
+            $.post('{{route('ajax.update')}}', {'process': 'sort_menu', 'db': json_sort}, function (data) {
                 console.log(data);
             });
         });

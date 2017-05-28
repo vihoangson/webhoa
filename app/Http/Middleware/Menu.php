@@ -26,16 +26,28 @@ class Menu {
 
     private function make_menu( $menu_name ) {
         \Menu::make( $menu_name, function ( $menu ) {
-            $db = \App\Menu::where( 'group_name', $menu->name )->where( 'parent_id', 0 )->get();
+
+            // Lấy dữ liệu từ DB
+            $db = \App\Menu::orderBy( 'sequence' )->where( 'group_name', $menu->name )->where( 'parent_id', 0 )->get();
+
             foreach ( $db as $v ) {
+
+                // Nếu menu có menu con
                 if ( $v->children() ) {
+
+                    // Lấy dữ liệu menu con
                     $children = $v->children()->get();
-                    $mm       = $menu->add( $v->name, $v->link );
+
+                    // Tạo object menu chính
+                    $mm       = $menu->add( $v->name, $v->link )->data( 'sequence', $v->sequence );
                     foreach ( $children as $sub_menu ) {
-                        $mm->add( $sub_menu->name, $sub_menu->link );
+                        // Tạo object menu con
+                        $mm->add( $sub_menu->name, $sub_menu->link )->data( 'sequence', $sub_menu->sequence );
                     }
                 } else {
-                    $menu->add( $v->name, $v->link );
+
+                    // Tạo object menu chính
+                    $menu->add( $v->name, $v->link )->data( 'sequence', $v->name );
                 }
             }
         } );

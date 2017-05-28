@@ -38,7 +38,6 @@ class MenuComposer {
 
     private function set_menu_main( View $view ) {
         $data_menu_main = $this->get_data_menu( 'MainMenu' );
-
         // Set menu for admin
         if ( ! \Auth::guard()->guest() ) {
             $data_menu_main['Admin CP'] = '/admin';
@@ -55,6 +54,7 @@ class MenuComposer {
     }
 
     /**
+     *
      * @param $group_name
      *
      * @return array
@@ -65,7 +65,7 @@ class MenuComposer {
             return [];
         }
 
-        $menus = \Menu::get( $group_name )->roots();
+        $menus = \Menu::get( $group_name )->sortBy('sequence')->roots();
 
         $data_menu = [];
         foreach ( $menus as $menu ) {

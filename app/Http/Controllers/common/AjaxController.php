@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\common;
 
 use App\Image;
+use App\Menu;
 use App\Review;
 use Session;
 use App\Customer;
@@ -135,7 +136,7 @@ class AjaxController extends Controller {
                 $i  = 0;
                 foreach ( $db as $menu ) {
                     echo $menu->id;
-                    $parent            = menu::find( $menu->id );
+                    $parent            = Menu::find( $menu->id );
                     $parent->parent_id = 0;
                     $parent->sequence  = $i;
                     $i ++;

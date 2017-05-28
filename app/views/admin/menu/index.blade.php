@@ -34,47 +34,12 @@
         </tr>
         </thead>
         <tbody>
-        @if(isset($menus))
-            @foreach($menus as $menu)
-                <tr  class="parent-level">
-                    <td>{{$menu->name}}</td>
-                    <td>{{$menu->link}}</td>
-                    <td>{{$menu->group_name}}</td>
-                    <td class="text-right">
-                        <div class="btn-menu">
-                            <a href="/admin/menu/{{$menu->id}}/edit" class="btn-white btn btn-xs">Edit</a>
-                        </div>
-                        {!! Form::open(['url' => '/admin/menu/'.$menu->id, 'method' => 'delete','class'=>'confirm-action']) !!}
-                        <button type="submit" name="id" value="{{$menu->id}}" href="/admin/menu/{{$menu->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
-                        {!! Form::close() !!}
-                    </td>
-                </tr>
-                @if($menu->children()->get())
-
-                    @foreach($menu->children()->get() as $menu_1)
-                        <tr class="child-level">
-                            <td>{{$menu_1->name}}</td>
-                            <td>{{$menu_1->link}}</td>
-                            <td>{{$menu_1->group_name}}</td>
-                            <td class="text-right">
-                                <div class="btn-menu">
-                                    <a href="/admin/menu/{{$menu_1->id}}/edit" class="btn-white btn btn-xs">Edit</a>
-                                </div>
-                                {!! Form::open(['url' => '/admin/menu/'.$menu_1->id, 'method' => 'delete','class'=>'confirm-action']) !!}
-                                <button type="submit" name="id" value="{{$menu_1->id}}" href="/admin/menu/{{$menu_1->id}}/destroy" class="btn-white btn btn-xs">Delete</button>
-                                {!! Form::close() !!}
-                            </td>
-                        </tr>
-                    @endforeach
-
-                @endif
-
-            @endforeach
-
-
-        @endif
+        @foreach($group_name as $group)
+            <p><a href="{{route('admin.menu.list',['menu'=>$group->group_name])}}">{{$group->group_name}}</a></p>
+        @endforeach
         </tbody>
+
     </table>
-    <div><a href="/admin/menu/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create menu</a> <a href="/admin/menu/sort" class="btn btn-primary"> Sort</a></div>
+    <div><a href="/admin/menu/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create menu</a> <a href="{{route('admin.menu.sort',['menu'=>$group->group_name])}}" class="btn btn-primary"> Sort</a></div>
 
 @endsection

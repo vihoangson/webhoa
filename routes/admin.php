@@ -18,8 +18,8 @@ Route::post('/update_ajax', 'common\AjaxController@update_ajax')->name('ajax.upd
 
 Route::get('/logout', 'admin\DashboardController@logout');
 
-Route::get('/menu/sort', 'admin\MenuController@sort');
-
+Route::get('/menu/sort', 'admin\MenuController@sort')->name('admin.menu.sort');
+Route::get('/menu/list', 'admin\MenuController@list_menu')->name('admin.menu.list');
 Route::resource('/menu', 'admin\MenuController');
 
 Route::resource('/post', 'admin\PostController');
