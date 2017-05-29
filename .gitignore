@@ -8,3 +8,5 @@ public/uploads/*
 public/uploads*
 .idea/*
 composer.lock
+public/bower_components/*
+public/bower_components/
