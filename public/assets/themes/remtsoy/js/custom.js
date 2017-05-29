@@ -7,9 +7,9 @@ $('[data-countdown]').each(function () {
 });
 
 // Global vars
-var TWITTER_USERNAME = 'envato',
-    GOOGLE_MAP_LAT = 40.7564971,
-    GOOGLE_MAP_LNG = -73.9743277;
+// var TWITTER_USERNAME = 'envato',
+//     GOOGLE_MAP_LAT = 40.7564971,
+//     GOOGLE_MAP_LNG = -73.9743277;
 
 
 // Countdown
@@ -153,16 +153,16 @@ $('[data-toggle="tooltip"]').tooltip();
 
 
 // Twitter
-$("#twitter").tweet({
-    username: TWITTER_USERNAME,
-    count: 3
-});
+// $("#twitter").tweet({
+//     username: TWITTER_USERNAME,
+//     count: 3
+// });
 
-$("#twitter-ticker").tweet({
-    username: TWITTER_USERNAME,
-    page: 1,
-    count: 20
-});
+// $("#twitter-ticker").tweet({
+//     username: TWITTER_USERNAME,
+//     page: 1,
+//     count: 20
+// });
 
 
 // Checkboxes and radio

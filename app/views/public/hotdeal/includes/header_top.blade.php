@@ -4,7 +4,7 @@
 <div class="main_header">
     <div class="top-main-area text-center">
         <div class="container">
-            <a href="/assets/themes/remtsoy/index.html" class="logo mt5">
+            <a href="{{url('/')}}" class="logo mt5">
                 <img src="/assets/themes/remtsoy/img/logo-small-dark.png" alt="Image Alternative text"
                      title="Image Title"/>
             </a>

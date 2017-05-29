@@ -598,7 +598,7 @@
                     </div>
 
 
-                    <div class="sidebar-box">
+                    <div class="sidebar-box hidden">
                         <h5>Recent Posts</h5>
                         <ul class="thumb-list">
                             <li>
