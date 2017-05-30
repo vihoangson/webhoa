@@ -75,6 +75,6 @@
         @endif
         </tbody>
     </table>
-    <div><a href="/admin/menu/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create menu</a> <a href="{{route('admin.menu.sort',['menu'=>$menu_1->group_name])}}" class="btn btn-primary"> Sort</a></div>
+    <div><a href="/admin/menu/create" class="btn btn-primary"><i class="glyphicon-plus"></i> Create menu</a> <a href="{{route('admin.menu.sort' )}}" class="btn btn-primary"> Sort</a></div>
 
 @endsection
