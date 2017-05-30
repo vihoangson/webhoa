@@ -30,10 +30,10 @@ class HomeController extends Controller {
 
         if ( \App::environment( 'production' ) ) {
             $products         = Cache::remember( 'users', $minutes, function () {
-                return Product::where( 'active', 1 )->paginate();
+                return Product::where( 'active', 1 )->where( 'homepage', 1 )->get();
             } );
             $feature_products = Cache::remember( 'users', $minutes, function () {
-                return Product::where( 'active', 1 )->limit( 3 )->paginate();
+                return Product::where( 'active', 1 )->where( 'promotion', 1 )->limit( 3 )->paginate();
             } );
         } else {
             $products         = Product::where( 'active', 1 )->where( 'homepage', 1 )->get();
