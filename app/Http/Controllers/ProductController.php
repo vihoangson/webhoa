@@ -136,9 +136,9 @@ class ProductController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show( $id ) {
-
         if ( get_id_or_slug( $id ) == 'id' ) {
             $product = Product::find( $id );
+            return Redirect::to(route("product.show",$product->slug));
         } else {
             $product = Product::findBySlug( $id );
         }

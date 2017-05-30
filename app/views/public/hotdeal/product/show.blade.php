@@ -58,10 +58,6 @@
                                 <img src="/{{$img->url}}" alt="Image Alternative text" title="Gamer Chick"/>
                             @endif
                         @endforeach
-                        {{--<img src="img/gamer_chick_800x600.jpg" alt="Image Alternative text" title="Gamer Chick" />--}}
-                        {{--<img src="img/amaze_800x600.jpg" alt="Image Alternative text" title="AMaze" />--}}
-                        {{--<img src="img/urbex_esch_lux_with_laney_and_laaaaag_800x600.jpg" alt="Image Alternative text" title="Urbex Esch/Lux with Laney and Laaaaag" />--}}
-                        {{--<img src="img/food_is_pride_800x600.jpg" alt="Image Alternative text" title="Food is Pride" />--}}
                     </div>
                 </div>
                 <div class="col-md-7">
@@ -80,8 +76,7 @@
                             <small><a href="#" class="text-muted">Đã có {{count($product->reviews)}} đánh giá</a>
                             </small>
                         @endif
-
-                        <h3>{{$product->title}}</h3>
+                        <h3>{{$product->title}} @if ( ! \Auth::guard()->guest() ) (<a href="{{route('admin.product.edit',$product->id)}}">Sửa</a>)@endif </h3>
                         <p class=" hidden product-info-price">{{$product->price_formated}}</p>
                         @if(!$product->price_sale)
                             <span class="price-head">@lang('common.Price') :</span>
