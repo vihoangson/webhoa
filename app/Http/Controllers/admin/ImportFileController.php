@@ -94,12 +94,12 @@ class ImportFileController extends Controller {
                     if (is_base64($n[$col])) {
                         $product->$col = base64_decode($n[$col]);
                     } else {
-                        $product->$col = $n['content'];
+                        flash( "Nội dung ô content của slug " . $product->slug . ' không đúng base64 vui lòng xem hướng dẫn bến dưới' );
                     }
                 } elseif ($col == 'name') {
                     $product->title = $n[$col];
                 } else {
-                    flash( "Nội dung ô content cả slug " . $product->slug . ' không đúng base64 vui lòng xem hướng dẫn bến dưới' );
+                    $product->$col = $n[$col];
                 }
 
             }
