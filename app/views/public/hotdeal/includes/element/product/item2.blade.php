@@ -7,7 +7,7 @@
             </a>
         </header>
         <div class="product-inner">
-            <a href="/product/{{$product->slug}}>
+            <a href="/product/{{$product->slug}}">
             <h5 class="product-title">{{$product->title}}</h5>
             </a>
             <p class="product-desciption"></p>
