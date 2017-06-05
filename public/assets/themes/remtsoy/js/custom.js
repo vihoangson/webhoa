@@ -374,9 +374,9 @@ $(".add_wishlist").click(function () {
         }
         if (status == 'error' || data.status == 'error') {
             $('#popupmodal .modal-title').html('Notice');
-            if(data.message){
+            if (data.message) {
                 $('#popupmodal .modal-body').html(data.message);
-            }else{
+            } else {
                 $('#popupmodal .modal-body').html('Gặp sự cố');
             }
             $('#popupmodal').modal();
@@ -389,50 +389,64 @@ $(".add_wishlist").click(function () {
 });
 
 
-if($("#myTab .active").length==0){
+if ($("#myTab .active").length == 0) {
     $("#myTab li:first a").trigger("click");
 }
 
-$(window).bind('load', function() {
-    $('img').each(function() {
-        if((typeof this.naturalWidth != "undefined" &&
-            this.naturalWidth == 0 ) 
-            || this.readyState == 'uninitialized' ) {
+$(window).bind('load', function () {
+    $('img').each(function () {
+        if ((typeof this.naturalWidth != "undefined" &&
+            this.naturalWidth == 0 )
+            || this.readyState == 'uninitialized') {
             $(this).attr('src', 'http://placehold.it/200x200');
         }
     });
 });
 
-$("#remove_coupon_code").click(function(){
-    
+$("#remove_coupon_code").click(function () {
+
     $("#form-coupon input").val('');
     $("#remove_coupon_code").remove();
-    $.get('/remove_coupon_code',function(data){
+    $.get('/remove_coupon_code', function (data) {
 
-        if(data.status == 'success'){
-            location.reload();    
-        }else{
+        if (data.status == 'success') {
+            location.reload();
+        } else {
             alert(data.message);
-        }       
+        }
     });
-    
+
 });
-$(".auto-fill").click(function(){
+$(".auto-fill").click(function () {
     $("input[type='text']").val("sample text");
-    $("input[type='tel']").val("01218851144");    
+    $("input[type='tel']").val("01218851144");
     $("input[type='email']").val("sample@gmail.com");
     $("textarea").val("sample@gmail.com");
 })
 
-$(".payment_method input").change(function(){
-    if($(this).attr('id') == 'chuyenkhoan'){
+$(".payment_method input").change(function () {
+    if ($(this).attr('id') == 'chuyenkhoan') {
         $("#tttk").show();
-    }else{
+    } else {
         $("#tttk").hide();
     }
 })
-$(".checkout-button").click(function(e){    
+$(".checkout-button").click(function (e) {
     $("#form-cart input[name='step']").val('payment');
     $("#form-cart").submit();
     e.preventDefault();
 })
+
+
+//<editor-fold desc="auto height item">
+$(window).load(function(){
+    var max = 0;
+    $(".item2").each(function () {
+        if ($(this).height() > max) {
+            max = $(this).height();
+        }
+    });
+    $(".item2").height(max);
+})
+
+//</editor-fold>
